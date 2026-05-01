@@ -1,0 +1,27 @@
+{
+  "name": "Kawaii Dream A",
+  "params": {"scale": 1.0, "color": "#1a0011", "opacity": 1.0},
+  "layers": [
+    {"id": "kd-a-1", "name": "Hearts", "effectUrl": "nt/effects/cute-hearts.html", "blend": "normal",
+      "params": {"color1": "#ff69b4", "color2": "#ff1493", "count": 40, "size": 20, "speed": 1.2, "opacity": 0.6, "reactLow": 1.2, "reactHigh": 1.0, "spin": 0.3}},
+    {"id": "kd-a-2", "name": "Stars", "effectUrl": "nt/effects/cute-stars.html", "blend": "normal",
+      "params": {"color": "#ffdd44", "count": 60, "size": 12, "speed": 0.8, "opacity": 0.5, "reactHigh": 1.5}},
+    {"id": "kd-a-3", "name": "Glow Orbs", "effectUrl": "nt/effects/amb-glow-orbs.html", "blend": "normal",
+      "params": {"color": "#ff88cc", "count": 10, "opacity": 0.4, "size": 40, "speed": 0.5, "blur": 25, "reactLow": 0.8}},
+    {"id": "kd-a-4", "name": "Sparkle", "effectUrl": "nt/effects/ptcl-sparkle.html", "blend": "normal",
+      "params": {"color": "#ffffaa", "count": 120, "size": 8, "speed": 3.0, "opacity": 0.5, "reactHigh": 1.5}},
+    {"id": "kd-a-5", "name": "Flowlines", "effectUrl": "nt/effects/amb-flowlines.html", "blend": "normal",
+      "params": {"color": "#ff66aa", "count": 5, "speed": 0.8, "thickness": 1.5, "opacity": 0.25, "reactLow": 0.8, "glow": 8}},
+    {"id": "kd-a-6", "name": "Candy BG", "effectUrl": "nt/effects/cute-candy.html", "blend": "normal",
+      "params": {"opacity": 0.35, "count": 30, "size": 15, "speed": 1.0}},
+    {"id": "kd-a-7", "name": "Color Wash", "effectUrl": "nt/effects/amb-color-wash.html", "blend": "normal",
+      "params": {"color": "#ff88dd", "opacity": 0.06, "style": "vignette", "intensity": 0.4, "reactLow": 0.15}},
+    {"id": "kd-a-8", "name": "Bubbles", "effectUrl": "nt/effects/cute-bubbles.html", "blend": "normal",
+      "params": {"opacity": 0.3, "count": 25, "size": 18, "speed": 0.8}},
+    {"id": "kd-a-9", "name": "Ring Pulse", "effectUrl": "nt/effects/fx-ringpulse.html", "blend": "normal",
+      "params": {"color": "#ff69b4", "opacity": 0.3, "speed": 1.5}},
+    {"id": "kd-a-10", "name": "Strobe Soft", "effectUrl": "nt/effects/fx-strobe.html", "blend": "normal",
+      "params": {"intensity": 0.3, "threshold": 0.6, "decay": 0.06, "color": "#ffccee", "mode": "Flash"}}
+  ],
+  "id": "preset-kawaii-dream-a"
+}

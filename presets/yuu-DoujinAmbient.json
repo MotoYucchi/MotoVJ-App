@@ -1,0 +1,25 @@
+{
+  "name": "Doujin Ambient",
+  "params": {"scale": 1.0, "color": "#000000", "opacity": 1.0},
+  "layers": [
+    {"id": "da-1", "name": "Plasma BG", "effectUrl": "nt/effects/bg-plasma.html", "blend": "normal",
+      "params": {"opacity": 0.15, "speed": 0.5}},
+    {"id": "da-2", "name": "Glow Orbs", "effectUrl": "nt/effects/amb-glow-orbs.html", "blend": "normal",
+      "params": {"color": "#66bbff", "count": 12, "opacity": 0.4, "size": 50, "speed": 0.4, "blur": 30, "reactLow": 0.6}},
+    {"id": "da-3", "name": "Flowlines", "effectUrl": "nt/effects/amb-flowlines.html", "blend": "normal",
+      "params": {"color": "#4488ff", "count": 8, "speed": 0.6, "thickness": 1, "opacity": 0.3, "reactLow": 0.5, "glow": 12}},
+    {"id": "da-4", "name": "Snow", "effectUrl": "nt/effects/ptcl-snow.html", "blend": "normal",
+      "params": {"opacity": 0.2, "count": 50, "speed": 0.5, "size": 3}},
+    {"id": "da-5", "name": "Mountain Viz", "effectUrl": "nt/effects/viz-mountain.html", "blend": "normal",
+      "params": {"color": "#44aaff", "opacity": 0.3, "reactLow": 1.0}},
+    {"id": "da-6", "name": "Waveform", "effectUrl": "nt/effects/viz-waveform.html", "blend": "normal",
+      "params": {"color": "#88ccff", "opacity": 0.2}},
+    {"id": "da-7", "name": "Color Wash", "effectUrl": "nt/effects/amb-color-wash.html", "blend": "normal",
+      "params": {"color": "#4466cc", "opacity": 0.04, "style": "bottom-fade", "intensity": 0.4, "reactLow": 0.1}},
+    {"id": "da-8", "name": "Sparkle", "effectUrl": "nt/effects/ptcl-sparkle.html", "blend": "normal",
+      "params": {"color": "#aaddff", "count": 80, "size": 5, "speed": 2.0, "opacity": 0.3, "reactHigh": 1.0}},
+    {"id": "da-9", "name": "Ring Scope", "effectUrl": "nt/effects/viz-ring-scope.html", "blend": "normal",
+      "params": {"color": "#6699ff", "opacity": 0.2, "speed": 0.3, "density": 2, "reactLow": 0.5, "glow": 5}}
+  ],
+  "id": "preset-doujin-ambient"
+}

@@ -1,0 +1,120 @@
+{
+  "name": "Content Retro",
+  "params": {
+    "scale": 1,
+    "color": "#000000",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "cr-1",
+      "name": "Grid Retro",
+      "effectUrl": "nt/effects/geo-grid.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff00ff",
+        "speed": 1.5,
+        "lineCount": 16,
+        "opacity": 0.35,
+        "reactLow": 1.2,
+        "reactHigh": 0.8,
+        "horizon": 0.35
+      }
+    },
+    {
+      "id": "cr-2",
+      "name": "Tunnel",
+      "effectUrl": "nt/effects/mtn-tunnel.html",
+      "blend": "normal",
+      "params": {
+        "color": "#00ffff",
+        "speed": 3,
+        "sides": 4,
+        "layers": 10,
+        "opacity": 0.3,
+        "reactLow": 1.5,
+        "hueShift": 60
+      }
+    },
+    {
+      "id": "cr-3",
+      "name": "Neonwave",
+      "effectUrl": "nt/effects/spc-neonwave.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff44ff",
+        "opacity": 0.3,
+        "speed": 1.5
+      }
+    },
+    {
+      "id": "cr-4",
+      "name": "HBands",
+      "effectUrl": "nt/effects/fx-hbands.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff00ff",
+        "opacity": 0.12
+      }
+    },
+    {
+      "id": "cr-5",
+      "name": "Glitch",
+      "effectUrl": "nt/effects/fx-glitch.html",
+      "blend": "normal",
+      "params": {
+        "intensity": 0.35,
+        "speed": 1.5,
+        "color": "#00ffff",
+        "threshold": 0.55,
+        "noiseLines": 5,
+        "chromatic": 8,
+        "scanlines": 1
+      }
+    },
+    {
+      "id": "cr-6",
+      "name": "Laser Beams",
+      "effectUrl": "nt/effects/fx-laser-beams.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff00ff",
+        "opacity": 0.35,
+        "count": 6,
+        "speed": 0.4,
+        "thickness": 2,
+        "length": 0.7,
+        "reactLow": 1,
+        "glow": 12
+      }
+    },
+    {
+      "id": "cr-7",
+      "name": "Sparkle",
+      "effectUrl": "nt/effects/ptcl-sparkle.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff88ff",
+        "count": 80,
+        "size": 6,
+        "speed": 3,
+        "opacity": 0.3,
+        "reactHigh": 1
+      }
+    },
+    {
+      "id": "cr-9",
+      "name": "Strobe",
+      "effectUrl": "nt/effects/fx-strobe.html",
+      "blend": "normal",
+      "params": {
+        "intensity": 0.3,
+        "threshold": 0.55,
+        "decay": 0.06,
+        "color": "#ff88ff",
+        "mode": "Additive"
+      }
+    }
+  ],
+  "id": "group-1772119272061"
+}

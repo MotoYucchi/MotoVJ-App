@@ -1,0 +1,175 @@
+{
+  "name": "Content Hype",
+  "params": {
+    "scale": 1,
+    "color": "#000000",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "ch-1",
+      "name": "Starfield Fast",
+      "effectUrl": "nt/effects/mtn-starfield.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ffffff",
+        "opacity": 0.5,
+        "speed": 4,
+        "reactLow": 2,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "count": 120,
+        "trail": 0.2
+      }
+    },
+    {
+      "id": "ch-2",
+      "name": "Laser Beams",
+      "effectUrl": "nt/effects/fx-laser-beams.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff2266",
+        "opacity": 0.5,
+        "count": 8,
+        "speed": 0.8,
+        "thickness": 4,
+        "length": 0.9,
+        "reactLow": 2,
+        "glow": 18
+      }
+    },
+    {
+      "id": "ch-3",
+      "name": "Burst",
+      "effectUrl": "nt/effects/ptcl-burst.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff8800",
+        "opacity": 0.5,
+        "count": 100,
+        "speed": 4,
+        "reactLow": 2.5,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "maxParticles": 100,
+        "size": 5,
+        "threshold": 0.4,
+        "trail": 0.15,
+        "gravity": 0.1
+      }
+    },
+    {
+      "id": "ch-4",
+      "name": "Confetti",
+      "effectUrl": "nt/effects/ptcl-confetti.html",
+      "blend": "normal",
+      "params": {
+        "count": 40,
+        "speed": 2,
+        "size": 7,
+        "opacity": 0.5,
+        "reactLow": 2,
+        "threshold": 0.4,
+        "spin": 2,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "ch-5",
+      "name": "Strobe",
+      "effectUrl": "nt/effects/fx-strobe.html",
+      "blend": "normal",
+      "params": {
+        "intensity": 0.5,
+        "threshold": 0.45,
+        "decay": 0.2,
+        "color": "#ffffff",
+        "mode": "Additive",
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "ch-6",
+      "name": "Bass Rings",
+      "effectUrl": "nt/effects/fx-bass-rings.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff4400",
+        "intensity": 0.6,
+        "pulseDist": 300,
+        "thickness": 8,
+        "count": 4,
+        "speed": 3,
+        "reactLow": 2.5,
+        "glow": 15
+      }
+    },
+    {
+      "id": "ch-7",
+      "name": "Sparkle",
+      "effectUrl": "nt/effects/ptcl-sparkle.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ffdd00",
+        "count": 80,
+        "size": 10,
+        "speed": 5,
+        "opacity": 0.5,
+        "reactHigh": 2,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "ch-8",
+      "name": "Glitch",
+      "effectUrl": "nt/effects/fx-glitch.html",
+      "blend": "normal",
+      "params": {
+        "intensity": 0.4,
+        "speed": 2,
+        "color": "#ff0044",
+        "threshold": 0.5,
+        "noiseLines": 6,
+        "chromatic": 10,
+        "scanlines": 1
+      }
+    },
+    {
+      "id": "ch-9",
+      "name": "Shake",
+      "effectUrl": "nt/effects/fx-shake.html",
+      "blend": "normal",
+      "params": {
+        "intensity": 0.4,
+        "threshold": 0.5
+      }
+    },
+    {
+      "id": "ch-10",
+      "name": "Color Wash",
+      "effectUrl": "nt/effects/amb-color-wash.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff2200",
+        "opacity": 0.04,
+        "style": "vignette",
+        "intensity": 0.4,
+        "reactLow": 0.2
+      }
+    }
+  ],
+  "id": "group-1775288626550"
+}

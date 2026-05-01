@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 200 200">
+  <!-- Grid of 4 squares -->
+  <rect x="25" y="25" width="65" height="65" rx="8" fill="white"/>
+  <rect x="110" y="25" width="65" height="65" rx="8" fill="white"/>
+  <rect x="25" y="110" width="65" height="65" rx="8" fill="white"/>
+  <rect x="110" y="110" width="65" height="65" rx="8" fill="white"/>
+</svg>

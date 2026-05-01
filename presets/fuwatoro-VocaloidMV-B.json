@@ -1,0 +1,157 @@
+{
+  "name": "Vocaloid MV-B",
+  "params": {
+    "scale": 1,
+    "color": "#000000",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "mv-b-1",
+      "name": "🎬 Video Player",
+      "effectUrl": "nt/effects/vid-player.html",
+      "blend": "normal",
+      "params": {
+        "videoUrl": "",
+        "opacity": 1,
+        "playbackRate": 1,
+        "loopMode": "once",
+        "audioEnabled": "off",
+        "audioVolume": 0,
+        "fitMode": "contain",
+        "chromaKey": "off",
+        "reactBass": 0
+      }
+    },
+    {
+      "id": "mv-b-2",
+      "name": "Confetti Burst",
+      "effectUrl": "nt/effects/ptcl-confetti.html",
+      "blend": "normal",
+      "params": {
+        "count": 60,
+        "speed": 1.5,
+        "size": 5,
+        "opacity": 0.25,
+        "reactLow": 1.5,
+        "threshold": 0.6,
+        "spin": 1.5
+      }
+    },
+    {
+      "id": "mv-b-3",
+      "name": "Stars Float",
+      "effectUrl": "nt/effects/cute-stars.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ffdd44",
+        "count": 25,
+        "size": 17,
+        "speed": 0.6,
+        "opacity": 0.2,
+        "reactHigh": 0.8,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "color1": "#ffcc00",
+        "color2": "#ff66aa",
+        "points": 5,
+        "reactLow": 1.2,
+        "spin": 0.5
+      }
+    },
+    {
+      "id": "mv-b-4",
+      "name": "Mini Bars Top",
+      "effectUrl": "nt/effects/viz-minibars.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff88cc",
+        "opacity": 0.1,
+        "barCount": 24,
+        "height": 0.17,
+        "position": "top",
+        "mirror": "off",
+        "barGap": 3,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "mv-b-5",
+      "name": "Glow Orbs",
+      "effectUrl": "nt/effects/amb-glow-orbs.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff66aa",
+        "count": 8,
+        "opacity": 0.15,
+        "size": 35,
+        "speed": 0.3,
+        "blur": 20,
+        "reactLow": 0.3,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "mv-b-6",
+      "name": "Color Wash",
+      "effectUrl": "nt/effects/amb-color-wash.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff44aa",
+        "opacity": 0.03,
+        "style": "top-fade",
+        "intensity": 0.2,
+        "reactLow": 0.1,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "mv-b-7",
+      "name": "Snow Light",
+      "effectUrl": "nt/effects/ptcl-snow.html",
+      "blend": "normal",
+      "params": {
+        "opacity": 0.1,
+        "count": 180,
+        "speed": 0.4,
+        "size": 3,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "color": "#e0f0ff",
+        "wind": 0.3,
+        "reactLow": 1
+      }
+    },
+    {
+      "id": "mv-b-8",
+      "name": "Strobe Gentle",
+      "effectUrl": "nt/effects/fx-strobe.html",
+      "blend": "normal",
+      "params": {
+        "intensity": 0.12,
+        "threshold": 0.75,
+        "decay": 0.2,
+        "color": "#ffccee",
+        "mode": "Flash",
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    }
+  ],
+  "id": "group-1772119272061"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Pop Setup",
+  "params": {
+    "scale": 1,
+    "color": "#111100",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "layer-genre-1775290021150-0",
+      "name": "Circles",
+      "effectUrl": "nt/effects/geo-circle.html",
+      "params": {
+        "color": "#ff9100",
+        "size": 300,
+        "reactLow": 1.5
+      }
+    },
+    {
+      "id": "layer-genre-1775290021150-1",
+      "name": "Spectrum",
+      "effectUrl": "nt/effects/viz-bars.html",
+      "params": {
+        "color": "#facc15",
+        "sensitivity": 1.5
+      }
+    },
+    {
+      "id": "layer-genre-1775290021150-2",
+      "name": "Stars",
+      "effectUrl": "nt/effects/ptcl-sparkle.html",
+      "params": {
+        "color": "#00e5ff",
+        "count": 60
+      }
+    },
+    {
+      "id": "layer-genre-1775290021150-3",
+      "name": "Starfield",
+      "effectUrl": "nt/effects/mtn-starfield.html",
+      "params": {
+        "color": "#ffffff",
+        "speed": 1
+      }
+    }
+  ],
+  "id": "group-genre-1775290021150"
+}

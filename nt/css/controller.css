@@ -1,0 +1,114 @@
+/* MotoVJ v3 — Controller Layout */
+
+/* ── App Layout ── */
+#app-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ── Toolbar ── */
+#toolbar {
+  display: flex;
+  align-items: center;
+  height: 42px;
+  padding: 0 var(--sp-3);
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  z-index: var(--z-toolbar);
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+.toolbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding-right: var(--sp-3);
+  border-right: 1px solid var(--border-default);
+  margin-right: var(--sp-2);
+}
+
+.toolbar-brand-name {
+  font-size: var(--font-md);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-neon));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.toolbar-brand-version {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+.toolbar-separator {
+  width: 1px;
+  height: 20px;
+  background: var(--border-default);
+  margin: 0 var(--sp-2);
+}
+
+.toolbar-spacer { flex: 1; }
+
+.toolbar-status {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.toolbar-status-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  animation: pulse 2s infinite;
+}
+
+.toolbar-status-dot.offline {
+  background: var(--accent-red);
+  animation: none;
+}
+
+/* ── Workspace ── */
+#workspace {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Status Bar ── */
+#statusbar {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 var(--sp-3);
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  gap: var(--sp-4);
+  flex-shrink: 0;
+}
+
+.statusbar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+.statusbar-item .accent {
+  color: var(--accent-neon);
+}

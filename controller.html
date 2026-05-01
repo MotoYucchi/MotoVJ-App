@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>VJ Controller Pro - Modular</title>
+  <style>
+    body { font-family: sans-serif; background: #1a1a1a; color: #eee; margin: 0; display: flex; flex-direction: column; height: 100vh; }
+    header { background: #333; padding: 10px; display: flex; gap: 10px; align-items: center; border-bottom: 2px solid #444; }
+    #decks-container { display: flex; flex-grow: 1; overflow-x: auto; padding: 1%; gap: 2%; }
+    .deck-panel { flex: 1; min-width: 300px; background: #252525; border: 1px solid #444; border-radius: 8px; display: flex; flex-direction: column; }
+    .deck-header { padding: 10px; background: #3a3a3a; display: flex; justify-content: space-between; border-radius: 8px 8px 0 0; }
+    
+    .layer-list { padding: 10px; overflow-y: auto; flex-grow: 1; }
+    .layer-item { background: #333; margin-bottom: 10px; border-radius: 4px; border: 1px solid #555; }
+    .layer-ctrl-bar { padding: 8px; display: flex; align-items: center; gap: 5px; background: #444; cursor: pointer; }
+    .layer-title { flex-grow: 1; font-weight: bold; border: none; background: transparent; color: white; }
+    .layer-params { padding: 10px; display: none; border-top: 1px solid #555; }
+    .layer-item.expanded .layer-params { display: block; }
+    
+    .btn { cursor: pointer; border: none; border-radius: 3px; padding: 5px 8px; font-size: 12px; }
+    .btn-add { background: #28a745; color: white; }
+    .btn-del { background: #dc3545; color: white; }
+    .btn-move { background: #666; color: white; }
+    .btn-sync { background: #007bff; color: white; padding: 10px; }
+    
+    .param-row { margin-bottom: 8px; }
+    input[type=range] { width: 100%; }
+
+    /* Deck & Group Layout */
+    .group-item {
+      background: #2a2a2a;
+      border: 1px solid #444;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .group-header {
+      background: #3d3d3d;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between; /* 左右に振り分け */
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .group-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-grow: 1;
+    }
+
+    .group-actions {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .group-title {
+      background: transparent;
+      border: 1px solid transparent;
+      color: #fff;
+      font-weight: bold;
+      width: 120px;
+    }
+
+    .group-title:hover { border-color: #555; }
+
+    .group-content {
+      padding: 10px;
+      display: block; /* collapsedクラスで制御 */
+    }
+
+    .group-item.collapsed .group-content { display: none; }
+
+    /* Parameter Rows */
+    .param-row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      padding: 5px;
+      background: #333;
+      border-radius: 4px;
+    }
+
+    .param-row label {
+      font-size: 11px;
+      color: #aaa;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .midi-tag {
+      background: #007bff;
+      color: white;
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-size: 9px;
+      text-transform: uppercase;
+    }
+
+    /* Preset Select */
+    .preset-select {
+      background: #1a1a1a;
+      color: #eee;
+      border: 1px solid #555;
+      font-size: 12px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button id="sync-btn" class="btn btn-sync">🔄 全デッキ同期 (Force Sync)</button>
+    <button id="start-audio-btn" class="btn btn-move">🎙 Audio Start</button>
+    <span id="audio-status">Audio: Stopped</span>
+  </header>
+
+  <main id="decks-container"></main>
+
+  <script src="./js/storage.js"></script>
+  <script src="./js/ws-client.js"></script>
+  <script src="./js/audio-fft.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/midi-handler.js"></script>
+</body>
+</html>

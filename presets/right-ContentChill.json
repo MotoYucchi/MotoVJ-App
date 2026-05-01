@@ -1,0 +1,25 @@
+{
+  "name": "Content Chill",
+  "params": {"scale": 1.0, "color": "#000000", "opacity": 1.0},
+  "layers": [
+    {"id": "cc-1", "name": "Glow Orbs", "effectUrl": "nt/effects/amb-glow-orbs.html", "blend": "normal",
+      "params": {"color": "#88aaff", "count": 10, "opacity": 0.35, "size": 45, "speed": 0.4, "blur": 28, "reactLow": 0.5}},
+    {"id": "cc-2", "name": "Flowlines", "effectUrl": "nt/effects/amb-flowlines.html", "blend": "normal",
+      "params": {"color": "#6688ff", "count": 6, "speed": 0.6, "thickness": 1.5, "opacity": 0.3, "reactLow": 0.5, "glow": 10}},
+    {"id": "cc-3", "name": "Mountain Viz", "effectUrl": "nt/effects/viz-mountain.html", "blend": "normal",
+      "params": {"color": "#4488ff", "opacity": 0.3, "reactLow": 1.0}},
+    {"id": "cc-4", "name": "Bubbles", "effectUrl": "nt/effects/cute-bubbles.html", "blend": "normal",
+      "params": {"opacity": 0.25, "count": 20, "size": 15, "speed": 0.6}},
+    {"id": "cc-5", "name": "Snow", "effectUrl": "nt/effects/ptcl-snow.html", "blend": "normal",
+      "params": {"opacity": 0.2, "count": 40, "speed": 0.4, "size": 3}},
+    {"id": "cc-6", "name": "Sparkle", "effectUrl": "nt/effects/ptcl-sparkle.html", "blend": "normal",
+      "params": {"color": "#aaddff", "count": 60, "size": 5, "speed": 1.5, "opacity": 0.25, "reactHigh": 0.8}},
+    {"id": "cc-7", "name": "Ring Scope", "effectUrl": "nt/effects/viz-ring-scope.html", "blend": "normal",
+      "params": {"color": "#6699ff", "opacity": 0.2, "speed": 0.3, "density": 2, "reactLow": 0.5, "glow": 5}},
+    {"id": "cc-8", "name": "Color Wash", "effectUrl": "nt/effects/amb-color-wash.html", "blend": "normal",
+      "params": {"color": "#4466bb", "opacity": 0.04, "style": "vignette", "intensity": 0.3}},
+    {"id": "cc-9", "name": "Waveform", "effectUrl": "nt/effects/viz-waveform.html", "blend": "normal",
+      "params": {"color": "#88ccff", "opacity": 0.15}}
+  ],
+  "id": "preset-content-chill"
+}

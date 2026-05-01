@@ -1,0 +1,23 @@
+{
+  "name": "Bass Liquid",
+  "params": {"scale": 1.0, "color": "#000508", "opacity": 1.0},
+  "layers": [
+    {"id": "bl-1", "name": "Ripple BG", "effectUrl": "nt/effects/bg-ripple.html", "blend": "normal",
+      "params": {"color": "#0066ff", "opacity": 0.2, "speed": 1.5}},
+    {"id": "bl-2", "name": "Wave", "effectUrl": "nt/effects/mtn-wave.html", "blend": "normal",
+      "params": {"color": "#0088ff", "opacity": 0.4, "speed": 2.0, "reactLow": 1.5}},
+    {"id": "bl-3", "name": "Bars Bottom", "effectUrl": "nt/effects/viz-bars.html", "blend": "normal",
+      "params": {"color": "#00aaff", "opacity": 0.35, "reactLow": 1.5}},
+    {"id": "bl-4", "name": "Glow Orbs", "effectUrl": "nt/effects/amb-glow-orbs.html", "blend": "normal",
+      "params": {"color": "#0088ff", "count": 8, "opacity": 0.3, "size": 40, "speed": 0.5, "blur": 25, "reactLow": 0.8}},
+    {"id": "bl-5", "name": "Bass Rings", "effectUrl": "nt/effects/fx-bass-rings.html", "blend": "normal",
+      "params": {"color": "#0066ff", "intensity": 0.5, "pulseDist": 200, "thickness": 5, "count": 2, "speed": 2.0, "reactLow": 1.5, "glow": 12}},
+    {"id": "bl-6", "name": "Rain", "effectUrl": "nt/effects/ptcl-rain.html", "blend": "normal",
+      "params": {"color": "#88ccff", "opacity": 0.25, "count": 100, "speed": 3.0}},
+    {"id": "bl-7", "name": "Sparkle", "effectUrl": "nt/effects/ptcl-sparkle.html", "blend": "normal",
+      "params": {"color": "#aaddff", "count": 80, "size": 5, "speed": 2.5, "opacity": 0.3, "reactHigh": 1.0}},
+    {"id": "bl-8", "name": "Color Wash", "effectUrl": "nt/effects/amb-color-wash.html", "blend": "normal",
+      "params": {"color": "#0044aa", "opacity": 0.04, "style": "bottom-fade", "intensity": 0.4, "reactLow": 0.15}}
+  ],
+  "id": "preset-bass-liquid"
+}

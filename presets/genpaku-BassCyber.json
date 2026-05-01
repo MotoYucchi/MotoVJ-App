@@ -1,0 +1,27 @@
+{
+  "name": "Bass Cyber",
+  "params": {"scale": 1.0, "color": "#000811", "opacity": 1.0},
+  "layers": [
+    {"id": "bc-1", "name": "Grid", "effectUrl": "nt/effects/geo-grid.html", "blend": "normal",
+      "params": {"color": "#00ffd5", "speed": 2.0, "lineCount": 18, "opacity": 0.4, "reactLow": 1.5, "reactHigh": 0.8, "horizon": 0.35}},
+    {"id": "bc-2", "name": "Tunnel", "effectUrl": "nt/effects/mtn-tunnel.html", "blend": "normal",
+      "params": {"color": "#00ffcc", "speed": 4.0, "sides": 4, "layers": 12, "opacity": 0.3, "reactLow": 2.0, "hueShift": 40}},
+    {"id": "bc-3", "name": "Bass Rings", "effectUrl": "nt/effects/fx-bass-rings.html", "blend": "normal",
+      "params": {"color": "#00eeff", "intensity": 0.6, "pulseDist": 250, "thickness": 6, "count": 3, "speed": 2.5, "reactLow": 2.0, "glow": 15}},
+    {"id": "bc-4", "name": "Laser Beams", "effectUrl": "nt/effects/fx-laser-beams.html", "blend": "normal",
+      "params": {"color": "#00ff88", "opacity": 0.4, "count": 6, "speed": -0.6, "thickness": 3, "length": 0.7, "reactLow": 1.5, "glow": 15}},
+    {"id": "bc-5", "name": "Matrix", "effectUrl": "nt/effects/spc-matrix.html", "blend": "normal",
+      "params": {"color": "#00ff44", "opacity": 0.2, "speed": 2.0}},
+    {"id": "bc-6", "name": "Glitch", "effectUrl": "nt/effects/fx-glitch.html", "blend": "normal",
+      "params": {"intensity": 0.4, "speed": 1.5, "color": "#00ffff", "threshold": 0.5, "noiseLines": 6, "chromatic": 10, "scanlines": 1}},
+    {"id": "bc-7", "name": "HBands", "effectUrl": "nt/effects/fx-hbands.html", "blend": "normal",
+      "params": {"color": "#00eeff", "opacity": 0.15}},
+    {"id": "bc-8", "name": "Strobe", "effectUrl": "nt/effects/fx-strobe.html", "blend": "normal",
+      "params": {"intensity": 0.5, "threshold": 0.5, "decay": 0.08, "color": "#00ffff", "mode": "Additive"}},
+    {"id": "bc-9", "name": "Sparkle", "effectUrl": "nt/effects/ptcl-sparkle.html", "blend": "normal",
+      "params": {"color": "#88ffdd", "count": 100, "size": 6, "speed": 4.0, "opacity": 0.3, "reactHigh": 1.5}},
+    {"id": "bc-10", "name": "Color Wash", "effectUrl": "nt/effects/amb-color-wash.html", "blend": "normal",
+      "params": {"color": "#004488", "opacity": 0.04, "style": "vignette", "intensity": 0.4}}
+  ],
+  "id": "preset-bass-cyber"
+}

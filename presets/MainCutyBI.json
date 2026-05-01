@@ -1,0 +1,175 @@
+{
+  "id": "group-1772119272061",
+  "name": "BI",
+  "params": {
+    "scale": 1,
+    "color": "#000000",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "layer-1772119292579",
+      "name": "Cube",
+      "effectUrl": "effects/effect-0002.html",
+      "params": {
+        "shape": "Cube",
+        "speed": 3.3,
+        "opacity": 1,
+        "color": "#ff0040",
+        "reactLow": 3.1,
+        "reactMid": 3.6,
+        "reactHigh": 2.8,
+        "baseR": 0,
+        "baseG": 206.81102362204726,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "layer-1772121531071",
+      "name": "vi02",
+      "effectUrl": "effects/effect-0003.html",
+      "params": {
+        "shape": "Waveform",
+        "color": "#ffb8b8",
+        "opacity": 1,
+        "sensitivity": 4.4,
+        "beatAnim": "None",
+        "reactLow": 2.4,
+        "baseR": 0,
+        "baseG": 206.81102362204726,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "layer-1772125104690",
+      "name": "Grid",
+      "effectUrl": "effects/effect-0001.html",
+      "params": {
+        "shape": "Grid",
+        "speed": -2.8,
+        "opacity": 0.87,
+        "color": "#007cdb",
+        "beatAnim": "Scale",
+        "reactLow": 2.9,
+        "reactMid": 3.3,
+        "reactHigh": 4.9,
+        "baseR": 0,
+        "baseG": 206.81102362204726,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "layer-1772125830464",
+      "name": "Rect",
+      "effectUrl": "effects/effect-0007.html",
+      "params": {
+        "size": 393,
+        "thickness": 16,
+        "opacity": 0.44,
+        "color": "#a591f8",
+        "reactLow": 1.7,
+        "baseR": 0,
+        "baseG": 206.81102362204726,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "layer-1772125881590",
+      "name": "n1",
+      "effectUrl": "effects/effect-0010.html",
+      "params": {
+        "size": 174,
+        "sides": 6,
+        "opacity": 0.8,
+        "color": "#9900ff",
+        "baseR": 0,
+        "baseG": 206.81102362204726,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "layer-1772126108352",
+      "name": "sp-n1",
+      "effectUrl": "effects/effect-0011.html",
+      "params": {
+        "baseSize": 84,
+        "baseThick": 13,
+        "opacity": 0.8,
+        "color": "#4deb2d",
+        "lowSize": 5,
+        "lowHue": 335,
+        "lowThick": 39,
+        "midSize": 1.9,
+        "midHue": 138,
+        "midThick": 27,
+        "highSize": 5,
+        "highHue": 205,
+        "highThick": 36,
+        "subBass": 3,
+        "ultraHigh": 4,
+        "beatAnim": "Glitch",
+        "baseR": 0,
+        "baseG": 206.81102362204726,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "layer-1772128330889",
+      "name": "utili",
+      "effectUrl": "effects/effect-0005.html",
+      "params": {
+        "mode": "GroupParticles",
+        "opacity": 0.82,
+        "color": "#b020fe",
+        "reactLow": 4.3,
+        "reactMid": 5,
+        "reactHigh": 4.2,
+        "baseR": 0,
+        "baseG": 206.81102362204726,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "layer-1772131327808",
+      "name": "Pop",
+      "effectUrl": "effects/effect-0015.html",
+      "params": {
+        "motif": "Mix",
+        "layout": "Burst",
+        "color1": "#42d0ff",
+        "color2": "#fff199",
+        "color3": "#ffb8c9",
+        "opacity": 0.38,
+        "afterimage": 0.99,
+        "speed": 2.8,
+        "waveAmp": 50,
+        "lowReactSize": 2,
+        "lowReactSpawn": 5.6,
+        "midReactHue": 316,
+        "highReactFlash": 4.8,
+        "baseR": 0,
+        "baseG": 206.81102362204726,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "layer-1774540741580",
+      "name": "New Layer",
+      "effectUrl": "effects/effect-hard-song01.html",
+      "params": {
+        "flash": "0.03",
+        "glitch": "0.64",
+        "intensity": "1.08",
+        "speed": "1.9"
+      }
+    }
+  ]
+}

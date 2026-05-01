@@ -1,0 +1,50 @@
+/* MotoVJ v3 — Virtual Controller */
+#vc-panel {
+  display: none;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border-subtle);
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 22rem;
+  flex-shrink: 0;
+  z-index: 40;
+}
+#vc-panel.active { display: flex; flex-direction: column; }
+#vc-panel.fullscreen {
+  position: absolute; top: 2.625rem; left: 0; right: 0; bottom: 1.5rem;
+  height: auto; z-index: 50;
+}
+.vc-row {
+  display: flex;
+  flex: 1;
+  min-height: 15rem;
+}
+#vc-panel.fullscreen .vc-row {
+  min-height: 0;
+}
+.vc-track {
+  display: flex; flex-direction: column; width: 3.75rem; min-width: 3.75rem;
+  border-right: 1px solid var(--border-subtle);
+  align-items: center; padding: 0.625rem 0; gap: 0.75rem;
+}
+.vc-track-label {
+  font-size: 0.625rem; color: var(--text-muted); font-family: var(--font-mono);
+}
+.vc-knob-input {
+  width: 2.5rem !important;
+}
+.vc-toggle-btn {
+  width: 1.5rem; height: 1rem; border-radius: 0.5rem; background: var(--bg-input);
+  border: 1px solid var(--border-default); cursor: pointer; transition: all 0.2s;
+}
+.vc-toggle-btn.active { background: var(--accent-neon); box-shadow: var(--glow-neon); }
+input[type=range].vc-fader-input {
+  -webkit-appearance: slider-vertical;
+  appearance: slider-vertical;
+  width: 1.5rem;
+  flex: 1;
+  background: var(--bg-input);
+  border-radius: 0.75rem;
+  outline: none;
+  margin-bottom: 0.625rem;
+}

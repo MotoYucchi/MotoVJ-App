@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 200 200">
+  <!-- Speaker body -->
+  <polygon points="30,75 60,75 95,40 95,160 60,125 30,125" fill="white"/>
+  <!-- X mark -->
+  <line x1="125" y1="70" x2="170" y2="130" stroke="white" stroke-width="14" stroke-linecap="round"/>
+  <line x1="170" y1="70" x2="125" y2="130" stroke="white" stroke-width="14" stroke-linecap="round"/>
+</svg>

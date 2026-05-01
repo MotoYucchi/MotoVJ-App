@@ -1,0 +1,25 @@
+{
+  "name": "Kawaii Dream B",
+  "params": {"scale": 1.0, "color": "#110016", "opacity": 1.0},
+  "layers": [
+    {"id": "kd-b-1", "name": "Flowers", "effectUrl": "nt/effects/cute-flowers.html", "blend": "normal",
+      "params": {"opacity": 0.5, "count": 35, "size": 20, "speed": 1.0}},
+    {"id": "kd-b-2", "name": "Hearts Float", "effectUrl": "nt/effects/cute-hearts.html", "blend": "normal",
+      "params": {"color1": "#ee88ff", "color2": "#ff44aa", "count": 30, "size": 22, "speed": 1.0, "opacity": 0.55, "reactLow": 1.0, "reactHigh": 1.2}},
+    {"id": "kd-b-3", "name": "Glow Orbs Purple", "effectUrl": "nt/effects/amb-glow-orbs.html", "blend": "normal",
+      "params": {"color": "#cc66ff", "count": 8, "opacity": 0.35, "size": 45, "speed": 0.4, "blur": 30, "reactLow": 0.6}},
+    {"id": "kd-b-4", "name": "Confetti", "effectUrl": "nt/effects/ptcl-confetti.html", "blend": "normal",
+      "params": {"count": 80, "speed": 1.5, "size": 6, "opacity": 0.5, "reactLow": 1.5, "threshold": 0.5, "spin": 1.5}},
+    {"id": "kd-b-5", "name": "Sparkle White", "effectUrl": "nt/effects/ptcl-sparkle.html", "blend": "normal",
+      "params": {"color": "#ffffff", "count": 100, "size": 6, "speed": 2.5, "opacity": 0.4, "reactHigh": 1.2}},
+    {"id": "kd-b-6", "name": "Snow Drift", "effectUrl": "nt/effects/ptcl-snow.html", "blend": "normal",
+      "params": {"opacity": 0.25, "count": 60, "speed": 0.6, "size": 4}},
+    {"id": "kd-b-7", "name": "Neon Rings", "effectUrl": "nt/effects/fx-ringpulse.html", "blend": "normal",
+      "params": {"color": "#ff66cc", "opacity": 0.25}},
+    {"id": "kd-b-8", "name": "Color Wash", "effectUrl": "nt/effects/amb-color-wash.html", "blend": "normal",
+      "params": {"color": "#cc88ff", "opacity": 0.05, "style": "radial", "intensity": 0.3, "reactLow": 0.1}},
+    {"id": "kd-b-9", "name": "Emoji ♡", "effectUrl": "nt/effects/util-emoji.html", "blend": "normal",
+      "params": {"text": "♡", "color": "#ff69b4", "fontSize": 60, "opacity": 0.2, "posX": 0.9, "posY": 0.1, "reactLow": 0.5, "glow": 15, "bounce": 5}}
+  ],
+  "id": "preset-kawaii-dream-b"
+}

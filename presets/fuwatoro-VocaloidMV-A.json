@@ -1,0 +1,124 @@
+{
+  "name": "Vocaloid MV-A",
+  "params": {
+    "scale": 1,
+    "color": "#000000",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "mv-a-2",
+      "name": "Mini Bars Bottom",
+      "effectUrl": "nt/effects/viz-minibars.html",
+      "blend": "normal",
+      "params": {
+        "color": "#00eeff",
+        "opacity": 0.12,
+        "barCount": 32,
+        "height": 0.15,
+        "position": "bottom",
+        "mirror": "off",
+        "barGap": 2
+      }
+    },
+    {
+      "id": "mv-a-3",
+      "name": "Sparkle Subtle",
+      "effectUrl": "nt/effects/ptcl-sparkle.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ffffff",
+        "count": 50,
+        "size": 15,
+        "speed": 1.5,
+        "opacity": 0.61,
+        "reactHigh": 0.8,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "mv-a-4",
+      "name": "Color Wash",
+      "effectUrl": "nt/effects/amb-color-wash.html",
+      "blend": "normal",
+      "params": {
+        "color": "#0088ff",
+        "opacity": 0.3,
+        "style": "top-fade",
+        "intensity": 0.17,
+        "reactLow": 0.36,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "mv-a-5",
+      "name": "Ring Scope",
+      "effectUrl": "nt/effects/viz-ring-scope.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ffffff",
+        "opacity": 0.08,
+        "speed": 0.3,
+        "density": 2,
+        "reactLow": 0.3,
+        "glow": 3,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "thickness": 1.5
+      }
+    },
+    {
+      "id": "mv-a-6",
+      "name": "Bass Rings Subtle",
+      "effectUrl": "nt/effects/fx-bass-rings.html",
+      "blend": "normal",
+      "params": {
+        "color": "#44aaff",
+        "intensity": 0.2,
+        "pulseDist": 200,
+        "thickness": 2,
+        "count": 2,
+        "speed": 1.5,
+        "reactLow": 1,
+        "glow": 5
+      }
+    },
+    {
+      "id": "mv-a-7",
+      "name": "Flowlines Ghost",
+      "effectUrl": "nt/effects/amb-flowlines.html",
+      "blend": "normal",
+      "params": {
+        "color": "#4488ff",
+        "count": 3,
+        "speed": 0.5,
+        "thickness": 1,
+        "opacity": 0.08,
+        "reactLow": 0.3,
+        "glow": 5
+      }
+    },
+    {
+      "id": "mv-a-8",
+      "name": "Strobe Soft",
+      "effectUrl": "nt/effects/fx-strobe.html",
+      "blend": "normal",
+      "params": {
+        "intensity": 0.15,
+        "threshold": 0.65,
+        "decay": 0.04,
+        "color": "#ffffff",
+        "mode": "Additive"
+      }
+    }
+  ],
+  "id": "group-1775288626550"
+}

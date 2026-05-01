@@ -1,0 +1,131 @@
+{
+  "name": "Bass Void",
+  "params": {
+    "scale": 1,
+    "color": "#050005",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "bv-1",
+      "name": "Vortex",
+      "effectUrl": "nt/effects/mtn-vortex.html",
+      "blend": "normal",
+      "params": {
+        "color": "#8800ff",
+        "opacity": 0.5,
+        "speed": 3,
+        "reactLow": 2
+      }
+    },
+    {
+      "id": "bv-2",
+      "name": "Lightning",
+      "effectUrl": "nt/effects/fx-lightning.html",
+      "blend": "normal",
+      "params": {
+        "color": "#cc44ff",
+        "opacity": 0.6,
+        "reactLow": 2.5
+      }
+    },
+    {
+      "id": "bv-3",
+      "name": "Bass Rings",
+      "effectUrl": "nt/effects/fx-bass-rings.html",
+      "blend": "normal",
+      "params": {
+        "color": "#9933ff",
+        "intensity": 0.6,
+        "pulseDist": 300,
+        "thickness": 8,
+        "count": 3,
+        "speed": 2.5,
+        "reactLow": 2.5,
+        "glow": 18
+      }
+    },
+    {
+      "id": "bv-4",
+      "name": "Strobe",
+      "effectUrl": "nt/effects/fx-strobe.html",
+      "blend": "normal",
+      "params": {
+        "intensity": 0.13,
+        "threshold": 0.45,
+        "decay": 0.2,
+        "color": "#cc66ff",
+        "mode": "Invert",
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "bv-5",
+      "name": "Sparkle",
+      "effectUrl": "nt/effects/ptcl-sparkle.html",
+      "blend": "normal",
+      "params": {
+        "color": "#dd88ff",
+        "count": 100,
+        "size": 8,
+        "speed": 5,
+        "opacity": 0.4,
+        "reactHigh": 1.8
+      }
+    },
+    {
+      "id": "bv-6",
+      "name": "Fractal",
+      "effectUrl": "nt/effects/spc-fractal.html",
+      "blend": "normal",
+      "params": {
+        "color": "#7700ff",
+        "opacity": 0.2,
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "bv-7",
+      "name": "Laser Beams",
+      "effectUrl": "nt/effects/fx-laser-beams.html",
+      "blend": "normal",
+      "params": {
+        "color": "#aa00ff",
+        "opacity": 0.4,
+        "count": 10,
+        "speed": 1,
+        "thickness": 3,
+        "length": 0.8,
+        "reactLow": 2,
+        "glow": 18
+      }
+    },
+    {
+      "id": "bv-8",
+      "name": "Shake",
+      "effectUrl": "nt/effects/fx-shake.html",
+      "blend": "normal",
+      "params": {
+        "intensity": 0.35,
+        "threshold": 0.5
+      }
+    },
+    {
+      "id": "bv-9",
+      "name": "Color Wash",
+      "effectUrl": "nt/effects/amb-color-wash.html",
+      "blend": "normal",
+      "params": {
+        "color": "#6600bb",
+        "opacity": 0.05,
+        "style": "vignette",
+        "intensity": 0.5,
+        "reactLow": 0.2
+      }
+    }
+  ],
+  "id": "group-1775288626550"
+}

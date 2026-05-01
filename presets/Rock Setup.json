@@ -1,0 +1,47 @@
+{
+  "name": "Rock Setup",
+  "params": {
+    "scale": 1.1,
+    "color": "#0a000f",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "layer-genre-1775290057450-0",
+      "name": "3D Cube",
+      "effectUrl": "nt/effects/3d-cube.html",
+      "params": {
+        "color": "#b388ff",
+        "speed": 1.5,
+        "reactMid": 3
+      }
+    },
+    {
+      "id": "layer-genre-1775290057450-1",
+      "name": "Plasma",
+      "effectUrl": "nt/effects/bg-plasma.html",
+      "params": {
+        "color1": "#7c3aed",
+        "color2": "#c026d3",
+        "opacity": 0.5
+      }
+    },
+    {
+      "id": "layer-genre-1775290057450-2",
+      "name": "Waveform",
+      "effectUrl": "nt/effects/viz-waveform.html",
+      "params": {
+        "color": "#a78bfa",
+        "opacity": 0.8
+      }
+    },
+    {
+      "id": "layer-1775290882466",
+      "name": "ptcl-confetti",
+      "effectUrl": "nt/effects/ptcl-confetti.html",
+      "blend": "normal",
+      "params": {}
+    }
+  ],
+  "id": "group-1775288626550"
+}

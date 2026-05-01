@@ -1,0 +1,785 @@
+{
+  "nodes": {
+    "n_mols1xat_1": {
+      "id": "n_mols1xat_1",
+      "type": "audio-fft",
+      "title": "Audio FFT",
+      "x": -174.59362199987288,
+      "y": 199.64323194772606,
+      "params": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "id": "fft",
+          "name": "FFT",
+          "type": "audio"
+        },
+        {
+          "id": "bass",
+          "name": "Bass",
+          "type": "value"
+        },
+        {
+          "id": "mid",
+          "name": "Mid",
+          "type": "value"
+        },
+        {
+          "id": "high",
+          "name": "High",
+          "type": "value"
+        },
+        {
+          "id": "beat",
+          "name": "Beat",
+          "type": "trigger"
+        }
+      ]
+    },
+    "n_mols5mag_2": {
+      "id": "n_mols5mag_2",
+      "type": "viz-bars",
+      "title": "VizBars",
+      "x": 208.82446016109168,
+      "y": 101.47018498646918,
+      "params": {
+        "barCount": 48,
+        "gap": 2,
+        "mirror": 1,
+        "glow": 8
+      },
+      "inputs": [
+        {
+          "id": "audio",
+          "name": "Audio",
+          "type": "audio"
+        },
+        {
+          "id": "color",
+          "name": "Color",
+          "type": "color"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ],
+      "_instance": {}
+    },
+    "n_molsec2y_4": {
+      "id": "n_molsec2y_4",
+      "type": "color-source",
+      "title": "Color",
+      "x": -30.480142605659474,
+      "y": 377.88608223986415,
+      "params": {
+        "r": 95,
+        "g": 175,
+        "b": 138,
+        "a": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "id": "color",
+          "name": "Color",
+          "type": "color"
+        }
+      ]
+    },
+    "n_molskfgk_1": {
+      "id": "n_molskfgk_1",
+      "type": "bg-plasma",
+      "title": "Plasma",
+      "x": 288.4242331769567,
+      "y": 288.9371348843458,
+      "params": {
+        "speed": 1,
+        "scale": 5,
+        "complexity": 3
+      },
+      "inputs": [
+        {
+          "id": "audio",
+          "name": "Audio",
+          "type": "audio"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ],
+      "_instance": {}
+    },
+    "n_molsmxad_b": {
+      "id": "n_molsmxad_b",
+      "type": "geo-grid",
+      "title": "Grid",
+      "x": 282.7588347607179,
+      "y": 390.0420887459763,
+      "params": {
+        "cols": 12,
+        "rows": 8,
+        "reactivity": 2
+      },
+      "inputs": [
+        {
+          "id": "audio",
+          "name": "Audio",
+          "type": "audio"
+        },
+        {
+          "id": "color",
+          "name": "Color",
+          "type": "color"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ],
+      "_instance": {}
+    },
+    "n_molsoa5h_f": {
+      "id": "n_molsoa5h_f",
+      "type": "color-shift",
+      "title": "Color Shift",
+      "x": 458.33593056728284,
+      "y": 178.94099518800525,
+      "params": {
+        "hueShift": 240
+      },
+      "inputs": [
+        {
+          "id": "canvas",
+          "name": "Input",
+          "type": "canvas"
+        },
+        {
+          "id": "amount",
+          "name": "Amount",
+          "type": "value"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ]
+    },
+    "n_moltuhah_1": {
+      "id": "n_moltuhah_1",
+      "type": "output-screen",
+      "title": "Screen Output",
+      "x": 973.6543613956196,
+      "y": 160.68401354998156,
+      "params": {
+        "opacity": 1,
+        "deck": "none"
+      },
+      "inputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ],
+      "outputs": [],
+      "_opacity": 1,
+      "_deck": "none"
+    },
+    "n_moltw50e_5": {
+      "id": "n_moltw50e_5",
+      "type": "blend",
+      "title": "Blend",
+      "x": 590.3308245353059,
+      "y": 290.3400239767488,
+      "params": {
+        "mode": "screen",
+        "opacity": 1
+      },
+      "inputs": [
+        {
+          "id": "a",
+          "name": "Input A",
+          "type": "canvas"
+        },
+        {
+          "id": "b",
+          "name": "Input B",
+          "type": "canvas"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ]
+    },
+    "n_moltzxg3_a": {
+      "id": "n_moltzxg3_a",
+      "type": "fx-glitch",
+      "title": "Glitch",
+      "x": 438.34284811972736,
+      "y": 484.3901033656178,
+      "params": {
+        "intensity": 0.74,
+        "sliceCount": 9,
+        "noise": 0,
+        "bw": 0,
+        "rgbSplit": 0
+      },
+      "inputs": [
+        {
+          "id": "canvas",
+          "name": "Input",
+          "type": "canvas"
+        },
+        {
+          "id": "audio",
+          "name": "Audio",
+          "type": "audio"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ],
+      "_instance": {}
+    },
+    "n_molu24ta_h": {
+      "id": "n_molu24ta_h",
+      "type": "mtn-tunnel",
+      "title": "Tunnel",
+      "x": 207.2559669276532,
+      "y": 503.39146465215856,
+      "params": {
+        "rings": 8,
+        "speed": 1.5,
+        "sides": 6
+      },
+      "inputs": [
+        {
+          "id": "audio",
+          "name": "Audio",
+          "type": "audio"
+        },
+        {
+          "id": "color",
+          "name": "Color",
+          "type": "color"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ],
+      "_instance": {}
+    },
+    "n_molu27qg_i": {
+      "id": "n_molu27qg_i",
+      "type": "blend",
+      "title": "Blend",
+      "x": 610.929098899348,
+      "y": 511.27576872303575,
+      "params": {
+        "mode": "screen",
+        "opacity": 1
+      },
+      "inputs": [
+        {
+          "id": "a",
+          "name": "Input A",
+          "type": "canvas"
+        },
+        {
+          "id": "b",
+          "name": "Input B",
+          "type": "canvas"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ]
+    },
+    "n_molu2zt8_n": {
+      "id": "n_molu2zt8_n",
+      "type": "color-source",
+      "title": "Color",
+      "x": -22.608812289817234,
+      "y": 461.0108199017133,
+      "params": {
+        "r": 98,
+        "g": 85,
+        "b": 170,
+        "a": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "id": "color",
+          "name": "Color",
+          "type": "color"
+        }
+      ]
+    },
+    "n_molu46vj_p": {
+      "id": "n_molu46vj_p",
+      "type": "scale-transform",
+      "title": "Scale",
+      "x": 263.7357171026068,
+      "y": 616.2477787172506,
+      "params": {
+        "scaleX": 2.95,
+        "scaleY": 2.1
+      },
+      "inputs": [
+        {
+          "id": "canvas",
+          "name": "Input",
+          "type": "canvas"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ]
+    },
+    "n_molu5muk_s": {
+      "id": "n_molu5muk_s",
+      "type": "ptcl-fire",
+      "title": "Fire",
+      "x": 218.7064179621258,
+      "y": 728.9289935920976,
+      "params": {
+        "intensity": 1.5,
+        "width": 0.65,
+        "height": 1
+      },
+      "inputs": [
+        {
+          "id": "audio",
+          "name": "Audio",
+          "type": "audio"
+        },
+        {
+          "id": "color",
+          "name": "Color",
+          "type": "color"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ],
+      "_instance": {}
+    },
+    "n_molu62zb_u": {
+      "id": "n_molu62zb_u",
+      "type": "blend",
+      "title": "Blend",
+      "x": 785.6621798536639,
+      "y": 546.8617014120916,
+      "params": {
+        "mode": "screen",
+        "opacity": 1
+      },
+      "inputs": [
+        {
+          "id": "a",
+          "name": "Input A",
+          "type": "canvas"
+        },
+        {
+          "id": "b",
+          "name": "Input B",
+          "type": "canvas"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ]
+    },
+    "n_molu6kuo_x": {
+      "id": "n_molu6kuo_x",
+      "type": "blend",
+      "title": "Blend",
+      "x": 483.0158377579577,
+      "y": 680.4582793829668,
+      "params": {
+        "mode": "screen",
+        "opacity": 1
+      },
+      "inputs": [
+        {
+          "id": "a",
+          "name": "Input A",
+          "type": "canvas"
+        },
+        {
+          "id": "b",
+          "name": "Input B",
+          "type": "canvas"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ]
+    },
+    "n_momwe2mq_1": {
+      "id": "n_momwe2mq_1",
+      "type": "transform-pos",
+      "title": "Position",
+      "x": 963.8822386503246,
+      "y": 258.43820490843484,
+      "params": {
+        "offsetX": 0,
+        "offsetY": 0
+      },
+      "inputs": [
+        {
+          "id": "canvas",
+          "name": "Input",
+          "type": "canvas"
+        },
+        {
+          "id": "x",
+          "name": "X",
+          "type": "value"
+        },
+        {
+          "id": "y",
+          "name": "Y",
+          "type": "value"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ]
+    },
+    "n_momxo2j0_3": {
+      "id": "n_momxo2j0_3",
+      "type": "trigger-toggle",
+      "title": "Trig Toggle",
+      "x": -72.44168555150252,
+      "y": 697.1077974193652,
+      "params": {
+        "interval": "1",
+        "smooth": 0
+      },
+      "inputs": [
+        {
+          "id": "trigger",
+          "name": "Trigger",
+          "type": "trigger"
+        },
+        {
+          "id": "val1",
+          "name": "Value 1",
+          "type": "value"
+        },
+        {
+          "id": "val2",
+          "name": "Value 2",
+          "type": "value"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "value",
+          "name": "Value",
+          "type": "value"
+        }
+      ]
+    },
+    "n_momxou62_8": {
+      "id": "n_momxou62_8",
+      "type": "opacity",
+      "title": "Opacity",
+      "x": 1001.8819418040349,
+      "y": 563.8146610471666,
+      "params": {
+        "opacity": 1
+      },
+      "inputs": [
+        {
+          "id": "canvas",
+          "name": "Input",
+          "type": "canvas"
+        },
+        {
+          "id": "amount",
+          "name": "Amount",
+          "type": "value"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "canvas",
+          "name": "Canvas",
+          "type": "canvas"
+        }
+      ]
+    }
+  },
+  "connections": {
+    "c_molsdpcc_2": {
+      "id": "c_molsdpcc_2",
+      "srcNode": "n_mols1xat_1",
+      "srcPort": "fft",
+      "dstNode": "n_mols5mag_2",
+      "dstPort": "audio",
+      "type": "audio"
+    },
+    "c_molseikk_5": {
+      "id": "c_molseikk_5",
+      "srcNode": "n_molsec2y_4",
+      "srcPort": "color",
+      "dstNode": "n_mols5mag_2",
+      "dstPort": "color",
+      "type": "color"
+    },
+    "c_molskv8o_3": {
+      "id": "c_molskv8o_3",
+      "srcNode": "n_mols1xat_1",
+      "srcPort": "fft",
+      "dstNode": "n_molskfgk_1",
+      "dstPort": "audio",
+      "type": "audio"
+    },
+    "c_molsnapk_c": {
+      "id": "c_molsnapk_c",
+      "srcNode": "n_mols1xat_1",
+      "srcPort": "fft",
+      "dstNode": "n_molsmxad_b",
+      "dstPort": "audio",
+      "type": "audio"
+    },
+    "c_molsnhk0_d": {
+      "id": "c_molsnhk0_d",
+      "srcNode": "n_molsec2y_4",
+      "srcPort": "color",
+      "dstNode": "n_molsmxad_b",
+      "dstPort": "color",
+      "type": "color"
+    },
+    "c_moltvor3_3": {
+      "id": "c_moltvor3_3",
+      "srcNode": "n_mols5mag_2",
+      "srcPort": "canvas",
+      "dstNode": "n_molsoa5h_f",
+      "dstPort": "canvas",
+      "type": "canvas"
+    },
+    "c_moltwsgh_7": {
+      "id": "c_moltwsgh_7",
+      "srcNode": "n_molsoa5h_f",
+      "srcPort": "canvas",
+      "dstNode": "n_moltw50e_5",
+      "dstPort": "a",
+      "type": "canvas"
+    },
+    "c_moltwvut_8": {
+      "id": "c_moltwvut_8",
+      "srcNode": "n_molsmxad_b",
+      "srcPort": "canvas",
+      "dstNode": "n_moltw50e_5",
+      "dstPort": "b",
+      "type": "canvas"
+    },
+    "c_moltz58s_9": {
+      "id": "c_moltz58s_9",
+      "srcNode": "n_mols1xat_1",
+      "srcPort": "mid",
+      "dstNode": "n_molsoa5h_f",
+      "dstPort": "amount",
+      "type": "value"
+    },
+    "c_molu02y9_b": {
+      "id": "c_molu02y9_b",
+      "srcNode": "n_mols1xat_1",
+      "srcPort": "fft",
+      "dstNode": "n_moltzxg3_a",
+      "dstPort": "audio",
+      "type": "audio"
+    },
+    "c_molu07lq_c": {
+      "id": "c_molu07lq_c",
+      "srcNode": "n_moltw50e_5",
+      "srcPort": "canvas",
+      "dstNode": "n_moltzxg3_a",
+      "dstPort": "canvas",
+      "type": "canvas"
+    },
+    "c_molu2egy_j": {
+      "id": "c_molu2egy_j",
+      "srcNode": "n_moltzxg3_a",
+      "srcPort": "canvas",
+      "dstNode": "n_molu27qg_i",
+      "dstPort": "a",
+      "type": "canvas"
+    },
+    "c_molu2wpx_m": {
+      "id": "c_molu2wpx_m",
+      "srcNode": "n_mols1xat_1",
+      "srcPort": "fft",
+      "dstNode": "n_molu24ta_h",
+      "dstPort": "audio",
+      "type": "audio"
+    },
+    "c_molu34w8_o": {
+      "id": "c_molu34w8_o",
+      "srcNode": "n_molu2zt8_n",
+      "srcPort": "color",
+      "dstNode": "n_molu24ta_h",
+      "dstPort": "color",
+      "type": "color"
+    },
+    "c_molu4blr_q": {
+      "id": "c_molu4blr_q",
+      "srcNode": "n_molu46vj_p",
+      "srcPort": "canvas",
+      "dstNode": "n_molu27qg_i",
+      "dstPort": "b",
+      "type": "canvas"
+    },
+    "c_molu4e4g_r": {
+      "id": "c_molu4e4g_r",
+      "srcNode": "n_molu24ta_h",
+      "srcPort": "canvas",
+      "dstNode": "n_molu46vj_p",
+      "dstPort": "canvas",
+      "type": "canvas"
+    },
+    "c_molu6err_w": {
+      "id": "c_molu6err_w",
+      "srcNode": "n_molu27qg_i",
+      "srcPort": "canvas",
+      "dstNode": "n_molu62zb_u",
+      "dstPort": "a",
+      "type": "canvas"
+    },
+    "c_molu6ml7_y": {
+      "id": "c_molu6ml7_y",
+      "srcNode": "n_molu6kuo_x",
+      "srcPort": "canvas",
+      "dstNode": "n_molu62zb_u",
+      "dstPort": "b",
+      "type": "canvas"
+    },
+    "c_molu6ptr_z": {
+      "id": "c_molu6ptr_z",
+      "srcNode": "n_molu5muk_s",
+      "srcPort": "canvas",
+      "dstNode": "n_molu6kuo_x",
+      "dstPort": "a",
+      "type": "canvas"
+    },
+    "c_momweokr_2": {
+      "id": "c_momweokr_2",
+      "srcNode": "n_momwe2mq_1",
+      "srcPort": "canvas",
+      "dstNode": "n_moltuhah_1",
+      "dstPort": "canvas",
+      "type": "canvas"
+    },
+    "c_momx8fu7_1": {
+      "id": "c_momx8fu7_1",
+      "srcNode": "n_mols1xat_1",
+      "srcPort": "fft",
+      "dstNode": "n_molu5muk_s",
+      "dstPort": "audio",
+      "type": "audio"
+    },
+    "c_momxo7f1_4": {
+      "id": "c_momxo7f1_4",
+      "srcNode": "n_mols1xat_1",
+      "srcPort": "beat",
+      "dstNode": "n_momxo2j0_3",
+      "dstPort": "trigger",
+      "type": "trigger"
+    },
+    "c_momxo9t5_5": {
+      "id": "c_momxo9t5_5",
+      "srcNode": "n_mols1xat_1",
+      "srcPort": "high",
+      "dstNode": "n_momxo2j0_3",
+      "dstPort": "val2",
+      "type": "value"
+    },
+    "c_momxoe3x_6": {
+      "id": "c_momxoe3x_6",
+      "srcNode": "n_mols1xat_1",
+      "srcPort": "bass",
+      "dstNode": "n_momxo2j0_3",
+      "dstPort": "val1",
+      "type": "value"
+    },
+    "c_momxp4hu_9": {
+      "id": "c_momxp4hu_9",
+      "srcNode": "n_momxo2j0_3",
+      "srcPort": "value",
+      "dstNode": "n_momxou62_8",
+      "dstPort": "amount",
+      "type": "value"
+    },
+    "c_momxpic2_a": {
+      "id": "c_momxpic2_a",
+      "srcNode": "n_molu62zb_u",
+      "srcPort": "canvas",
+      "dstNode": "n_momxou62_8",
+      "dstPort": "canvas",
+      "type": "canvas"
+    },
+    "c_momxplci_b": {
+      "id": "c_momxplci_b",
+      "srcNode": "n_momxou62_8",
+      "srcPort": "canvas",
+      "dstNode": "n_momwe2mq_1",
+      "dstPort": "canvas",
+      "type": "canvas"
+    }
+  },
+  "version": 3
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Hard Setup",
+  "params": {
+    "scale": 1,
+    "color": "#110000",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "layer-genre-1775290078743-0",
+      "name": "Glitch FX",
+      "effectUrl": "nt/effects/fx-glitch.html",
+      "params": {
+        "intensity": 0.75,
+        "speed": 2,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "threshold": 0.4,
+        "color": "#ff004c",
+        "noiseLines": 10,
+        "chromatic": 15,
+        "scanlines": 1
+      }
+    },
+    {
+      "id": "layer-genre-1775290078743-1",
+      "name": "Fire",
+      "effectUrl": "nt/effects/ptcl-fire.html",
+      "params": {
+        "color": "#ff1744",
+        "opacity": 0.8
+      }
+    },
+    {
+      "id": "layer-genre-1775290078743-2",
+      "name": "Strobe",
+      "effectUrl": "nt/effects/fx-strobe.html",
+      "params": {
+        "intensity": 0.65,
+        "threshold": 0.5,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "decay": 0.2,
+        "color": "#ffffff",
+        "mode": "Invert"
+      }
+    },
+    {
+      "id": "layer-1775290129931",
+      "name": "ptcl-sparkle",
+      "effectUrl": "nt/effects/ptcl-sparkle.html",
+      "blend": "normal",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "color": "#ffd700",
+        "count": 300,
+        "size": 15,
+        "speed": 7.6,
+        "opacity": 0.9,
+        "reactHigh": 2.1
+      }
+    }
+  ],
+  "id": "group-genre-1775290078743"
+}

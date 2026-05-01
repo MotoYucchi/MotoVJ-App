@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 200 200">
+   <g fill="white" transform="translate(50%, 50%)">
+    <!-- 歯の部分 (8個の突起) -->
+    <rect x="42%" y="3%" width="16%" height="30%" rx="2%" />
+    <rect x="42%" y="3%" width="16%" height="30%" rx="2%" transform="rotate(45,100,100)" />
+    <rect x="42%" y="3%" width="16%" height="30%" rx="2%" transform="rotate(90,100,100)" />
+    <rect x="42%" y="3%" width="16%" height="30%" rx="2%" transform="rotate(135,100,100)"/>
+    <rect x="42%" y="3%" width="16%" height="30%" rx="2%" transform="rotate(180,100,100)"/>
+    <rect x="42%" y="3%" width="16%" height="30%" rx="2%" transform="rotate(225,100,100)"/>
+    <rect x="42%" y="3%" width="16%" height="30%" rx="2%" transform="rotate(270,100,100)"/>
+    <rect x="42%" y="3%" width="16%" height="30%" rx="2%" transform="rotate(315,100,100)"/>
+    
+    <!-- 中央の土台部分 -->
+    <rect x="25%" y="25%" width="50%" height="50%" rx="25%"  fill="none" stroke="#fff" stroke-width="20%" />
+  </g>
+</svg>

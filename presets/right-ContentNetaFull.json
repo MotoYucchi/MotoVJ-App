@@ -1,0 +1,25 @@
+{
+  "name": "Content NetaFull",
+  "params": {"scale": 1.0, "color": "#000000", "opacity": 1.0},
+  "layers": [
+    {"id": "nf-1", "name": "🎬 Video Player", "effectUrl": "nt/effects/vid-player.html", "blend": "normal",
+      "params": {"videoUrl": "", "opacity": 1.0, "playbackRate": 1, "loopMode": "loop", "audioEnabled": "off", "fitMode": "contain", "chromaKey": "off", "reactBass": 0}},
+    {"id": "nf-2", "name": "Confetti Burst", "effectUrl": "nt/effects/ptcl-confetti.html", "blend": "normal",
+      "params": {"count": 120, "speed": 2.0, "size": 8, "opacity": 0.5, "reactLow": 2.0, "threshold": 0.4, "spin": 2.0}},
+    {"id": "nf-3", "name": "Emoji 🔥", "effectUrl": "nt/effects/util-emoji.html", "blend": "normal",
+      "params": {"text": "🔥", "color": "#ffffff", "fontSize": 80, "opacity": 0.5, "posX": 0.1, "posY": 0.85, "reactLow": 1.0, "glow": 5, "bounce": 8}},
+    {"id": "nf-4", "name": "Emoji 🎉", "effectUrl": "nt/effects/util-emoji.html", "blend": "normal",
+      "params": {"text": "🎉", "color": "#ffffff", "fontSize": 70, "opacity": 0.4, "posX": 0.9, "posY": 0.85, "reactLow": 0.8, "glow": 5, "bounce": 6}},
+    {"id": "nf-5", "name": "Sparkle", "effectUrl": "nt/effects/ptcl-sparkle.html", "blend": "normal",
+      "params": {"color": "#ffdd00", "count": 120, "size": 10, "speed": 4.0, "opacity": 0.5, "reactHigh": 2.0}},
+    {"id": "nf-6", "name": "Strobe Hard", "effectUrl": "nt/effects/fx-strobe.html", "blend": "normal",
+      "params": {"intensity": 0.5, "threshold": 0.45, "decay": 0.08, "color": "#ffffff", "mode": "Flash"}},
+    {"id": "nf-7", "name": "Bass Rings", "effectUrl": "nt/effects/fx-bass-rings.html", "blend": "normal",
+      "params": {"color": "#ff4444", "intensity": 0.5, "pulseDist": 250, "thickness": 6, "count": 3, "speed": 2.5, "reactLow": 2.0, "glow": 12}},
+    {"id": "nf-8", "name": "Stars", "effectUrl": "nt/effects/cute-stars.html", "blend": "normal",
+      "params": {"color": "#ffaa00", "count": 40, "size": 12, "speed": 1.0, "opacity": 0.35, "reactHigh": 1.0}},
+    {"id": "nf-9", "name": "Color Wash", "effectUrl": "nt/effects/amb-color-wash.html", "blend": "normal",
+      "params": {"color": "#ff6600", "opacity": 0.04, "style": "vignette", "intensity": 0.3, "reactLow": 0.2}}
+  ],
+  "id": "preset-content-netafull"
+}

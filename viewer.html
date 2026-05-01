@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { margin: 0; background: transparent; overflow: hidden; position: relative; width: 100vw; height: 100vh; }
+    .group-wrapper { 
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+      pointer-events: none; transform-origin: center center;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .layer-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    iframe { width: 100%; height: 100%; border: none; background: transparent; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <div id="layers-container"></div>
+
+  <script>
+    const hashParams = new URLSearchParams(window.location.hash.substring(1));
+    const myDeckId = hashParams.get('d') || 'deck-a';
+    
+    const container = document.getElementById('layers-container');
+    let iframes = {}; 
+    let groupElements = {};
+
+    function standardize(data) {
+      if (!Array.isArray(data)) return [];
+      return data.map(item => {
+        if (!item.layers) {
+          return {
+            id: "g-" + (item.id || Date.now()),
+            name: "Migrated Group",
+            params: { scale: 1.0, color: "#000000", opacity: 1.0 },
+            layers: [item]
+          };
+        }
+        return item;
+      });
+    }
+
+    function buildLayers(groupsData) {
+      const data = standardize(groupsData);
+      container.innerHTML = '';
+      iframes = {};
+      groupElements = {};
+      
+      data.forEach((group) => {
+        const groupEl = document.createElement('div');
+        groupEl.className = 'group-wrapper';
+        groupEl.id = `group-dom-${group.id}`;
+        
+        // グループ初期スタイルの適用
+        if (group.params) {
+          groupEl.style.transform = `scale(${group.params.scale || 1.0})`;
+          groupEl.style.opacity = group.params.opacity !== undefined ? group.params.opacity : 1.0;
+        }
+
+        group.layers.forEach((layer) => {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'layer-wrapper';
+          wrapper.style.mixBlendMode = layer.blend || 'normal';
+
+          const iframe = document.createElement('iframe');
+          iframe.src = layer.effectUrl;
+          
+          iframe.onload = () => {
+            // ロード完了時にデータを送る
+            if (layer.params) {
+              Object.keys(layer.params).forEach(key => {
+                iframe.contentWindow.postMessage({ type: 'param_update', paramId: key, value: layer.params[key] }, '*');
+              });
+            }
+            if (group.params && group.params.color) {
+              iframe.contentWindow.postMessage({ type: 'group_update', color: group.params.color }, '*');
+            }
+          };
+          
+          wrapper.appendChild(iframe);
+          groupEl.appendChild(wrapper);
+          // 安全のために、win が存在するかチェックする関数として保持
+          iframes[layer.id] = { 
+            getWin: () => iframe.contentWindow, 
+            groupId: group.id 
+          };
+        });
+        
+        container.appendChild(groupEl);
+        groupElements[group.id] = groupEl;
+      });
+    }
+
+    // 初期ロード
+    try {
+      const saved = JSON.parse(localStorage.getItem(`vj_${myDeckId}`));
+      const rawData = saved ? (saved.groups || saved.layers || []) : [];
+      buildLayers(rawData);
+    } catch(e) { console.error(e); }
+
+    const ws = new WebSocket(`ws://${location.host}/ws`);
+    ws.onmessage = (e) => {
+      try {
+        const msg = JSON.parse(e.data);
+        
+        if (msg.type === 'audio_data') {
+          Object.values(iframes).forEach(obj => {
+            const win = obj.getWin();
+            if (win) win.postMessage(msg, '*');
+          });
+          return;
+        }
+
+        if (msg.deckId !== myDeckId) return;
+
+        if (msg.type === 'param_update') {
+          if (msg.layerId) {
+            // ★修正ポイント: nullチェックを徹底
+            const target = iframes[msg.layerId];
+            if (target) {
+              const win = target.getWin();
+              if (win) win.postMessage(msg, '*');
+            }
+          } else if (msg.groupId) {
+            const groupEl = groupElements[msg.groupId];
+            if (groupEl) {
+              if (msg.paramId === 'scale') groupEl.style.transform = `scale(${msg.value})`;
+              else if (msg.paramId === 'color') {
+                Object.keys(iframes).forEach(lId => {
+                  if (iframes[lId].groupId === msg.groupId) {
+                    const win = iframes[lId].getWin();
+                    if (win) win.postMessage({ type: 'group_update', color: msg.value }, '*');
+                  }
+                });
+              }
+            }
+          }
+        } 
+        else if (msg.type === 'rebuild_layers') {
+          buildLayers(msg.layers);
+        }
+      } catch (err) {
+        console.error("Viewer Sync Error:", err);
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "Content Kaos",
+  "params": {"scale": 1.0, "color": "#000000", "opacity": 1.0},
+  "layers": [
+    {"id": "ck-1", "name": "🎬 Video Loop", "effectUrl": "nt/effects/vid-loop.html", "blend": "normal",
+      "params": {"videoUrl": "", "opacity": 0.6, "playbackRate": 1.5, "fitMode": "cover", "reactBass": 0.5}},
+    {"id": "ck-2", "name": "Glitch Heavy", "effectUrl": "nt/effects/fx-glitch.html", "blend": "normal",
+      "params": {"intensity": 0.6, "speed": 3.0, "color": "#ff0088", "threshold": 0.35, "noiseLines": 10, "chromatic": 18, "scanlines": 1}},
+    {"id": "ck-3", "name": "Emoji 💀", "effectUrl": "nt/effects/util-emoji.html", "blend": "normal",
+      "params": {"text": "💀", "color": "#ffffff", "fontSize": 100, "opacity": 0.3, "posX": 0.5, "posY": 0.5, "reactLow": 1.5, "glow": 5, "bounce": 12}},
+    {"id": "ck-4", "name": "Pixelate", "effectUrl": "nt/effects/fx-pixelate.html", "blend": "normal",
+      "params": {"opacity": 0.2}},
+    {"id": "ck-5", "name": "Mirror", "effectUrl": "nt/effects/fx-mirror.html", "blend": "normal",
+      "params": {"opacity": 0.15}},
+    {"id": "ck-6", "name": "Fire", "effectUrl": "nt/effects/ptcl-fire.html", "blend": "normal",
+      "params": {"color": "#ff4400", "opacity": 0.4, "reactLow": 2.0}},
+    {"id": "ck-7", "name": "Lightning", "effectUrl": "nt/effects/fx-lightning.html", "blend": "normal",
+      "params": {"color": "#ff00ff", "opacity": 0.4, "reactLow": 2.0}},
+    {"id": "ck-8", "name": "Strobe Invert", "effectUrl": "nt/effects/fx-strobe.html", "blend": "normal",
+      "params": {"intensity": 0.7, "threshold": 0.4, "decay": 0.12, "color": "#ffffff", "mode": "Invert"}},
+    {"id": "ck-9", "name": "Shake Heavy", "effectUrl": "nt/effects/fx-shake.html", "blend": "normal",
+      "params": {"intensity": 0.5, "threshold": 0.4}},
+    {"id": "ck-10", "name": "Confetti Chaos", "effectUrl": "nt/effects/ptcl-confetti.html", "blend": "normal",
+      "params": {"count": 150, "speed": 3.0, "size": 9, "opacity": 0.5, "reactLow": 3.0, "threshold": 0.35, "spin": 3.0}},
+    {"id": "ck-11", "name": "Bass Rings", "effectUrl": "nt/effects/fx-bass-rings.html", "blend": "normal",
+      "params": {"color": "#ff0044", "intensity": 0.6, "pulseDist": 350, "thickness": 10, "count": 4, "speed": 3.0, "reactLow": 3.0, "glow": 20}}
+  ],
+  "id": "preset-content-kaos"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Vocaloid Cosmos",
+  "params": {"scale": 1.0, "color": "#000005", "opacity": 1.0},
+  "layers": [
+    {"id": "vc-1", "name": "Starfield", "effectUrl": "nt/effects/mtn-starfield.html", "blend": "normal",
+      "params": {"color": "#ffffff", "opacity": 0.5, "speed": 2.0, "reactLow": 1.5}},
+    {"id": "vc-2", "name": "Circular Viz", "effectUrl": "nt/effects/viz-circular.html", "blend": "normal",
+      "params": {"color": "#00eeff", "opacity": 0.4, "reactLow": 1.5}},
+    {"id": "vc-3", "name": "Glow Orbs", "effectUrl": "nt/effects/amb-glow-orbs.html", "blend": "normal",
+      "params": {"color": "#4488ff", "count": 10, "opacity": 0.35, "size": 45, "speed": 0.4, "blur": 25, "reactLow": 0.6}},
+    {"id": "vc-4", "name": "Neonwave", "effectUrl": "nt/effects/spc-neonwave.html", "blend": "normal",
+      "params": {"color": "#ff44cc", "opacity": 0.3, "speed": 1.0}},
+    {"id": "vc-5", "name": "Sparkle", "effectUrl": "nt/effects/ptcl-sparkle.html", "blend": "normal",
+      "params": {"color": "#aaddff", "count": 120, "size": 6, "speed": 2.5, "opacity": 0.4, "reactHigh": 1.5}},
+    {"id": "vc-6", "name": "Ring Scope", "effectUrl": "nt/effects/viz-ring-scope.html", "blend": "normal",
+      "params": {"color": "#6699ff", "opacity": 0.25, "speed": 0.4, "density": 3, "reactLow": 0.8, "glow": 8}},
+    {"id": "vc-7", "name": "Flowlines", "effectUrl": "nt/effects/amb-flowlines.html", "blend": "normal",
+      "params": {"color": "#ff88cc", "count": 5, "speed": 0.8, "thickness": 1.5, "opacity": 0.2, "reactLow": 0.5, "glow": 8}},
+    {"id": "vc-8", "name": "Strobe", "effectUrl": "nt/effects/fx-strobe.html", "blend": "normal",
+      "params": {"intensity": 0.3, "threshold": 0.55, "decay": 0.05, "color": "#88ccff", "mode": "Additive"}},
+    {"id": "vc-9", "name": "Bass Rings", "effectUrl": "nt/effects/fx-bass-rings.html", "blend": "normal",
+      "params": {"color": "#4488ff", "intensity": 0.3, "pulseDist": 200, "thickness": 4, "count": 2, "speed": 2.0, "reactLow": 1.0, "glow": 10}},
+    {"id": "vc-10", "name": "Color Wash", "effectUrl": "nt/effects/amb-color-wash.html", "blend": "normal",
+      "params": {"color": "#001144", "opacity": 0.04, "style": "vignette", "intensity": 0.4}}
+  ],
+  "id": "preset-vocaloid-cosmos"
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>MotoVJ v3 — Viewer</title>
+  <style>
+    body { margin: 0; background: transparent; overflow: hidden; position: relative; width: 100vw; height: 100vh; }
+    canvas { display: block; width: 100%; height: 100%; }
+    .video-layer-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <canvas id="main-canvas"></canvas>
+  <div id="video-container"></div>
+
+  <!-- Effects runtime & definitions -->
+  <script src="js/core/event-bus.js"></script>
+  <script src="js/effects/vj-runtime.js"></script>
+  <script src="js/effects/all-effects.js"></script>
+  <!-- Node system (data model only) -->
+  <script src="js/nodes/node-graph.js"></script>
+  <script src="js/nodes/node-types.js"></script>
+  <script src="js/nodes/node-executor.js"></script>
+  <!-- Viewer engine -->
+  <script src="js/viewer/viewer-engine.js"></script>
+</body>
+</html>

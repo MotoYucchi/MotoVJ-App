@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 200 200">
+  <!-- Top-left corner -->
+  <polyline points="30,70 30,30 70,30" fill="none" stroke="white" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Top-right corner -->
+  <polyline points="130,30 170,30 170,70" fill="none" stroke="white" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Bottom-right corner -->
+  <polyline points="170,130 170,170 130,170" fill="none" stroke="white" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Bottom-left corner -->
+  <polyline points="70,170 30,170 30,130" fill="none" stroke="white" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

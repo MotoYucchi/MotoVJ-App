@@ -1,0 +1,27 @@
+{
+  "name": "Content Elegant",
+  "params": {"scale": 1.0, "color": "#000000", "opacity": 1.0},
+  "layers": [
+    {"id": "ce-1", "name": "Spiral", "effectUrl": "nt/effects/geo-spiral.html", "blend": "normal",
+      "params": {"color": "#ffd700", "opacity": 0.3, "speed": 0.8}},
+    {"id": "ce-2", "name": "Polygon", "effectUrl": "nt/effects/geo-polygon.html", "blend": "normal",
+      "params": {"color": "#ffd700", "opacity": 0.25, "reactLow": 1.0}},
+    {"id": "ce-3", "name": "Glow Orbs Gold", "effectUrl": "nt/effects/amb-glow-orbs.html", "blend": "normal",
+      "params": {"color": "#ffaa00", "count": 8, "opacity": 0.3, "size": 40, "speed": 0.3, "blur": 25, "reactLow": 0.4}},
+    {"id": "ce-4", "name": "Sparkle Gold", "effectUrl": "nt/effects/ptcl-sparkle.html", "blend": "normal",
+      "params": {"color": "#ffd700", "count": 100, "size": 8, "speed": 2.0, "opacity": 0.4, "reactHigh": 1.2}},
+    {"id": "ce-5", "name": "Circle Viz", "effectUrl": "nt/effects/viz-circular.html", "blend": "normal",
+      "params": {"color": "#ffcc00", "opacity": 0.25, "reactLow": 0.8}},
+    {"id": "ce-6", "name": "Ring Scope", "effectUrl": "nt/effects/viz-ring-scope.html", "blend": "normal",
+      "params": {"color": "#ffaa00", "opacity": 0.2, "speed": 0.3, "density": 3, "reactLow": 0.6, "glow": 6}},
+    {"id": "ce-7", "name": "Flowlines", "effectUrl": "nt/effects/amb-flowlines.html", "blend": "normal",
+      "params": {"color": "#ffcc44", "count": 4, "speed": 0.5, "thickness": 1, "opacity": 0.2, "reactLow": 0.4, "glow": 8}},
+    {"id": "ce-8", "name": "Color Wash", "effectUrl": "nt/effects/amb-color-wash.html", "blend": "normal",
+      "params": {"color": "#aa8800", "opacity": 0.04, "style": "vignette", "intensity": 0.3}},
+    {"id": "ce-9", "name": "Snow Light", "effectUrl": "nt/effects/ptcl-snow.html", "blend": "normal",
+      "params": {"opacity": 0.15, "count": 30, "speed": 0.3, "size": 3}},
+    {"id": "ce-10", "name": "Strobe Soft", "effectUrl": "nt/effects/fx-strobe.html", "blend": "normal",
+      "params": {"intensity": 0.2, "threshold": 0.6, "decay": 0.04, "color": "#ffeedd", "mode": "Additive"}}
+  ],
+  "id": "preset-content-elegant"
+}

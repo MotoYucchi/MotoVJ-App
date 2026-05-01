@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotoVJ v3 — Controller</title>
+  <meta name="description" content="MotoVJ v3 - Node-based VJ Software Controller">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/node-editor.css">
+  <link rel="stylesheet" href="css/controller.css">
+  <link rel="stylesheet" href="css/virtual-controller.css">
+</head>
+<body>
+  <div id="app-layout">
+    <header id="toolbar"></header>
+    <main id="workspace">
+      <aside id="node-palette" class="node-palette"></aside>
+      <div id="node-editor-wrap" class="node-editor-wrap">
+        <canvas id="node-editor-canvas" class="node-editor-canvas"></canvas>
+      </div>
+      <aside id="properties-panel" class="properties-panel"></aside>
+    </main>
+    <footer id="statusbar"></footer>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Core -->
+  <script src="js/core/event-bus.js"></script>
+  <script src="js/core/i18n.js"></script>
+  <script src="js/core/ws-client.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/core/mapping.js"></script>
+
+  <!-- Effects -->
+  <script src="js/effects/vj-runtime.js"></script>
+  <script src="js/effects/all-effects.js"></script>
+
+  <!-- Nodes -->
+  <script src="js/nodes/node-graph.js"></script>
+  <script src="js/nodes/node-types.js"></script>
+  <script src="js/nodes/node-executor.js"></script>
+  <script src="js/nodes/node-editor-canvas.js"></script>
+
+  <!-- UI -->
+  <script src="js/ui/toast.js"></script>
+  <script src="js/ui/modal.js"></script>
+  <script src="js/ui/context-menu.js"></script>
+  <script src="js/ui/toolbar.js"></script>
+  <script src="js/ui/node-palette.js"></script>
+  <script src="js/ui/properties-panel.js"></script>
+  <script src="js/ui/virtual-controller.js"></script>
+
+  <!-- Audio -->
+  <script src="js/audio/audio-engine.js"></script>
+
+  <!-- MIDI -->
+  <script src="js/midi/midi-handler.js"></script>
+
+  <!-- App Init (must be last) -->
+  <script src="js/core/app.js"></script>
+</body>
+</html>

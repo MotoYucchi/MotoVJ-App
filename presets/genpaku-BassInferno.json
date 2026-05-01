@@ -1,0 +1,171 @@
+{
+  "name": "Bass Inferno",
+  "params": {
+    "scale": 1,
+    "color": "#2ee7ff",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "bi-1",
+      "name": "Fire",
+      "effectUrl": "nt/effects/ptcl-fire.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff2200",
+        "opacity": 0.6,
+        "count": 80,
+        "speed": 3,
+        "reactLow": 2,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "spread": 100,
+        "turbulence": 1.5
+      }
+    },
+    {
+      "id": "bi-2",
+      "name": "Bass Rings",
+      "effectUrl": "nt/effects/fx-bass-rings.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff4400",
+        "intensity": 0.7,
+        "pulseDist": 300,
+        "thickness": 10,
+        "count": 4,
+        "speed": 3,
+        "reactLow": 2.5,
+        "glow": 20
+      }
+    },
+    {
+      "id": "bi-3",
+      "name": "Glitch",
+      "effectUrl": "nt/effects/fx-glitch.html",
+      "blend": "normal",
+      "params": {
+        "intensity": 0.6,
+        "speed": 2,
+        "color": "#ff0033",
+        "threshold": 0.4,
+        "noiseLines": 8,
+        "chromatic": 12,
+        "scanlines": 1,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "bi-4",
+      "name": "Strobe Hard",
+      "effectUrl": "nt/effects/fx-strobe.html",
+      "blend": "normal",
+      "params": {
+        "intensity": 0.52,
+        "threshold": 0.45,
+        "decay": 0.2,
+        "color": "#ffffff",
+        "mode": "Invert",
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "bi-5",
+      "name": "Laser Beams",
+      "effectUrl": "nt/effects/fx-laser-beams.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff0044",
+        "opacity": 0.5,
+        "count": 8,
+        "speed": 0.8,
+        "thickness": 3,
+        "length": 0.9,
+        "reactLow": 2,
+        "glow": 20
+      }
+    },
+    {
+      "id": "bi-6",
+      "name": "Burst",
+      "effectUrl": "nt/effects/ptcl-burst.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff6600",
+        "opacity": 0.5,
+        "count": 100,
+        "speed": 5.1,
+        "reactLow": 2.5,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "maxParticles": 60,
+        "size": 4.5,
+        "threshold": 0.4,
+        "trail": 0.15,
+        "gravity": 0.1
+      }
+    },
+    {
+      "id": "bi-7",
+      "name": "Sparkle",
+      "effectUrl": "nt/effects/ptcl-sparkle.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ffaa00",
+        "count": 35,
+        "size": 11.5,
+        "speed": 5,
+        "opacity": 0.4,
+        "reactHigh": 2,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    },
+    {
+      "id": "bi-8",
+      "name": "Shake",
+      "effectUrl": "nt/effects/fx-shake.html",
+      "blend": "normal",
+      "params": {
+        "intensity": 0.4,
+        "threshold": 0.5,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "decay": 0.06,
+        "mode": "All"
+      }
+    },
+    {
+      "id": "bi-9",
+      "name": "Color Wash",
+      "effectUrl": "nt/effects/amb-color-wash.html",
+      "blend": "normal",
+      "params": {
+        "color": "#ff2200",
+        "opacity": 0.05,
+        "style": "vignette",
+        "intensity": 0.5,
+        "reactLow": 0.2,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1
+      }
+    }
+  ],
+  "id": "group-1775288626550"
+}
