@@ -1,199 +1,66 @@
 [
   {
-    "id": "group-a1",
-    "name": "Main Group",
+    "id": "group-1777670243618",
+    "name": "Chill Sunset",
     "params": {
-      "scale": 1.2,
-      "color": "#000000",
+      "scale": 1,
+      "color": "#1a0522",
       "opacity": 1
     },
     "layers": [
       {
-        "id": "layer-a1",
-        "effectUrl": "effects/effect-0000-circle.html",
-        "name": "Circle A1",
+        "id": "layer-sunset-wave",
+        "name": "Sunset Waves",
+        "effectUrl": "effects/effect-chill01-flowwave.html",
         "params": {
-          "size": 624,
-          "color": "#9ec3ff",
-          "audioReact": 0.5,
-          "reactLow": 2.2,
-          "thickness": 30,
-          "reactMid": 191,
-          "reactHigh": 20,
-          "baseR": 212.83464566929132,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.968503937007874
+          "baseR": 180,
+          "baseG": 80,
+          "baseB": 40,
+          "baseA": 0.8,
+          "opacity": 0.7,
+          "color": "#cc6633",
+          "speed": 0.35,
+          "waveCount": 5,
+          "waveHeight": 100,
+          "reactLow": 1.2,
+          "reactMid": 0.8,
+          "reactHigh": 0.5
         }
       },
       {
-        "id": "layer-1772119057178",
-        "name": "grid",
-        "effectUrl": "effects/effect-0001.html",
+        "id": "layer-sunset-glow",
+        "name": "Warm Glow",
+        "effectUrl": "effects/effect-chill02-glowdrift.html",
         "params": {
-          "shape": "Grid",
-          "speed": -2.8,
-          "opacity": 0.63,
-          "color": "#ff8d0a",
-          "beatAnim": "None",
-          "reactLow": 1.9,
-          "reactMid": 4.1,
-          "reactHigh": 1.9,
-          "baseR": 212.83464566929132,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.968503937007874
+          "baseR": 200,
+          "baseG": 100,
+          "baseB": 50,
+          "baseA": 0.6,
+          "opacity": 0.4,
+          "color": "#ff8844",
+          "speed": 0.2,
+          "count": 8,
+          "sizeBase": 150,
+          "reactLow": 1,
+          "reactMid": 0.5,
+          "reactHigh": 1
         }
       },
       {
-        "id": "layer-1772119617714",
-        "name": "equli",
-        "effectUrl": "effects/effect-0003.html",
-        "params": {
-          "shape": "Equalizer",
-          "color": "#00ccff",
-          "opacity": 0.75,
-          "sensitivity": 2.3,
-          "beatAnim": "Shake",
-          "reactLow": 1.7,
-          "baseR": 212.83464566929132,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.968503937007874
-        }
-      },
-      {
-        "id": "layer-1772122595703",
-        "name": "Generator2",
-        "effectUrl": "effects/effect-0001.html",
-        "params": {
-          "shape": "Tunnel",
-          "speed": -3.9,
-          "opacity": 0.8,
-          "color": "#949494",
-          "beatAnim": "Scale",
-          "reactLow": 5,
-          "reactMid": 4.4,
-          "reactHigh": 2.3,
-          "baseR": 212.83464566929132,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.968503937007874
-        }
-      },
-      {
-        "id": "layer-1772126754422",
-        "name": "3dobj",
-        "effectUrl": "effects/effect-0012.html",
-        "params": {
-          "shape": "Diamond",
-          "speed": 2.7,
-          "opacity": 1,
-          "color": "#d8a9fe",
-          "axisX": 345,
-          "axisY": -70,
-          "reactLow": 1.6,
-          "reactMid": 7.5,
-          "reactHigh": 20,
-          "beatAnim": "Glitch",
-          "baseR": 212.83464566929132,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.968503937007874
-        }
-      },
-      {
-        "id": "layer-1772129202021",
-        "name": "シャボン玉",
-        "effectUrl": "effects/effect-0014.html",
-        "params": {
-          "complexity": 10,
-          "particleCount": 199,
-          "opacity": 1,
-          "afterimage": 0.99,
-          "color1": "#ff00ff",
-          "color2": "#00ffff",
-          "color3": "#ffff00",
-          "pattern": "湧き出る",
-          "speed": 3.6,
-          "highReact": 5,
-          "midReact": 0,
-          "lowReact": 1.7,
-          "baseR": 212.83464566929132,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.968503937007874
-        }
-      },
-      {
-        "id": "layer-1772132590657",
-        "name": "CodeRain",
-        "effectUrl": "effects/effect-0002.html",
-        "params": {
-          "shape": "Kaleidoscope",
-          "speed": 2.9,
-          "opacity": 0.37,
-          "color": "#feac39",
-          "reactLow": 4.8,
-          "reactMid": 4.5,
-          "reactHigh": 4.3,
-          "baseR": 212.83464566929132,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.968503937007874
-        }
-      },
-      {
-        "id": "layer-1772132876578",
-        "name": "Box",
-        "effectUrl": "effects/effect-0012.html",
-        "params": {
-          "shape": "Box",
-          "speed": 1,
-          "opacity": 1,
-          "color": "#00fffb",
-          "axisX": -296,
-          "axisY": -26,
-          "reactLow": 1.7,
-          "reactMid": 5.8,
-          "reactHigh": 18.9,
-          "beatAnim": "Glitch",
-          "baseR": 212.83464566929132,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.968503937007874
-        }
-      },
-      {
-        "id": "layer-1772119507959",
-        "name": "Circle-A2",
+        "id": "layer-sunset-circle",
+        "name": "Breathing Circle",
         "effectUrl": "effects/effect-0000-circle.html",
         "params": {
-          "size": 187,
-          "thickness": 5,
-          "color": "#00ff55",
-          "reactLow": 1.9,
-          "reactMid": 360,
-          "reactHigh": 34,
-          "baseR": 212.83464566929132,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.968503937007874
-        }
-      },
-      {
-        "id": "layer-1774525383828",
-        "name": "New Layer",
-        "effectUrl": "effects/effect-template.html",
-        "params": {
-          "baseR": 212.83464566929132,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.968503937007874,
-          "size": 423.14960629921256,
-          "thickness": 84.04724409448818,
-          "audioSense": 5,
-          "shapeMode": "Circle"
+          "baseR": 255,
+          "baseG": 120,
+          "baseB": 60,
+          "baseA": 0.5,
+          "size": 300,
+          "thickness": 3,
+          "color": "#ff6622",
+          "reactLow": 0.8,
+          "reactMid": 30,
+          "reactHigh": 5
         }
       }
     ]

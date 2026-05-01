@@ -52,12 +52,6 @@ window.VJApp = {
       requestAnimationFrame(loop);
       if (window.VJ) window.VJ.updateTime(now);
       if (window.VJNodeExecutor) VJNodeExecutor.execute();
-      if (window.VJNodeEditorCanvas) {
-        // Redraw editor if there are nodes (to update Monitors etc.)
-        if (window.VJNodeGraph && window.VJNodeGraph.getNodesArray().length > 0) {
-           window.VJNodeEditorCanvas.requestRedraw();
-        }
-      }
     }
     requestAnimationFrame(loop);
 

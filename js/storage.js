@@ -56,6 +56,11 @@ window.VJStorage = {
     return this.decks[deckId] || [];
   },
 
+  overwriteDeck(deckId, groups) {
+    this.decks[deckId] = groups;
+    this.save(deckId);
+  },
+
   // ★ 修正箇所：引数の数（4個か5個か）を自動判定し、値の型を適切に変換して保存する
   updateParam(deckId, arg2, arg3, arg4, arg5) {
     const deck = this.decks[deckId];

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "group-b1",
   "name": "Background Group",
   "params": {
@@ -28,7 +28,7 @@
     {
       "id": "layer-1772119169021",
       "name": "Utility",
-      "effectUrl": "effects/effect-0004.html",
+      "effectUrl": "effects/effect-0004-utility.html",
       "params": {
         "mode": "NoiseGlitch",
         "feedback": 0.85,
@@ -45,7 +45,7 @@
     {
       "id": "layer-1772119096059",
       "name": "Vi01",
-      "effectUrl": "effects/effect-0003.html",
+      "effectUrl": "effects/effect-0003-visualizer.html",
       "params": {
         "shape": "Radial",
         "color": "#a600ff",
@@ -62,7 +62,7 @@
     {
       "id": "layer-1772124840586",
       "name": "grouputili",
-      "effectUrl": "effects/effect-0005.html",
+      "effectUrl": "effects/effect-0005-ambient.html",
       "params": {
         "mode": "ReactiveVignette",
         "opacity": 0.34,
@@ -79,7 +79,7 @@
     {
       "id": "layer-1772132388833",
       "name": "Cube",
-      "effectUrl": "effects/effect-0002.html",
+      "effectUrl": "effects/effect-0002-shapes.html",
       "params": {
         "shape": "Cube",
         "speed": 1,
@@ -97,7 +97,7 @@
     {
       "id": "layer-1772132448747",
       "name": "Particle",
-      "effectUrl": "effects/effect-0001.html",
+      "effectUrl": "effects/effect-0001-generator.html",
       "params": {
         "shape": "Starfield",
         "speed": 2,
@@ -111,22 +111,6 @@
         "baseG": 206.81102362204726,
         "baseB": 255,
         "baseA": 1
-      }
-    },
-    {
-      "id": "layer-1774540338225",
-      "name": "New Layer",
-      "effectUrl": "effects/effect-hard-song02.html",
-      "params": {
-        "baseR": 0,
-        "baseG": 255,
-        "baseB": 255,
-        "baseA": 1,
-        "speed": 1.2,
-        "trail": 0.08,
-        "kickBoost": 1.5,
-        "distort": 0.6,
-        "mode": "orbit"
       }
     }
   ]

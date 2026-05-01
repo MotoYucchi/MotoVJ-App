@@ -21,14 +21,46 @@
   window.addEventListener('resize', resize);
   resize();
 
-  // ── Load graph from localStorage ──
-  try {
-    const raw = localStorage.getItem('vjv3_graph');
-    if (raw) {
-      const data = JSON.parse(raw);
-      VJNodeGraph.deserialize(data);
+  // ── Deck filter from URL hash ──
+  function getDeckFilter() {
+    const hash = window.location.hash || '';
+    if (hash.includes('d=deck-a')) return 'a';
+    if (hash.includes('d=deck-b')) return 'b';
+    return null;
+  }
+
+  // ── Load graph: try REST API first, then localStorage fallback ──
+  async function loadInitialGraph() {
+    // Try REST API (server always has the latest)
+    try {
+      const res = await fetch('/api/graph');
+      if (res.ok) {
+        const data = await res.json();
+        if (data && (data.nodes && Object.keys(data.nodes).length > 0)) {
+          VJNodeGraph.deserialize(data);
+          console.log('📦 Graph loaded from REST API:', Object.keys(data.nodes).length, 'nodes');
+          return;
+        }
+      }
+    } catch (e) {
+      console.warn('REST graph fetch failed:', e);
     }
-  } catch (e) { console.error('Graph load error:', e); }
+
+    // Fallback: localStorage
+    try {
+      const raw = localStorage.getItem('vjv3_graph');
+      if (raw) {
+        const data = JSON.parse(raw);
+        if (data && data.nodes) {
+          VJNodeGraph.deserialize(data);
+          console.log('📦 Graph loaded from localStorage:', Object.keys(data.nodes).length, 'nodes');
+        }
+      }
+    } catch (e) {
+      console.error('localStorage graph load error:', e);
+    }
+  }
+  loadInitialGraph();
 
   // ── Visibility tracking ──
   let isVisible = true;
@@ -47,18 +79,19 @@
     // Composite output nodes onto main canvas
     mainCtx.clearRect(0, 0, canvasW, canvasH);
 
-    const filter = window.location.hash.includes('d=deck-a') ? 'a' :
-                   window.location.hash.includes('d=deck-b') ? 'b' : null;
-
+    const filter = getDeckFilter();
     const outputNodes = VJNodeGraph.getOutputNodes();
+
     for (const node of outputNodes) {
-      const deck = node._deck || 'none';
+      const deck = node._deck || node.params?.deck || 'none';
+
+      // Deck filter: skip nodes assigned to a different deck
       if (filter && deck !== 'none' && deck !== filter) continue;
 
       const finalCanvas = VJNodeExecutor.getOutput(node.id, '_final');
       if (finalCanvas) {
-        mainCtx.globalAlpha = node._opacity ?? 1;
-        mainCtx.drawImage(finalCanvas, 0, 0);
+        mainCtx.globalAlpha = node._opacity ?? node.params?.opacity ?? 1;
+        mainCtx.drawImage(finalCanvas, 0, 0, canvasW, canvasH);
       }
     }
     mainCtx.globalAlpha = 1;
@@ -101,10 +134,11 @@
         }
 
         if (msg.type === 'graph_sync' || msg.type === 'graph_update') {
-          const graphData = msg.graph || msg.nodes;
-          if (graphData) {
+          const graphData = msg.graph;
+          if (graphData && graphData.nodes) {
             VJNodeGraph.deserialize(graphData);
             localStorage.setItem('vjv3_graph', JSON.stringify(graphData));
+            console.log('🔄 Graph synced via WS:', Object.keys(graphData.nodes).length, 'nodes');
           }
           return;
         }
@@ -116,7 +150,7 @@
           }
           return;
         }
-      } catch (err) { console.error('Viewer Error:', err); }
+      } catch (err) { console.error('Viewer WS Error:', err); }
     };
 
     ws.onclose = () => { scheduleReconnect(); };

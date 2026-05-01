@@ -11,13 +11,91 @@
 
   <script id="vj-schema" type="application/json">
     [
-      { "id": "shape", "label": "Visualizer Type", "type": "select", "options": ["Bar", "Circle", "Line", "Waveform", "Dot", "Radial", "Nebula", "Ring", "Shockwave", "Equalizer"], "default": "Bar" },
-      { "id": "color", "label": "Base Color", "type": "color", "default": "#ff4500" },
-      { "id": "opacity", "label": "Opacity", "type": "range", "min": 0, "max": 1, "step": 0.01, "default": 1.0 },
-      { "id": "sensitivity", "label": "Sensitivity", "type": "range", "min": 0.1, "max": 5, "step": 0.1, "default": 1.0 },
-      { "id": "beatAnim", "label": "Beat Animation", "type": "select", "options": ["None", "Scale", "Flash", "Shake"], "default": "None" },
-      { "id": "reactLow", "label": "Bass React", "type": "range", "min": 0, "max": 3, "step": 0.1, "default": 1.0 }
-    ]
+      {
+            "id": "shape",
+            "label": "Visualizer Type",
+            "type": "select",
+            "options": [
+                  "Bar",
+                  "Circle",
+                  "Line",
+                  "Waveform",
+                  "Dot",
+                  "Radial",
+                  "Nebula",
+                  "Ring",
+                  "Shockwave",
+                  "Equalizer"
+            ],
+            "default": "Bar"
+      },
+      {
+            "id": "color",
+            "label": "Base Color",
+            "type": "color",
+            "default": "#ff4500"
+      },
+      {
+            "id": "opacity",
+            "label": "Opacity",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "default": 1.0
+      },
+      {
+            "id": "sensitivity",
+            "label": "Sensitivity",
+            "type": "range",
+            "min": 0.1,
+            "max": 5,
+            "step": 0.1,
+            "default": 1.0
+      },
+      {
+            "id": "beatAnim",
+            "label": "Beat Animation",
+            "type": "select",
+            "options": [
+                  "None",
+                  "Scale",
+                  "Flash",
+                  "Shake"
+            ],
+            "default": "None"
+      },
+      {
+            "id": "reactLow",
+            "label": "Bass React",
+            "type": "range",
+            "min": 0,
+            "max": 3,
+            "step": 0.1,
+            "default": 1.0
+      },
+      {
+            "id": "hueSource",
+            "label": "Hue Band",
+            "type": "select",
+            "options": [
+                  "None",
+                  "Low",
+                  "Mid",
+                  "High"
+            ],
+            "default": "None"
+      },
+      {
+            "id": "hueAmount",
+            "label": "Hue Amount",
+            "type": "range",
+            "min": -360,
+            "max": 360,
+            "step": 1,
+            "default": 90
+      }
+]
   </script>
 
   <script>
@@ -34,7 +112,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { shape: "Bar", color: "#ff4500", opacity: 1.0, sensitivity: 1.0, beatAnim: "None", reactLow: 1.0 };
+    let params = { shape: "Bar", color: "#ff4500", opacity: 1.0, sensitivity: 1.0, beatAnim: "None", reactLow: 1.0, hueSource: "None", hueAmount: 90 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let shockwaves = [];
@@ -57,6 +135,7 @@
     window.addEventListener('message', (e) => {
       const msg = e.data;
       if (msg.type === 'param_update') {
+        if (msg.paramId === 'baseA') document.body.style.opacity = msg.value;
         params[msg.paramId] = (msg.paramId === 'color' || msg.paramId === 'shape' || msg.paramId === 'beatAnim') ? msg.value : Number(msg.value);
       } else if (msg.type === 'audio_data' && msg.fft) {
         currentFFT = msg.fft;
@@ -196,6 +275,15 @@
         ctx.fillStyle = `rgba(255,255,255,${bass * 0.3})`;
         ctx.fillRect(0, 0, width, height);
       }
+      
+      // --- Audio Reactive Hue ---
+      if (params.hueSource !== 'None') {
+        let _band = 0;
+        if (params.hueSource === 'Low') _band = (currentFFT[1]+currentFFT[2]+currentFFT[3])/3/255;
+        else if (params.hueSource === 'Mid') { let s=0; for(let i=20;i<=30;i++) s+=currentFFT[i]; _band=s/11/255; }
+        else if (params.hueSource === 'High') { let s=0; for(let i=100;i<=120;i++) s+=currentFFT[i]; _band=s/21/255; }
+        canvas.style.filter = 'hue-rotate(' + (_band * params.hueAmount) + 'deg)';
+      } else { canvas.style.filter = ''; }
       requestAnimationFrame(draw);
     }
     draw();

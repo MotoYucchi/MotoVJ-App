@@ -11,13 +11,82 @@
 
   <script id="vj-schema" type="application/json">
     [
-      { "id": "mode", "label": "Group Utility Mode", "type": "select", "options": ["AmbientGlow", "MasterFlash", "ReactiveVignette", "GroupParticles"], "default": "AmbientGlow" },
-      { "id": "opacity", "label": "Master Alpha", "type": "range", "min": 0, "max": 1, "step": 0.01, "default": 0.8 },
-      { "id": "color", "label": "Layer Color", "type": "color", "default": "#ffffff" },
-      { "id": "reactLow", "label": "Low React (Intensity)", "type": "range", "min": 0, "max": 5, "step": 0.1, "default": 1.5 },
-      { "id": "reactMid", "label": "Mid React (Scale/Speed)", "type": "range", "min": 0, "max": 5, "step": 0.1, "default": 1.0 },
-      { "id": "reactHigh", "label": "High React (Sharpness)", "type": "range", "min": 0, "max": 5, "step": 0.1, "default": 1.0 }
-    ]
+      {
+            "id": "mode",
+            "label": "Group Utility Mode",
+            "type": "select",
+            "options": [
+                  "AmbientGlow",
+                  "MasterFlash",
+                  "ReactiveVignette",
+                  "GroupParticles"
+            ],
+            "default": "AmbientGlow"
+      },
+      {
+            "id": "opacity",
+            "label": "Master Alpha",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "default": 0.8
+      },
+      {
+            "id": "color",
+            "label": "Layer Color",
+            "type": "color",
+            "default": "#ffffff"
+      },
+      {
+            "id": "reactLow",
+            "label": "Low React (Intensity)",
+            "type": "range",
+            "min": 0,
+            "max": 5,
+            "step": 0.1,
+            "default": 1.5
+      },
+      {
+            "id": "reactMid",
+            "label": "Mid React (Scale/Speed)",
+            "type": "range",
+            "min": 0,
+            "max": 5,
+            "step": 0.1,
+            "default": 1.0
+      },
+      {
+            "id": "reactHigh",
+            "label": "High React (Sharpness)",
+            "type": "range",
+            "min": 0,
+            "max": 5,
+            "step": 0.1,
+            "default": 1.0
+      },
+      {
+            "id": "hueSource",
+            "label": "Hue Band",
+            "type": "select",
+            "options": [
+                  "None",
+                  "Low",
+                  "Mid",
+                  "High"
+            ],
+            "default": "None"
+      },
+      {
+            "id": "hueAmount",
+            "label": "Hue Amount",
+            "type": "range",
+            "min": -360,
+            "max": 360,
+            "step": 1,
+            "default": 90
+      }
+]
   </script>
 
   <script>
@@ -33,7 +102,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { mode: "AmbientGlow", opacity: 0.8, color: "#ffffff", reactLow: 1.5, reactMid: 1.0, reactHigh: 1.0 };
+    let params = { mode: "AmbientGlow", opacity: 0.8, color: "#ffffff", reactLow: 1.5, reactMid: 1.0, reactHigh: 1.0, hueSource: "None", hueAmount: 90 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let particles = Array.from({length: 40}, () => ({ x: Math.random(), y: Math.random(), r: Math.random() * 5 + 2, v: Math.random() * 0.5 + 0.1 }));
@@ -55,6 +124,7 @@
     window.addEventListener('message', (e) => {
       const msg = e.data;
       if (msg.type === 'param_update') {
+        if (msg.paramId === 'baseA') document.body.style.opacity = msg.value;
         params[msg.paramId] = (msg.paramId === 'color' || msg.paramId === 'mode') ? msg.value : Number(msg.value);
       } else if (msg.type === 'audio_data' && msg.fft) {
         currentFFT = msg.fft;
@@ -70,6 +140,14 @@
       const mid = (midSum / 11) / 255.0 || 0;
       let highSum = 0; for(let i = 100; i <= 120; i++) highSum += currentFFT[i];
       const high = (highSum / 21) / 255.0 || 0;
+      // --- Audio Reactive Hue ---
+      let _hueVal = 0;
+      if (params.hueSource === 'Low') _hueVal = low;
+      else if (params.hueSource === 'Mid') _hueVal = mid;
+      else if (params.hueSource === 'High') _hueVal = high;
+      const _hueDeg = _hueVal * params.hueAmount;
+      if (_hueDeg !== 0) canvas.style.filter = 'hue-rotate(' + _hueDeg + 'deg)';
+      else canvas.style.filter = '';
 
       ctx.clearRect(0, 0, width, height);
 

@@ -11,17 +11,122 @@
 
   <script id="vj-schema" type="application/json">
     [
-      { "id": "shape", "label": "立体形状", "type": "select", "options": ["Box", "Pyramid", "Diamond", "Torus", "Grid-Sphere"], "default": "Box" },
-      { "id": "speed", "label": "回転速度", "type": "range", "min": 0, "max": 5, "step": 0.1, "default": 1.0 },
-      { "id": "opacity", "label": "透明度", "type": "range", "min": 0, "max": 1, "step": 0.01, "default": 1.0 },
-      { "id": "color", "label": "ベース色", "type": "color", "default": "#00ff00" },
-      { "id": "axisX", "label": "軸シフト X", "type": "range", "min": -500, "max": 500, "step": 1, "default": 0 },
-      { "id": "axisY", "label": "軸シフト Y", "type": "range", "min": -500, "max": 500, "step": 1, "default": 0 },
-      { "id": "reactLow", "label": "低音 -> サイズ", "type": "range", "min": 0, "max": 5, "step": 0.1, "default": 1.5 },
-      { "id": "reactMid", "label": "中音 -> 回転強", "type": "range", "min": 0, "max": 10, "step": 0.1, "default": 2.0 },
-      { "id": "reactHigh", "label": "高音 -> 線の太さ", "type": "range", "min": 0, "max": 20, "step": 0.1, "default": 5.0 },
-      { "id": "beatAnim", "label": "Beat Animation", "type": "select", "options": ["なし", "Pulse", "Rotate", "Glitch"], "default": "なし" }
-    ]
+      {
+            "id": "shape",
+            "label": "立体形状",
+            "type": "select",
+            "options": [
+                  "Box",
+                  "Pyramid",
+                  "Diamond",
+                  "Torus",
+                  "Grid-Sphere"
+            ],
+            "default": "Box"
+      },
+      {
+            "id": "speed",
+            "label": "回転速度",
+            "type": "range",
+            "min": 0,
+            "max": 5,
+            "step": 0.1,
+            "default": 1.0
+      },
+      {
+            "id": "opacity",
+            "label": "透明度",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "default": 1.0
+      },
+      {
+            "id": "color",
+            "label": "ベース色",
+            "type": "color",
+            "default": "#00ff00"
+      },
+      {
+            "id": "axisX",
+            "label": "軸シフト X",
+            "type": "range",
+            "min": -500,
+            "max": 500,
+            "step": 1,
+            "default": 0
+      },
+      {
+            "id": "axisY",
+            "label": "軸シフト Y",
+            "type": "range",
+            "min": -500,
+            "max": 500,
+            "step": 1,
+            "default": 0
+      },
+      {
+            "id": "reactLow",
+            "label": "低音 -> サイズ",
+            "type": "range",
+            "min": 0,
+            "max": 5,
+            "step": 0.1,
+            "default": 1.5
+      },
+      {
+            "id": "reactMid",
+            "label": "中音 -> 回転強",
+            "type": "range",
+            "min": 0,
+            "max": 10,
+            "step": 0.1,
+            "default": 2.0
+      },
+      {
+            "id": "reactHigh",
+            "label": "高音 -> 線の太さ",
+            "type": "range",
+            "min": 0,
+            "max": 20,
+            "step": 0.1,
+            "default": 5.0
+      },
+      {
+            "id": "beatAnim",
+            "label": "Beat Animation",
+            "type": "select",
+            "options": [
+                  "なし",
+                  "Pulse",
+                  "Rotate",
+                  "Glitch"
+            ],
+            "default": "なし"
+      },
+      {
+            "id": "hueSource",
+            "label": "Hue Band",
+            "type": "select",
+            "options": [
+                  "None",
+                  "Low",
+                  "Mid",
+                  "High"
+            ],
+            "default": "None"
+      },
+      {
+            "id": "hueAmount",
+            "label": "Hue Amount",
+            "type": "range",
+            "min": -360,
+            "max": 360,
+            "step": 1,
+            "default": 90
+      }
+]
   </script>
 
   <script>
@@ -37,7 +142,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { shape: "Box", speed: 1.0, opacity: 1.0, color: "#00ff00", axisX: 0, axisY: 0, reactLow: 1.5, reactMid: 2.0, reactHigh: 5.0, beatAnim: "なし" };
+    let params = { shape: "Box", speed: 1.0, opacity: 1.0, color: "#00ff00", axisX: 0, axisY: 0, reactLow: 1.5, reactMid: 2.0, reactHigh: 5.0, beatAnim: "なし", hueSource: "None", hueAmount: 90 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let time = 0;
@@ -60,7 +165,8 @@
     window.addEventListener('message', (e) => {
       const msg = e.data;
       if (msg.type === 'param_update') {
-        params[msg.paramId] = (['color', 'shape', 'beatAnim'].includes(msg.paramId)) ? msg.value : Number(msg.value);
+        if (msg.paramId === 'baseA') document.body.style.opacity = msg.value;
+        params[msg.paramId] = (['color', 'shape', 'beatAnim', 'hueSource'].includes(msg.paramId)) ? msg.value : Number(msg.value);
       } else if (msg.type === 'audio_data' && msg.fft) {
         currentFFT = msg.fft;
       } else if (msg.type === 'group_update') {
@@ -93,6 +199,14 @@
       const mid = (midSum / 11) / 255.0 || 0;
       let highSum = 0; for(let i = 100; i <= 120; i++) highSum += currentFFT[i];
       const high = (highSum / 21) / 255.0 || 0;
+      // --- Audio Reactive Hue ---
+      let _hueVal = 0;
+      if (params.hueSource === 'Low') _hueVal = low;
+      else if (params.hueSource === 'Mid') _hueVal = mid;
+      else if (params.hueSource === 'High') _hueVal = high;
+      const _hueDeg = _hueVal * params.hueAmount;
+      if (_hueDeg !== 0) canvas.style.filter = 'hue-rotate(' + _hueDeg + 'deg)';
+      else canvas.style.filter = '';
 
       time += params.speed * 0.02;
       beatValue *= 0.9;

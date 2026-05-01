@@ -11,20 +11,140 @@
 
   <script id="vj-schema" type="application/json">
     [
-      { "id": "motif", "label": "モチーフ", "type": "select", "options": ["Heart", "Candy", "Star", "Mix"], "default": "Mix" },
-      { "id": "layout", "label": "レイアウト", "type": "select", "options": ["Burst", "Float"], "default": "Burst" },
-      { "id": "color1", "label": "キュート色1", "type": "color", "default": "#ff99cc" },
-      { "id": "color2", "label": "キュート色2", "type": "color", "default": "#cc99ff" },
-      { "id": "color3", "label": "キュート色3", "type": "color", "default": "#99ffff" },
-      { "id": "opacity", "label": "透明度(全体)", "type": "range", "min": 0, "max": 1, "step": 0.01, "default": 0.9 },
-      { "id": "afterimage", "label": "残像の強さ", "type": "range", "min": 0, "max": 0.99, "step": 0.01, "default": 0.99 },
-      { "id": "speed", "label": "移動スピード", "type": "range", "min": 0, "max": 5, "step": 0.1, "default": 1.0 },
-      { "id": "waveAmp", "label": "波打ちの振幅", "type": "range", "min": 0, "max": 200, "step": 1, "default": 50 },
-      { "id": "lowReactSize", "label": "低音 -> サイズ", "type": "range", "min": 0, "max": 5, "step": 0.1, "default": 2.0 },
-      { "id": "lowReactSpawn", "label": "低音 -> 生成数", "type": "range", "min": 0, "max": 10, "step": 0.1, "default": 3.0 },
-      { "id": "midReactHue", "label": "中音 -> 色相回転", "type": "range", "min": 0, "max": 360, "step": 1, "default": 180 },
-      { "id": "highReactFlash", "label": "高音 -> ぴかぴか", "type": "range", "min": 0, "max": 5, "step": 0.1, "default": 2.0 }
-    ]
+      {
+            "id": "motif",
+            "label": "モチーフ",
+            "type": "select",
+            "options": [
+                  "Heart",
+                  "Candy",
+                  "Star",
+                  "Mix"
+            ],
+            "default": "Mix"
+      },
+      {
+            "id": "layout",
+            "label": "レイアウト",
+            "type": "select",
+            "options": [
+                  "Burst",
+                  "Float"
+            ],
+            "default": "Burst"
+      },
+      {
+            "id": "color1",
+            "label": "キュート色1",
+            "type": "color",
+            "default": "#ff99cc"
+      },
+      {
+            "id": "color2",
+            "label": "キュート色2",
+            "type": "color",
+            "default": "#cc99ff"
+      },
+      {
+            "id": "color3",
+            "label": "キュート色3",
+            "type": "color",
+            "default": "#99ffff"
+      },
+      {
+            "id": "opacity",
+            "label": "透明度(全体)",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "default": 0.9
+      },
+      {
+            "id": "afterimage",
+            "label": "残像の強さ",
+            "type": "range",
+            "min": 0,
+            "max": 0.99,
+            "step": 0.01,
+            "default": 0.99
+      },
+      {
+            "id": "speed",
+            "label": "移動スピード",
+            "type": "range",
+            "min": 0,
+            "max": 5,
+            "step": 0.1,
+            "default": 1.0
+      },
+      {
+            "id": "waveAmp",
+            "label": "波打ちの振幅",
+            "type": "range",
+            "min": 0,
+            "max": 200,
+            "step": 1,
+            "default": 50
+      },
+      {
+            "id": "lowReactSize",
+            "label": "低音 -> サイズ",
+            "type": "range",
+            "min": 0,
+            "max": 5,
+            "step": 0.1,
+            "default": 2.0
+      },
+      {
+            "id": "lowReactSpawn",
+            "label": "低音 -> 生成数",
+            "type": "range",
+            "min": 0,
+            "max": 10,
+            "step": 0.1,
+            "default": 3.0
+      },
+      {
+            "id": "midReactHue",
+            "label": "中音 -> 色相回転",
+            "type": "range",
+            "min": 0,
+            "max": 360,
+            "step": 1,
+            "default": 180
+      },
+      {
+            "id": "highReactFlash",
+            "label": "高音 -> ぴかぴか",
+            "type": "range",
+            "min": 0,
+            "max": 5,
+            "step": 0.1,
+            "default": 2.0
+      },
+      {
+            "id": "hueSource",
+            "label": "Hue Band",
+            "type": "select",
+            "options": [
+                  "None",
+                  "Low",
+                  "Mid",
+                  "High"
+            ],
+            "default": "None"
+      },
+      {
+            "id": "hueAmount",
+            "label": "Hue Amount",
+            "type": "range",
+            "min": -360,
+            "max": 360,
+            "step": 1,
+            "default": 90
+      }
+]
   </script>
 
   <script>
@@ -40,7 +160,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { motif: "Mix", layout: "Burst", color1: "#ff99cc", color2: "#cc99ff", color3: "#99ffff", opacity: 0.9, afterimage: 0.4, speed: 1.0, waveAmp: 50, lowReactSize: 2.0, lowReactSpawn: 3.0, midReactHue: 180, highReactFlash: 2.0 };
+    let params = { motif: "Mix", layout: "Burst", color1: "#ff99cc", color2: "#cc99ff", color3: "#99ffff", opacity: 0.9, afterimage: 0.4, speed: 1.0, waveAmp: 50, lowReactSize: 2.0, lowReactSpawn: 3.0, midReactHue: 180, highReactFlash: 2.0, hueSource: "None", hueAmount: 90 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let time = 0;
@@ -63,7 +183,8 @@
     window.addEventListener('message', (e) => {
       const msg = e.data;
       if (msg.type === 'param_update') {
-        if (['color1', 'color2', 'color3', 'motif', 'layout'].includes(msg.paramId)) {
+        if (msg.paramId === 'baseA') document.body.style.opacity = msg.value;
+        if (['color1', 'color2', 'color3', 'motif', 'layout', 'hueSource'].includes(msg.paramId)) {
           params[msg.paramId] = msg.value;
         } else {
           params[msg.paramId] = Number(msg.value);
@@ -168,6 +289,14 @@
       const mid = (midSum / 11) / 255.0 || 0;
       let highSum = 0; for(let i = 100; i <= 120; i++) highSum += currentFFT[i];
       const high = (highSum / 21) / 255.0 || 0;
+      // --- Audio Reactive Hue ---
+      let _hueVal = 0;
+      if (params.hueSource === 'Low') _hueVal = low;
+      else if (params.hueSource === 'Mid') _hueVal = mid;
+      else if (params.hueSource === 'High') _hueVal = high;
+      const _hueDeg = _hueVal * params.hueAmount;
+      if (_hueDeg !== 0) canvas.style.filter = 'hue-rotate(' + _hueDeg + 'deg)';
+      else canvas.style.filter = '';
 
       time += params.speed * 0.02;
       ctx.clearRect(0, 0, width, height);

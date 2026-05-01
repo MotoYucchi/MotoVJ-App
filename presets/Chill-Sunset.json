@@ -1,0 +1,25 @@
+﻿{
+  "id": "chill-sunset",
+  "name": "Chill Sunset",
+  "params": { "scale": 1.0, "color": "#1a0522", "opacity": 1.0 },
+  "layers": [
+    {
+      "id": "layer-sunset-wave",
+      "name": "Sunset Waves",
+      "effectUrl": "effects/effect-chill01-flowwave.html",
+      "params": { "baseR": 180, "baseG": 80, "baseB": 40, "baseA": 0.8, "opacity": 0.7, "color": "#cc6633", "speed": 0.35, "waveCount": 5, "waveHeight": 100, "reactLow": 1.2, "reactMid": 0.8, "reactHigh": 0.5 }
+    },
+    {
+      "id": "layer-sunset-glow",
+      "name": "Warm Glow",
+      "effectUrl": "effects/effect-chill02-glowdrift.html",
+      "params": { "baseR": 200, "baseG": 100, "baseB": 50, "baseA": 0.6, "opacity": 0.4, "color": "#ff8844", "speed": 0.2, "count": 8, "sizeBase": 150, "reactLow": 1.0, "reactMid": 0.5, "reactHigh": 1.0 }
+    },
+    {
+      "id": "layer-sunset-circle",
+      "name": "Breathing Circle",
+      "effectUrl": "effects/effect-0000-circle.html",
+      "params": { "baseR": 255, "baseG": 120, "baseB": 60, "baseA": 0.5, "size": 300, "thickness": 3, "color": "#ff6622", "reactLow": 0.8, "reactMid": 30, "reactHigh": 5 }
+    }
+  ]
+}

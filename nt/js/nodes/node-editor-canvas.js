@@ -606,16 +606,24 @@ window.VJNodeEditorCanvas = (() => {
   }
 
   // ── Graph sync ──
+  let _isBroadcasting = false;
+
   function broadcastGraph() {
     const data = VJNodeGraph.serialize();
+    _isBroadcasting = true;
     VJWs.send({ type: 'graph_update', graph: data });
     VJStorage.setGraph(data);
+    // Also save via REST API so Viewer can fetch on load
+    fetch('/api/graph', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    }).catch(() => {});
+    setTimeout(() => { _isBroadcasting = false; }, 200);
   }
 
   function saveGraph() {
-    const data = VJNodeGraph.serialize();
-    VJWs.send({ type: 'graph_update', graph: data });
-    VJStorage.setGraph(data);
+    broadcastGraph();
     VJBus.emit('toast:info', VJi18n.t('graph_saved'));
   }
 
@@ -679,15 +687,15 @@ window.VJNodeEditorCanvas = (() => {
       // Start render loop
       draw();
 
-      // Listen for graph sync from WS
+      // Listen for graph sync from WS (only when NOT our own broadcast)
       VJBus.on('ws:graph_sync', (msg) => {
-        if (msg.graph) {
+        if (msg.graph && !_isBroadcasting) {
           VJNodeGraph.deserialize(msg.graph);
         }
       });
 
       VJBus.on('ws:graph_update', (msg) => {
-        if (msg.graph) {
+        if (msg.graph && !_isBroadcasting) {
           VJNodeGraph.deserialize(msg.graph);
         }
       });

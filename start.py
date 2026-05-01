@@ -1,7 +1,7 @@
 import json
 import os
 import uvicorn
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request
 from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 
@@ -26,7 +26,7 @@ def load_from_disk():
     for deck_id in server_state.keys():
         path = os.path.join(DECKS_DIR, f"{deck_id}.json")
         if os.path.exists(path):
-            with open(path, "r", encoding="utf-8") as f:
+            with open(path, "r", encoding="utf-8-sig") as f:
                 server_state[deck_id] = json.load(f)
     print("📁 Decks loaded from disk.")
 
@@ -42,16 +42,51 @@ PRESETS_DIR = "./presets"
 if not os.path.exists(PRESETS_DIR):
     os.makedirs(PRESETS_DIR)
 
+EFFECTS_DIR = "./effects"
+EFFECT_LIST_PATH = os.path.join(EFFECTS_DIR, "effect-list.json")
+
 @app.post("/save_preset/{name}")
-async def save_preset(name: str, data: dict):
+async def save_preset(name: str, request: Request):
+    data = await request.json()
     path = os.path.join(PRESETS_DIR, f"{name}.json")
-    with open(path, "w") as f:
-        json.dump(data, f)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
     return {"status": "saved"}
+
+@app.get("/load_preset/{name}")
+async def load_preset(name: str):
+    path = os.path.join(PRESETS_DIR, f"{name}.json")
+    if not os.path.exists(path):
+        return {"error": "not found"}
+    with open(path, "r", encoding="utf-8-sig") as f:
+        return json.load(f)
 
 @app.get("/list_presets")
 async def list_presets():
-    return [f.replace(".json", "") for f in os.listdir(PRESETS_DIR)]
+    if not os.path.exists(PRESETS_DIR):
+        return []
+    return sorted([f.replace(".json", "") for f in os.listdir(PRESETS_DIR) if f.endswith(".json")])
+
+@app.get("/list_effects")
+async def list_effects():
+    if os.path.exists(EFFECT_LIST_PATH):
+        with open(EFFECT_LIST_PATH, "r", encoding="utf-8-sig") as f:
+            return json.load(f)
+    return []
+
+@app.post("/refresh_effect_list")
+async def refresh_effect_list():
+    """effects/ ディレクトリをスキャンして effect-list.json を再生成"""
+    effects = []
+    if os.path.exists(EFFECTS_DIR):
+        for fname in sorted(os.listdir(EFFECTS_DIR)):
+            if fname.endswith(".html") and fname != "effect-template.html":
+                name = fname.replace("effect-", "").replace(".html", "").replace("-", " ").title()
+                effects.append({"name": name, "url": f"effects/{fname}"})
+    with open(EFFECT_LIST_PATH, "w", encoding="utf-8") as f:
+        json.dump(effects, f, indent=2, ensure_ascii=False)
+    print(f"🔄 Effect list refreshed: {len(effects)} effects found.")
+    return effects
 
 class ConnectionManager:
     def __init__(self):

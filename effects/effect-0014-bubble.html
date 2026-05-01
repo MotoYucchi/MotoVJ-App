@@ -11,19 +11,128 @@
 
   <script id="vj-schema" type="application/json">
     [
-      { "id": "complexity", "label": "万華鏡の数", "type": "range", "min": 2, "max": 12, "step": 1, "default": 6 },
-      { "id": "particleCount", "label": "シャボン玉の数", "type": "range", "min": 10, "max": 200, "step": 1, "default": 100 },
-      { "id": "opacity", "label": "透明度(全体)", "type": "range", "min": 0, "max": 1, "step": 0.01, "default": 0.8 },
-      { "id": "afterimage", "label": "残像の強さ", "type": "range", "min": 0, "max": 0.99, "step": 0.01, "default": 0.5 },
-      { "id": "color1", "label": "色1", "type": "color", "default": "#ff00ff" },
-      { "id": "color2", "label": "色2", "type": "color", "default": "#00ffff" },
-      { "id": "color3", "label": "色3", "type": "color", "default": "#ffff00" },
-      { "id": "pattern", "label": "アニメーション", "type": "select", "options": ["湧き出る", "浮遊"], "default": "湧き出る" },
-      { "id": "speed", "label": "回転スピード", "type": "range", "min": 0, "max": 5, "step": 0.1, "default": 1.0 },
-      { "id": "highReact", "label": "高音 -> ぴかぴか", "type": "range", "min": 0, "max": 5, "step": 0.1, "default": 1.5 },
-      { "id": "midReact", "label": "中音 -> 色/回転", "type": "range", "min": 0, "max": 10, "step": 0.1, "default": 2.0 },
-      { "id": "lowReact", "label": "低音 -> サイズ", "type": "range", "min": 0, "max": 5, "step": 0.1, "default": 1.5 }
-    ]
+      {
+            "id": "complexity",
+            "label": "万華鏡の数",
+            "type": "range",
+            "min": 2,
+            "max": 12,
+            "step": 1,
+            "default": 6
+      },
+      {
+            "id": "particleCount",
+            "label": "シャボン玉の数",
+            "type": "range",
+            "min": 10,
+            "max": 200,
+            "step": 1,
+            "default": 100
+      },
+      {
+            "id": "opacity",
+            "label": "透明度(全体)",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "default": 0.8
+      },
+      {
+            "id": "afterimage",
+            "label": "残像の強さ",
+            "type": "range",
+            "min": 0,
+            "max": 0.99,
+            "step": 0.01,
+            "default": 0.5
+      },
+      {
+            "id": "color1",
+            "label": "色1",
+            "type": "color",
+            "default": "#ff00ff"
+      },
+      {
+            "id": "color2",
+            "label": "色2",
+            "type": "color",
+            "default": "#00ffff"
+      },
+      {
+            "id": "color3",
+            "label": "色3",
+            "type": "color",
+            "default": "#ffff00"
+      },
+      {
+            "id": "pattern",
+            "label": "アニメーション",
+            "type": "select",
+            "options": [
+                  "湧き出る",
+                  "浮遊"
+            ],
+            "default": "湧き出る"
+      },
+      {
+            "id": "speed",
+            "label": "回転スピード",
+            "type": "range",
+            "min": 0,
+            "max": 5,
+            "step": 0.1,
+            "default": 1.0
+      },
+      {
+            "id": "highReact",
+            "label": "高音 -> ぴかぴか",
+            "type": "range",
+            "min": 0,
+            "max": 5,
+            "step": 0.1,
+            "default": 1.5
+      },
+      {
+            "id": "midReact",
+            "label": "中音 -> 色/回転",
+            "type": "range",
+            "min": 0,
+            "max": 10,
+            "step": 0.1,
+            "default": 2.0
+      },
+      {
+            "id": "lowReact",
+            "label": "低音 -> サイズ",
+            "type": "range",
+            "min": 0,
+            "max": 5,
+            "step": 0.1,
+            "default": 1.5
+      },
+      {
+            "id": "hueSource",
+            "label": "Hue Band",
+            "type": "select",
+            "options": [
+                  "None",
+                  "Low",
+                  "Mid",
+                  "High"
+            ],
+            "default": "None"
+      },
+      {
+            "id": "hueAmount",
+            "label": "Hue Amount",
+            "type": "range",
+            "min": -360,
+            "max": 360,
+            "step": 1,
+            "default": 90
+      }
+]
   </script>
 
   <script>
@@ -39,7 +148,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { complexity: 6, particleCount: 100, opacity: 0.8, afterimage: 0.5, color1: "#ff00ff", color2: "#00ffff", color3: "#ffff00", pattern: "湧き出る", speed: 1.0, highReact: 1.5, midReact: 2.0, lowReact: 1.5 };
+    let params = { complexity: 6, particleCount: 100, opacity: 0.8, afterimage: 0.5, color1: "#ff00ff", color2: "#00ffff", color3: "#ffff00", pattern: "湧き出る", speed: 1.0, highReact: 1.5, midReact: 2.0, lowReact: 1.5, hueSource: "None", hueAmount: 90 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let time = 0;
@@ -63,7 +172,8 @@
     window.addEventListener('message', (e) => {
       const msg = e.data;
       if (msg.type === 'param_update') {
-        if (['color1', 'color2', 'color3', 'pattern'].includes(msg.paramId)) {
+        if (msg.paramId === 'baseA') document.body.style.opacity = msg.value;
+        if (['color1', 'color2', 'color3', 'pattern', 'hueSource'].includes(msg.paramId)) {
           params[msg.paramId] = msg.value;
         } else {
           params[msg.paramId] = Number(msg.value);
@@ -112,6 +222,14 @@
       const mid = (midSum / 11) / 255.0 || 0;
       let highSum = 0; for(let i = 100; i <= 120; i++) highSum += currentFFT[i];
       const high = (highSum / 21) / 255.0 || 0;
+      // --- Audio Reactive Hue ---
+      let _hueVal = 0;
+      if (params.hueSource === 'Low') _hueVal = low;
+      else if (params.hueSource === 'Mid') _hueVal = mid;
+      else if (params.hueSource === 'High') _hueVal = high;
+      const _hueDeg = _hueVal * params.hueAmount;
+      if (_hueDeg !== 0) canvas.style.filter = 'hue-rotate(' + _hueDeg + 'deg)';
+      else canvas.style.filter = '';
 
       time += params.speed * 0.02;
       ctx.clearRect(0, 0, width, height); // 透過要件のため、残像はCanvasを消去せず薄い黒で塗りつぶすことで実装

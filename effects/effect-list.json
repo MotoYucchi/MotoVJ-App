@@ -1,0 +1,62 @@
+[
+  {
+    "name": "0000 Circle",
+    "url": "effects/effect-0000-circle.html"
+  },
+  {
+    "name": "0001 Generator",
+    "url": "effects/effect-0001-generator.html"
+  },
+  {
+    "name": "0002 Shapes",
+    "url": "effects/effect-0002-shapes.html"
+  },
+  {
+    "name": "0003 Visualizer",
+    "url": "effects/effect-0003-visualizer.html"
+  },
+  {
+    "name": "0004 Utility",
+    "url": "effects/effect-0004-utility.html"
+  },
+  {
+    "name": "0005 Ambient",
+    "url": "effects/effect-0005-ambient.html"
+  },
+  {
+    "name": "0011 Polygon",
+    "url": "effects/effect-0011-polygon.html"
+  },
+  {
+    "name": "0012 Wireframe3D",
+    "url": "effects/effect-0012-wireframe3d.html"
+  },
+  {
+    "name": "0013 Kaleidoscope",
+    "url": "effects/effect-0013-kaleidoscope.html"
+  },
+  {
+    "name": "0014 Bubble",
+    "url": "effects/effect-0014-bubble.html"
+  },
+  {
+    "name": "0015 Kawaii",
+    "url": "effects/effect-0015-kawaii.html"
+  },
+  {
+    "name": "Chill01 Flowwave",
+    "url": "effects/effect-chill01-flowwave.html"
+  },
+  {
+    "name": "Chill02 Glowdrift",
+    "url": "effects/effect-chill02-glowdrift.html"
+  },
+  {
+    "name": "Chill03 Auraring",
+    "url": "effects/effect-chill03-auraring.html"
+  },
+  {
+    "name": "Hard Song01 Radial",
+    "url": "effects/effect-hard-song01-radial.html"
+  }
+]

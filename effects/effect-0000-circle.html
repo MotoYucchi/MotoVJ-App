@@ -55,6 +55,7 @@
       
       // 個別パラメータ更新
       if (msg.type === 'param_update') {
+        if (msg.paramId === 'baseA') document.body.style.opacity = msg.value;
         if (msg.paramId === 'color') {
           params[msg.paramId] = msg.value;
         } else {

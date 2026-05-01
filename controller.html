@@ -2,101 +2,291 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>VJ Controller Pro - Modular</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotoVJ Controller</title>
   <style>
-    body { font-family: sans-serif; background: #1a1a1a; color: #eee; margin: 0; display: flex; flex-direction: column; height: 100vh; }
-    header { background: #333; padding: 10px; display: flex; gap: 10px; align-items: center; border-bottom: 2px solid #444; }
-    #decks-container { display: flex; flex-grow: 1; overflow-x: auto; padding: 1%; gap: 2%; }
-    .deck-panel { flex: 1; min-width: 300px; background: #252525; border: 1px solid #444; border-radius: 8px; display: flex; flex-direction: column; }
-    .deck-header { padding: 10px; background: #3a3a3a; display: flex; justify-content: space-between; border-radius: 8px 8px 0 0; }
-    
-    .layer-list { padding: 10px; overflow-y: auto; flex-grow: 1; }
-    .layer-item { background: #333; margin-bottom: 10px; border-radius: 4px; border: 1px solid #555; }
-    .layer-ctrl-bar { padding: 8px; display: flex; align-items: center; gap: 5px; background: #444; cursor: pointer; }
-    .layer-title { flex-grow: 1; font-weight: bold; border: none; background: transparent; color: white; }
-    .layer-params { padding: 10px; display: none; border-top: 1px solid #555; }
-    .layer-item.expanded .layer-params { display: block; }
-    
-    .btn { cursor: pointer; border: none; border-radius: 3px; padding: 5px 8px; font-size: 12px; }
-    .btn-add { background: #28a745; color: white; }
-    .btn-del { background: #dc3545; color: white; }
-    .btn-move { background: #666; color: white; }
-    .btn-sync { background: #007bff; color: white; padding: 10px; }
-    
-    .param-row { margin-bottom: 8px; }
-    input[type=range] { width: 100%; }
+    /* ====== Reset & Base ====== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', 'Meiryo', sans-serif; background: #111; color: #e0e0e0; display: flex; flex-direction: column; height: 100vh; overscroll-behavior-x: none; -webkit-user-select: none; user-select: none; }
 
-    /* Deck & Group Layout */
-    .group-item {
-      background: #2a2a2a;
-      border: 1px solid #444;
+    /* ====== Header ====== */
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      padding: 8px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      border-bottom: 2px solid #0f3460;
+      flex-shrink: 0;
+    }
+
+    /* ====== Buttons ====== */
+    .btn {
+      cursor: pointer;
+      border: none;
       border-radius: 6px;
-      margin-bottom: 15px;
-      overflow: hidden;
+      padding: 6px 10px;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+      background: #333;
+      color: #e0e0e0;
+    }
+    .btn:hover { filter: brightness(1.3); transform: scale(1.05); }
+    .btn:active { transform: scale(0.97); }
+    .btn img { width: 16px; height: 16px; pointer-events: none; }
+
+    .btn-sync { background: linear-gradient(135deg, #0f3460, #1a6bb5); color: white; padding: 8px 14px; font-weight: bold; }
+    .btn-add { background: #1b8a3c; color: white; }
+    .btn-del { background: #a83232; color: white; }
+    .btn-icon { background: transparent; padding: 4px; border-radius: 4px; min-width: 24px; min-height: 24px; }
+    .btn-icon:hover { background: rgba(255,255,255,0.1); }
+    .btn-audio { background: #444; color: white; padding: 8px 14px; }
+    .btn-audio.active { background: #1b8a3c; }
+
+    #audio-status { font-size: 12px; color: #888; margin-left: auto; }
+
+    /* ====== Decks Container ====== */
+    #decks-container { display: flex; flex-grow: 1; overflow-x: auto; padding: 8px; gap: 8px; }
+    .deck-panel {
+      flex: 1;
+      min-width: 320px;
+      background: #1a1a2e;
+      border: 1px solid #333;
+      border-radius: 10px;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
+    .deck-header {
+      padding: 10px 14px;
+      background: linear-gradient(135deg, #0f3460, #1a3a5c);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    .group-list { padding: 8px; overflow-y: auto; flex-grow: 1; }
+
+    /* ====== Group ====== */
+    .group-item {
+      background: #1e1e30;
+      border: 1px solid #333;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .group-item:hover { border-color: #555; }
+    .group-item.collapsed .group-content { display: none; }
 
     .group-header {
-      background: #3d3d3d;
-      padding: 8px 12px;
+      background: linear-gradient(90deg, #262640, #2a2a45);
+      padding: 6px 10px;
       display: flex;
-      justify-content: space-between; /* 左右に振り分け */
       align-items: center;
-      gap: 10px;
+      gap: 6px;
       cursor: pointer;
+      min-height: 40px;
     }
 
-    .group-info {
+    .group-drag-handle {
+      width: 24px;
+      height: 32px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      flex-grow: 1;
+      justify-content: center;
+      cursor: grab;
+      opacity: 0.5;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+      touch-action: none;
     }
+    .group-drag-handle:hover { opacity: 1; }
+    .group-drag-handle:active { cursor: grabbing; }
+    .group-drag-handle img { width: 14px; height: 14px; }
 
-    .group-actions {
-      display: flex;
-      align-items: center;
-      gap: 5px;
+    .group-fold-icon {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
     }
+    .group-item.collapsed .group-fold-icon { transform: rotate(-90deg); }
+
+    .group-info { display: flex; align-items: center; gap: 6px; flex-grow: 1; min-width: 0; }
 
     .group-title {
       background: transparent;
       border: 1px solid transparent;
       color: #fff;
       font-weight: bold;
+      font-size: 13px;
       width: 120px;
+      padding: 2px 4px;
+      border-radius: 4px;
     }
-
     .group-title:hover { border-color: #555; }
+    .group-title:focus { border-color: #1a6bb5; outline: none; }
 
-    .group-content {
-      padding: 10px;
-      display: block; /* collapsedクラスで制御 */
+    .group-actions { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+
+    .group-content { padding: 8px; }
+
+    .group-master-params {
+      padding: 6px 8px;
+      background: #222238;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .group-master-params label { font-size: 11px; color: #888; }
+
+    /* ====== Layer ====== */
+    .layer-list { min-height: 20px; }
+
+    .layer-item {
+      background: #252540;
+      margin-bottom: 6px;
+      border-radius: 6px;
+      border: 1px solid #3a3a55;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .layer-item:hover { border-color: #555; }
+    .layer-item.expanded { border-left: 3px solid #1a6bb5; }
+    .layer-item.expanded .layer-params { display: block; }
+    .layer-item.dragging { opacity: 0.5; border: 2px dashed #1a6bb5; }
+    .layer-item.drag-over { border-top: 3px solid #1a6bb5; }
+
+    .layer-ctrl-bar {
+      padding: 6px 8px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: linear-gradient(90deg, #2d2d50, #333358);
+      min-height: 36px;
     }
 
-    .group-item.collapsed .group-content { display: none; }
+    .layer-drag-handle {
+      width: 22px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: grab;
+      opacity: 0.4;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+      touch-action: none;
+      border-radius: 3px;
+    }
+    .layer-drag-handle:hover { opacity: 1; background: rgba(255,255,255,0.05); }
+    .layer-drag-handle:active { cursor: grabbing; }
+    .layer-drag-handle img { width: 12px; height: 12px; }
 
-    /* Parameter Rows */
+    .layer-fold-btn {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+    .layer-fold-btn:hover { background: rgba(255,255,255,0.1); }
+
+    .layer-fold-icon {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.25s ease;
+      pointer-events: none;
+    }
+    .layer-item.expanded .layer-fold-icon { transform: rotate(180deg); }
+
+    .layer-title {
+      flex-grow: 1;
+      font-weight: bold;
+      font-size: 12px;
+      border: none;
+      background: transparent;
+      color: #ddd;
+      padding: 2px 4px;
+      border-radius: 3px;
+      min-width: 0;
+    }
+    .layer-title:hover { background: rgba(255,255,255,0.05); }
+    .layer-title:focus { background: rgba(255,255,255,0.1); outline: none; }
+
+    .layer-params { padding: 8px; display: none; border-top: 1px solid #3a3a55; background: #1e1e35; }
+
+    /* ====== Slider Thumb 1.5x ====== */
+    input[type=range] {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      background: #333;
+      border-radius: 3px;
+      outline: none;
+      cursor: pointer;
+      margin: 10px 0;
+      touch-action: pan-x;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4a8aff, #1a6bb5);
+      border: 2px solid #0a3d80;
+      cursor: pointer;
+      box-shadow: 0 0 6px rgba(26,107,181,0.4);
+      transition: box-shadow 0.15s;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      box-shadow: 0 0 12px rgba(26,107,181,0.7);
+    }
+    input[type=range]::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4a8aff, #1a6bb5);
+      border: 2px solid #0a3d80;
+      cursor: pointer;
+      box-shadow: 0 0 6px rgba(26,107,181,0.4);
+    }
+    input[type=range]::-moz-range-track {
+      height: 6px;
+      background: #333;
+      border-radius: 3px;
+    }
+
+    /* ====== Param Row ====== */
     .param-row {
       display: flex;
       flex-direction: column;
-      margin-bottom: 10px;
-      padding: 5px;
-      background: #333;
+      margin-bottom: 4px;
+      padding: 8px 8px 12px 8px;
+      background: #252542;
       border-radius: 4px;
     }
-
     .param-row label {
       font-size: 11px;
-      color: #aaa;
+      color: #999;
       margin-bottom: 4px;
       display: flex;
       justify-content: space-between;
     }
 
     .midi-tag {
-      background: #007bff;
+      background: #1a6bb5;
       color: white;
       padding: 1px 4px;
       border-radius: 3px;
@@ -104,20 +294,96 @@
       text-transform: uppercase;
     }
 
-    /* Preset Select */
+    /* ====== Preset Select ====== */
     .preset-select {
-      background: #1a1a1a;
-      color: #eee;
-      border: 1px solid #555;
-      font-size: 12px;
-      border-radius: 3px;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      border: 1px solid #444;
+      font-size: 11px;
+      border-radius: 4px;
+      padding: 3px 6px;
+      max-width: 140px;
     }
+    .preset-select:focus { border-color: #1a6bb5; outline: none; }
+
+    /* ====== Context Menu ====== */
+    .layer-context-menu {
+      position: fixed;
+      background: #2a2a45;
+      border: 1px solid #555;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      z-index: 9999;
+      min-width: 160px;
+      overflow: hidden;
+      animation: ctxFadeIn 0.12s ease;
+    }
+    @keyframes ctxFadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+    .ctx-item {
+      padding: 8px 14px;
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #ddd;
+      transition: background 0.1s;
+    }
+    .ctx-item:hover { background: #1a6bb5; color: white; }
+    .ctx-item img { width: 14px; height: 14px; }
+    .ctx-danger { color: #ff6b6b; }
+    .ctx-danger:hover { background: #a83232; color: white; }
+
+    /* ====== Effect Select Modal ====== */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      animation: modalFade 0.15s ease;
+    }
+    @keyframes modalFade { from { opacity: 0; } to { opacity: 1; } }
+
+    .modal-box {
+      background: #1e1e35;
+      border: 1px solid #444;
+      border-radius: 12px;
+      padding: 20px;
+      min-width: 300px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.6);
+    }
+    .modal-box h3 { margin-bottom: 12px; font-size: 14px; color: #ccc; }
+    .modal-box select {
+      width: 100%;
+      padding: 8px;
+      font-size: 13px;
+      background: #252540;
+      color: #e0e0e0;
+      border: 1px solid #555;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .modal-box select:focus { border-color: #1a6bb5; outline: none; }
+    .modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+    .modal-actions .btn { padding: 6px 16px; }
+
+    /* ====== Drag visual feedback ====== */
+    .group-item.dragging { opacity: 0.5; border: 2px dashed #1a6bb5; }
+    .group-item.drag-over { border-top: 3px solid #1a6bb5; }
   </style>
 </head>
 <body>
   <header>
-    <button id="sync-btn" class="btn btn-sync">🔄 全デッキ同期 (Force Sync)</button>
-    <button id="start-audio-btn" class="btn btn-move">🎙 Audio Start</button>
+    <button id="sync-btn" class="btn btn-sync">
+      <img src="nt/icons/connect.svg" alt="sync"> Force Sync
+    </button>
+    <button id="start-audio-btn" class="btn btn-audio">
+      <img src="nt/icons/audio-on.svg" alt="audio"> Audio Start
+    </button>
     <span id="audio-status">Audio: Stopped</span>
   </header>
 

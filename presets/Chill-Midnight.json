@@ -1,0 +1,25 @@
+﻿{
+  "id": "chill-midnight",
+  "name": "Chill Midnight",
+  "params": { "scale": 1.0, "color": "#000000", "opacity": 1.0 },
+  "layers": [
+    {
+      "id": "layer-mid-ring",
+      "name": "Midnight Rings",
+      "effectUrl": "effects/effect-chill03-auraring.html",
+      "params": { "baseR": 40, "baseG": 60, "baseB": 150, "baseA": 0.7, "opacity": 0.6, "color": "#2244aa", "speed": 0.2, "ringCount": 6, "ringSpacing": 70, "thickness": 1.5, "reactLow": 1.0, "reactMid": 0.8, "reactHigh": 1.5 }
+    },
+    {
+      "id": "layer-mid-drift",
+      "name": "Deep Drift",
+      "effectUrl": "effects/effect-chill02-glowdrift.html",
+      "params": { "baseR": 20, "baseG": 40, "baseB": 120, "baseA": 0.5, "opacity": 0.3, "color": "#1133aa", "speed": 0.15, "count": 15, "sizeBase": 120, "reactLow": 1.5, "reactMid": 0.5, "reactHigh": 2.0 }
+    },
+    {
+      "id": "layer-mid-ambient",
+      "name": "Ambient Glow",
+      "effectUrl": "effects/effect-0005-ambient.html",
+      "params": { "baseR": 30, "baseG": 30, "baseB": 100, "baseA": 0.4, "mode": "AmbientGlow", "opacity": 0.5, "color": "#1a1a66", "reactLow": 1.0, "reactMid": 0.5, "reactHigh": 0.5 }
+    }
+  ]
+}
