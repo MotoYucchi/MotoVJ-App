@@ -1,7 +1,7 @@
 [
   {
     "id": "group-1777670243618",
-    "name": "Chill Forest",
+    "name": "Botanical Tree",
     "params": {
       "scale": 1,
       "color": "#0a1a0a",
@@ -51,6 +51,57 @@
         }
       },
       {
+        "id": "layer-1777682762550",
+        "name": "0002 Shapes Left",
+        "effectUrl": "effects/effect-0002-shapes.html",
+        "params": {
+          "shape": "Cube",
+          "speed": 0,
+          "opacity": 1,
+          "color": "#8acc66",
+          "reactLow": 1.5,
+          "reactMid": 1,
+          "reactHigh": 1,
+          "hueSource": "Low",
+          "hueAmount": 90,
+          "shiftX": -61,
+          "shiftY": -7
+        }
+      },
+      {
+        "id": "layer-1777683573974",
+        "name": "0002 Shapes Right",
+        "effectUrl": "effects/effect-0002-shapes.html",
+        "params": {
+          "shape": "Cube",
+          "speed": 0,
+          "opacity": 1,
+          "color": "#8acc66",
+          "reactLow": 1.5,
+          "reactMid": 1,
+          "reactHigh": 1,
+          "hueSource": "Low",
+          "hueAmount": 90,
+          "shiftX": "61",
+          "shiftY": -7
+        }
+      },
+      {
+        "id": "layer-1777682632635",
+        "name": "0003 Visualizer",
+        "effectUrl": "effects/effect-0003-visualizer.html",
+        "params": {
+          "shape": "Bar",
+          "color": "#ff4500",
+          "opacity": 1,
+          "sensitivity": 1,
+          "beatAnim": "Flash",
+          "reactLow": 1,
+          "hueSource": "High",
+          "hueAmount": 144
+        }
+      },
+      {
         "id": "layer-forest-gen",
         "name": "Tree Line",
         "effectUrl": "effects/effect-0002-shapes.html",
@@ -67,188 +118,27 @@
           "reactMid": 0.8,
           "reactHigh": 0.3,
           "hueSource": "High",
-          "hueAmount": 360
-        }
-      }
-    ]
-  },
-  {
-    "id": "group-1777675924447",
-    "name": "Chill Midnight",
-    "params": {
-      "scale": 1,
-      "color": "#000000",
-      "opacity": 1
-    },
-    "layers": [
-      {
-        "id": "layer-mid-ring",
-        "name": "Midnight Rings",
-        "effectUrl": "effects/effect-chill03-auraring.html",
-        "params": {
-          "baseR": 40,
-          "baseG": 60,
-          "baseB": 150,
-          "baseA": 0.7,
-          "opacity": 0.6,
-          "color": "#2244aa",
-          "speed": 0.2,
-          "ringCount": 6,
-          "ringSpacing": 70,
-          "thickness": 4,
-          "reactLow": 1,
-          "reactMid": 0.8,
-          "reactHigh": 1.5,
-          "hueSource": "None",
-          "hueAmount": 90
+          "hueAmount": 360,
+          "shiftX": 0,
+          "shiftY": 0
         }
       },
       {
-        "id": "layer-mid-drift",
-        "name": "Deep Drift",
-        "effectUrl": "effects/effect-chill02-glowdrift.html",
+        "id": "layer-1777682347503",
+        "name": "0016 Botanical",
+        "effectUrl": "effects/effect-0016-botanical.html",
         "params": {
-          "baseR": 20,
-          "baseG": 40,
-          "baseB": 120,
-          "baseA": 0.5,
-          "opacity": 0.77,
-          "color": "#1133aa",
-          "speed": 0.15,
-          "count": 15,
-          "sizeBase": 163,
-          "reactLow": 1.5,
-          "reactMid": 0.5,
-          "reactHigh": 2,
-          "hueSource": "None",
-          "hueAmount": 90
-        }
-      },
-      {
-        "id": "layer-mid-ambient",
-        "name": "Ambient Glow",
-        "effectUrl": "effects/effect-0005-ambient.html",
-        "params": {
-          "baseR": 30,
-          "baseG": 30,
-          "baseB": 100,
-          "baseA": 0.4,
-          "mode": "AmbientGlow",
-          "opacity": 0.85,
-          "color": "#ff94e2",
-          "reactLow": 1.3,
-          "reactMid": 0.5,
-          "reactHigh": 0.5,
-          "hueSource": "None",
-          "hueAmount": 90
-        }
-      }
-    ]
-  },
-  {
-    "id": "group-1777676020895",
-    "name": "Background Group",
-    "params": {
-      "scale": 4.4,
-      "color": "#330033",
-      "opacity": 1
-    },
-    "layers": [
-      {
-        "id": "layer-b1",
-        "effectUrl": "effects/effect-0000-circle.html",
-        "name": "Back Circle",
-        "params": {
-          "size": 159,
-          "color": "#f76464",
-          "audioReact": 0.1,
-          "thickness": 14,
-          "reactLow": 1,
-          "reactMid": 90,
-          "reactHigh": 20,
-          "baseR": 0,
-          "baseG": 206.81102362204726,
-          "baseB": 255,
-          "baseA": 1
-        }
-      },
-      {
-        "id": "layer-1772119096059",
-        "name": "Vi01",
-        "effectUrl": "effects/effect-0003-visualizer.html",
-        "params": {
-          "shape": "Radial",
-          "color": "#a600ff",
+          "layout": "Center",
           "opacity": 1,
-          "sensitivity": 3.5,
-          "beatAnim": "None",
-          "reactLow": 1.6,
-          "baseR": 0,
-          "baseG": 206.81102362204726,
-          "baseB": 255,
-          "baseA": 1,
+          "color": "#00ff44",
+          "lineThickness": 8.4,
+          "reactLow": 0.8,
+          "reactMid": 1,
+          "reactHigh": 1,
           "hueSource": "None",
-          "hueAmount": 90
-        }
-      },
-      {
-        "id": "layer-1772124840586",
-        "name": "grouputili",
-        "effectUrl": "effects/effect-0005-ambient.html",
-        "params": {
-          "mode": "GroupParticles",
-          "opacity": 0.65,
-          "color": "#ceeca2",
-          "reactLow": 4.4,
-          "reactMid": 4.8,
-          "reactHigh": 4.3,
-          "baseR": 0,
-          "baseG": 206.81102362204726,
-          "baseB": 255,
-          "baseA": 1,
-          "hueSource": "Low",
-          "hueAmount": 180
-        }
-      },
-      {
-        "id": "layer-1772132388833",
-        "name": "Cube",
-        "effectUrl": "effects/effect-0002-shapes.html",
-        "params": {
-          "shape": "Cube",
-          "speed": 1,
-          "opacity": 1,
-          "color": "#c6bffd",
-          "reactLow": 1.1,
-          "reactMid": 2.7,
-          "reactHigh": 1.5,
-          "baseR": 0,
-          "baseG": 206.81102362204726,
-          "baseB": 255,
-          "baseA": 1,
-          "hueSource": "None",
-          "hueAmount": 90
-        }
-      },
-      {
-        "id": "layer-1772132448747",
-        "name": "Particle",
-        "effectUrl": "effects/effect-0001-generator.html",
-        "params": {
-          "shape": "Starfield",
-          "speed": 2,
-          "opacity": 1,
-          "color": "#8cf1f2",
-          "beatAnim": "Scale",
-          "reactLow": 3.5,
-          "reactMid": 3.5,
-          "reactHigh": 2,
-          "baseR": 0,
-          "baseG": 206.81102362204726,
-          "baseB": 255,
-          "baseA": 1,
-          "hueSource": "None",
-          "hueAmount": 90
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
         }
       }
     ]

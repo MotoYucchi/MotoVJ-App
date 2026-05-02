@@ -103,6 +103,24 @@
             "max": 360,
             "step": 1,
             "default": 90
+      },
+      {
+            "id": "shiftX",
+            "label": "Shift X",
+            "type": "range",
+            "min": -100,
+            "max": 100,
+            "step": 1,
+            "default": 0
+      },
+      {
+            "id": "shiftY",
+            "label": "Shift Y",
+            "type": "range",
+            "min": -100,
+            "max": 100,
+            "step": 1,
+            "default": 0
       }
 ]
   </script>
@@ -120,7 +138,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { complexity: 6, speed: 1.0, particleCount: 80, opacity: 0.8, afterimage: 0.2, color: "#00ffff", beatColorJump: 45, beatAnim: "Pop", hueSource: "None", hueAmount: 90 };
+    let params = { complexity: 6, speed: 1.0, particleCount: 80, opacity: 0.8, afterimage: 0.2, color: "#00ffff", beatColorJump: 45, beatAnim: "Pop", hueSource: "None", hueAmount: 90, shiftX: 0, shiftY: 0 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let time = 0;
@@ -199,7 +217,9 @@
       if (particles.length > params.particleCount) particles.pop();
 
       ctx.save();
-      ctx.translate(cx, cy);
+      const shiftOffsetX = (params.shiftX || 0) / 100 * cx;
+      const shiftOffsetY = (params.shiftY || 0) / 100 * cy;
+      ctx.translate(cx + shiftOffsetX, cy + shiftOffsetY);
       
       // ビートアニメーション（Pop, Zoom）
       let zoom = 1 + low * 0.3;

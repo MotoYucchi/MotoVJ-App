@@ -171,6 +171,24 @@
             "max": 360,
             "step": 1,
             "default": 90
+      },
+      {
+            "id": "shiftX",
+            "label": "Shift X",
+            "type": "range",
+            "min": -100,
+            "max": 100,
+            "step": 1,
+            "default": 0
+      },
+      {
+            "id": "shiftY",
+            "label": "Shift Y",
+            "type": "range",
+            "min": -100,
+            "max": 100,
+            "step": 1,
+            "default": 0
       }
 ]
   </script>
@@ -186,7 +204,7 @@
       lowSize: 1.0, lowHue: 0, lowThick: 10,
       midSize: 0.5, midHue: 90, midThick: 5,
       highSize: 0.2, highHue: 180, highThick: 20,
-      subBass: 7, ultraHigh: 9, beatAnim: "なし", hueSource: "None", hueAmount: 90 };
+      subBass: 7, ultraHigh: 9, beatAnim: "なし", hueSource: "None", hueAmount: 90, shiftX: 0, shiftY: 0 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let beatValue = 0; // Beat Animation用
@@ -210,7 +228,7 @@
       const msg = e.data;
       if (msg.type === 'param_update') {
         if (msg.paramId === 'baseA') document.body.style.opacity = msg.value;
-        params[msg.paramId] = (msg.paramId === 'color' || msg.paramId === 'beatAnim') ? msg.value : Number(msg.value);
+        params[msg.paramId] = (msg.paramId === 'color' || msg.paramId === 'beatAnim' || msg.paramId === 'hueSource') ? msg.value : Number(msg.value);
       } else if (msg.type === 'audio_data' && msg.fft) {
         currentFFT = msg.fft;
       } else if (msg.type === 'group_update') {
@@ -253,7 +271,9 @@
       // 3. 描画
       ctx.clearRect(0, 0, width, height);
       ctx.save();
-      ctx.translate(width/2, height/2);
+      const shiftOffsetX = (params.shiftX || 0) / 100 * (width / 2);
+      const shiftOffsetY = (params.shiftY || 0) / 100 * (height / 2);
+      ctx.translate(width/2 + shiftOffsetX, height/2 + shiftOffsetY);
       ctx.rotate(beatRotate + (params.beatAnim === "Glitch" ? (Math.random()-0.5)*beatValue : 0));
       
       const mixedRgb = hexToRgb(params.color);

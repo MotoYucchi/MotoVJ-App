@@ -1,5 +1,5 @@
 {
-  "id": "group-1777676020895",
+  "id": "group-1772119272061",
   "name": "Background Group",
   "params": {
     "scale": 4.4,
@@ -7,6 +7,27 @@
     "opacity": 1
   },
   "layers": [
+    {
+      "id": "layer-1777684977842",
+      "name": "0014 Bubble",
+      "effectUrl": "effects/effect-0014-bubble.html",
+      "params": {
+        "complexity": 6,
+        "particleCount": 154,
+        "opacity": 0.59,
+        "afterimage": 0.8,
+        "color1": "#ff00ff",
+        "color2": "#00ffff",
+        "color3": "#ffff00",
+        "pattern": "湧き出る",
+        "speed": 1,
+        "highReact": 1.5,
+        "midReact": 2,
+        "lowReact": 0.6,
+        "hueSource": "High",
+        "hueAmount": 90
+      }
+    },
     {
       "id": "layer-b1",
       "effectUrl": "effects/effect-0000-circle.html",
@@ -22,7 +43,9 @@
         "baseR": 0,
         "baseG": 206.81102362204726,
         "baseB": 255,
-        "baseA": 1
+        "baseA": 1,
+        "shiftX": 0,
+        "shiftY": 0
       }
     },
     {
@@ -80,7 +103,9 @@
         "baseB": 255,
         "baseA": 1,
         "hueSource": "None",
-        "hueAmount": 90
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
       }
     },
     {
@@ -101,6 +126,26 @@
         "baseB": 255,
         "baseA": 1,
         "hueSource": "None",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-1777685036023",
+      "name": "Chill03 Auraring",
+      "effectUrl": "effects/effect-chill03-auraring.html",
+      "params": {
+        "opacity": "0.42",
+        "color": "#00d028",
+        "speed": 0.3,
+        "ringCount": 7,
+        "ringSpacing": 21,
+        "thickness": "8",
+        "reactLow": 0.8,
+        "reactMid": 4.1,
+        "reactHigh": 2.2,
+        "hueSource": "Mid",
         "hueAmount": 90
       }
     }

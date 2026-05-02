@@ -107,6 +107,24 @@
             "max": 360,
             "step": 1,
             "default": 90
+      },
+      {
+            "id": "shiftX",
+            "label": "Shift X",
+            "type": "range",
+            "min": -100,
+            "max": 100,
+            "step": 1,
+            "default": 0
+      },
+      {
+            "id": "shiftY",
+            "label": "Shift Y",
+            "type": "range",
+            "min": -100,
+            "max": 100,
+            "step": 1,
+            "default": 0
       }
 ]
   </script>
@@ -125,7 +143,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { shape: "Particle", speed: 1.0, opacity: 1.0, color: "#00ffff", beatAnim: "None", reactLow: 1.0, reactMid: 1.0, reactHigh: 1.0, hueSource: "None", hueAmount: 90 };
+    let params = { shape: "Particle", speed: 1.0, opacity: 1.0, color: "#00ffff", beatAnim: "None", reactLow: 1.0, reactMid: 1.0, reactHigh: 1.0, hueSource: "None", hueAmount: 90, shiftX: 0, shiftY: 0 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let time = 0;
@@ -190,7 +208,9 @@
       if (params.beatAnim === "Scale") animScale = 1 + (bass * params.reactLow * 0.5);
       if (params.beatAnim === "Shake") ctx.translate((Math.random()-0.5)*bass*50, (Math.random()-0.5)*bass*50);
       
-      ctx.translate(cx, cy);
+      const shiftOffsetX = (params.shiftX || 0) / 100 * cx;
+      const shiftOffsetY = (params.shiftY || 0) / 100 * cy;
+      ctx.translate(cx + shiftOffsetX, cy + shiftOffsetY);
       ctx.scale(animScale, animScale);
 
       // --- Shape別の描画ロジック ---

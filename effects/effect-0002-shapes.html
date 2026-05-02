@@ -96,6 +96,24 @@
             "max": 360,
             "step": 1,
             "default": 90
+      },
+      {
+            "id": "shiftX",
+            "label": "Shift X",
+            "type": "range",
+            "min": -100,
+            "max": 100,
+            "step": 1,
+            "default": 0
+      },
+      {
+            "id": "shiftY",
+            "label": "Shift Y",
+            "type": "range",
+            "min": -100,
+            "max": 100,
+            "step": 1,
+            "default": 0
       }
 ]
   </script>
@@ -114,7 +132,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { shape: "Cube", speed: 1.0, opacity: 1.0, color: "#00ff00", reactLow: 1.5, reactMid: 1.0, reactHigh: 1.0, hueSource: "None", hueAmount: 90 };
+    let params = { shape: "Cube", speed: 1.0, opacity: 1.0, color: "#00ff00", reactLow: 1.5, reactMid: 1.0, reactHigh: 1.0, hueSource: "None", hueAmount: 90, shiftX: 0, shiftY: 0 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let time = 0;
@@ -138,7 +156,7 @@
       const msg = e.data;
       if (msg.type === 'param_update') {
         if (msg.paramId === 'baseA') document.body.style.opacity = msg.value;
-        params[msg.paramId] = (msg.paramId === 'color' || msg.paramId === 'shape') ? msg.value : Number(msg.value);
+        params[msg.paramId] = (msg.paramId === 'color' || msg.paramId === 'shape' || msg.paramId === 'hueSource') ? msg.value : Number(msg.value);
       } else if (msg.type === 'audio_data' && msg.fft) {
         currentFFT = msg.fft;
       } else if (msg.type === 'group_update') {
@@ -163,7 +181,7 @@
       const high = (highSum / 21) / 255.0 || 0;
       // --- Audio Reactive Hue ---
       let _hueVal = 0;
-      if (params.hueSource === 'Low') _hueVal = low;
+      if (params.hueSource === 'Low') _hueVal = bass;
       else if (params.hueSource === 'Mid') _hueVal = mid;
       else if (params.hueSource === 'High') _hueVal = high;
       const _hueDeg = _hueVal * params.hueAmount;
@@ -175,6 +193,12 @@
       ctx.clearRect(0, 0, width, height);
 
       ctx.save();
+      
+      // ユーザー要望のXYシフト機能
+      const shiftOffsetX = (params.shiftX || 0) / 100 * cx;
+      const shiftOffsetY = (params.shiftY || 0) / 100 * cy;
+      ctx.translate(shiftOffsetX, shiftOffsetY);
+
       ctx.strokeStyle = ctx.fillStyle = color;
 
       switch(params.shape) {

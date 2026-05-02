@@ -17,7 +17,9 @@
       { "id": "color", "label": "ベース色", "type": "color", "default": "#00ffff" },
       { "id": "reactLow", "label": "低音反応 (サイズ増幅)", "type": "range", "min": 0, "max": 3, "step": 0.1, "default": 1.0 },
       { "id": "reactMid", "label": "中音反応 (色相変化)", "type": "range", "min": 0, "max": 360, "step": 1, "default": 90 },
-      { "id": "reactHigh", "label": "高音反応 (線の太さ)", "type": "range", "min": 0, "max": 100, "step": 1, "default": 20 }
+      { "id": "reactHigh", "label": "高音反応 (線の太さ)", "type": "range", "min": 0, "max": 100, "step": 1, "default": 20 },
+      { "id": "shiftX", "label": "Shift X", "type": "range", "min": -100, "max": 100, "step": 1, "default": 0 },
+      { "id": "shiftY", "label": "Shift Y", "type": "range", "min": -100, "max": 100, "step": 1, "default": 0 }
     ]
   </script>
 
@@ -25,7 +27,7 @@
     const circle = document.getElementById('circle');
     
     // 初期パラメータ
-    let params = { size: 200, thickness: 5, color: '#00ffff', reactLow: 1.0, reactMid: 90, reactHigh: 20 };
+    let params = { size: 200, thickness: 5, color: '#00ffff', reactLow: 1.0, reactMid: 90, reactHigh: 20, shiftX: 0, shiftY: 0 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 }; // 親グループの色
 
@@ -93,12 +95,15 @@
       // ★ 第二フェーズ：Modulo Math による色合成
       const mixedColor = calculateModColor(params.color, groupColorRgb);
 
+      const shiftOffsetX = (params.shiftX || 0) / 100 * (window.innerWidth / 2);
+      const shiftOffsetY = (params.shiftY || 0) / 100 * (window.innerHeight / 2);
+      
       // 3. DOM適用
       circle.style.width = `${params.size}px`;
       circle.style.height = `${params.size}px`;
       circle.style.borderColor = mixedColor; // 合成された色を適用
       circle.style.borderWidth = `${currentThickness}px`;
-      circle.style.transform = `scale(${scale})`;
+      circle.style.transform = `translate(${shiftOffsetX}px, ${shiftOffsetY}px) scale(${scale})`;
       circle.style.filter = `hue-rotate(${hueRotation}deg)`;
 
       requestAnimationFrame(render);

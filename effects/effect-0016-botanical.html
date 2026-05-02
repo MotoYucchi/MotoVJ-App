@@ -92,6 +92,24 @@
             "max": 360,
             "step": 1,
             "default": 90
+      },
+      {
+            "id": "shiftX",
+            "label": "Shift X",
+            "type": "range",
+            "min": -100,
+            "max": 100,
+            "step": 1,
+            "default": 0
+      },
+      {
+            "id": "shiftY",
+            "label": "Shift Y",
+            "type": "range",
+            "min": -100,
+            "max": 100,
+            "step": 1,
+            "default": 0
       }
     ]
   </script>
@@ -110,7 +128,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { layout: "Bottom", opacity: 1.0, color: "#00ff44", lineThickness: 1.0, reactLow: 1.5, reactMid: 1.0, reactHigh: 1.0, hueSource: "None", hueAmount: 90 };
+    let params = { layout: "Bottom", opacity: 1.0, color: "#00ff44", lineThickness: 1.0, reactLow: 1.5, reactMid: 1.0, reactHigh: 1.0, hueSource: "None", hueAmount: 90, shiftX: 0, shiftY: 0 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let time = 0;
@@ -253,13 +271,16 @@
       
       let baseLength = (height * 0.15) * (1 + bass * params.reactLow);
 
+      const shiftOffsetX = (params.shiftX || 0) / 100 * cx;
+      const shiftOffsetY = (params.shiftY || 0) / 100 * cy;
+
       if (params.layout === "Bottom") {
-        drawBranch(cx, height, baseLength, -Math.PI / 2, 0, maxDepth, bass, mid, high, drawColor);
+        drawBranch(cx + shiftOffsetX, height + shiftOffsetY, baseLength, -Math.PI / 2, 0, maxDepth, bass, mid, high, drawColor);
       } else if (params.layout === "Center") {
         let numBranches = 6;
         for (let i = 0; i < numBranches; i++) {
           let angle = (Math.PI * 2 / numBranches) * i + time * 0.5;
-          drawBranch(cx, cy, baseLength * 0.8, angle, 0, maxDepth - 1, bass, mid, high, drawColor);
+          drawBranch(cx + shiftOffsetX, cy + shiftOffsetY, baseLength * 0.8, angle, 0, maxDepth - 1, bass, mid, high, drawColor);
         }
       }
 

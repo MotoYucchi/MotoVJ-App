@@ -62,7 +62,8 @@
           wrapper.style.mixBlendMode = layer.blend || 'normal';
 
           const iframe = document.createElement('iframe');
-          iframe.src = layer.effectUrl;
+          // キャッシュ回避のためクエリパラメータを付与
+          iframe.src = layer.effectUrl + '?t=' + Date.now();
           
           iframe.onload = () => {
             // ロード完了時にデータを送る
