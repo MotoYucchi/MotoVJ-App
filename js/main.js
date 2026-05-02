@@ -116,6 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const idx = deck.findIndex(g => g.id === groupId);
       if (idx !== -1) {
         presetData.id = groupId; 
+        
+        // グループのMaster Opacityのみ元の値を維持する
+        if (deck[idx].params && deck[idx].params.opacity !== undefined) {
+          if (!presetData.params) presetData.params = {};
+          presetData.params.opacity = deck[idx].params.opacity;
+        }
+
         deck[idx] = presetData;
         VJStorage.save(deckId);
         window.syncDeck(deckId);

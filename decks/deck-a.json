@@ -5,7 +5,7 @@
     "params": {
       "scale": 1,
       "color": "#0a1a0a",
-      "opacity": 1
+      "opacity": "1"
     },
     "layers": [
       {
@@ -48,6 +48,23 @@
           "reactHigh": 2,
           "hueSource": "High",
           "hueAmount": 325
+        }
+      },
+      {
+        "id": "layer-1777686440920",
+        "name": "Equalizer",
+        "effectUrl": "effects/effect-0003-visualizer.html",
+        "params": {
+          "shape": "Equalizer",
+          "color": "#ff7a15",
+          "opacity": 1,
+          "sensitivity": 1,
+          "beatAnim": "None",
+          "reactLow": 1,
+          "hueSource": "High",
+          "hueAmount": -14,
+          "shiftX": 0,
+          "shiftY": -82
         }
       },
       {
@@ -98,7 +115,9 @@
           "beatAnim": "Flash",
           "reactLow": 1,
           "hueSource": "High",
-          "hueAmount": 144
+          "hueAmount": 144,
+          "shiftX": 0,
+          "shiftY": 0
         }
       },
       {
@@ -139,14 +158,6 @@
           "hueAmount": 90,
           "shiftX": 0,
           "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-1777686440920",
-        "name": "0003 Visualizer",
-        "effectUrl": "effects/effect-0003-visualizer.html",
-        "params": {
-          "shape": "Equalizer"
         }
       }
     ]

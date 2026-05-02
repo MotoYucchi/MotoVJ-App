@@ -50,6 +50,23 @@
       }
     },
     {
+      "id": "layer-1777686440920",
+      "name": "Equalizer",
+      "effectUrl": "effects/effect-0003-visualizer.html",
+      "params": {
+        "shape": "Equalizer",
+        "color": "#ff7a15",
+        "opacity": 1,
+        "sensitivity": 1,
+        "beatAnim": "None",
+        "reactLow": 1,
+        "hueSource": "High",
+        "hueAmount": -14,
+        "shiftX": 0,
+        "shiftY": -82
+      }
+    },
+    {
       "id": "layer-1777682762550",
       "name": "0002 Shapes Left",
       "effectUrl": "effects/effect-0002-shapes.html",
@@ -81,7 +98,7 @@
         "reactHigh": 1,
         "hueSource": "Low",
         "hueAmount": 90,
-        "shiftX": 61,
+        "shiftX": "61",
         "shiftY": -7
       }
     },
@@ -97,7 +114,9 @@
         "beatAnim": "Flash",
         "reactLow": 1,
         "hueSource": "High",
-        "hueAmount": 144
+        "hueAmount": 144,
+        "shiftX": 0,
+        "shiftY": 0
       }
     },
     {
