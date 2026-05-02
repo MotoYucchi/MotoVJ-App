@@ -117,11 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (idx !== -1) {
         presetData.id = groupId; 
         
-        // グループのMaster Opacityのみ元の値を維持する
-        if (deck[idx].params && deck[idx].params.opacity !== undefined) {
-          if (!presetData.params) presetData.params = {};
-          presetData.params.opacity = deck[idx].params.opacity;
-        }
+        // 現在のグループのopacityを取得（設定されていなければ1.0とする）
+        const currentOpacity = (deck[idx].params && deck[idx].params.opacity !== undefined) ? deck[idx].params.opacity : 1.0;
+        
+        if (!presetData.params) presetData.params = {};
+        // プリセットのopacityを現在の値で必ず上書きする（プリセットに1が含まれていても無視）
+        presetData.params.opacity = currentOpacity;
 
         deck[idx] = presetData;
         VJStorage.save(deckId);
@@ -137,11 +138,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const presetName = prompt("Preset Name:", group.name);
     if (!presetName) return;
 
+    // 保存用データを作成し、opacityは保存しないように削除する
+    const groupToSave = JSON.parse(JSON.stringify(group));
+    if (groupToSave.params && groupToSave.params.opacity !== undefined) {
+      delete groupToSave.params.opacity;
+    }
+
     try {
       const res = await fetch(`/save_preset/${presetName}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(group)
+        body: JSON.stringify(groupToSave)
       });
       if (res.ok) {
         alert("Preset Saved!");
