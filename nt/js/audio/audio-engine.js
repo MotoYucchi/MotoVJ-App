@@ -12,8 +12,28 @@ window.VJAudio = (() => {
   async function start() {
     if (_active) return;
     try {
-      _stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      _audioCtx = new AudioContext();
+      if (_audioCtx.state === 'suspended') {
+        await _audioCtx.resume();
+      }
+
+      if (navigator.mediaDevices === undefined) {
+        navigator.mediaDevices = {};
+      }
+      if (navigator.mediaDevices.getUserMedia === undefined) {
+        navigator.mediaDevices.getUserMedia = function(constraints) {
+          var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+          if (!getUserMedia) {
+            return Promise.reject(new Error('スマホブラウザ等のセキュリティ制限により、マイクを使用できません。https:// でアクセスするか、localhostである必要があります。(getUserMedia is not implemented)'));
+          }
+          return new Promise(function(resolve, reject) {
+            getUserMedia.call(navigator, constraints, resolve, reject);
+          });
+        }
+      }
+
+      _stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
       const source = _audioCtx.createMediaStreamSource(_stream);
       _analyser = _audioCtx.createAnalyser();
       _analyser.fftSize = _fftSize;

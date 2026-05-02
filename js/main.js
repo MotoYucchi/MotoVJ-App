@@ -173,6 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
           </button>
         </div>
       </div>
+      <div class="group-master-opacity" style="padding: 6px 12px; background: #262626; border-bottom: 1px solid #111; display: flex; align-items: center; gap: 10px;">
+        <label style="font-size: 11px; color: #ddd; white-space: nowrap; font-weight: bold;">Master Opacity</label>
+        <input type="range" min="0" max="1" step="0.01" value="${group.params.opacity !== undefined ? group.params.opacity : 1.0}" 
+          data-deck="${deckId}" data-group="${group.id}" data-param="opacity"
+          oninput="updateParamFromUI('${deckId}', '${group.id}', null, 'opacity', this.value)" style="flex: 1; cursor: pointer; accent-color: #00ffcc;">
+      </div>
       <div class="group-content">
         <div class="group-master-params">
            <label>G-Scale</label>

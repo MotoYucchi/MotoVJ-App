@@ -124,6 +124,7 @@
             const groupEl = groupElements[msg.groupId];
             if (groupEl) {
               if (msg.paramId === 'scale') groupEl.style.transform = `scale(${msg.value})`;
+              else if (msg.paramId === 'opacity') groupEl.style.opacity = msg.value;
               else if (msg.paramId === 'color') {
                 Object.keys(iframes).forEach(lId => {
                   if (iframes[lId].groupId === msg.groupId) {
