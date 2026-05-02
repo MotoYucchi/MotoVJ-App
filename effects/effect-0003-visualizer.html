@@ -94,6 +94,24 @@
             "max": 360,
             "step": 1,
             "default": 90
+      },
+      {
+            "id": "shiftX",
+            "label": "Shift X",
+            "type": "range",
+            "min": -100,
+            "max": 100,
+            "step": 1,
+            "default": 0
+      },
+      {
+            "id": "shiftY",
+            "label": "Shift Y",
+            "type": "range",
+            "min": -100,
+            "max": 100,
+            "step": 1,
+            "default": 0
       }
 ]
   </script>
@@ -112,7 +130,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { shape: "Bar", color: "#ff4500", opacity: 1.0, sensitivity: 1.0, beatAnim: "None", reactLow: 1.0, hueSource: "None", hueAmount: 90 };
+    let params = { shape: "Bar", color: "#ff4500", opacity: 1.0, sensitivity: 1.0, beatAnim: "None", reactLow: 1.0, hueSource: "None", hueAmount: 90, shiftX: 0, shiftY: 0 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let shockwaves = [];
@@ -136,7 +154,7 @@
       const msg = e.data;
       if (msg.type === 'param_update') {
         if (msg.paramId === 'baseA') document.body.style.opacity = msg.value;
-        params[msg.paramId] = (msg.paramId === 'color' || msg.paramId === 'shape' || msg.paramId === 'beatAnim') ? msg.value : Number(msg.value);
+        params[msg.paramId] = (['color', 'shape', 'beatAnim', 'hueSource'].includes(msg.paramId)) ? msg.value : Number(msg.value);
       } else if (msg.type === 'audio_data' && msg.fft) {
         currentFFT = msg.fft;
       } else if (msg.type === 'group_update') {
@@ -150,6 +168,10 @@
       const color = getMixedColor();
       
       ctx.save();
+      const shiftOffsetX = (params.shiftX || 0) / 100 * cx;
+      const shiftOffsetY = (params.shiftY || 0) / 100 * cy;
+      ctx.translate(shiftOffsetX, shiftOffsetY);
+      
       // Beat Animation
       if (params.beatAnim === "Scale") {
         const s = 1 + (bass * params.reactLow * 0.2);

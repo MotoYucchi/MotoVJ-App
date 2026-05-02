@@ -140,6 +140,14 @@
           "shiftX": 0,
           "shiftY": 0
         }
+      },
+      {
+        "id": "layer-1777686440920",
+        "name": "0003 Visualizer",
+        "effectUrl": "effects/effect-0003-visualizer.html",
+        "params": {
+          "shape": "Equalizer"
+        }
       }
     ]
   }
