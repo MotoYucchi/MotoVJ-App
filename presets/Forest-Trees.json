@@ -1,0 +1,156 @@
+{
+  "id": "group-1777688166412",
+  "name": "Forest Trees",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-1777688363929",
+      "name": "Circle center",
+      "effectUrl": "effects/effect-0011-polygon.html",
+      "params": {
+        "baseSize": 150,
+        "baseThick": 25,
+        "opacity": 0.8,
+        "color": "#00f86f",
+        "lowSize": 1.4,
+        "lowHue": 218,
+        "lowThick": 50,
+        "midSize": 1.5,
+        "midHue": 196,
+        "midThick": 50,
+        "highSize": 1.3,
+        "highHue": 274,
+        "highThick": 50,
+        "subBass": 69,
+        "ultraHigh": 86,
+        "beatAnim": "Pulse",
+        "hueSource": "High",
+        "hueAmount": 360,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-1777688675684",
+      "name": "Circle left",
+      "effectUrl": "effects/effect-0011-polygon.html",
+      "params": {
+        "baseSize": 92,
+        "baseThick": 25,
+        "opacity": 0.8,
+        "color": "#0aff50",
+        "lowSize": 1.4,
+        "lowHue": 218,
+        "lowThick": 50,
+        "midSize": 1.5,
+        "midHue": 196,
+        "midThick": 50,
+        "highSize": 1.3,
+        "highHue": 274,
+        "highThick": 50,
+        "subBass": 69,
+        "ultraHigh": 86,
+        "beatAnim": "Pulse",
+        "hueSource": "High",
+        "hueAmount": 269,
+        "shiftX": -41,
+        "shiftY": -41
+      }
+    },
+    {
+      "id": "layer-1777688781542",
+      "name": "Circle right",
+      "effectUrl": "effects/effect-0011-polygon.html",
+      "params": {
+        "baseSize": 92,
+        "baseThick": 25,
+        "opacity": 0.8,
+        "color": "#0aff50",
+        "lowSize": 1.4,
+        "lowHue": 218,
+        "lowThick": 50,
+        "midSize": 1.5,
+        "midHue": 196,
+        "midThick": 50,
+        "highSize": 1.3,
+        "highHue": 274,
+        "highThick": 50,
+        "subBass": 69,
+        "ultraHigh": 86,
+        "beatAnim": "Pulse",
+        "hueSource": "High",
+        "hueAmount": 269,
+        "shiftX": 38,
+        "shiftY": -41
+      }
+    },
+    {
+      "id": "layer-1777690439676",
+      "name": "Hard Song01 Radial",
+      "effectUrl": "effects/effect-hard-song01-radial.html",
+      "params": {
+        "speed": 4.9,
+        "intensity": 1.34,
+        "glitch": 0.7,
+        "flash": 0.02,
+        "mode": "radial",
+        "hueSource": "High",
+        "hueAmount": 208
+      }
+    },
+    {
+      "id": "layer-1777688846805",
+      "name": "0005 Ambient",
+      "effectUrl": "effects/effect-0005-ambient.html",
+      "params": {
+        "mode": "ReactiveVignette",
+        "opacity": "0.83",
+        "color": "#ffdadb",
+        "reactLow": "1.2",
+        "reactMid": "2.6",
+        "reactHigh": "2.5",
+        "hueSource": "High",
+        "hueAmount": "-345"
+      }
+    },
+    {
+      "id": "layer-1777688318942",
+      "name": "Tree right",
+      "effectUrl": "effects/effect-0016-botanical.html",
+      "params": {
+        "layout": "Bottom",
+        "opacity": 1,
+        "color": "#b51a00",
+        "lineThickness": 1,
+        "reactLow": 0.7,
+        "reactMid": 1.6,
+        "reactHigh": 1,
+        "hueSource": "Low",
+        "hueAmount": 340,
+        "shiftX": 61,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-1777688178705",
+      "name": "Tree left",
+      "effectUrl": "effects/effect-0016-botanical.html",
+      "params": {
+        "layout": "Bottom",
+        "opacity": 1,
+        "color": "#b51a00",
+        "lineThickness": 1,
+        "reactLow": 0.7,
+        "reactMid": 1.6,
+        "reactHigh": 1,
+        "hueSource": "Low",
+        "hueAmount": 340,
+        "shiftX": -64,
+        "shiftY": 0
+      }
+    }
+  ]
+}

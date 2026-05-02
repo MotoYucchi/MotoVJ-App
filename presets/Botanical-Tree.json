@@ -3,10 +3,24 @@
   "name": "Botanical Tree",
   "params": {
     "scale": 1,
-    "color": "#0a1a0a",
-    "opacity": 1
+    "color": "#0a1a0a"
   },
   "layers": [
+    {
+      "id": "layer-1777692301574",
+      "name": "Circle Center",
+      "effectUrl": "effects/effect-0000-circle.html",
+      "params": {
+        "size": 198,
+        "thickness": 36,
+        "color": "#14d100",
+        "reactLow": 3,
+        "reactMid": 353,
+        "reactHigh": 7,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
     {
       "id": "layer-forest-wave",
       "name": "Forest Flow",
@@ -50,6 +64,21 @@
       }
     },
     {
+      "id": "layer-1777692099376",
+      "name": "0000 Circle",
+      "effectUrl": "effects/effect-0000-circle.html",
+      "params": {
+        "size": 547,
+        "thickness": 36,
+        "color": "#14d100",
+        "reactLow": 3,
+        "reactMid": 353,
+        "reactHigh": 7,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
       "id": "layer-1777686440920",
       "name": "Equalizer",
       "effectUrl": "effects/effect-0003-visualizer.html",
@@ -74,32 +103,32 @@
         "shape": "Cube",
         "speed": 0,
         "opacity": 1,
-        "color": "#8acc66",
+        "color": "#0056d6",
         "reactLow": 1.5,
         "reactMid": 1,
         "reactHigh": 1,
         "hueSource": "Low",
-        "hueAmount": 90,
+        "hueAmount": 306,
         "shiftX": -61,
         "shiftY": -7
       }
     },
     {
-      "id": "layer-1777683573974",
+      "id": "layer-1777689678612",
       "name": "0002 Shapes Right",
       "effectUrl": "effects/effect-0002-shapes.html",
       "params": {
         "shape": "Cube",
         "speed": 0,
         "opacity": 1,
-        "color": "#8acc66",
+        "color": "#0056d6",
         "reactLow": 1.5,
         "reactMid": 1,
         "reactHigh": 1,
         "hueSource": "Low",
-        "hueAmount": 90,
-        "shiftX": "61",
-        "shiftY": -7
+        "hueAmount": 306,
+        "shiftX": 58,
+        "shiftY": -4
       }
     },
     {

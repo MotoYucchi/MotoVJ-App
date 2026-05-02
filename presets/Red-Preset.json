@@ -1,0 +1,134 @@
+{
+  "id": "group-1777690713933",
+  "name": "Red Preset",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-1777691345094",
+      "name": "Hard Song01 Radial",
+      "effectUrl": "effects/effect-hard-song01-radial.html",
+      "params": {
+        "speed": 4.7,
+        "intensity": 0.22,
+        "glitch": 0.99,
+        "flash": 0.02,
+        "mode": "bars",
+        "hueSource": "Low",
+        "hueAmount": 360
+      }
+    },
+    {
+      "id": "layer-1777690809353",
+      "name": "Dot wave",
+      "effectUrl": "effects/effect-0004-utility.html",
+      "params": {
+        "mode": "DotWave",
+        "feedback": 0.86,
+        "opacity": 1,
+        "speed": 2.5,
+        "color": "#3c071b",
+        "intensity": 1,
+        "reactLow": 1.5,
+        "hueSource": "Low",
+        "hueAmount": 54,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-1777691486507",
+      "name": "Botanical Left",
+      "effectUrl": "effects/effect-0016-botanical.html",
+      "params": {
+        "layout": "Center",
+        "opacity": 1,
+        "color": "#e63b7a",
+        "lineThickness": 2.7,
+        "reactLow": 0,
+        "reactMid": 0.9,
+        "reactHigh": 2.5,
+        "hueSource": "Mid",
+        "hueAmount": 90,
+        "shiftX": -64,
+        "shiftY": -35
+      }
+    },
+    {
+      "id": "layer-1777691631849",
+      "name": "Botanical Right",
+      "effectUrl": "effects/effect-0016-botanical.html",
+      "params": {
+        "layout": "Center",
+        "opacity": 1,
+        "color": "#e63b7a",
+        "lineThickness": 2.7,
+        "reactLow": 0,
+        "reactMid": 0.9,
+        "reactHigh": 2.5,
+        "hueSource": "Mid",
+        "hueAmount": 90,
+        "shiftX": 62,
+        "shiftY": -35
+      }
+    },
+    {
+      "id": "layer-1777690722718",
+      "name": "GeneTunnel",
+      "effectUrl": "effects/effect-0001-generator.html",
+      "params": {
+        "shape": "Tunnel",
+        "speed": 1,
+        "opacity": 1,
+        "color": "#b51a00",
+        "beatAnim": "None",
+        "reactLow": 0.7,
+        "reactMid": 2.9,
+        "reactHigh": 5,
+        "hueSource": "None",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-1777691206434",
+      "name": "CodeRain",
+      "effectUrl": "effects/effect-0002-shapes.html",
+      "params": {
+        "shape": "CodeRain",
+        "speed": 0.6,
+        "opacity": 1,
+        "color": "#01c7fc",
+        "reactLow": 5,
+        "reactMid": 2.1,
+        "reactHigh": 2.8,
+        "hueSource": "Low",
+        "hueAmount": 156,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-1777691733509",
+      "name": "Grid frame",
+      "effectUrl": "effects/effect-0001-generator.html",
+      "params": {
+        "shape": "Grid",
+        "speed": 3.8,
+        "opacity": 1,
+        "color": "#ff6250",
+        "beatAnim": "None",
+        "reactLow": 5,
+        "reactMid": 5,
+        "reactHigh": 5,
+        "hueSource": "None",
+        "hueAmount": -238,
+        "shiftX": 0,
+        "shiftY": 19
+      }
+    }
+  ]
+}

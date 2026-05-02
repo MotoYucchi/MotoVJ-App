@@ -1,10 +1,9 @@
-﻿{
-  "id": "group-1772119272061",
+{
+  "id": "group-1777685718003",
   "name": "BI",
   "params": {
     "scale": 1,
-    "color": "#000000",
-    "opacity": 1
+    "color": "#000000"
   },
   "layers": [
     {
@@ -22,7 +21,11 @@
         "baseR": 0,
         "baseG": 206.81102362204726,
         "baseB": 255,
-        "baseA": 1
+        "baseA": 1,
+        "hueSource": "None",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
       }
     },
     {
@@ -39,57 +42,11 @@
         "baseR": 0,
         "baseG": 206.81102362204726,
         "baseB": 255,
-        "baseA": 1
-      }
-    },
-    {
-      "id": "layer-1772125104690",
-      "name": "Grid",
-      "effectUrl": "effects/effect-0001-generator.html",
-      "params": {
-        "shape": "Grid",
-        "speed": -2.8,
-        "opacity": 0.87,
-        "color": "#007cdb",
-        "beatAnim": "Scale",
-        "reactLow": 2.9,
-        "reactMid": 3.3,
-        "reactHigh": 4.9,
-        "baseR": 0,
-        "baseG": 206.81102362204726,
-        "baseB": 255,
-        "baseA": 1
-      }
-    },
-    {
-      "id": "layer-1772125830464",
-      "name": "Rect",
-      "effectUrl": "effects/effect-0007.html",
-      "params": {
-        "size": 393,
-        "thickness": 16,
-        "opacity": 0.44,
-        "color": "#a591f8",
-        "reactLow": 1.7,
-        "baseR": 0,
-        "baseG": 206.81102362204726,
-        "baseB": 255,
-        "baseA": 1
-      }
-    },
-    {
-      "id": "layer-1772125881590",
-      "name": "n1",
-      "effectUrl": "effects/effect-0010.html",
-      "params": {
-        "size": 174,
-        "sides": 6,
-        "opacity": 0.8,
-        "color": "#9900ff",
-        "baseR": 0,
-        "baseG": 206.81102362204726,
-        "baseB": 255,
-        "baseA": 1
+        "baseA": 1,
+        "hueSource": "None",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
       }
     },
     {
@@ -116,7 +73,11 @@
         "baseR": 0,
         "baseG": 206.81102362204726,
         "baseB": 255,
-        "baseA": 1
+        "baseA": 1,
+        "hueSource": "None",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
       }
     },
     {
@@ -133,7 +94,9 @@
         "baseR": 0,
         "baseG": 206.81102362204726,
         "baseB": 255,
-        "baseA": 1
+        "baseA": 1,
+        "hueSource": "None",
+        "hueAmount": 90
       }
     },
     {
@@ -157,18 +120,42 @@
         "baseR": 0,
         "baseG": 206.81102362204726,
         "baseB": 255,
-        "baseA": 1
+        "baseA": 1,
+        "hueSource": "None",
+        "hueAmount": 90
       }
     },
     {
       "id": "layer-1774540741580",
-      "name": "New Layer",
+      "name": "Strobe",
       "effectUrl": "effects/effect-hard-song01-radial.html",
       "params": {
         "flash": "0.03",
         "glitch": "0.64",
         "intensity": "1.08",
-        "speed": "1.9"
+        "speed": "1.9",
+        "mode": "radial",
+        "hueSource": "None",
+        "hueAmount": 90
+      }
+    },
+    {
+      "id": "layer-1777689990506",
+      "name": "GeneLissajous",
+      "effectUrl": "effects/effect-0001-generator.html",
+      "params": {
+        "shape": "Lissajous",
+        "speed": 5,
+        "opacity": 0.74,
+        "color": "#3a87fe",
+        "beatAnim": "None",
+        "reactLow": 2.3,
+        "reactMid": 2.2,
+        "reactHigh": 5,
+        "hueSource": "High",
+        "hueAmount": 334,
+        "shiftX": 0,
+        "shiftY": 6
       }
     }
   ]

@@ -3,8 +3,7 @@
   "name": "Background Group",
   "params": {
     "scale": 2.7,
-    "color": "#330033",
-    "opacity": 1
+    "color": "#330033"
   },
   "layers": [
     {
@@ -43,7 +42,9 @@
         "baseB": 255,
         "baseA": 1,
         "hueSource": "None",
-        "hueAmount": 90
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
       }
     },
     {
@@ -166,6 +167,25 @@
         "hueAmount": 341,
         "shiftX": -10,
         "shiftY": -6
+      }
+    },
+    {
+      "id": "layer-1777687967212",
+      "name": "Sphere",
+      "effectUrl": "effects/effect-0012-wireframe3d.html",
+      "params": {
+        "shape": "Grid-Sphere",
+        "speed": 1,
+        "opacity": 1,
+        "color": "#32fff6",
+        "axisX": 244,
+        "axisY": 16,
+        "reactLow": 0,
+        "reactMid": 3.3,
+        "reactHigh": 9.1,
+        "beatAnim": "Pulse",
+        "hueSource": "High",
+        "hueAmount": 345
       }
     }
   ]
