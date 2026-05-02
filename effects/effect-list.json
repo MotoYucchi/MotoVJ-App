@@ -44,6 +44,10 @@
     "url": "effects/effect-0015-kawaii.html"
   },
   {
+    "name": "0016 Botanical",
+    "url": "effects/effect-0016-botanical.html"
+  },
+  {
     "name": "Chill01 Flowwave",
     "url": "effects/effect-chill01-flowwave.html"
   },
@@ -58,9 +62,5 @@
   {
     "name": "Hard Song01 Radial",
     "url": "effects/effect-hard-song01-radial.html"
-  },
-  {
-    "name": "0016 Botanical",
-    "url": "effects/effect-0016-botanical.html"
   }
 ]
