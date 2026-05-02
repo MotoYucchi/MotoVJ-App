@@ -1,31 +1,96 @@
-﻿{
-  "id": "chill-aurora",
+{
+  "id": "group-1777670243618",
   "name": "Chill Aurora",
-  "params": { "scale": 1.0, "color": "#000000", "opacity": 1.0 },
+  "params": {
+    "scale": 1,
+    "color": "#000000",
+    "opacity": 1
+  },
   "layers": [
     {
       "id": "layer-aurora-wave1",
       "name": "Aurora Green",
       "effectUrl": "effects/effect-chill01-flowwave.html",
-      "params": { "baseR": 30, "baseG": 200, "baseB": 120, "baseA": 0.7, "opacity": 0.5, "color": "#22cc88", "speed": 0.4, "waveCount": 3, "waveHeight": 120, "reactLow": 1.5, "reactMid": 1.0, "reactHigh": 0.6 }
+      "params": {
+        "baseR": 30,
+        "baseG": 200,
+        "baseB": 120,
+        "baseA": 0.7,
+        "opacity": 0.5,
+        "color": "#22cc88",
+        "speed": 0.4,
+        "waveCount": 3,
+        "waveHeight": 120,
+        "reactLow": 1.5,
+        "reactMid": 1,
+        "reactHigh": 0.6,
+        "hueSource": "None",
+        "hueAmount": 90
+      }
     },
     {
       "id": "layer-aurora-wave2",
       "name": "Aurora Purple",
       "effectUrl": "effects/effect-chill01-flowwave.html",
-      "params": { "baseR": 120, "baseG": 40, "baseB": 180, "baseA": 0.5, "opacity": 0.4, "color": "#8833bb", "speed": 0.3, "waveCount": 2, "waveHeight": 90, "reactLow": 1.0, "reactMid": 1.2, "reactHigh": 0.8 }
+      "params": {
+        "baseR": 120,
+        "baseG": 40,
+        "baseB": 180,
+        "baseA": 0.5,
+        "opacity": 0.4,
+        "color": "#8833bb",
+        "speed": 0.3,
+        "waveCount": 2,
+        "waveHeight": 90,
+        "reactLow": 1,
+        "reactMid": 1.2,
+        "reactHigh": 0.8,
+        "hueSource": "None",
+        "hueAmount": 90
+      }
     },
     {
       "id": "layer-aurora-ring",
       "name": "Aura Rings",
       "effectUrl": "effects/effect-chill03-auraring.html",
-      "params": { "baseR": 60, "baseG": 160, "baseB": 180, "baseA": 0.4, "opacity": 0.3, "color": "#44aacc", "speed": 0.15, "ringCount": 3, "ringSpacing": 100, "thickness": 1, "reactLow": 1.0, "reactMid": 0.8, "reactHigh": 2.0 }
+      "params": {
+        "baseR": 60,
+        "baseG": 160,
+        "baseB": 180,
+        "baseA": 0.4,
+        "opacity": 0.3,
+        "color": "#44aacc",
+        "speed": 0.15,
+        "ringCount": 3,
+        "ringSpacing": 100,
+        "thickness": 10,
+        "reactLow": 1,
+        "reactMid": 0.8,
+        "reactHigh": 2,
+        "hueSource": "Mid",
+        "hueAmount": 90
+      }
     },
     {
       "id": "layer-aurora-glow",
       "name": "Sky Glow",
       "effectUrl": "effects/effect-chill02-glowdrift.html",
-      "params": { "baseR": 40, "baseG": 130, "baseB": 150, "baseA": 0.3, "opacity": 0.25, "color": "#33aadd", "speed": 0.1, "count": 6, "sizeBase": 200, "reactLow": 0.5, "reactMid": 0.3, "reactHigh": 1.5 }
+      "params": {
+        "baseR": 40,
+        "baseG": 130,
+        "baseB": 150,
+        "baseA": 0.3,
+        "opacity": 0.98,
+        "color": "#33aadd",
+        "speed": 0.1,
+        "count": 22,
+        "sizeBase": 166,
+        "reactLow": 0.8,
+        "reactMid": 0.3,
+        "reactHigh": 2.1,
+        "hueSource": "Low",
+        "hueAmount": 90
+      }
     }
   ]
 }

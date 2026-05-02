@@ -1,25 +1,73 @@
-﻿{
-  "id": "chill-forest",
+{
+  "id": "group-1777670243618",
   "name": "Chill Forest",
-  "params": { "scale": 1.0, "color": "#0a1a0a", "opacity": 1.0 },
+  "params": {
+    "scale": 1,
+    "color": "#0a1a0a",
+    "opacity": 1
+  },
   "layers": [
     {
       "id": "layer-forest-wave",
       "name": "Forest Flow",
       "effectUrl": "effects/effect-chill01-flowwave.html",
-      "params": { "baseR": 30, "baseG": 140, "baseB": 60, "baseA": 0.7, "opacity": 0.6, "color": "#226644", "speed": 0.25, "waveCount": 4, "waveHeight": 60, "reactLow": 1.0, "reactMid": 1.0, "reactHigh": 0.8 }
+      "params": {
+        "baseR": 30,
+        "baseG": 140,
+        "baseB": 60,
+        "baseA": 0.7,
+        "opacity": 0.6,
+        "color": "#226644",
+        "speed": 0.95,
+        "waveCount": 4,
+        "waveHeight": 35,
+        "reactLow": 1,
+        "reactMid": 1.6,
+        "reactHigh": 0.8,
+        "hueSource": "None",
+        "hueAmount": 107
+      }
     },
     {
       "id": "layer-forest-orb",
       "name": "Firefly Drift",
       "effectUrl": "effects/effect-chill02-glowdrift.html",
-      "params": { "baseR": 80, "baseG": 200, "baseB": 80, "baseA": 0.6, "opacity": 0.5, "color": "#44cc66", "speed": 0.3, "count": 20, "sizeBase": 40, "reactLow": 0.8, "reactMid": 1.5, "reactHigh": 2.0 }
+      "params": {
+        "baseR": 80,
+        "baseG": 200,
+        "baseB": 80,
+        "baseA": 0.6,
+        "opacity": 0.5,
+        "color": "#44cc66",
+        "speed": 0.3,
+        "count": 20,
+        "sizeBase": 40,
+        "reactLow": 0.8,
+        "reactMid": 1.5,
+        "reactHigh": 2,
+        "hueSource": "High",
+        "hueAmount": 325
+      }
     },
     {
       "id": "layer-forest-gen",
       "name": "Tree Line",
       "effectUrl": "effects/effect-0002-shapes.html",
-      "params": { "baseR": 20, "baseG": 100, "baseB": 30, "baseA": 0.4, "shape": "FractalTree", "speed": 0.3, "opacity": 0.4, "color": "#228833", "reactLow": 0.5, "reactMid": 0.8, "reactHigh": 0.3 }
+      "params": {
+        "baseR": 20,
+        "baseG": 100,
+        "baseB": 30,
+        "baseA": 0.4,
+        "shape": "FractalTree",
+        "speed": 0.3,
+        "opacity": 0.53,
+        "color": "#228833",
+        "reactLow": 0.5,
+        "reactMid": 0.8,
+        "reactHigh": 0.3,
+        "hueSource": "High",
+        "hueAmount": 360
+      }
     }
   ]
 }

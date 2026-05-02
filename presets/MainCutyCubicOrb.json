@@ -1,5 +1,5 @@
-﻿{
-  "id": "group-b1",
+{
+  "id": "group-1777676020895",
   "name": "Background Group",
   "params": {
     "scale": 4.4,
@@ -12,30 +12,13 @@
       "effectUrl": "effects/effect-0000-circle.html",
       "name": "Back Circle",
       "params": {
-        "size": "505",
+        "size": 159,
         "color": "#f76464",
         "audioReact": 0.1,
-        "thickness": 12,
+        "thickness": 14,
         "reactLow": 1,
         "reactMid": 90,
         "reactHigh": 20,
-        "baseR": 0,
-        "baseG": 206.81102362204726,
-        "baseB": 255,
-        "baseA": 1
-      }
-    },
-    {
-      "id": "layer-1772119169021",
-      "name": "Utility",
-      "effectUrl": "effects/effect-0004-utility.html",
-      "params": {
-        "mode": "NoiseGlitch",
-        "feedback": 0.85,
-        "speed": 1.6,
-        "color": "#59978d",
-        "intensity": 1.7,
-        "reactLow": 2.3,
         "baseR": 0,
         "baseG": 206.81102362204726,
         "baseB": 255,
@@ -56,7 +39,9 @@
         "baseR": 0,
         "baseG": 206.81102362204726,
         "baseB": 255,
-        "baseA": 1
+        "baseA": 1,
+        "hueSource": "None",
+        "hueAmount": 90
       }
     },
     {
@@ -64,16 +49,18 @@
       "name": "grouputili",
       "effectUrl": "effects/effect-0005-ambient.html",
       "params": {
-        "mode": "ReactiveVignette",
-        "opacity": 0.34,
-        "color": "#eca1a1",
-        "reactLow": 3.2,
+        "mode": "GroupParticles",
+        "opacity": 0.65,
+        "color": "#ceeca2",
+        "reactLow": 4.4,
         "reactMid": 4.8,
         "reactHigh": 4.3,
         "baseR": 0,
         "baseG": 206.81102362204726,
         "baseB": 255,
-        "baseA": 1
+        "baseA": 1,
+        "hueSource": "Low",
+        "hueAmount": 180
       }
     },
     {
@@ -91,7 +78,9 @@
         "baseR": 0,
         "baseG": 206.81102362204726,
         "baseB": 255,
-        "baseA": 1
+        "baseA": 1,
+        "hueSource": "None",
+        "hueAmount": 90
       }
     },
     {
@@ -110,7 +99,9 @@
         "baseR": 0,
         "baseG": 206.81102362204726,
         "baseB": 255,
-        "baseA": 1
+        "baseA": 1,
+        "hueSource": "None",
+        "hueAmount": 90
       }
     }
   ]
