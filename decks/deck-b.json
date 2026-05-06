@@ -1,174 +1,11 @@
 [
   {
-    "id": "group-1777685718003",
-    "name": "BI",
-    "params": {
-      "scale": 1,
-      "color": "#000000",
-      "opacity": "1"
-    },
-    "layers": [
-      {
-        "id": "layer-1772119292579",
-        "name": "Cube",
-        "effectUrl": "effects/effect-0002-shapes.html",
-        "params": {
-          "shape": "Cube",
-          "speed": 3.3,
-          "opacity": 1,
-          "color": "#ff0040",
-          "reactLow": 3.1,
-          "reactMid": 3.6,
-          "reactHigh": 2.8,
-          "baseR": 0,
-          "baseG": 206.81102362204726,
-          "baseB": 255,
-          "baseA": 1,
-          "hueSource": "None",
-          "hueAmount": 90,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-1772121531071",
-        "name": "vi02",
-        "effectUrl": "effects/effect-0003-visualizer.html",
-        "params": {
-          "shape": "Waveform",
-          "color": "#ffb8b8",
-          "opacity": 1,
-          "sensitivity": 4.4,
-          "beatAnim": "None",
-          "reactLow": 2.4,
-          "baseR": 0,
-          "baseG": 206.81102362204726,
-          "baseB": 255,
-          "baseA": 1,
-          "hueSource": "None",
-          "hueAmount": 90,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-1772126108352",
-        "name": "sp-n1",
-        "effectUrl": "effects/effect-0011-polygon.html",
-        "params": {
-          "baseSize": 84,
-          "baseThick": 13,
-          "opacity": 0.8,
-          "color": "#4deb2d",
-          "lowSize": 5,
-          "lowHue": 335,
-          "lowThick": 39,
-          "midSize": 1.9,
-          "midHue": 138,
-          "midThick": 27,
-          "highSize": 5,
-          "highHue": 205,
-          "highThick": 36,
-          "subBass": 3,
-          "ultraHigh": 4,
-          "beatAnim": "Glitch",
-          "baseR": 0,
-          "baseG": 206.81102362204726,
-          "baseB": 255,
-          "baseA": 1,
-          "hueSource": "None",
-          "hueAmount": 90,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-1772128330889",
-        "name": "utili",
-        "effectUrl": "effects/effect-0005-ambient.html",
-        "params": {
-          "mode": "GroupParticles",
-          "opacity": 0.82,
-          "color": "#b020fe",
-          "reactLow": 4.3,
-          "reactMid": 5,
-          "reactHigh": 4.2,
-          "baseR": 0,
-          "baseG": 206.81102362204726,
-          "baseB": 255,
-          "baseA": 1,
-          "hueSource": "None",
-          "hueAmount": 90
-        }
-      },
-      {
-        "id": "layer-1772131327808",
-        "name": "Pop",
-        "effectUrl": "effects/effect-0015-kawaii.html",
-        "params": {
-          "motif": "Mix",
-          "layout": "Burst",
-          "color1": "#42d0ff",
-          "color2": "#fff199",
-          "color3": "#ffb8c9",
-          "opacity": 0.38,
-          "afterimage": 0.99,
-          "speed": 2.8,
-          "waveAmp": 50,
-          "lowReactSize": 2,
-          "lowReactSpawn": 5.6,
-          "midReactHue": 316,
-          "highReactFlash": 4.8,
-          "baseR": 0,
-          "baseG": 206.81102362204726,
-          "baseB": 255,
-          "baseA": 1,
-          "hueSource": "None",
-          "hueAmount": 90
-        }
-      },
-      {
-        "id": "layer-1774540741580",
-        "name": "Strobe",
-        "effectUrl": "effects/effect-hard-song01-radial.html",
-        "params": {
-          "flash": "0.03",
-          "glitch": "0.64",
-          "intensity": "1.08",
-          "speed": "1.9",
-          "mode": "radial",
-          "hueSource": "None",
-          "hueAmount": 90
-        }
-      },
-      {
-        "id": "layer-1777689990506",
-        "name": "GeneLissajous",
-        "effectUrl": "effects/effect-0001-generator.html",
-        "params": {
-          "shape": "Lissajous",
-          "speed": 5,
-          "opacity": 0.74,
-          "color": "#3a87fe",
-          "beatAnim": "None",
-          "reactLow": 2.3,
-          "reactMid": 2.2,
-          "reactHigh": 5,
-          "hueSource": "High",
-          "hueAmount": 334,
-          "shiftX": 0,
-          "shiftY": 6
-        }
-      }
-    ]
-  },
-  {
     "id": "group-1772119272061",
     "name": "Background Group",
     "params": {
       "scale": 2.7,
       "color": "#330033",
-      "opacity": 0
+      "opacity": 1
     },
     "layers": [
       {
@@ -356,12 +193,147 @@
     ]
   },
   {
+    "id": "group-1777708762289",
+    "name": "Red Preset",
+    "params": {
+      "scale": 1,
+      "color": "#1e5c00",
+      "opacity": "0"
+    },
+    "layers": [
+      {
+        "id": "layer-1777691345094",
+        "name": "Hard Song01 Radial",
+        "effectUrl": "effects/effect-hard-song01-radial.html",
+        "params": {
+          "speed": 4.7,
+          "intensity": 0.22,
+          "glitch": 0.99,
+          "flash": 0.02,
+          "mode": "bars",
+          "hueSource": "Low",
+          "hueAmount": 360
+        }
+      },
+      {
+        "id": "layer-1777690809353",
+        "name": "NoiseGlitch",
+        "effectUrl": "effects/effect-0004-utility.html",
+        "params": {
+          "mode": "NoiseGlitch",
+          "feedback": 0.61,
+          "opacity": 1,
+          "speed": 0.2,
+          "color": "#07273b",
+          "intensity": 0.5,
+          "reactLow": 2.4,
+          "hueSource": "Low",
+          "hueAmount": 54,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-1777691486507",
+        "name": "Botanical Left",
+        "effectUrl": "effects/effect-0016-botanical.html",
+        "params": {
+          "layout": "Center",
+          "opacity": 1,
+          "color": "#e63b7a",
+          "lineThickness": 2.7,
+          "reactLow": 0,
+          "reactMid": 0.9,
+          "reactHigh": 2.5,
+          "hueSource": "Mid",
+          "hueAmount": 90,
+          "shiftX": -64,
+          "shiftY": -35
+        }
+      },
+      {
+        "id": "layer-1777691631849",
+        "name": "Botanical Right",
+        "effectUrl": "effects/effect-0016-botanical.html",
+        "params": {
+          "layout": "Center",
+          "opacity": 1,
+          "color": "#e63b7a",
+          "lineThickness": 2.7,
+          "reactLow": 0,
+          "reactMid": 0.9,
+          "reactHigh": 2.5,
+          "hueSource": "Mid",
+          "hueAmount": 90,
+          "shiftX": 62,
+          "shiftY": -35
+        }
+      },
+      {
+        "id": "layer-1777690722718",
+        "name": "GeneTunnel",
+        "effectUrl": "effects/effect-0001-generator.html",
+        "params": {
+          "shape": "Tunnel",
+          "speed": 1,
+          "opacity": 1,
+          "color": "#b51a00",
+          "beatAnim": "None",
+          "reactLow": 0.7,
+          "reactMid": 2.9,
+          "reactHigh": 5,
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-1777691206434",
+        "name": "CodeRain",
+        "effectUrl": "effects/effect-0002-shapes.html",
+        "params": {
+          "shape": "CodeRain",
+          "speed": 0.6,
+          "opacity": 1,
+          "color": "#01c7fc",
+          "reactLow": 5,
+          "reactMid": 2.1,
+          "reactHigh": 2.8,
+          "hueSource": "Low",
+          "hueAmount": 156,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-1777691733509",
+        "name": "Grid frame",
+        "effectUrl": "effects/effect-0001-generator.html",
+        "params": {
+          "shape": "Grid",
+          "speed": 3.8,
+          "opacity": 1,
+          "color": "#ff6250",
+          "beatAnim": "None",
+          "reactLow": 5,
+          "reactMid": 5,
+          "reactHigh": 5,
+          "hueSource": "None",
+          "hueAmount": -238,
+          "shiftX": 0,
+          "shiftY": 19
+        }
+      }
+    ]
+  },
+  {
     "id": "group-1777690235819",
     "name": "Main Group",
     "params": {
       "scale": "1.1",
       "color": "#14ff15",
-      "opacity": "0"
+      "opacity": 0
     },
     "layers": [
       {

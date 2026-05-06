@@ -1,0 +1,68 @@
+{
+  "id": "group-bass-deepdive",
+  "name": "Bass DeepDive",
+  "params": {
+    "scale": 1,
+    "color": "#440088",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "layer-deep-woofer1",
+      "name": "Deep Woofer",
+      "effectUrl": "effects/effect-bass04-woofer.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1,
+        "bassFreqLow": 0, "bassFreqHigh": 4,
+        "bassThreshold": 0.2, "bassSense": 2.0,
+        "coneSize": 300, "vibration": 25, "ringCount": 12,
+        "color": "#8844ff", "opacity": 0.9,
+        "hueSource": "Low", "hueAmount": 90,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-deep-tunnel1",
+      "name": "Abyss Tunnel",
+      "effectUrl": "effects/effect-bass08-tunnel.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.8,
+        "bassFreqLow": 0, "bassFreqHigh": 4,
+        "bassThreshold": 0.15, "bassSense": 1.5,
+        "speed": 0.6, "sides": 8, "depth": 20, "thickness": 1.5,
+        "afterimage": 0.95, "color": "#6633cc", "opacity": 0.7,
+        "hueSource": "Low", "hueAmount": 60,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-deep-ripple1",
+      "name": "Deep Ripple",
+      "effectUrl": "effects/effect-bass05-ripple.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.6,
+        "bassFreqLow": 0, "bassFreqHigh": 4,
+        "bassThreshold": 0.2, "bassSense": 1.8,
+        "rippleSpeed": 3, "rippleDecay": 0.005, "maxRipples": 8,
+        "thickness": 3, "cooldown": 200, "distort": 0.6,
+        "color": "#7744dd", "opacity": 0.6,
+        "hueSource": "None", "hueAmount": 90,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-deep-pulse1",
+      "name": "Sub Pulse",
+      "effectUrl": "effects/effect-bass01-pulsering.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.5,
+        "bassFreqLow": 0, "bassFreqHigh": 3,
+        "bassThreshold": 0.25, "bassSense": 2.0,
+        "ringCount": 2, "ringSpacing": 150, "thickness": 8,
+        "color": "#5522aa", "opacity": 0.5, "mode": "Single",
+        "hueSource": "Low", "hueAmount": 45,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

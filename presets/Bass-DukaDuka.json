@@ -1,0 +1,68 @@
+{
+  "id": "group-bass-dukaduka",
+  "name": "Bass DukaDuka",
+  "params": {
+    "scale": 1,
+    "color": "#ff00aa",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "layer-duka-pulse1",
+      "name": "Pulse Main",
+      "effectUrl": "effects/effect-bass01-pulsering.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1,
+        "bassFreqLow": 0, "bassFreqHigh": 8,
+        "bassThreshold": 0.08, "bassSense": 2.0,
+        "ringCount": 4, "ringSpacing": 60, "thickness": 5,
+        "color": "#ff00ff", "opacity": 1.0, "mode": "Multi",
+        "hueSource": "Low", "hueAmount": 120,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-duka-strobe1",
+      "name": "Kick Flash",
+      "effectUrl": "effects/effect-bass06-strobe.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.7,
+        "bassFreqLow": 0, "bassFreqHigh": 6,
+        "bassThreshold": 0.2, "bassSense": 1.5,
+        "flashDuration": 40, "cooldown": 60,
+        "color": "#ffffff", "opacity": 0.5, "shape": "Circle",
+        "hueSource": "None", "hueAmount": 90,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-duka-tunnel1",
+      "name": "Bass Tunnel",
+      "effectUrl": "effects/effect-bass08-tunnel.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.6,
+        "bassFreqLow": 0, "bassFreqHigh": 8,
+        "bassThreshold": 0.05, "bassSense": 1.8,
+        "speed": 1.5, "sides": 6, "depth": 12, "thickness": 2,
+        "afterimage": 0.92, "color": "#ff44aa", "opacity": 0.8,
+        "hueSource": "Low", "hueAmount": 180,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-duka-ripple1",
+      "name": "Ripple Accent",
+      "effectUrl": "effects/effect-bass05-ripple.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.5,
+        "bassFreqLow": 0, "bassFreqHigh": 8,
+        "bassThreshold": 0.15, "bassSense": 1.2,
+        "rippleSpeed": 8, "rippleDecay": 0.015, "maxRipples": 10,
+        "thickness": 1.5, "cooldown": 80, "distort": 0,
+        "color": "#ff88cc", "opacity": 0.6,
+        "hueSource": "None", "hueAmount": 90,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

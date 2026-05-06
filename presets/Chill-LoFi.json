@@ -1,0 +1,31 @@
+﻿{
+  "id": "chill-lofi",
+  "name": "Chill Lo-Fi",
+  "params": { "scale": 1.0, "color": "#0a0510", "opacity": 1.0 },
+  "layers": [
+    {
+      "id": "layer-lofi-circle",
+      "name": "Lo-Fi Circle",
+      "effectUrl": "effects/effect-0000-circle.html",
+      "params": { "baseR": 160, "baseG": 100, "baseB": 200, "baseA": 0.6, "size": 250, "thickness": 2, "color": "#aa66cc", "reactLow": 0.6, "reactMid": 60, "reactHigh": 8 }
+    },
+    {
+      "id": "layer-lofi-drift",
+      "name": "Bokeh Drift",
+      "effectUrl": "effects/effect-chill02-glowdrift.html",
+      "params": { "baseR": 180, "baseG": 120, "baseB": 160, "baseA": 0.5, "opacity": 0.35, "color": "#cc88aa", "speed": 0.2, "count": 18, "sizeBase": 60, "reactLow": 0.8, "reactMid": 0.5, "reactHigh": 2.5 }
+    },
+    {
+      "id": "layer-lofi-ring",
+      "name": "Vinyl Ring",
+      "effectUrl": "effects/effect-chill03-auraring.html",
+      "params": { "baseR": 100, "baseG": 60, "baseB": 140, "baseA": 0.4, "opacity": 0.4, "color": "#664488", "speed": 0.1, "ringCount": 2, "ringSpacing": 120, "thickness": 1.5, "reactLow": 0.8, "reactMid": 1.5, "reactHigh": 0.5 }
+    },
+    {
+      "id": "layer-lofi-wave",
+      "name": "Slow Wave",
+      "effectUrl": "effects/effect-chill01-flowwave.html",
+      "params": { "baseR": 140, "baseG": 80, "baseB": 180, "baseA": 0.3, "opacity": 0.3, "color": "#8844aa", "speed": 0.15, "waveCount": 2, "waveHeight": 40, "reactLow": 0.5, "reactMid": 0.5, "reactHigh": 0.3 }
+    }
+  ]
+}
