@@ -3,9 +3,9 @@
     "id": "group-1777690713933",
     "name": "Red Preset",
     "params": {
-      "scale": 1,
+      "scale": 1.7,
       "color": "#000000",
-      "opacity": "0.4"
+      "opacity": "0"
     },
     "layers": [
       {
@@ -135,12 +135,768 @@
     ]
   },
   {
-    "id": "group-1778042914462",
+    "id": "group-1778045717583",
+    "name": "Botanical Tree",
+    "params": {
+      "scale": 1,
+      "color": "#5dafee",
+      "opacity": "0"
+    },
+    "layers": [
+      {
+        "id": "layer-1777692301574",
+        "name": "Circle Center",
+        "effectUrl": "effects/effect-0000-circle.html",
+        "params": {
+          "size": 198,
+          "thickness": 36,
+          "color": "#14d100",
+          "reactLow": 3,
+          "reactMid": 353,
+          "reactHigh": 7,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-forest-wave",
+        "name": "Forest Flow",
+        "effectUrl": "effects/effect-chill01-flowwave.html",
+        "params": {
+          "baseR": 30,
+          "baseG": 140,
+          "baseB": 60,
+          "baseA": 0.7,
+          "opacity": 0.6,
+          "color": "#226644",
+          "speed": 0.95,
+          "waveCount": 4,
+          "waveHeight": 35,
+          "reactLow": 1,
+          "reactMid": 1.6,
+          "reactHigh": 0.8,
+          "hueSource": "None",
+          "hueAmount": 107
+        }
+      },
+      {
+        "id": "layer-forest-orb",
+        "name": "Firefly Drift",
+        "effectUrl": "effects/effect-chill02-glowdrift.html",
+        "params": {
+          "baseR": 80,
+          "baseG": 200,
+          "baseB": 80,
+          "baseA": 0.6,
+          "opacity": 0.5,
+          "color": "#44cc66",
+          "speed": 0.3,
+          "count": 20,
+          "sizeBase": 40,
+          "reactLow": 0.8,
+          "reactMid": 1.5,
+          "reactHigh": 2,
+          "hueSource": "High",
+          "hueAmount": 325
+        }
+      },
+      {
+        "id": "layer-1777692099376",
+        "name": "0000 Circle",
+        "effectUrl": "effects/effect-0000-circle.html",
+        "params": {
+          "size": 547,
+          "thickness": 36,
+          "color": "#14d100",
+          "reactLow": 3,
+          "reactMid": 353,
+          "reactHigh": 7,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-1777686440920",
+        "name": "Equalizer",
+        "effectUrl": "effects/effect-0003-visualizer.html",
+        "params": {
+          "shape": "Equalizer",
+          "color": "#ff7a15",
+          "opacity": 1,
+          "sensitivity": 1,
+          "beatAnim": "None",
+          "reactLow": 1,
+          "hueSource": "High",
+          "hueAmount": -14,
+          "shiftX": 0,
+          "shiftY": -82
+        }
+      },
+      {
+        "id": "layer-1777682762550",
+        "name": "0002 Shapes Left",
+        "effectUrl": "effects/effect-0002-shapes.html",
+        "params": {
+          "shape": "Cube",
+          "speed": 0,
+          "opacity": 1,
+          "color": "#0056d6",
+          "reactLow": 1.5,
+          "reactMid": 1,
+          "reactHigh": 1,
+          "hueSource": "Low",
+          "hueAmount": 306,
+          "shiftX": -61,
+          "shiftY": -7
+        }
+      },
+      {
+        "id": "layer-1777689678612",
+        "name": "0002 Shapes Right",
+        "effectUrl": "effects/effect-0002-shapes.html",
+        "params": {
+          "shape": "Cube",
+          "speed": 0,
+          "opacity": 1,
+          "color": "#0056d6",
+          "reactLow": 1.5,
+          "reactMid": 1,
+          "reactHigh": 1,
+          "hueSource": "Low",
+          "hueAmount": 306,
+          "shiftX": 58,
+          "shiftY": -4
+        }
+      },
+      {
+        "id": "layer-1777682632635",
+        "name": "0003 Visualizer",
+        "effectUrl": "effects/effect-0003-visualizer.html",
+        "params": {
+          "shape": "Bar",
+          "color": "#ff4500",
+          "opacity": 1,
+          "sensitivity": 1,
+          "beatAnim": "Flash",
+          "reactLow": 1,
+          "hueSource": "High",
+          "hueAmount": 144,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-forest-gen",
+        "name": "Tree Line",
+        "effectUrl": "effects/effect-0002-shapes.html",
+        "params": {
+          "baseR": 20,
+          "baseG": 100,
+          "baseB": 30,
+          "baseA": 0.4,
+          "shape": "FractalTree",
+          "speed": 0.3,
+          "opacity": 0.53,
+          "color": "#228833",
+          "reactLow": 0.5,
+          "reactMid": 0.8,
+          "reactHigh": 0.3,
+          "hueSource": "High",
+          "hueAmount": 360,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-1777682347503",
+        "name": "0016 Botanical",
+        "effectUrl": "effects/effect-0016-botanical.html",
+        "params": {
+          "layout": "Center",
+          "opacity": 1,
+          "color": "#00ff44",
+          "lineThickness": 8.4,
+          "reactLow": 0.8,
+          "reactMid": 1,
+          "reactHigh": 1,
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1778044247631",
+    "name": "BI",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-1772119292579",
+        "name": "Cube",
+        "effectUrl": "effects/effect-0002-shapes.html",
+        "params": {
+          "shape": "Cube",
+          "speed": 3.3,
+          "opacity": 1,
+          "color": "#ff0040",
+          "reactLow": 3.1,
+          "reactMid": 3.6,
+          "reactHigh": 2.8,
+          "baseR": 0,
+          "baseG": 206.81102362204726,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-1772121531071",
+        "name": "vi02",
+        "effectUrl": "effects/effect-0003-visualizer.html",
+        "params": {
+          "shape": "Waveform",
+          "color": "#ffb8b8",
+          "opacity": 1,
+          "sensitivity": 4.4,
+          "beatAnim": "None",
+          "reactLow": 2.4,
+          "baseR": 0,
+          "baseG": 206.81102362204726,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-1772126108352",
+        "name": "sp-n1",
+        "effectUrl": "effects/effect-0011-polygon.html",
+        "params": {
+          "baseSize": 84,
+          "baseThick": 13,
+          "opacity": 0.8,
+          "color": "#4deb2d",
+          "lowSize": 5,
+          "lowHue": 335,
+          "lowThick": 39,
+          "midSize": 1.9,
+          "midHue": 138,
+          "midThick": 27,
+          "highSize": 5,
+          "highHue": 205,
+          "highThick": 36,
+          "subBass": 3,
+          "ultraHigh": 4,
+          "beatAnim": "Glitch",
+          "baseR": 0,
+          "baseG": 206.81102362204726,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-1772128330889",
+        "name": "utili",
+        "effectUrl": "effects/effect-0005-ambient.html",
+        "params": {
+          "mode": "GroupParticles",
+          "opacity": 0.82,
+          "color": "#b020fe",
+          "reactLow": 4.3,
+          "reactMid": 5,
+          "reactHigh": 4.2,
+          "baseR": 0,
+          "baseG": 206.81102362204726,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-1772131327808",
+        "name": "Pop",
+        "effectUrl": "effects/effect-0015-kawaii.html",
+        "params": {
+          "motif": "Mix",
+          "layout": "Burst",
+          "color1": "#42d0ff",
+          "color2": "#fff199",
+          "color3": "#ffb8c9",
+          "opacity": 0.38,
+          "afterimage": 0.99,
+          "speed": 2.8,
+          "waveAmp": 50,
+          "lowReactSize": 2,
+          "lowReactSpawn": 5.6,
+          "midReactHue": 316,
+          "highReactFlash": 4.8,
+          "baseR": 0,
+          "baseG": 206.81102362204726,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-1774540741580",
+        "name": "Strobe",
+        "effectUrl": "effects/effect-hard-song01-radial.html",
+        "params": {
+          "flash": "0.03",
+          "glitch": "0.64",
+          "intensity": "1.08",
+          "speed": "1.9",
+          "mode": "radial",
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-1777689990506",
+        "name": "GeneLissajous",
+        "effectUrl": "effects/effect-0001-generator.html",
+        "params": {
+          "shape": "Lissajous",
+          "speed": 5,
+          "opacity": 0.74,
+          "color": "#3a87fe",
+          "beatAnim": "None",
+          "reactLow": 2.3,
+          "reactMid": 2.2,
+          "reactHigh": 5,
+          "hueSource": "High",
+          "hueAmount": 334,
+          "shiftX": 0,
+          "shiftY": 6
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1778044838762",
+    "name": "Background Group",
+    "params": {
+      "scale": 2.7,
+      "color": "#330033",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-b1",
+        "effectUrl": "effects/effect-0000-circle.html",
+        "name": "Back Circle",
+        "params": {
+          "size": 159,
+          "color": "#f76464",
+          "audioReact": 0.1,
+          "thickness": 14,
+          "reactLow": 1,
+          "reactMid": 90,
+          "reactHigh": 20,
+          "baseR": 0,
+          "baseG": 206.81102362204726,
+          "baseB": 255,
+          "baseA": 1,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-1772119096059",
+        "name": "Vi01",
+        "effectUrl": "effects/effect-0003-visualizer.html",
+        "params": {
+          "shape": "Radial",
+          "color": "#a600ff",
+          "opacity": 1,
+          "sensitivity": 3.5,
+          "beatAnim": "None",
+          "reactLow": 1.6,
+          "baseR": 0,
+          "baseG": 206.81102362204726,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-1777684977842",
+        "name": "0014 Bubble",
+        "effectUrl": "effects/effect-0014-bubble.html",
+        "params": {
+          "complexity": 6,
+          "particleCount": 154,
+          "opacity": 0.59,
+          "afterimage": 0.8,
+          "color1": "#ff00ff",
+          "color2": "#00ffff",
+          "color3": "#ffff00",
+          "pattern": "湧き出る",
+          "speed": 1,
+          "highReact": 1.5,
+          "midReact": 2,
+          "lowReact": 0.6,
+          "hueSource": "High",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-1777685036023",
+        "name": "Chill03 Auraring",
+        "effectUrl": "effects/effect-chill03-auraring.html",
+        "params": {
+          "opacity": "0.42",
+          "color": "#00d028",
+          "speed": 0.3,
+          "ringCount": 7,
+          "ringSpacing": 36,
+          "thickness": "8",
+          "reactLow": 0.8,
+          "reactMid": 4.1,
+          "reactHigh": 0.5,
+          "hueSource": "Mid",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-1772124840586",
+        "name": "grouputili",
+        "effectUrl": "effects/effect-0005-ambient.html",
+        "params": {
+          "mode": "GroupParticles",
+          "opacity": 0.65,
+          "color": "#ceeca2",
+          "reactLow": 4.4,
+          "reactMid": 4.8,
+          "reactHigh": 4.3,
+          "baseR": 0,
+          "baseG": 206.81102362204726,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "Low",
+          "hueAmount": 180
+        }
+      },
+      {
+        "id": "layer-1772132448747",
+        "name": "Particle",
+        "effectUrl": "effects/effect-0001-generator.html",
+        "params": {
+          "shape": "Starfield",
+          "speed": 2,
+          "opacity": 1,
+          "color": "#8cf1f2",
+          "beatAnim": "Scale",
+          "reactLow": 3.5,
+          "reactMid": 3.5,
+          "reactHigh": 2,
+          "baseR": 0,
+          "baseG": 206.81102362204726,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-1777686126315",
+        "name": "0001 Generator",
+        "effectUrl": "effects/effect-0001-generator.html",
+        "params": {
+          "shape": "Grid",
+          "speed": 3.2,
+          "opacity": 0.53,
+          "color": "#00ffff",
+          "beatAnim": "Scale",
+          "reactLow": 4,
+          "reactMid": 3.7,
+          "reactHigh": 0.5,
+          "hueSource": "Mid",
+          "hueAmount": -310,
+          "shiftX": 0,
+          "shiftY": -62
+        }
+      },
+      {
+        "id": "layer-1772132388833",
+        "name": "Cube",
+        "effectUrl": "effects/effect-0002-shapes.html",
+        "params": {
+          "shape": "Cube",
+          "speed": 1,
+          "opacity": 1,
+          "color": "#c6bffd",
+          "reactLow": 0,
+          "reactMid": 2.8,
+          "reactHigh": 2.4,
+          "baseR": 0,
+          "baseG": 206.81102362204726,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "High",
+          "hueAmount": 341,
+          "shiftX": -10,
+          "shiftY": -6
+        }
+      },
+      {
+        "id": "layer-1777687967212",
+        "name": "Sphere",
+        "effectUrl": "effects/effect-0012-wireframe3d.html",
+        "params": {
+          "shape": "Grid-Sphere",
+          "speed": 1,
+          "opacity": 1,
+          "color": "#32fff6",
+          "axisX": 244,
+          "axisY": 16,
+          "reactLow": 0,
+          "reactMid": 3.3,
+          "reactHigh": 9.1,
+          "beatAnim": "Pulse",
+          "hueSource": "High",
+          "hueAmount": 345
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1778046010343",
+    "name": "Chill Aurora",
+    "params": {
+      "scale": 1,
+      "color": "#799e29",
+      "opacity": "0"
+    },
+    "layers": [
+      {
+        "id": "layer-aurora-wave1",
+        "name": "Aurora Green",
+        "effectUrl": "effects/effect-chill01-flowwave.html",
+        "params": {
+          "baseR": 30,
+          "baseG": 200,
+          "baseB": 120,
+          "baseA": 0.7,
+          "opacity": 0.5,
+          "color": "#22cc88",
+          "speed": 0.4,
+          "waveCount": 3,
+          "waveHeight": 120,
+          "reactLow": 1.5,
+          "reactMid": 1,
+          "reactHigh": 0.6,
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-aurora-wave2",
+        "name": "Aurora Purple",
+        "effectUrl": "effects/effect-chill01-flowwave.html",
+        "params": {
+          "baseR": 120,
+          "baseG": 40,
+          "baseB": 180,
+          "baseA": 0.5,
+          "opacity": 0.4,
+          "color": "#8833bb",
+          "speed": 0.3,
+          "waveCount": 2,
+          "waveHeight": 90,
+          "reactLow": 1,
+          "reactMid": 1.2,
+          "reactHigh": 0.8,
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-aurora-ring",
+        "name": "Aura Rings",
+        "effectUrl": "effects/effect-chill03-auraring.html",
+        "params": {
+          "baseR": 60,
+          "baseG": 160,
+          "baseB": 180,
+          "baseA": 0.4,
+          "opacity": 0.3,
+          "color": "#44aacc",
+          "speed": 0.15,
+          "ringCount": 3,
+          "ringSpacing": 100,
+          "thickness": 10,
+          "reactLow": 1,
+          "reactMid": 0.8,
+          "reactHigh": 2,
+          "hueSource": "Mid",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-aurora-glow",
+        "name": "Sky Glow",
+        "effectUrl": "effects/effect-chill02-glowdrift.html",
+        "params": {
+          "baseR": 40,
+          "baseG": 130,
+          "baseB": 150,
+          "baseA": 0.3,
+          "opacity": 0.98,
+          "color": "#33aadd",
+          "speed": 0.1,
+          "count": 22,
+          "sizeBase": 166,
+          "reactLow": 0.8,
+          "reactMid": 0.3,
+          "reactHigh": 2.1,
+          "hueSource": "Low",
+          "hueAmount": 90
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1778044443540",
+    "name": "Bass DunDun",
+    "params": {
+      "scale": 1,
+      "color": "#708311",
+      "opacity": "0"
+    },
+    "layers": [
+      {
+        "id": "layer-dd-shock1",
+        "name": "Heavy Impact",
+        "effectUrl": "effects/effect-bass02-shockwave.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 6,
+          "bassThreshold": 0.2,
+          "bassSense": 2.5,
+          "waveSpeed": 6,
+          "waveDecay": 0.008,
+          "maxRadius": 1000,
+          "thickness": 8,
+          "cooldown": 150,
+          "color": "#2266ff",
+          "opacity": 1,
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-dd-quake1",
+        "name": "Earth Shake",
+        "effectUrl": "effects/effect-bass03-quake.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.8,
+          "bassFreqLow": "3",
+          "bassFreqHigh": 6,
+          "bassThreshold": 0.15,
+          "bassSense": "2.8",
+          "shakeAmount": "46",
+          "glitchSlice": 0.6,
+          "rgbSplit": 10,
+          "color": "#4488ff",
+          "opacity": 0.8,
+          "mode": "Both",
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-dd-woofer1",
+        "name": "Sub Woofer",
+        "effectUrl": "effects/effect-bass04-woofer.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.7,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 4,
+          "bassThreshold": 0.1,
+          "bassSense": "2.6",
+          "coneSize": 250,
+          "vibration": 30,
+          "ringCount": 10,
+          "color": "#3355dd",
+          "opacity": 0.9,
+          "hueSource": "Low",
+          "hueAmount": 60,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-dd-pulse1",
+        "name": "Deep Ring",
+        "effectUrl": "effects/effect-bass01-pulsering.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.5,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 6,
+          "bassThreshold": 0.15,
+          "bassSense": "1.7",
+          "ringCount": 3,
+          "ringSpacing": 100,
+          "thickness": 6,
+          "color": "#1144bb",
+          "opacity": 0.7,
+          "mode": "Single",
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1778045231383",
     "name": "Bass DeepDive",
     "params": {
       "scale": 1,
       "color": "#440088",
-      "opacity": 1
+      "opacity": "1"
     },
     "layers": [
       {
@@ -180,7 +936,7 @@
           "bassFreqHigh": 4,
           "bassThreshold": 0.15,
           "bassSense": 1.5,
-          "speed": 0.6,
+          "speed": "5",
           "sides": 8,
           "depth": 20,
           "thickness": 1.5,

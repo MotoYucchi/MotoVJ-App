@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ====== Create Group UI ======
   function createGroupUI(deckId, group, groupIndex) {
     const div = document.createElement('div');
-    div.className = 'group-item';
+    div.className = 'group-item collapsed';
     div.dataset.deckId = deckId;
     div.dataset.groupIndex = groupIndex;
     div.innerHTML = `
@@ -187,9 +187,12 @@ document.addEventListener('DOMContentLoaded', () => {
           </button>
         </div>
       </div>
-      <div class="group-master-opacity" style="padding: 6px 12px; background: #262626; border-bottom: 1px solid #111; display: flex; align-items: center; gap: 10px;">
+      <div class="group-master-opacity" style="padding: 8px 12px; background: #262626; border-bottom: 1px solid #111; display: flex; align-items: center; gap: 10px;">
+        <input type="color" value="${group.params.color}" class="group-color-mini"
+          oninput="updateParamFromUI('${deckId}', '${group.id}', null, 'color', this.value)"
+          title="G-Color (Modulo)">
         <label style="font-size: 11px; color: #ddd; white-space: nowrap; font-weight: bold;">Master Opacity</label>
-        <input type="range" min="0" max="1" step="0.01" value="${group.params.opacity !== undefined ? group.params.opacity : 1.0}" 
+        <input type="range" class="master-opacity-slider" min="0" max="1" step="0.01" value="${group.params.opacity !== undefined ? group.params.opacity : 1.0}" 
           data-deck="${deckId}" data-group="${group.id}" data-param="opacity"
           oninput="updateParamFromUI('${deckId}', '${group.id}', null, 'opacity', this.value)" style="flex: 1; cursor: pointer; accent-color: #00ffcc;">
       </div>
@@ -199,9 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
            <input type="range" min="0.1" max="5.0" step="0.1" value="${group.params.scale}" 
              data-deck="${deckId}" data-group="${group.id}" data-param="scale"
              oninput="updateParamFromUI('${deckId}', '${group.id}', null, 'scale', this.value)">
-           <label>G-Color (Modulo)</label>
-           <input type="color" value="${group.params.color}" 
-             oninput="updateParamFromUI('${deckId}', '${group.id}', null, 'color', this.value)">
         </div>
         <div class="layer-list" id="list-${deckId}-${group.id}"></div>
       </div>

@@ -374,6 +374,53 @@
     /* ====== Drag visual feedback ====== */
     .group-item.dragging { opacity: 0.5; border: 2px dashed #1a6bb5; }
     .group-item.drag-over { border-top: 3px solid #1a6bb5; }
+
+    /* ====== Group Color Mini (collapsed-accessible) ====== */
+    .group-color-mini {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 32px;
+      height: 32px;
+      border: 2px solid #555;
+      border-radius: 6px;
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+      flex-shrink: 0;
+    }
+    .group-color-mini::-webkit-color-swatch-wrapper { padding: 2px; }
+    .group-color-mini::-webkit-color-swatch { border-radius: 3px; border: none; }
+    .group-color-mini::-moz-color-swatch { border-radius: 3px; border: none; }
+    .group-color-mini:hover { border-color: #888; }
+
+    /* ====== Master Opacity Slider: 1.5x Thumb ====== */
+    .master-opacity-slider {
+      margin: 14px 0 !important;
+    }
+    .master-opacity-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00ffcc, #00aa88) !important;
+      border: 3px solid #007755 !important;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,255,204,0.4);
+      transition: box-shadow 0.15s;
+    }
+    .master-opacity-slider::-webkit-slider-thumb:hover {
+      box-shadow: 0 0 18px rgba(0,255,204,0.7);
+    }
+    .master-opacity-slider::-moz-range-thumb {
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00ffcc, #00aa88) !important;
+      border: 3px solid #007755 !important;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,255,204,0.4);
+    }
   </style>
 </head>
 <body>
