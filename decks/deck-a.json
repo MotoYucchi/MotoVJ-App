@@ -3,7 +3,7 @@
     "id": "group-1777690713933",
     "name": "Red Preset",
     "params": {
-      "scale": 1.7,
+      "scale": "1.1",
       "color": "#000000",
       "opacity": "0"
     },
@@ -139,7 +139,7 @@
     "name": "Botanical Tree",
     "params": {
       "scale": 1,
-      "color": "#5dafee",
+      "color": "#5dee76",
       "opacity": "0"
     },
     "layers": [
@@ -333,7 +333,7 @@
     "params": {
       "scale": 1,
       "color": "#000000",
-      "opacity": 0
+      "opacity": "0"
     },
     "layers": [
       {
@@ -496,7 +496,7 @@
     "params": {
       "scale": 2.7,
       "color": "#330033",
-      "opacity": 0
+      "opacity": "0"
     },
     "layers": [
       {
@@ -688,7 +688,7 @@
     "name": "Chill Aurora",
     "params": {
       "scale": 1,
-      "color": "#799e29",
+      "color": "#9e296d",
       "opacity": "0"
     },
     "layers": [
@@ -784,7 +784,7 @@
     "name": "Bass DunDun",
     "params": {
       "scale": 1,
-      "color": "#708311",
+      "color": "#b77f06",
       "opacity": "0"
     },
     "layers": [
@@ -823,8 +823,8 @@
           "baseG": 255,
           "baseB": 255,
           "baseA": 0.8,
-          "bassFreqLow": "3",
-          "bassFreqHigh": 6,
+          "bassFreqLow": "4",
+          "bassFreqHigh": "9",
           "bassThreshold": 0.15,
           "bassSense": "2.8",
           "shakeAmount": "46",
@@ -895,8 +895,8 @@
     "name": "Bass DeepDive",
     "params": {
       "scale": 1,
-      "color": "#440088",
-      "opacity": "1"
+      "color": "#008a81",
+      "opacity": "0"
     },
     "layers": [
       {
