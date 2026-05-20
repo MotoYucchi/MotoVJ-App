@@ -94,5 +94,45 @@
   {
     "name": "Hard Song01 Radial",
     "url": "effects/effect-hard-song01-radial.html"
+  },
+  {
+    "name": "Iv01 Prism",
+    "url": "effects/effect-iv01-prism.html"
+  },
+  {
+    "name": "Iv02 Hexgrid",
+    "url": "effects/effect-iv02-hexgrid.html"
+  },
+  {
+    "name": "Iv03 Laserwall",
+    "url": "effects/effect-iv03-laserwall.html"
+  },
+  {
+    "name": "Iv04 Vortex",
+    "url": "effects/effect-iv04-vortex.html"
+  },
+  {
+    "name": "Iv05 Glitchbar",
+    "url": "effects/effect-iv05-glitchbar.html"
+  },
+  {
+    "name": "Iv06 Cornerflash",
+    "url": "effects/effect-iv06-cornerflash.html"
+  },
+  {
+    "name": "Iv07 Edgerunner",
+    "url": "effects/effect-iv07-edgerunner.html"
+  },
+  {
+    "name": "Iv08 Framebeat",
+    "url": "effects/effect-iv08-framebeat.html"
+  },
+  {
+    "name": "Iv09 Trackarc",
+    "url": "effects/effect-iv09-trackarc.html"
+  },
+  {
+    "name": "Iv10 Sidepillar",
+    "url": "effects/effect-iv10-sidepillar.html"
   }
 ]

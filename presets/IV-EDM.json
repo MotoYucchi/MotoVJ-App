@@ -1,0 +1,64 @@
+{
+  "id": "group-iv-edm",
+  "name": "IV EDM",
+  "params": {
+    "scale": 1,
+    "color": "#ff8800",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "layer-iv-edm-prism",
+      "name": "Prism Rainbow",
+      "effectUrl": "effects/effect-iv01-prism.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1.0,
+        "rayCount": 80, "rayLength": 500, "thickness": 3,
+        "rotSpeed": 1.0, "spread": 1.0, "sizeReact": 2.0,
+        "colorReactLow": 200, "colorReactMid": 150, "colorReactHigh": 100,
+        "smoothing": 0.12, "color": "#ff4400", "opacity": 0.8,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-edm-laser",
+      "name": "Laser Show",
+      "effectUrl": "effects/effect-iv03-laserwall.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.8,
+        "lineCount": 12, "scanSpeed": 2.0, "thickness": 4,
+        "orientation": "Both", "sizeReact": 2.0,
+        "colorReactLow": 180, "colorReactMid": 120, "colorReactHigh": 80,
+        "smoothing": 0.1, "glow": 30, "color": "#ff00ff", "opacity": 0.7,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-edm-hex",
+      "name": "HexGrid Floor",
+      "effectUrl": "effects/effect-iv02-hexgrid.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.6,
+        "gridSize": 45, "cellGap": 2, "pulseDecay": 0.9,
+        "sizeReact": 1.8,
+        "colorReactLow": 160, "colorReactMid": 100, "colorReactHigh": 80,
+        "smoothing": 0.12, "color": "#00ff44", "opacity": 0.6,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-edm-glitch",
+      "name": "GlitchBar Drop",
+      "effectUrl": "effects/effect-iv05-glitchbar.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.5,
+        "barCount": 48, "barWidth": 0.9, "glitchIntensity": 0.3,
+        "shakeAmount": 8, "channelSplit": 6, "mirror": "Center",
+        "sizeReact": 1.5,
+        "colorReactLow": 140, "colorReactMid": 100, "colorReactHigh": 60,
+        "smoothing": 0.12, "color": "#ffaa00", "opacity": 0.4,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

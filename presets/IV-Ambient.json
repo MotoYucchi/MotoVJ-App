@@ -1,0 +1,37 @@
+{
+  "id": "group-iv-ambient",
+  "name": "IV Ambient",
+  "params": {
+    "scale": 1,
+    "color": "#003366",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "layer-iv-amb-hex",
+      "name": "HexGrid Breathe",
+      "effectUrl": "effects/effect-iv02-hexgrid.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1.0,
+        "gridSize": 80, "cellGap": 5, "pulseDecay": 0.97,
+        "sizeReact": 0.6,
+        "colorReactLow": 60, "colorReactMid": 40, "colorReactHigh": 20,
+        "smoothing": 0.35, "color": "#004488", "opacity": 0.7,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-amb-vortex",
+      "name": "Vortex Slow",
+      "effectUrl": "effects/effect-iv04-vortex.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.7,
+        "particleCount": 30, "vortexSpeed": 0.3, "radius": 350,
+        "trailAlpha": 0.03, "dotSize": 6, "sizeReact": 0.5,
+        "colorReactLow": 50, "colorReactMid": 60, "colorReactHigh": 30,
+        "smoothing": 0.35, "color": "#006688", "opacity": 0.6,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "group-iv-allout",
+  "name": "IV AllOut",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "layer-iv-ao-prism",
+      "name": "Prism Full",
+      "effectUrl": "effects/effect-iv01-prism.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1.0,
+        "rayCount": 60, "rayLength": 400, "thickness": 2.5,
+        "rotSpeed": 1.2, "spread": 1.0, "sizeReact": 2.0,
+        "colorReactLow": 180, "colorReactMid": 120, "colorReactHigh": 90,
+        "smoothing": 0.1, "color": "#ffffff", "opacity": 0.8,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-ao-hex",
+      "name": "HexGrid Full",
+      "effectUrl": "effects/effect-iv02-hexgrid.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.7,
+        "gridSize": 50, "cellGap": 2, "pulseDecay": 0.91,
+        "sizeReact": 1.8,
+        "colorReactLow": 150, "colorReactMid": 100, "colorReactHigh": 60,
+        "smoothing": 0.12, "color": "#ffffff", "opacity": 0.6,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-ao-laser",
+      "name": "Laser Full",
+      "effectUrl": "effects/effect-iv03-laserwall.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.6,
+        "lineCount": 8, "scanSpeed": 1.8, "thickness": 4,
+        "orientation": "Cross", "sizeReact": 2.0,
+        "colorReactLow": 160, "colorReactMid": 100, "colorReactHigh": 70,
+        "smoothing": 0.1, "glow": 25, "color": "#ffffff", "opacity": 0.6,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-ao-vortex",
+      "name": "Vortex Full",
+      "effectUrl": "effects/effect-iv04-vortex.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.5,
+        "particleCount": 50, "vortexSpeed": 1.5, "radius": 250,
+        "trailAlpha": 0.05, "dotSize": 4, "sizeReact": 1.8,
+        "colorReactLow": 140, "colorReactMid": 90, "colorReactHigh": 60,
+        "smoothing": 0.12, "color": "#ffffff", "opacity": 0.5,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-ao-glitch",
+      "name": "GlitchBar Full",
+      "effectUrl": "effects/effect-iv05-glitchbar.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.4,
+        "barCount": 48, "barWidth": 0.85, "glitchIntensity": 0.4,
+        "shakeAmount": 10, "channelSplit": 5, "mirror": "Center",
+        "sizeReact": 1.5,
+        "colorReactLow": 120, "colorReactMid": 80, "colorReactHigh": 50,
+        "smoothing": 0.12, "color": "#ffffff", "opacity": 0.4,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

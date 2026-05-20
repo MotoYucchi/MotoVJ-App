@@ -1,0 +1,36 @@
+{
+  "id": "group-ive-ambient",
+  "name": "IVe Ambient",
+  "params": {
+    "scale": 1,
+    "color": "#00e6a0"
+  },
+  "layers": [
+    {
+      "id": "layer-ive-amb-track",
+      "name": "TrackArc Drift",
+      "effectUrl": "effects/effect-iv09-trackarc.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1.0,
+        "ringCount": 2, "arcLength": 2.0, "dotCount": 12, "ellipseRatio": 0.7,
+        "rotSpeed": 0.3, "ringRadius": 350, "sizeReact": 0.6,
+        "colorReactLow": 60, "colorReactMid": 50, "colorReactHigh": 30,
+        "smoothing": 0.25, "color": "#100800", "opacity": 0.7,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-amb-frame",
+      "name": "FrameBeat Glow",
+      "effectUrl": "effects/effect-iv08-framebeat.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.6,
+        "frameWidth": 12, "bounceReact": 0.5, "layerCount": 1, "glow": 25,
+        "waveAmount": 3, "sizeReact": 0.5,
+        "colorReactLow": 50, "colorReactMid": 40, "colorReactHigh": 20,
+        "smoothing": 0.25, "color": "#001008", "opacity": 0.5,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

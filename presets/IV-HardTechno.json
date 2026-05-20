@@ -1,0 +1,51 @@
+{
+  "id": "group-iv-hardtechno",
+  "name": "IV HardTechno",
+  "params": {
+    "scale": 1,
+    "color": "#ff2200",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "layer-iv-ht-glitch",
+      "name": "Glitch Main",
+      "effectUrl": "effects/effect-iv05-glitchbar.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1.0,
+        "barCount": 64, "barWidth": 0.9, "glitchIntensity": 0.7,
+        "shakeAmount": 20, "channelSplit": 10, "mirror": "Center",
+        "sizeReact": 2.0,
+        "colorReactLow": 180, "colorReactMid": 90, "colorReactHigh": 45,
+        "smoothing": 0.1, "color": "#ff3300", "opacity": 0.9,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-ht-laser",
+      "name": "Laser Cross",
+      "effectUrl": "effects/effect-iv03-laserwall.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.8,
+        "lineCount": 10, "scanSpeed": 2.5, "thickness": 5,
+        "orientation": "Cross", "sizeReact": 2.0,
+        "colorReactLow": 200, "colorReactMid": 60, "colorReactHigh": 40,
+        "smoothing": 0.08, "glow": 25, "color": "#ff4400", "opacity": 0.7,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-ht-vortex",
+      "name": "Vortex BG",
+      "effectUrl": "effects/effect-iv04-vortex.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.5,
+        "particleCount": 60, "vortexSpeed": 2.5, "radius": 250,
+        "trailAlpha": 0.05, "dotSize": 3, "sizeReact": 2.0,
+        "colorReactLow": 160, "colorReactMid": 80, "colorReactHigh": 50,
+        "smoothing": 0.1, "color": "#ff6600", "opacity": 0.6,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

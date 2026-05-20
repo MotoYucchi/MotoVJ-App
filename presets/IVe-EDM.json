@@ -1,0 +1,49 @@
+{
+  "id": "group-ive-edm",
+  "name": "IVe EDM",
+  "params": {
+    "scale": 1,
+    "color": "#00e6a0"
+  },
+  "layers": [
+    {
+      "id": "layer-ive-edm-corner",
+      "name": "CornerFlash Burst",
+      "effectUrl": "effects/effect-iv06-cornerflash.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1.0,
+        "cornerSize": 250, "glowIntensity": 0.8, "pulseSpeed": 2.0, "arcCount": 6,
+        "sizeReact": 2.0,
+        "colorReactLow": 200, "colorReactMid": 150, "colorReactHigh": 100,
+        "smoothing": 0.12, "color": "#100800", "opacity": 0.85,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-edm-frame",
+      "name": "FrameBeat Neon",
+      "effectUrl": "effects/effect-iv08-framebeat.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.8,
+        "frameWidth": 25, "bounceReact": 2.0, "layerCount": 2, "glow": 30,
+        "waveAmount": 12, "sizeReact": 1.8,
+        "colorReactLow": 180, "colorReactMid": 120, "colorReactHigh": 80,
+        "smoothing": 0.1, "color": "#001008", "opacity": 0.7,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-edm-edge",
+      "name": "EdgeRunner Flow",
+      "effectUrl": "effects/effect-iv07-edgerunner.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.7,
+        "particleCount": 16, "speed": 2.5, "trailLength": 40, "edgeWidth": 35,
+        "dotSize": 5, "sizeReact": 1.5,
+        "colorReactLow": 160, "colorReactMid": 100, "colorReactHigh": 60,
+        "smoothing": 0.12, "color": "#080010", "opacity": 0.6,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

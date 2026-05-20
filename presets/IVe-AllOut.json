@@ -1,0 +1,75 @@
+{
+  "id": "group-ive-allout",
+  "name": "IVe AllOut",
+  "params": {
+    "scale": 1,
+    "color": "#00e6a0"
+  },
+  "layers": [
+    {
+      "id": "layer-ive-ao-corner",
+      "name": "CornerFlash Full",
+      "effectUrl": "effects/effect-iv06-cornerflash.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1.0,
+        "cornerSize": 220, "glowIntensity": 0.8, "pulseSpeed": 2.0, "arcCount": 6,
+        "sizeReact": 2.0,
+        "colorReactLow": 180, "colorReactMid": 120, "colorReactHigh": 80,
+        "smoothing": 0.1, "color": "#100800", "opacity": 0.8,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-ao-edge",
+      "name": "EdgeRunner Full",
+      "effectUrl": "effects/effect-iv07-edgerunner.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.8,
+        "particleCount": 15, "speed": 2.5, "trailLength": 40, "edgeWidth": 30,
+        "dotSize": 4.5, "sizeReact": 1.8,
+        "colorReactLow": 160, "colorReactMid": 100, "colorReactHigh": 70,
+        "smoothing": 0.12, "color": "#001008", "opacity": 0.7,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-ao-frame",
+      "name": "FrameBeat Full",
+      "effectUrl": "effects/effect-iv08-framebeat.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.7,
+        "frameWidth": 22, "bounceReact": 1.8, "layerCount": 2, "glow": 25,
+        "waveAmount": 12, "sizeReact": 1.5,
+        "colorReactLow": 150, "colorReactMid": 100, "colorReactHigh": 60,
+        "smoothing": 0.1, "color": "#080010", "opacity": 0.6,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-ao-track",
+      "name": "TrackArc Full",
+      "effectUrl": "effects/effect-iv09-trackarc.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.6,
+        "ringCount": 3, "arcLength": 1.2, "dotCount": 20, "ellipseRatio": 0.6,
+        "rotSpeed": 0.7, "ringRadius": 300, "sizeReact": 1.5,
+        "colorReactLow": 130, "colorReactMid": 90, "colorReactHigh": 50,
+        "smoothing": 0.12, "color": "#100010", "opacity": 0.5,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-ao-pillar",
+      "name": "SidePillar Full",
+      "effectUrl": "effects/effect-iv10-sidepillar.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.5,
+        "pillarCount": 6, "maxWidth": 25, "gapRatio": 0.8, "sparkAmount": 12,
+        "sizeReact": 1.5,
+        "colorReactLow": 120, "colorReactMid": 80, "colorReactHigh": 40,
+        "smoothing": 0.12, "color": "#001000", "opacity": 0.45,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

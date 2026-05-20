@@ -1,0 +1,49 @@
+{
+  "id": "group-ive-dnb",
+  "name": "IVe DnB",
+  "params": {
+    "scale": 1,
+    "color": "#00e6a0"
+  },
+  "layers": [
+    {
+      "id": "layer-ive-dnb-edge",
+      "name": "EdgeRunner Fast",
+      "effectUrl": "effects/effect-iv07-edgerunner.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1.0,
+        "particleCount": 20, "speed": 3.5, "trailLength": 50, "edgeWidth": 25,
+        "dotSize": 3.5, "sizeReact": 2.0,
+        "colorReactLow": 180, "colorReactMid": 130, "colorReactHigh": 80,
+        "smoothing": 0.1, "color": "#100800", "opacity": 0.9,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-dnb-corner",
+      "name": "CornerFlash Hit",
+      "effectUrl": "effects/effect-iv06-cornerflash.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.8,
+        "cornerSize": 200, "glowIntensity": 0.9, "pulseSpeed": 2.5, "arcCount": 5,
+        "sizeReact": 2.2,
+        "colorReactLow": 220, "colorReactMid": 140, "colorReactHigh": 100,
+        "smoothing": 0.1, "color": "#001008", "opacity": 0.75,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-dnb-pillar",
+      "name": "SidePillar Snap",
+      "effectUrl": "effects/effect-iv10-sidepillar.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.6,
+        "pillarCount": 8, "maxWidth": 28, "gapRatio": 0.6, "sparkAmount": 15,
+        "sizeReact": 2.0,
+        "colorReactLow": 160, "colorReactMid": 100, "colorReactHigh": 60,
+        "smoothing": 0.08, "color": "#080010", "opacity": 0.6,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

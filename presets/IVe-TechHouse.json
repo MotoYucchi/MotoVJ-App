@@ -1,0 +1,49 @@
+{
+  "id": "group-ive-techhouse",
+  "name": "IVe TechHouse",
+  "params": {
+    "scale": 1,
+    "color": "#00e6a0"
+  },
+  "layers": [
+    {
+      "id": "layer-ive-th-pillar",
+      "name": "SidePillar Groove",
+      "effectUrl": "effects/effect-iv10-sidepillar.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1.0,
+        "pillarCount": 5, "maxWidth": 25, "gapRatio": 0.9, "sparkAmount": 5,
+        "sizeReact": 1.2,
+        "colorReactLow": 140, "colorReactMid": 50, "colorReactHigh": 20,
+        "smoothing": 0.15, "color": "#100800", "opacity": 0.85,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-th-track",
+      "name": "TrackArc Orbit",
+      "effectUrl": "effects/effect-iv09-trackarc.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.7,
+        "ringCount": 2, "arcLength": 1.2, "dotCount": 16, "ellipseRatio": 0.55,
+        "rotSpeed": 0.5, "ringRadius": 320, "sizeReact": 1.0,
+        "colorReactLow": 100, "colorReactMid": 80, "colorReactHigh": 30,
+        "smoothing": 0.15, "color": "#001008", "opacity": 0.65,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-th-frame",
+      "name": "FrameBeat Subtle",
+      "effectUrl": "effects/effect-iv08-framebeat.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.5,
+        "frameWidth": 15, "bounceReact": 1.0, "layerCount": 1, "glow": 15,
+        "waveAmount": 5, "sizeReact": 1.0,
+        "colorReactLow": 120, "colorReactMid": 40, "colorReactHigh": 20,
+        "smoothing": 0.15, "color": "#080010", "opacity": 0.5,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

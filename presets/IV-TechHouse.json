@@ -1,0 +1,50 @@
+{
+  "id": "group-iv-techhouse",
+  "name": "IV TechHouse",
+  "params": {
+    "scale": 1,
+    "color": "#ff00aa",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "layer-iv-th-prism",
+      "name": "Prism Main",
+      "effectUrl": "effects/effect-iv01-prism.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1.0,
+        "rayCount": 30, "rayLength": 350, "thickness": 2,
+        "rotSpeed": 0.6, "spread": 1.0, "sizeReact": 1.2,
+        "colorReactLow": 150, "colorReactMid": 40, "colorReactHigh": 20,
+        "smoothing": 0.12, "color": "#ff00cc", "opacity": 0.9,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-th-hex",
+      "name": "HexGrid Floor",
+      "effectUrl": "effects/effect-iv02-hexgrid.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.7,
+        "gridSize": 60, "cellGap": 3, "pulseDecay": 0.93,
+        "sizeReact": 1.0,
+        "colorReactLow": 100, "colorReactMid": 80, "colorReactHigh": 30,
+        "smoothing": 0.15, "color": "#00ffcc", "opacity": 0.6,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-th-laser",
+      "name": "Laser Accent",
+      "effectUrl": "effects/effect-iv03-laserwall.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.5,
+        "lineCount": 5, "scanSpeed": 1.2, "thickness": 3,
+        "orientation": "Horizontal", "sizeReact": 1.5,
+        "colorReactLow": 130, "colorReactMid": 50, "colorReactHigh": 25,
+        "smoothing": 0.1, "glow": 20, "color": "#ff0088", "opacity": 0.5,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

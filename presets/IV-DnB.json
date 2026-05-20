@@ -1,0 +1,51 @@
+{
+  "id": "group-iv-dnb",
+  "name": "IV DnB",
+  "params": {
+    "scale": 1,
+    "color": "#44ff00",
+    "opacity": 1
+  },
+  "layers": [
+    {
+      "id": "layer-iv-dnb-glitch",
+      "name": "Glitch Bars",
+      "effectUrl": "effects/effect-iv05-glitchbar.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1.0,
+        "barCount": 96, "barWidth": 0.8, "glitchIntensity": 0.5,
+        "shakeAmount": 15, "channelSplit": 8, "mirror": "Dual",
+        "sizeReact": 1.8,
+        "colorReactLow": 100, "colorReactMid": 120, "colorReactHigh": 60,
+        "smoothing": 0.08, "color": "#ffcc00", "opacity": 0.8,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-dnb-prism",
+      "name": "Prism Burst",
+      "effectUrl": "effects/effect-iv01-prism.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.8,
+        "rayCount": 60, "rayLength": 250, "thickness": 3,
+        "rotSpeed": 1.5, "spread": 1.0, "sizeReact": 2.0,
+        "colorReactLow": 80, "colorReactMid": 150, "colorReactHigh": 50,
+        "smoothing": 0.08, "color": "#00ff88", "opacity": 0.7,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-iv-dnb-vortex",
+      "name": "Vortex Fast",
+      "effectUrl": "effects/effect-iv04-vortex.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.5,
+        "particleCount": 40, "vortexSpeed": 3.0, "radius": 180,
+        "trailAlpha": 0.06, "dotSize": 3, "sizeReact": 1.8,
+        "colorReactLow": 60, "colorReactMid": 100, "colorReactHigh": 80,
+        "smoothing": 0.08, "color": "#00ccff", "opacity": 0.5,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}

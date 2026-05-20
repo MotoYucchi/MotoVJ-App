@@ -1,0 +1,62 @@
+{
+  "id": "group-ive-hardcore",
+  "name": "IVe Hardcore",
+  "params": {
+    "scale": 1,
+    "color": "#00e6a0"
+  },
+  "layers": [
+    {
+      "id": "layer-ive-hc-corner",
+      "name": "CornerFlash Blast",
+      "effectUrl": "effects/effect-iv06-cornerflash.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 1.0,
+        "cornerSize": 300, "glowIntensity": 0.9, "pulseSpeed": 3.0, "arcCount": 8,
+        "sizeReact": 2.5,
+        "colorReactLow": 240, "colorReactMid": 180, "colorReactHigh": 120,
+        "smoothing": 0.08, "color": "#100800", "opacity": 0.9,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-hc-pillar",
+      "name": "SidePillar Smash",
+      "effectUrl": "effects/effect-iv10-sidepillar.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.9,
+        "pillarCount": 10, "maxWidth": 35, "gapRatio": 0.5, "sparkAmount": 25,
+        "sizeReact": 2.5,
+        "colorReactLow": 200, "colorReactMid": 150, "colorReactHigh": 100,
+        "smoothing": 0.08, "color": "#001008", "opacity": 0.8,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-hc-frame",
+      "name": "FrameBeat Crush",
+      "effectUrl": "effects/effect-iv08-framebeat.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.7,
+        "frameWidth": 30, "bounceReact": 2.5, "layerCount": 3, "glow": 40,
+        "waveAmount": 20, "sizeReact": 2.0,
+        "colorReactLow": 220, "colorReactMid": 160, "colorReactHigh": 100,
+        "smoothing": 0.08, "color": "#080010", "opacity": 0.7,
+        "shiftX": 0, "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-ive-hc-edge",
+      "name": "EdgeRunner Fury",
+      "effectUrl": "effects/effect-iv07-edgerunner.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.6,
+        "particleCount": 25, "speed": 4.0, "trailLength": 35, "edgeWidth": 40,
+        "dotSize": 4, "sizeReact": 2.0,
+        "colorReactLow": 200, "colorReactMid": 140, "colorReactHigh": 90,
+        "smoothing": 0.08, "color": "#100010", "opacity": 0.55,
+        "shiftX": 0, "shiftY": 0
+      }
+    }
+  ]
+}
