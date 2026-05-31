@@ -4,8 +4,8 @@
     "name": "Background Group",
     "params": {
       "scale": "1",
-      "color": "#330033",
-      "opacity": 0
+      "color": "#000000",
+      "opacity": 0.67
     },
     "layers": [
       {
@@ -197,7 +197,7 @@
     "name": "Red Preset",
     "params": {
       "scale": 1,
-      "color": "#48005c",
+      "color": "#248f8d",
       "opacity": 0
     },
     "layers": [
@@ -332,7 +332,7 @@
     "name": "Botanical Tree",
     "params": {
       "scale": 1,
-      "color": "#5eba71",
+      "color": "#695eba",
       "opacity": 0
     },
     "layers": [
@@ -526,7 +526,7 @@
     "params": {
       "scale": "1",
       "color": "#000000",
-      "opacity": "0"
+      "opacity": 0
     },
     "layers": [
       {
@@ -688,8 +688,8 @@
     "name": "Main Group",
     "params": {
       "scale": 1,
-      "color": "#7a36bf",
-      "opacity": "0"
+      "color": "#36bf7f",
+      "opacity": 0.46
     },
     "layers": [
       {
@@ -894,11 +894,269 @@
     ]
   },
   {
+    "id": "group-1779289846707",
+    "name": "IV HardTechno",
+    "params": {
+      "scale": 1,
+      "color": "#0008ff",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-iv-ht-glitch",
+        "name": "Glitch Main",
+        "effectUrl": "effects/effect-iv05-glitchbar.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "barCount": 64,
+          "barWidth": 0.9,
+          "glitchIntensity": 0.7,
+          "shakeAmount": 20,
+          "channelSplit": 10,
+          "mirror": "Center",
+          "sizeReact": 2,
+          "colorReactLow": 180,
+          "colorReactMid": 90,
+          "colorReactHigh": 45,
+          "smoothing": 0.1,
+          "color": "#ff3300",
+          "opacity": 0.9,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-iv-ht-laser",
+        "name": "Laser Cross",
+        "effectUrl": "effects/effect-iv03-laserwall.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.8,
+          "lineCount": 10,
+          "scanSpeed": 2.5,
+          "thickness": 5,
+          "orientation": "Cross",
+          "sizeReact": 2,
+          "colorReactLow": 200,
+          "colorReactMid": 60,
+          "colorReactHigh": 40,
+          "smoothing": 0.08,
+          "glow": 25,
+          "color": "#ff4400",
+          "opacity": 0.7,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-iv-ht-vortex",
+        "name": "Vortex BG",
+        "effectUrl": "effects/effect-iv04-vortex.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.5,
+          "particleCount": 60,
+          "vortexSpeed": 2.5,
+          "radius": 250,
+          "trailAlpha": 0.05,
+          "dotSize": 3,
+          "sizeReact": 2,
+          "colorReactLow": 160,
+          "colorReactMid": 80,
+          "colorReactHigh": 50,
+          "smoothing": 0.1,
+          "color": "#ff6600",
+          "opacity": 0.6,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1779290017833",
+    "name": "IVe DnB",
+    "params": {
+      "scale": 1,
+      "color": "#1e92eb",
+      "opacity": "1"
+    },
+    "layers": [
+      {
+        "id": "layer-ive-dnb-edge",
+        "name": "EdgeRunner Fast",
+        "effectUrl": "effects/effect-iv07-edgerunner.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "particleCount": 20,
+          "speed": 3.5,
+          "trailLength": 50,
+          "edgeWidth": 25,
+          "dotSize": 3.5,
+          "sizeReact": 2,
+          "colorReactLow": 180,
+          "colorReactMid": 130,
+          "colorReactHigh": 80,
+          "smoothing": 0.1,
+          "color": "#100800",
+          "opacity": 0.9,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-ive-dnb-corner",
+        "name": "CornerFlash Hit",
+        "effectUrl": "effects/effect-iv06-cornerflash.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.8,
+          "cornerSize": 200,
+          "glowIntensity": 0.9,
+          "pulseSpeed": 2.5,
+          "arcCount": 5,
+          "sizeReact": 2.2,
+          "colorReactLow": 220,
+          "colorReactMid": 140,
+          "colorReactHigh": 100,
+          "smoothing": 0.1,
+          "color": "#001008",
+          "opacity": 0.75,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-ive-dnb-pillar",
+        "name": "SidePillar Snap",
+        "effectUrl": "effects/effect-iv10-sidepillar.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.6,
+          "pillarCount": 8,
+          "maxWidth": 28,
+          "gapRatio": 0.6,
+          "sparkAmount": 15,
+          "sizeReact": 2,
+          "colorReactLow": 160,
+          "colorReactMid": 100,
+          "colorReactHigh": 60,
+          "smoothing": 0.08,
+          "color": "#080010",
+          "opacity": 0.6,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1779296638887",
+    "name": "IVe Trance",
+    "params": {
+      "scale": 1,
+      "color": "#00e6a0",
+      "opacity": 1
+    },
+    "layers": [
+      {
+        "id": "layer-ive-tr-track",
+        "name": "TrackArc Flow",
+        "effectUrl": "effects/effect-iv09-trackarc.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "ringCount": 3,
+          "arcLength": 1.5,
+          "dotCount": 24,
+          "ellipseRatio": 0.65,
+          "rotSpeed": 0.6,
+          "ringRadius": 350,
+          "sizeReact": 1.3,
+          "colorReactLow": 100,
+          "colorReactMid": 120,
+          "colorReactHigh": 60,
+          "smoothing": 0.2,
+          "color": "#100800",
+          "opacity": 0.85,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-ive-tr-frame",
+        "name": "FrameBeat Pulse",
+        "effectUrl": "effects/effect-iv08-framebeat.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.7,
+          "frameWidth": 18,
+          "bounceReact": 1.5,
+          "layerCount": 3,
+          "glow": 25,
+          "waveAmount": 8,
+          "sizeReact": 1.2,
+          "colorReactLow": 80,
+          "colorReactMid": 100,
+          "colorReactHigh": 50,
+          "smoothing": 0.18,
+          "color": "#001008",
+          "opacity": 0.65,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-ive-tr-edge",
+        "name": "EdgeRunner Drift",
+        "effectUrl": "effects/effect-iv07-edgerunner.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.5,
+          "particleCount": 10,
+          "speed": 1.5,
+          "trailLength": 60,
+          "edgeWidth": 20,
+          "dotSize": 5,
+          "sizeReact": 1,
+          "colorReactLow": 70,
+          "colorReactMid": 90,
+          "colorReactHigh": 40,
+          "smoothing": 0.2,
+          "color": "#080010",
+          "opacity": 0.5,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
     "id": "group-1778045162472",
     "name": "Bass DunDun",
     "params": {
       "scale": 1,
-      "color": "#ff3d3d",
+      "color": "#ff0000",
       "opacity": 0
     },
     "layers": [
