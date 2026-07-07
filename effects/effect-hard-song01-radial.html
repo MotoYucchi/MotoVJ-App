@@ -174,9 +174,9 @@ function draw() {
       if (_hueDeg !== 0) canvas.style.filter = 'hue-rotate(' + _hueDeg + 'deg)';
       else canvas.style.filter = '';
 
-  const r = (params.baseR + groupColor.r) % 256;
-  const g = (params.baseG + groupColor.g) % 256;
-  const b = (params.baseB + groupColor.b) % 256;
+  const r = Math.min(255, params.baseR + groupColor.r);
+  const g = Math.min(255, params.baseG + groupColor.g);
+  const b = Math.min(255, params.baseB + groupColor.b);
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 

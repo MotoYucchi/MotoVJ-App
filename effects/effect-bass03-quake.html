@@ -87,7 +87,7 @@ function render() {
   if (bassActive <= 0) { requestAnimationFrame(render); return; }
 
   const lRgb = hexToRgb(params.color);
-  const r = (lRgb.r+groupColorRgb.r)%256, g = (lRgb.g+groupColorRgb.g)%256, b = (lRgb.b+groupColorRgb.b)%256;
+  const r = Math.min(255, lRgb.r+groupColorRgb.r), g = Math.min(255, lRgb.g+groupColorRgb.g), b = Math.min(255, lRgb.b+groupColorRgb.b);
   const alpha = bassActive * params.opacity;
 
   ctx.save();

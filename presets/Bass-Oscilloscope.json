@@ -1,0 +1,46 @@
+{
+  "id": "group-bass-scope",
+  "name": "Bass Scope",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-bass-laser-bg",
+      "name": "Grid BG",
+      "effectUrl": "effects/effect-iv03-laserwall.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.8,
+        "lineCount": 15,
+        "scanSpeed": 1.5,
+        "thickness": 2,
+        "orientation": "Both",
+        "sizeReact": 1.2,
+        "colorReactLow": 0,
+        "colorReactMid": 50,
+        "colorReactHigh": 0,
+        "smoothing": 0.1,
+        "glow": 20,
+        "color": "#000000",
+        "opacity": 0.3,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-bass-oscilloscope",
+      "name": "Main Waveform",
+      "effectUrl": "effects/effect-bass10-oscilloscope.html",
+      "params": {
+        "thickness": 12,
+        "amplitude": 400,
+        "color": "#000000",
+        "opacity": 0.9,
+        "reactLow": 3.0,
+        "trail": 0.4,
+        "shape": "Linear"
+      }
+    }
+  ]
+}

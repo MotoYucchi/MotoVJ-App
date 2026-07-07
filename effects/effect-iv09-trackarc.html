@@ -109,9 +109,9 @@ function render() {
   ctx.clearRect(0, 0, width, height);
 
   const lRgb = hexToRgb(params.color);
-  const baseR = (lRgb.r + groupColorRgb.r) % 256;
-  const baseG = (lRgb.g + groupColorRgb.g) % 256;
-  const baseB = (lRgb.b + groupColorRgb.b) % 256;
+  const baseR = Math.min(255, lRgb.r + groupColorRgb.r);
+  const baseG = Math.min(255, lRgb.g + groupColorRgb.g);
+  const baseB = Math.min(255, lRgb.b + groupColorRgb.b);
   const baseHue = (Math.atan2(baseB - 128, baseR - 128) * 180 / Math.PI + 360) % 360;
 
   const shiftX = (params.shiftX / 100) * cx;

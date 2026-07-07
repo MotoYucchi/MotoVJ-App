@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MotoVJ Touch Mixer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-user-drag: none; }
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: #0f111a;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      padding: 10px 20px;
+      border-bottom: 2px solid #0f3460;
+      font-weight: bold;
+      color: #66fcf1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #mixer-container {
+      flex: 1;
+      display: grid;
+      grid-template-rows: repeat(var(--fader-rows, 1), 1fr);
+      grid-auto-flow: column;
+      grid-auto-columns: 120px;
+      gap: 15px;
+      padding: 20px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      align-items: stretch;
+    }
+    .mixer-channel {
+      background: #1a1e29;
+      border: 1px solid #2b3a4a;
+      border-radius: 8px;
+      width: 120px;
+      height: 100%;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      flex-shrink: 0;
+    }
+    .channel-name {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-align: center;
+      word-break: break-all;
+      height: 34px;
+      overflow: hidden;
+      color: #fff;
+    }
+    
+    .faders-row {
+      display: flex;
+      gap: 20px;
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+    
+    .fader-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
+    .fader-label {
+      font-size: 11px;
+      color: #8892b0;
+      margin-bottom: 8px;
+    }
+
+    /* Vertical Range Sliders */
+    input[type=range].v-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 28px;
+      flex: 1;
+      background: #12151c;
+      border-radius: 14px;
+      border: 1px solid #333;
+      outline: none;
+      writing-mode: vertical-lr;
+      direction: rtl;
+    }
+    
+    /* Opacity Fader Track (1.5x size) */
+    input[type=range].opacity-fader {
+      width: 42px;
+      border-radius: 21px;
+    }
+    /* Opacity Thumb (1.5x size) */
+    input[type=range].opacity-fader::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 66px; height: 39px;
+      background: #66fcf1;
+      border: 3px solid #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(0,0,0,0.8);
+    }
+    
+    /* Hue Track Background */
+    input[type=range].hue-fader {
+      background: linear-gradient(to top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+      border: 2px solid #333;
+    }
+    input[type=range].hue-fader::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 44px; height: 18px;
+      background: rgba(255,255,255,0.9);
+      border: 2px solid #000;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0,0,0,0.8);
+    }
+
+    /* Color quick buttons */
+    .color-btn {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 2px solid #555;
+      cursor: pointer;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .color-btn.active {
+      border: 3px solid #66fcf1;
+      box-shadow: 0 0 8px #66fcf1;
+    }
+    .nav-btn {
+      background: #1a1e29;
+      color: #fff;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      border: 1px solid #00ffcc;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-btn:hover { background: #2a2e39; }
+  </style>
+</head>
+<body oncontextmenu="return false;">
+  <header>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <i class="fas fa-sliders"></i> MotoVJ Touch Mixer
+    </div>
+    <div id="status" style="font-size: 12px; color: #8892b0; margin-left: 15px; flex: 1;">Connecting...</div>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <select id="align-select" class="nav-btn" onchange="changeAlign(this.value)" style="outline: none; cursor: pointer; appearance: auto;">
+        <option value="start">左寄せ (Left)</option>
+        <option value="center">中央 (Center)</option>
+        <option value="end">右寄せ (Right)</option>
+      </select>
+      <select id="row-select" class="nav-btn" onchange="changeRows(this.value)" style="outline: none; cursor: pointer; appearance: auto;">
+        <option value="1">1段 (1 Row)</option>
+        <option value="2">2段 (2 Rows)</option>
+        <option value="3">3段 (3 Rows)</option>
+        <option value="4">4段 (4 Rows)</option>
+      </select>
+      <a href="controller.html" class="nav-btn"><i class="fas fa-layer-group"></i> Layer</a>
+    </div>
+  </header>
+  <main id="mixer-container">
+    <!-- Channels rendered here by touch-mixer.js -->
+  </main>
+  
+  <script src="./js/ws-client.js"></script>
+  <script src="./js/touch-mixer.js"></script>
+</body>
+</html>

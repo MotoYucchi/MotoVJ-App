@@ -49,6 +49,15 @@
             "default": "#00ff00"
       },
       {
+            "id": "thickness",
+            "label": "線の太さ",
+            "type": "range",
+            "min": 1,
+            "max": 50,
+            "step": 1,
+            "default": 2
+      },
+      {
             "id": "axisX",
             "label": "軸シフト X",
             "type": "range",
@@ -142,7 +151,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { shape: "Box", speed: 1.0, opacity: 1.0, color: "#00ff00", axisX: 0, axisY: 0, reactLow: 1.5, reactMid: 2.0, reactHigh: 5.0, beatAnim: "なし", hueSource: "None", hueAmount: 90 };
+    let params = { shape: "Box", speed: 1.0, opacity: 1.0, color: "#00ff00", axisX: 0, axisY: 0, reactLow: 1.5, reactMid: 2.0, reactHigh: 5.0, beatAnim: "なし", hueSource: "None", hueAmount: 90, thickness: 2 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let time = 0;
@@ -229,7 +238,7 @@
       const rotSpeed = time + (mid * params.reactMid) + (params.beatAnim === "Rotate" ? beatValue * 5 : 0);
       
       ctx.strokeStyle = drawColor;
-      ctx.lineWidth = 1 + (high * params.reactHigh);
+      ctx.lineWidth = params.thickness + (high * params.reactHigh);
 
       // 3. 描画ロジック
       if (shapes[params.shape]) {

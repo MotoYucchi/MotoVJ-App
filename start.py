@@ -74,6 +74,19 @@ async def list_effects():
             return json.load(f)
     return []
 
+VIDEO_DIR = "./Video"
+
+@app.get("/list_video_folders")
+async def list_video_folders():
+    folders = []
+    if os.path.exists(VIDEO_DIR):
+        for entry in os.listdir(VIDEO_DIR):
+            folder_path = os.path.join(VIDEO_DIR, entry)
+            if os.path.isdir(folder_path):
+                if os.path.exists(os.path.join(folder_path, "index.csv")):
+                    folders.append(entry)
+    return sorted(folders)
+
 @app.post("/refresh_effect_list")
 async def refresh_effect_list():
     """effects/ ディレクトリをスキャンして effect-list.json を再生成"""
@@ -104,10 +117,13 @@ class ConnectionManager:
         if websocket in self.active_connections:
             self.active_connections.remove(websocket)
 
-    async def broadcast(self, message: str):
+    async def broadcast(self, message: str | bytes):
         for connection in self.active_connections[:]:
             try:
-                await connection.send_text(message)
+                if isinstance(message, bytes):
+                    await connection.send_bytes(message)
+                else:
+                    await connection.send_text(message)
             except:
                 self.disconnect(connection)
 
@@ -118,37 +134,44 @@ async def websocket_endpoint(websocket: WebSocket):
     await manager.connect(websocket)
     try:
         while True:
-            data = await websocket.receive_text()
-            msg = json.loads(data)
+            # Use receive() to handle both bytes and text
+            message = await websocket.receive()
             
-            # 状態の更新ロジック
-            if msg.get("type") == "rebuild_layers":
-                server_state[msg["deckId"]] = msg["layers"]
-                save_to_disk() # 構造変更時は即座に保存
-            elif msg.get("type") == "param_update":
-                deck_id = msg.get("deckId")
-                group_id = msg.get("groupId")
-                layer_id = msg.get("layerId")
-                param_id = msg.get("paramId")
-                val = msg.get("value")
+            if "bytes" in message:
+                # Binary message (FFT data), broadcast directly
+                await manager.broadcast(message["bytes"])
+            elif "text" in message:
+                data = message["text"]
+                msg = json.loads(data)
                 
-                deck = server_state.get(deck_id)
-                if deck: # deck はグループのリスト
-                    for group in deck:
-                        if group["id"] == group_id:
-                            # グループ自体のパラメータ更新
-                            if layer_id is None:
-                                group["params"][param_id] = val
-                            # グループ内レイヤーのパラメータ更新
-                            else:
-                                for layer in group["layers"]:
-                                    if layer["id"] == layer_id:
-                                        layer["params"][param_id] = val
+                # 状態の更新ロジック
+                if msg.get("type") == "rebuild_layers":
+                    server_state[msg["deckId"]] = msg["layers"]
+                    save_to_disk() # 構造変更時は即座に保存
+                elif msg.get("type") == "param_update":
+                    deck_id = msg.get("deckId")
+                    group_id = msg.get("groupId")
+                    layer_id = msg.get("layerId")
+                    param_id = msg.get("paramId")
+                    val = msg.get("value")
+                    
+                    deck = server_state.get(deck_id)
+                    if deck: # deck はグループのリスト
+                        for group in deck:
+                            if group["id"] == group_id:
+                                # グループ自体のパラメータ更新
+                                if layer_id is None:
+                                    group["params"][param_id] = val
+                                # グループ内レイヤーのパラメータ更新
+                                else:
+                                    for layer in group["layers"]:
+                                        if layer["id"] == layer_id:
+                                            layer["params"][param_id] = val
+                    
+                    # 変更をディスクに保存
+                    save_to_disk()
                 
-                # 変更をディスクに保存
-                save_to_disk()
-            
-            await manager.broadcast(data)
+                await manager.broadcast(data)
     except WebSocketDisconnect:
         manager.disconnect(websocket)
 

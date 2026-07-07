@@ -48,6 +48,26 @@
     "url": "effects/effect-0016-botanical.html"
   },
   {
+    "name": "011 Camera Frame",
+    "url": "effects/effect-011-camera-frame.html"
+  },
+  {
+    "name": "012 Particles",
+    "url": "effects/effect-012-particles.html"
+  },
+  {
+    "name": "013 Sine Wave",
+    "url": "effects/effect-013-sine-wave.html"
+  },
+  {
+    "name": "014 Vertical Lines",
+    "url": "effects/effect-014-vertical-lines.html"
+  },
+  {
+    "name": "015 Opening Shape",
+    "url": "effects/effect-015-opening-shape.html"
+  },
+  {
     "name": "Bass01 Pulsering",
     "url": "effects/effect-bass01-pulsering.html"
   },
@@ -80,6 +100,18 @@
     "url": "effects/effect-bass08-tunnel.html"
   },
   {
+    "name": "Bass09 Grime",
+    "url": "effects/effect-bass09-grime.html"
+  },
+  {
+    "name": "Bass10 Oscilloscope",
+    "url": "effects/effect-bass10-oscilloscope.html"
+  },
+  {
+    "name": "Bass11 Impact Core",
+    "url": "effects/effect-bass11-impact-core.html"
+  },
+  {
     "name": "Chill01 Flowwave",
     "url": "effects/effect-chill01-flowwave.html"
   },
@@ -94,6 +126,14 @@
   {
     "name": "Hard Song01 Radial",
     "url": "effects/effect-hard-song01-radial.html"
+  },
+  {
+    "name": "High01 Stardust",
+    "url": "effects/effect-high01-stardust.html"
+  },
+  {
+    "name": "High02 Glass Shatter",
+    "url": "effects/effect-high02-glass-shatter.html"
   },
   {
     "name": "Iv01 Prism",

@@ -1,0 +1,24 @@
+{
+  "id": "group-high-stardust",
+  "name": "High Stardust",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-high-stardust-main",
+      "name": "Stardust Sparkles",
+      "effectUrl": "effects/effect-high01-stardust.html",
+      "params": {
+        "particleCount": 300,
+        "speed": 20,
+        "color": "#000000",
+        "opacity": 1.0,
+        "reactHigh": 6.0,
+        "decay": 0.82,
+        "thickness": 2.0
+      }
+    }
+  ]
+}

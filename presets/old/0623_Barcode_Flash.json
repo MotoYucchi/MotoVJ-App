@@ -1,0 +1,44 @@
+{
+  "id": "group-1779290877613",
+  "name": "0623 Barcode Flash",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-0623-barcode",
+      "name": "Vertical Lines",
+      "effectUrl": "effects/effect-014-vertical-lines.html",
+      "params": {
+        "lineCount": 4,
+        "baseWidth": 139,
+        "color": "#eb4d3d",
+        "opacity": 0.9,
+        "reactLow": 2.5,
+        "reactMid": 1.6,
+        "speed": 8.5
+      }
+    },
+    {
+      "id": "layer-0623-wireframe",
+      "name": "Thick Grid Sphere",
+      "effectUrl": "effects/effect-0012-wireframe3d.html",
+      "params": {
+        "shape": "Grid-Sphere",
+        "speed": 2,
+        "opacity": 0.5,
+        "color": "#ff3300",
+        "axisX": 0,
+        "axisY": 0,
+        "reactLow": 2,
+        "reactMid": 1,
+        "reactHigh": 3,
+        "beatAnim": "Rotate",
+        "hueSource": "Low",
+        "hueAmount": 180,
+        "thickness": 10
+      }
+    }
+  ]
+}

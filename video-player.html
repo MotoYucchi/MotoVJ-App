@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: transparent;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.1s ease;
+    }
+  </style>
+</head>
+<body>
+  <video id="video-a" loop muted playsinline preload="auto"></video>
+  <video id="video-b" loop muted playsinline preload="auto"></video>
+
+  <script>
+    const videoA = document.getElementById('video-a');
+    const videoB = document.getElementById('video-b');
+    
+    let folderA = "";
+    let folderB = "";
+    let params = {
+      folderA: "",
+      trackA: "",
+      playA: false,
+      folderB: "",
+      trackB: "",
+      playB: false,
+      crossfader: 0,
+      opacityA: 100,
+      opacityB: 100
+    };
+
+    window.addEventListener('message', (e) => {
+      const msg = e.data;
+      
+      if (msg.type === 'param_update') {
+        const id = msg.paramId;
+        const val = msg.value;
+        params[id] = val;
+
+        if (id === 'folderA') {
+          folderA = val;
+        } else if (id === 'folderB') {
+          folderB = val;
+        } else if (id === 'trackA') {
+          if (folderA && val) {
+            videoA.src = `/Video/${encodeURIComponent(folderA)}/${encodeURIComponent(val)}`;
+            videoA.load(); // 事前プリロードを強制
+            if (params.playA) videoA.play().catch(console.warn);
+          }
+        } else if (id === 'trackB') {
+          if (folderB && val) {
+            videoB.src = `/Video/${encodeURIComponent(folderB)}/${encodeURIComponent(val)}`;
+            videoB.load(); // 事前プリロードを強制
+            if (params.playB) videoB.play().catch(console.warn);
+          }
+        } else if (id === 'playA') {
+          if (val) videoA.play().catch(console.warn);
+          else videoA.pause();
+        } else if (id === 'playB') {
+          if (val) videoB.play().catch(console.warn);
+          else videoB.pause();
+        } else if (id === 'timeA') {
+          if (Math.abs(videoA.currentTime - val) > 0.5) videoA.currentTime = val;
+        } else if (id === 'timeB') {
+          if (Math.abs(videoB.currentTime - val) > 0.5) videoB.currentTime = val;
+        } else if (id === 'speedA') {
+          videoA.playbackRate = val;
+        } else if (id === 'speedB') {
+          videoB.playbackRate = val;
+        } else if (id === 'audioA') {
+          videoA.muted = !val;
+        } else if (id === 'audioB') {
+          videoB.muted = !val;
+        }
+
+        updateVideos();
+      }
+    });
+
+    function updateVideos() {
+      const ratio = params.crossfader / 100.0;
+      
+      // opacity calculations
+      const opA = (1.0 - ratio) * (params.opacityA / 100.0);
+      const opB = ratio * (params.opacityB / 100.0);
+      
+      videoA.style.opacity = opA;
+      videoB.style.opacity = opB;
+    }
+    updateVideos();
+  </script>
+</body>
+</html>

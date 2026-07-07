@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotoVJ - Video Edition</title>
+  <link rel="stylesheet" href="./css/video-controller.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body oncontextmenu="return false;">
+  <header>
+    <div style="font-weight: bold; font-size: 1.1rem; color: #66fcf1;"><i class="fas fa-film"></i> MotoVJ Video Controller</div>
+    <div>
+      <select id="audio-output-select" style="padding: 4px; background: #333; color: white; border: 1px solid #555;">
+        <option value="">Default Audio Output</option>
+      </select>
+    </div>
+  </header>
+  
+  <div class="controller-window">
+    <div class="deck-area">
+      <!-- Deck A -->
+      <div class="deck" id="deck-a">
+        <div class="video-header">
+          <div class="video-icon"><i class="fas fa-compact-disc"></i></div>
+          <div class="video-title" id="title-a">No track loaded</div>
+        </div>
+        <div class="preview-container">
+          <video class="video-preview" id="preview-a" loop playsinline preload="auto"></video>
+          <div class="play-overlay" id="overlay-a"><i class="fas fa-play"></i></div>
+        </div>
+        <input type="range" class="seek-bar" id="seek-a" min="0" max="100" value="0" step="0.1">
+        <div class="time-row">
+          <span id="time-curr-a">0:00</span>
+          <span id="time-dur-a">0:00</span>
+        </div>
+
+        <div class="deck-controls-row">
+          <div class="adjust-panel">
+            <div class="panel-label">Adjust</div>
+            <div class="adjust-grid">
+              <button class="adj-btn" onclick="adjustTime('A', -5)">&lt;</button>
+              <div class="adj-val">5s</div>
+              <button class="adj-btn" onclick="adjustTime('A', 5)">&gt;</button>
+              <button class="adj-btn" onclick="adjustTime('A', -1)">&lt;</button>
+              <div class="adj-val">1s</div>
+              <button class="adj-btn" onclick="adjustTime('A', 1)">&gt;</button>
+              <button class="adj-btn" onclick="adjustTime('A', -0.1)">&lt;</button>
+              <div class="adj-val">0.1s</div>
+              <button class="adj-btn" onclick="adjustTime('A', 0.1)">&gt;</button>
+            </div>
+          </div>
+          <div class="speed-panel">
+            <div class="panel-label">Speed</div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <input type="range" class="vertical-slider" id="speed-a" min="0.5" max="2.0" step="0.05" value="1.0">
+              <div class="speed-btns">
+                <button class="btn-highlight" onclick="setSpeed('A', 0.05, true)">+0.05</button>
+                <button onclick="setSpeed('A', 1.25)">1.25</button>
+                <button class="btn-highlight" onclick="setSpeed('A', 1.0)">1.0</button>
+                <button onclick="setSpeed('A', 0.75)">0.75</button>
+                <button class="btn-highlight" onclick="setSpeed('A', -0.05, true)">-0.05</button>
+              </div>
+            </div>
+            <div class="speed-val" id="speed-val-a">1.00</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mixer -->
+      <div class="mixer">
+        <div class="mixer-section" style="flex-direction: row; gap: 10px; justify-content: center; margin-top: -4px;">
+          <button class="audio-btn active" id="btn-bg" style="font-size: 0.75rem; padding: 4px 8px;">BG(背面)</button>
+          <button class="audio-btn" id="btn-fg" style="font-size: 0.75rem; padding: 4px 8px;">FG(前面)</button>
+        </div>
+
+        <div class="mixer-section">
+          <div class="panel-label">Load Track</div>
+          <div class="load-btns">
+            <button class="load-btn" id="btn-load-a">Load A</button>
+            <button class="load-btn" id="btn-load-b">Load B</button>
+          </div>
+        </div>
+
+        <div class="mixer-section">
+          <div class="panel-label">Audio</div>
+          <div class="audio-btns">
+            <button class="audio-btn active" id="audio-a-btn">OFF</button>
+            <button class="audio-btn active" id="audio-b-btn">OFF</button>
+          </div>
+        </div>
+
+        <div class="mixer-section">
+          <div class="panel-label" style="margin-bottom: 0;">A / M. / B</div>
+          <div class="opacity-sliders">
+            <input type="range" class="vertical-slider opacity-fader" id="opacity-a" style="height: 100px;" min="0" max="100" value="100">
+            <input type="range" class="vertical-slider opacity-fader master-fader" id="player-opacity" style="height: 100px;" min="0" max="100" value="100">
+            <input type="range" class="vertical-slider opacity-fader" id="opacity-b" style="height: 100px;" min="0" max="100" value="100">
+          </div>
+        </div>
+
+        <div class="mixer-section" style="margin-top: auto; margin-bottom: 8%;">
+          <div class="panel-label">Crossfader</div>
+          <div class="cf-controls" style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
+            <button id="btn-transition" class="load-btn" style="padding: 4px 8px; font-size: 0.8rem;">Auto</button>
+            <input type="number" id="cf-duration" value="2.0" step="0.5" style="width: 50px; background: #12151c; color: #fff; border: 1px solid #2b3a4a; border-radius: 4px; padding: 2px 4px; font-size: 0.8rem;">s
+          </div>
+          <div class="crossfader-container">
+            <input type="range" class="crossfader" id="crossfader" min="0" max="100" value="0">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Deck B -->
+      <div class="deck" id="deck-b">
+        <div class="video-header">
+          <div class="video-icon"><i class="fas fa-compact-disc"></i></div>
+          <div class="video-title" id="title-b">No track loaded</div>
+        </div>
+        <div class="preview-container">
+          <video class="video-preview" id="preview-b" loop playsinline preload="auto"></video>
+          <div class="play-overlay" id="overlay-b"><i class="fas fa-play"></i></div>
+        </div>
+        <input type="range" class="seek-bar" id="seek-b" min="0" max="100" value="0" step="0.1">
+        <div class="time-row">
+          <span id="time-curr-b">0:00</span>
+          <span id="time-dur-b">0:00</span>
+        </div>
+
+        <div class="deck-controls-row">
+          <div class="adjust-panel">
+            <div class="panel-label">Adjust</div>
+            <div class="adjust-grid">
+              <button class="adj-btn" onclick="adjustTime('B', -5)">&lt;</button>
+              <div class="adj-val">5s</div>
+              <button class="adj-btn" onclick="adjustTime('B', 5)">&gt;</button>
+              <button class="adj-btn" onclick="adjustTime('B', -1)">&lt;</button>
+              <div class="adj-val">1s</div>
+              <button class="adj-btn" onclick="adjustTime('B', 1)">&gt;</button>
+              <button class="adj-btn" onclick="adjustTime('B', -0.1)">&lt;</button>
+              <div class="adj-val">0.1s</div>
+              <button class="adj-btn" onclick="adjustTime('B', 0.1)">&gt;</button>
+            </div>
+          </div>
+          <div class="speed-panel">
+            <div class="panel-label">Speed</div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <input type="range" class="vertical-slider" id="speed-b" min="0.5" max="2.0" step="0.05" value="1.0">
+              <div class="speed-btns">
+                <button class="btn-highlight" onclick="setSpeed('B', 0.05, true)">+0.05</button>
+                <button onclick="setSpeed('B', 1.25)">1.25</button>
+                <button class="btn-highlight" onclick="setSpeed('B', 1.0)">1.0</button>
+                <button onclick="setSpeed('B', 0.75)">0.75</button>
+                <button class="btn-highlight" onclick="setSpeed('B', -0.05, true)">-0.05</button>
+              </div>
+            </div>
+            <div class="speed-val" id="speed-val-b">1.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Library -->
+    <div class="library-panel">
+      <div class="library-controls">
+        <select id="library-folder">
+          <option value="">-- Select Playlist --</option>
+        </select>
+        <div style="margin-left: auto; display: flex; gap: 8px;">
+          <button class="load-btn" id="btn-force-sync" style="background: #1e598f; padding: 6px 12px; font-size: 0.85rem;">🔄 Force Sync</button>
+          <button class="load-btn" id="btn-monitor" style="background: #3b3b55; padding: 6px 12px; font-size: 0.85rem;">🎧 Monitor</button>
+        </div>
+      </div>
+      <div class="track-list-box" id="library-tracks"></div>
+    </div>
+  </div>
+
+  <!-- Audio Monitor Modal -->
+  <div id="monitor-modal" class="modal-overlay">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="btn-close-modal">&times;</button>
+      <div class="modal-header">🎧 Audio Monitor</div>
+      
+      <div class="modal-row">
+        <span>Out</span>
+        <select id="audio-output-select">
+          <option value="">Default Output</option>
+        </select>
+      </div>
+
+      <div class="modal-row" style="margin-top: 8px;">
+        <span>A</span>
+        <audio id="monitor-audio-a" controls muted></audio>
+      </div>
+
+      <div class="modal-row">
+        <span>B</span>
+        <audio id="monitor-audio-b" controls muted></audio>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/ws-client.js"></script>
+  <script src="./js/video-controller.js"></script>
+</body>
+</html>
