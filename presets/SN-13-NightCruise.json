@@ -1,0 +1,80 @@
+{
+  "id": "group-sn-13-night-cruise",
+  "name": "Night Cruise",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn13-wireframe3d",
+      "name": "Wireframe3D",
+      "effectUrl": "effects/effect-0012-wireframe3d.html",
+      "params": {
+        "shape": "Box",
+        "speed": 1.2,
+        "opacity": 0.8,
+        "color": "#6699ff",
+        "axisX": 20,
+        "axisY": -40,
+        "reactLow": 1.5,
+        "reactMid": 4.0,
+        "reactHigh": 8.0,
+        "beatAnim": "Glitch",
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "hueSource": "None",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn13-edgerunner",
+      "name": "EdgeRunner",
+      "effectUrl": "effects/effect-iv07-edgerunner.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.8,
+        "particleCount": 12,
+        "speed": 2.0,
+        "trailLength": 45,
+        "edgeWidth": 30,
+        "dotSize": 6,
+        "sizeReact": 1.5,
+        "colorReactLow": 130,
+        "colorReactMid": 80,
+        "colorReactHigh": 40,
+        "smoothing": 0.15,
+        "color": "#000000",
+        "opacity": 0.7,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn13-circle",
+      "name": "Circle",
+      "effectUrl": "effects/effect-0000-circle.html",
+      "params": {
+        "size": 150,
+        "thickness": 8,
+        "color": "#ffffff",
+        "audioReact": 0.3,
+        "reactLow": 1.2,
+        "reactMid": 80,
+        "reactHigh": 10,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "group-b2b-hiphop-ink",
+  "name": "04 B2B HipHop Ink",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-04-b2b-hiphop-ink-l-1",
+      "name": "Ink Drop",
+      "effectUrl": "effects/effect-b2b03-ink-drop.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#000000",
+        "opacity": 0.8,
+        "gravity": 1.5,
+        "reactLow": 4.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-04-b2b-hiphop-ink-l-2",
+      "name": "Quake Shake",
+      "effectUrl": "effects/effect-bass03-quake.html",
+      "params": {
+        "shiftX": -25,
+        "shiftY": 0,
+        "opacity": 0.4
+      }
+    }
+  ]
+}

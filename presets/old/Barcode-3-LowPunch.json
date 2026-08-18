@@ -1,0 +1,36 @@
+{
+  "id": "group-barcode-3-lowpunch",
+  "name": "Barcode 3 LowPunch",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-barcode3-strobe",
+      "name": "Low Strobe",
+      "effectUrl": "effects/effect-bass06-strobe.html",
+      "params": {
+        "color": "#000000",
+        "reactLow": 3.0,
+        "opacity": 0.3,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-barcode3-lines",
+      "name": "Thick Flash",
+      "effectUrl": "effects/effect-014-vertical-lines.html",
+      "params": {
+        "lineCount": 4,
+        "baseWidth": 150,
+        "color": "#000000",
+        "opacity": 0.9,
+        "reactLow": 4.5,
+        "reactMid": 0.5,
+        "speed": 8.5
+      }
+    }
+  ]
+}

@@ -6,9 +6,9 @@
   <title>MotoVJ Controller</title>
   <style>
     /* ====== Reset & Base ====== */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', 'Meiryo', sans-serif; background: #111; color: #e0e0e0; display: flex; flex-direction: column; height: 100vh; overscroll-behavior-x: none; -webkit-user-select: none; user-select: none; }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-user-drag: none; }
+    body { font-family: 'Segoe UI', 'Meiryo', sans-serif; background: #111; color: #e0e0e0; display: flex; flex-direction: column; height: 100vh; overscroll-behavior-x: none; -webkit-user-select: none; user-select: none; touch-action: manipulation; }
+    input, textarea, select { -webkit-user-drag: auto; -webkit-user-select: auto; user-select: auto; }
     /* ====== Header ====== */
     header {
       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -423,15 +423,18 @@
     }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
   <header>
     <button id="sync-btn" class="btn btn-sync">
       <img src="nt/icons/connect.svg" alt="sync"> Force Sync
     </button>
     <button id="start-audio-btn" class="btn btn-audio">
-      <img src="nt/icons/audio-on.svg" alt="audio"> Audio Start
+      <img src="nt/icons/audio-on.svg" alt="audio"> Mic/Line In
     </button>
-    <span id="audio-status">Audio: Stopped</span>
+    <span id="audio-status" style="margin-right: 16px;">Mic: Stopped</span>
+    <a href="touch-mixer.html" class="btn" style="text-decoration:none; margin-left:auto; display:flex; align-items:center; background:#1a1e29; border:1px solid #00ffcc;">
+      <img src="nt/icons/hamburger-menu.svg" alt="" style="width:14px; filter:invert(1);"> Touch Mixer
+    </a>
   </header>
 
   <main id="decks-container"></main>

@@ -1,0 +1,61 @@
+{
+  "id": "group-sn-22-deep-ocean",
+  "name": "SN-22 Deep Ocean",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-22-glowdrift",
+      "name": "GlowDrift",
+      "effectUrl": "effects/effect-chill02-glowdrift.html",
+      "params": {
+        "color": "#0066aa",
+        "opacity": 0.75,
+        "speed": 0.3,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-22-ripple",
+      "name": "Ripple",
+      "effectUrl": "effects/effect-bass05-ripple.html",
+      "params": {
+        "color": "#003366",
+        "opacity": 0.5,
+        "reactLow": 1.5,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-22-bubble",
+      "name": "Bubble",
+      "effectUrl": "effects/effect-0014-bubble.html",
+      "params": {
+        "complexity": 5,
+        "particleCount": 60,
+        "opacity": 0.45,
+        "afterimage": 0.98,
+        "color1": "#00ccff",
+        "color2": "#0088ff",
+        "color3": "#00ffcc",
+        "pattern": "湧き出る",
+        "speed": 1.0,
+        "highReact": 1,
+        "midReact": 0.5,
+        "lowReact": 0.5,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "hueSource": "None",
+        "hueAmount": 60,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

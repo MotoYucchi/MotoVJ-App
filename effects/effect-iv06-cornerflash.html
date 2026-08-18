@@ -13,6 +13,7 @@
 <script id="vj-schema" type="application/json">
   [
     { "id": "cornerSize", "label": "コーナーサイズ", "type": "range", "min": 50, "max": 500, "step": 5, "default": 200 },
+    { "id": "thickness", "label": "線の太さ", "type": "range", "min": 1, "max": 20, "step": 0.5, "default": 2.5 },
     { "id": "glowIntensity", "label": "グロー強度", "type": "range", "min": 0, "max": 1, "step": 0.01, "default": 0.7 },
     { "id": "pulseSpeed", "label": "パルス速度", "type": "range", "min": 0.1, "max": 5, "step": 0.1, "default": 1.5 },
     { "id": "arcCount", "label": "アーク数", "type": "range", "min": 1, "max": 12, "step": 1, "default": 4 },
@@ -45,7 +46,7 @@ let params = {
   sizeReact: 1.5,
   colorReactLow: 120, colorReactMid: 60, colorReactHigh: 30,
   smoothing: 0.15, color: '#00ffcc', opacity: 1.0,
-  shiftX: 0, shiftY: 0,
+  shiftX: 0, shiftY: 0, thickness: 2.5,
   baseR: 0, baseG: 255, baseB: 255, baseA: 1.0
 };
 let currentFFT = new Array(512).fill(0);
@@ -113,9 +114,9 @@ function render() {
   ctx.clearRect(0, 0, width, height);
 
   const lRgb = hexToRgb(params.color);
-  const baseR = (lRgb.r + groupColorRgb.r) % 256;
-  const baseG = (lRgb.g + groupColorRgb.g) % 256;
-  const baseB = (lRgb.b + groupColorRgb.b) % 256;
+  const baseR = Math.min(255, lRgb.r + groupColorRgb.r);
+  const baseG = Math.min(255, lRgb.g + groupColorRgb.g);
+  const baseB = Math.min(255, lRgb.b + groupColorRgb.b);
   const baseHue = (Math.atan2(baseB - 128, baseR - 128) * 180 / Math.PI + 360) % 360;
 
   const shiftXPx = (params.shiftX / 100) * (width / 2);
@@ -161,7 +162,7 @@ function render() {
       ctx.beginPath();
       ctx.arc(cx, cy, arcRadius, arcAngle, arcAngle + Math.PI * 0.4);
       ctx.strokeStyle = `rgba(${rgb.r},${rgb.g},${rgb.b},${alpha})`;
-      ctx.lineWidth = 2 + smoothLow * 4;
+      ctx.lineWidth = params.thickness + smoothLow * 4;
       ctx.shadowColor = `rgba(${rgb.r},${rgb.g},${rgb.b},${alpha})`;
       ctx.shadowBlur = 10 + smoothLow * 15;
       ctx.stroke();

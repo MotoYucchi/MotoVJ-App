@@ -1,0 +1,24 @@
+{
+  "id": "group-barcode-1-amelo",
+  "name": "Barcode 1 AMelo",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-barcode1-lines",
+      "name": "Slow Lines",
+      "effectUrl": "effects/effect-014-vertical-lines.html",
+      "params": {
+        "lineCount": 15,
+        "baseWidth": 10,
+        "color": "#000000",
+        "opacity": 0.8,
+        "reactLow": 0.0,
+        "reactMid": 0.5,
+        "speed": 1.0
+      }
+    }
+  ]
+}

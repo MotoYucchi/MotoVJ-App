@@ -1,0 +1,75 @@
+{
+  "id": "group-sn-10-midnight-disco",
+  "name": "Midnight Disco",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn10-prism",
+      "name": "Prism",
+      "effectUrl": "effects/effect-iv01-prism.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1.0,
+        "rotSpeed": 0.8,
+        "segmentCount": 8,
+        "innerRadius": 80,
+        "outerRadius": 350,
+        "sizeReact": 1.5,
+        "colorReactLow": 160,
+        "colorReactMid": 100,
+        "colorReactHigh": 50,
+        "smoothing": 0.12,
+        "color": "#000000",
+        "opacity": 0.85,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn10-polygon",
+      "name": "Polygon",
+      "effectUrl": "effects/effect-0011-polygon.html",
+      "params": {
+        "color": "#ff66cc",
+        "opacity": 0.6,
+        "speed": 1.2,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "reactLow": 2.0,
+        "reactMid": 3.0,
+        "reactHigh": 1.5,
+        "hueSource": "Mid",
+        "hueAmount": 120,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn10-circle",
+      "name": "Circle",
+      "effectUrl": "effects/effect-0000-circle.html",
+      "params": {
+        "size": 300,
+        "thickness": 15,
+        "color": "#00ccff",
+        "audioReact": 0.5,
+        "reactLow": 2.0,
+        "reactMid": 150,
+        "reactHigh": 20,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

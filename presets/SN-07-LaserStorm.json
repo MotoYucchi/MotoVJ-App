@@ -1,0 +1,69 @@
+{
+  "id": "group-sn-07-laser-storm",
+  "name": "Laser Storm",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-07-laserwall",
+      "name": "LaserWall",
+      "effectUrl": "effects/effect-iv03-laserwall.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1.0,
+        "lineCount": 20,
+        "scanSpeed": 4.0,
+        "thickness": 8.0,
+        "orientation": "Both",
+        "sizeReact": 2.5,
+        "colorReactLow": 200,
+        "colorReactMid": 150,
+        "colorReactHigh": 100,
+        "smoothing": 0.08,
+        "glow": 50,
+        "color": "#000000",
+        "opacity": 0.9,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-07-laserclash",
+      "name": "LaserClash",
+      "effectUrl": "effects/effect-b2b02-laser-clash.html",
+      "params": {
+        "color": "#00ffff",
+        "opacity": 0.75,
+        "speed": 3.5
+      }
+    },
+    {
+      "id": "layer-sn-07-cornerflash",
+      "name": "CornerFlash",
+      "effectUrl": "effects/effect-iv06-cornerflash.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.8,
+        "cornerSize": 280,
+        "glowIntensity": 0.85,
+        "pulseSpeed": 2.5,
+        "arcCount": 6,
+        "sizeReact": 2.0,
+        "colorReactLow": 180,
+        "colorReactMid": 120,
+        "colorReactHigh": 80,
+        "smoothing": 0.1,
+        "color": "#000000",
+        "opacity": 0.7,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

@@ -5,7 +5,7 @@
     "params": {
       "scale": "1",
       "color": "#000000",
-      "opacity": 0.67
+      "opacity": 0
     },
     "layers": [
       {
@@ -46,7 +46,8 @@
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -123,7 +124,8 @@
           "hueSource": "Mid",
           "hueAmount": -310,
           "shiftX": 0,
-          "shiftY": -62
+          "shiftY": -62,
+          "thickness": 2
         }
       },
       {
@@ -145,7 +147,8 @@
           "hueSource": "High",
           "hueAmount": 341,
           "shiftX": -10,
-          "shiftY": -6
+          "shiftY": -6,
+          "thickness": 2
         }
       },
       {
@@ -164,7 +167,8 @@
           "reactHigh": 9.1,
           "beatAnim": "Pulse",
           "hueSource": "High",
-          "hueAmount": 345
+          "hueAmount": 345,
+          "thickness": 2
         }
       },
       {
@@ -187,7 +191,8 @@
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       }
     ]
@@ -285,7 +290,8 @@
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -303,7 +309,8 @@
           "hueSource": "Low",
           "hueAmount": 156,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -322,7 +329,8 @@
           "hueSource": "None",
           "hueAmount": -238,
           "shiftX": 0,
-          "shiftY": 19
+          "shiftY": 19,
+          "thickness": 2
         }
       }
     ]
@@ -422,7 +430,8 @@
           "hueSource": "High",
           "hueAmount": -14,
           "shiftX": 0,
-          "shiftY": -82
+          "shiftY": -82,
+          "thickness": 2
         }
       },
       {
@@ -440,7 +449,8 @@
           "hueSource": "Low",
           "hueAmount": 306,
           "shiftX": -61,
-          "shiftY": -7
+          "shiftY": -7,
+          "thickness": 2
         }
       },
       {
@@ -458,7 +468,8 @@
           "hueSource": "Low",
           "hueAmount": 306,
           "shiftX": 58,
-          "shiftY": -4
+          "shiftY": -4,
+          "thickness": 2
         }
       },
       {
@@ -475,7 +486,8 @@
           "hueSource": "High",
           "hueAmount": 144,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -497,7 +509,8 @@
           "hueSource": "High",
           "hueAmount": 360,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -548,7 +561,8 @@
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -569,7 +583,8 @@
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -678,7 +693,8 @@
           "hueSource": "High",
           "hueAmount": 334,
           "shiftX": 0,
-          "shiftY": 6
+          "shiftY": 6,
+          "thickness": 2
         }
       }
     ]
@@ -732,7 +748,8 @@
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -753,7 +770,8 @@
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -776,7 +794,8 @@
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -799,7 +818,8 @@
           "baseB": 255,
           "baseA": 1,
           "hueSource": "None",
-          "hueAmount": 90
+          "hueAmount": 90,
+          "thickness": 2
         }
       },
       {
@@ -846,7 +866,8 @@
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -869,7 +890,8 @@
           "baseB": 255,
           "baseA": 1,
           "hueSource": "None",
-          "hueAmount": 90
+          "hueAmount": 90,
+          "thickness": 2
         }
       },
       {
@@ -1035,7 +1057,8 @@
           "color": "#001008",
           "opacity": 0.75,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2.5
         }
       },
       {

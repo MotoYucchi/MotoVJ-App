@@ -98,7 +98,7 @@ function render() {
   time += tunnelSpeed * 0.02;
 
   const lRgb = hexToRgb(params.color);
-  const r = (lRgb.r+groupColorRgb.r)%256, g = (lRgb.g+groupColorRgb.g)%256, b = (lRgb.b+groupColorRgb.b)%256;
+  const r = Math.min(255, lRgb.r+groupColorRgb.r), g = Math.min(255, lRgb.g+groupColorRgb.g), b = Math.min(255, lRgb.b+groupColorRgb.b);
 
   ctx.save();
   ctx.translate(cx + (params.shiftX||0)/100*cx, cy + (params.shiftY||0)/100*cy);

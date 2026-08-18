@@ -1,0 +1,133 @@
+{
+  "id": "group-sn-29-summer-finale",
+  "name": "SN-29 Summer Finale",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-29-corner-flash",
+      "name": "Corner Flash",
+      "effectUrl": "effects/effect-iv06-cornerflash.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1.0,
+        "cornerSize": 250,
+        "glowIntensity": 0.9,
+        "pulseSpeed": 2.5,
+        "arcCount": 6,
+        "sizeReact": 2.2,
+        "colorReactLow": 200,
+        "colorReactMid": 140,
+        "colorReactHigh": 90,
+        "smoothing": 0.1,
+        "color": "#000000",
+        "opacity": 0.85,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-29-edge-runner",
+      "name": "Edge Runner",
+      "effectUrl": "effects/effect-iv07-edgerunner.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.85,
+        "particleCount": 18,
+        "speed": 3.0,
+        "trailLength": 45,
+        "edgeWidth": 40,
+        "dotSize": 6,
+        "sizeReact": 2.0,
+        "colorReactLow": 180,
+        "colorReactMid": 120,
+        "colorReactHigh": 70,
+        "smoothing": 0.1,
+        "color": "#000000",
+        "opacity": 0.8,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-29-frame-beat",
+      "name": "Frame Beat",
+      "effectUrl": "effects/effect-iv08-framebeat.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.7,
+        "frameWidth": 22,
+        "bounceReact": 2.0,
+        "layerCount": 2,
+        "glow": 30,
+        "waveAmount": 12,
+        "sizeReact": 1.8,
+        "colorReactLow": 160,
+        "colorReactMid": 100,
+        "colorReactHigh": 60,
+        "smoothing": 0.1,
+        "color": "#000000",
+        "opacity": 0.7,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-29-prism",
+      "name": "Prism",
+      "effectUrl": "effects/effect-iv01-prism.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.6,
+        "rotSpeed": 0.7,
+        "segmentCount": 6,
+        "innerRadius": 70,
+        "outerRadius": 280,
+        "sizeReact": 1.5,
+        "colorReactLow": 140,
+        "colorReactMid": 90,
+        "colorReactHigh": 45,
+        "smoothing": 0.12,
+        "color": "#000000",
+        "opacity": 0.6,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-29-pulse-ring",
+      "name": "Pulse Ring",
+      "effectUrl": "effects/effect-bass01-pulsering.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.5,
+        "bassFreqLow": 0,
+        "bassFreqHigh": 6,
+        "bassThreshold": 0.15,
+        "bassSense": 2.0,
+        "ringCount": 3,
+        "ringSpacing": 100,
+        "thickness": 6,
+        "color": "#000000",
+        "opacity": 0.55,
+        "mode": "Single",
+        "hueSource": "None",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "group-sn-18-crystal-prism",
+  "name": "SN-18 Crystal Prism",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-18-prism",
+      "name": "Prism",
+      "effectUrl": "effects/effect-iv01-prism.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1.0,
+        "rotSpeed": 0.6,
+        "segmentCount": 6,
+        "innerRadius": 60,
+        "outerRadius": 300,
+        "sizeReact": 1.2,
+        "colorReactLow": 100,
+        "colorReactMid": 120,
+        "colorReactHigh": 60,
+        "smoothing": 0.18,
+        "color": "#000000",
+        "opacity": 0.85,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-18-kaleidoscope",
+      "name": "Kaleidoscope",
+      "effectUrl": "effects/effect-0013-kaleidoscope.html",
+      "params": {
+        "color": "#ff88dd",
+        "opacity": 0.6,
+        "speed": 1.0,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "reactLow": 1.5,
+        "reactMid": 2.5,
+        "hueSource": "Mid",
+        "hueAmount": 150,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-18-particles",
+      "name": "Particles",
+      "effectUrl": "effects/effect-012-particles.html",
+      "params": {
+        "particleCount": 300,
+        "baseSize": 4,
+        "color1": "#ffffff",
+        "color2": "#ffccee",
+        "opacity": 0.4,
+        "reactLow": 1.5,
+        "reactMid": 1.0,
+        "speed": 1.0,
+        "shape": "Circle",
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

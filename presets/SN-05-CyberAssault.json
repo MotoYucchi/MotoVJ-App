@@ -1,0 +1,40 @@
+{
+  "id": "group-sn-05-cyber-assault",
+  "name": "Cyber Assault",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-05-cyber-grid",
+      "name": "CyberGrid",
+      "effectUrl": "effects/effect-b2b05-cyber-grid.html",
+      "params": {
+        "color": "#00ffcc",
+        "opacity": 0.85,
+        "speed": 3.0
+      }
+    },
+    {
+      "id": "layer-sn-05-glitch-split",
+      "name": "GlitchSplit",
+      "effectUrl": "effects/effect-b2b09-glitch-split.html",
+      "params": {
+        "color": "#ff00ff",
+        "opacity": 0.7,
+        "speed": 4.0
+      }
+    },
+    {
+      "id": "layer-sn-05-speed-lines",
+      "name": "SpeedLines",
+      "effectUrl": "effects/effect-b2b07-speed-lines.html",
+      "params": {
+        "color": "#ffffff",
+        "opacity": 0.6,
+        "speed": 5.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "group-botanical-tree",
+  "name": "Botanical Tree",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-botanical-bg",
+      "name": "Forest Flow",
+      "effectUrl": "effects/effect-chill01-flowwave.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.6,
+        "opacity": 0.6,
+        "color": "#0a2e12",
+        "speed": 0.5,
+        "waveCount": 5,
+        "waveHeight": 40,
+        "reactLow": 1.0,
+        "reactMid": 1.5,
+        "reactHigh": 0.5
+      }
+    },
+    {
+      "id": "layer-botanical-spores",
+      "name": "Firefly Drift",
+      "effectUrl": "effects/effect-chill02-glowdrift.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.5,
+        "opacity": 0.5,
+        "color": "#15ff4e",
+        "speed": 0.2,
+        "count": 30,
+        "sizeBase": 35,
+        "reactLow": 0.5,
+        "reactMid": 1.5,
+        "reactHigh": 1.0
+      }
+    },
+    {
+      "id": "layer-botanical-tree",
+      "name": "Botanical Core",
+      "effectUrl": "effects/effect-0016-botanical.html",
+      "params": {
+        "layout": "Center",
+        "opacity": 1.0,
+        "color": "#2eb848",
+        "lineThickness": 10.0,
+        "reactLow": 1.2,
+        "reactMid": 1.0,
+        "reactHigh": 1.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-botanical-leaves",
+      "name": "Falling Leaves",
+      "effectUrl": "effects/effect-012-particles.html",
+      "params": {
+        "particleCount": 300,
+        "baseSize": 5,
+        "color1": "#44ff77",
+        "color2": "#00aa33",
+        "opacity": 0.4,
+        "reactLow": 1.5,
+        "reactMid": 0.5,
+        "speed": 0.3,
+        "shape": "Diamond",
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

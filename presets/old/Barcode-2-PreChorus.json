@@ -1,0 +1,33 @@
+{
+  "id": "group-barcode-2-prechorus",
+  "name": "Barcode 2 PreChorus",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-barcode2-glitch",
+      "name": "Tension Glitch",
+      "effectUrl": "effects/effect-iv05-glitchbar.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.8,
+        "barCount": 40,
+        "barWidth": 2.0,
+        "glitchIntensity": 0.6,
+        "shakeAmount": 10,
+        "channelSplit": 5,
+        "mirror": "None",
+        "sizeReact": 1.5,
+        "colorReactLow": 0,
+        "colorReactMid": 120,
+        "colorReactHigh": 60,
+        "smoothing": 0.1,
+        "color": "#000000",
+        "opacity": 0.8,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

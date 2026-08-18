@@ -1,0 +1,60 @@
+{
+  "id": "group-sn-15-electric-slide",
+  "name": "Electric Slide",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn15-oscilloscope",
+      "name": "Oscilloscope",
+      "effectUrl": "effects/effect-bass10-oscilloscope.html",
+      "params": {
+        "color": "#00ff88",
+        "opacity": 0.9,
+        "reactLow": 3.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn15-glitchbar",
+      "name": "GlitchBar",
+      "effectUrl": "effects/effect-iv05-glitchbar.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.7,
+        "barCount": 15,
+        "barWidth": 6.0,
+        "glitchIntensity": 0.5,
+        "shakeAmount": 15,
+        "channelSplit": 8,
+        "mirror": "None",
+        "sizeReact": 1.5,
+        "colorReactLow": 120,
+        "colorReactMid": 60,
+        "colorReactHigh": 30,
+        "smoothing": 0.12,
+        "color": "#000000",
+        "opacity": 0.6,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn15-speedlines",
+      "name": "SpeedLines",
+      "effectUrl": "effects/effect-b2b07-speed-lines.html",
+      "params": {
+        "color": "#ffffff",
+        "opacity": 0.45,
+        "speed": 3.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

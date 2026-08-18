@@ -1,0 +1,32 @@
+{
+  "id": "group-barcode-4-highsparkle",
+  "name": "Barcode 4 HighSparkle",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-barcode4-laser",
+      "name": "High Scan",
+      "effectUrl": "effects/effect-iv03-laserwall.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.8,
+        "lineCount": 20,
+        "scanSpeed": 4.0,
+        "thickness": 2,
+        "orientation": "Horizontal",
+        "sizeReact": 2.0,
+        "colorReactLow": 0,
+        "colorReactMid": 50,
+        "colorReactHigh": 180,
+        "smoothing": 0.1,
+        "glow": 30,
+        "color": "#000000",
+        "opacity": 0.7,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

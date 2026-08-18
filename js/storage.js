@@ -48,7 +48,23 @@ window.VJStorage = {
     });
   },
 
+  saveTimers: {},
+
   save(deckId) {
+    if (this.saveTimers[deckId]) {
+      clearTimeout(this.saveTimers[deckId]);
+    }
+    this.saveTimers[deckId] = setTimeout(() => {
+      localStorage.setItem(`vj_${deckId}`, JSON.stringify({ id: deckId, groups: this.decks[deckId] }));
+      delete this.saveTimers[deckId];
+    }, 300); // 連続操作時のメインスレッドブロックを防ぐため300ms間引く
+  },
+
+  saveImmediate(deckId) {
+    if (this.saveTimers[deckId]) {
+      clearTimeout(this.saveTimers[deckId]);
+      delete this.saveTimers[deckId];
+    }
     localStorage.setItem(`vj_${deckId}`, JSON.stringify({ id: deckId, groups: this.decks[deckId] }));
   },
 

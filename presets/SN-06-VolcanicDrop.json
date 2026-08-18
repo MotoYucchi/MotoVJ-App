@@ -1,0 +1,74 @@
+{
+  "id": "group-sn-06-volcanic-drop",
+  "name": "Volcanic Drop",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-06-shockwave",
+      "name": "Shockwave",
+      "effectUrl": "effects/effect-bass02-shockwave.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1.0,
+        "bassFreqLow": 0,
+        "bassFreqHigh": 6,
+        "bassThreshold": 0.15,
+        "bassSense": 3.5,
+        "waveSpeed": 8,
+        "waveDecay": 0.006,
+        "maxRadius": 1200,
+        "thickness": 10,
+        "cooldown": 100,
+        "color": "#000000",
+        "opacity": 1.0,
+        "hueSource": "Low",
+        "hueAmount": 120
+      }
+    },
+    {
+      "id": "layer-sn-06-radial",
+      "name": "Radial",
+      "effectUrl": "effects/effect-hard-song01-radial.html",
+      "params": {
+        "speed": 6.0,
+        "intensity": 0.7,
+        "glitch": 0.5,
+        "flash": 0.15,
+        "mode": "bars",
+        "hueSource": "Low",
+        "hueAmount": 90,
+        "color": "#ff4400"
+      }
+    },
+    {
+      "id": "layer-sn-06-pulsering",
+      "name": "PulseRing",
+      "effectUrl": "effects/effect-bass01-pulsering.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.7,
+        "bassFreqLow": 0,
+        "bassFreqHigh": 8,
+        "bassThreshold": 0.1,
+        "bassSense": 2.5,
+        "ringCount": 4,
+        "ringSpacing": 80,
+        "thickness": 5,
+        "color": "#000000",
+        "opacity": 0.7,
+        "mode": "Single",
+        "hueSource": "None",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "group-b2b-trap-heavy",
+  "name": "11 B2B Trap Heavy",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-11-b2b-trap-heavy-1",
+      "name": "Glitch Split",
+      "effectUrl": "effects/effect-b2b09-glitch-split.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#ff0000",
+        "glitchIntensity": 60,
+        "reactHigh": 4.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-11-b2b-trap-heavy-2",
+      "name": "Heavy Quake",
+      "effectUrl": "effects/effect-bass04-woofer.html",
+      "params": {
+        "shiftX": -25,
+        "shiftY": 0,
+        "color": "#ffaa00",
+        "opacity": 0.7,
+        "reactLow": 5.0
+      }
+    }
+  ]
+}

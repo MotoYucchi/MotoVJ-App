@@ -1,0 +1,52 @@
+{
+  "id": "group-sn-21-moonlit-wave",
+  "name": "SN-21 Moonlit Wave",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-21-flowwave",
+      "name": "FlowWave",
+      "effectUrl": "effects/effect-chill01-flowwave.html",
+      "params": {
+        "color": "#4488cc",
+        "opacity": 0.8,
+        "speed": 0.4,
+        "reactLow": 1.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-21-auraring",
+      "name": "AuraRing",
+      "effectUrl": "effects/effect-chill03-auraring.html",
+      "params": {
+        "color": "#6644aa",
+        "opacity": 0.55,
+        "speed": 0.3,
+        "reactLow": 0.8,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-21-ambient",
+      "name": "Ambient",
+      "effectUrl": "effects/effect-0005-ambient.html",
+      "params": {
+        "color": "#001133",
+        "opacity": 0.4,
+        "speed": 0.2,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

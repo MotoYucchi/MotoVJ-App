@@ -1,193 +1,250 @@
 [
   {
-    "id": "group-1778045717583",
-    "name": "Botanical Tree",
+    "id": "group-1783439134991",
+    "name": "SN-01 Solar Flare",
     "params": {
       "scale": 1,
       "color": "#000000",
-      "opacity": "1"
+      "opacity": 0
     },
     "layers": [
       {
-        "id": "layer-1777692301574",
-        "name": "Circle Center",
-        "effectUrl": "effects/effect-0000-circle.html",
+        "id": "layer-sn01-shockwave",
+        "name": "Solar Shockwave",
+        "effectUrl": "effects/effect-bass02-shockwave.html",
         "params": {
-          "size": 198,
-          "thickness": 36,
-          "color": "#14d100",
-          "reactLow": 3,
-          "reactMid": 353,
-          "reactHigh": 7,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-forest-wave",
-        "name": "Forest Flow",
-        "effectUrl": "effects/effect-chill01-flowwave.html",
-        "params": {
-          "baseR": 30,
-          "baseG": 140,
-          "baseB": 60,
-          "baseA": 0.7,
-          "opacity": 0.6,
-          "color": "#226644",
-          "speed": 0.95,
-          "waveCount": 4,
-          "waveHeight": 35,
-          "reactLow": 1,
-          "reactMid": 1.6,
-          "reactHigh": 0.8,
-          "hueSource": "None",
-          "hueAmount": 107
-        }
-      },
-      {
-        "id": "layer-forest-orb",
-        "name": "Firefly Drift",
-        "effectUrl": "effects/effect-chill02-glowdrift.html",
-        "params": {
-          "baseR": 80,
-          "baseG": 200,
-          "baseB": 80,
-          "baseA": 0.6,
-          "opacity": 0.5,
-          "color": "#44cc66",
-          "speed": 0.3,
-          "count": 20,
-          "sizeBase": 40,
-          "reactLow": 0.8,
-          "reactMid": 1.5,
-          "reactHigh": 2,
-          "hueSource": "High",
-          "hueAmount": 325
-        }
-      },
-      {
-        "id": "layer-1777692099376",
-        "name": "0000 Circle",
-        "effectUrl": "effects/effect-0000-circle.html",
-        "params": {
-          "size": 547,
-          "thickness": 36,
-          "color": "#14d100",
-          "reactLow": 3,
-          "reactMid": 353,
-          "reactHigh": 7,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-1777686440920",
-        "name": "Equalizer",
-        "effectUrl": "effects/effect-0003-visualizer.html",
-        "params": {
-          "shape": "Equalizer",
-          "color": "#ff7a15",
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 8,
+          "bassThreshold": 0.12,
+          "bassSense": 3.5,
+          "waveSpeed": 18,
+          "waveDecay": 0.012,
+          "maxRadius": 1200,
+          "thickness": 8,
+          "cooldown": 80,
+          "color": "#000000",
           "opacity": 1,
-          "sensitivity": 1,
-          "beatAnim": "None",
-          "reactLow": 1,
-          "hueSource": "High",
-          "hueAmount": -14,
-          "shiftX": 0,
-          "shiftY": -82
-        }
-      },
-      {
-        "id": "layer-1777682762550",
-        "name": "0002 Shapes Left",
-        "effectUrl": "effects/effect-0002-shapes.html",
-        "params": {
-          "shape": "Cube",
-          "speed": 0,
-          "opacity": 1,
-          "color": "#0056d6",
-          "reactLow": 1.5,
-          "reactMid": 1,
-          "reactHigh": 1,
           "hueSource": "Low",
-          "hueAmount": 306,
-          "shiftX": -61,
-          "shiftY": -7
-        }
-      },
-      {
-        "id": "layer-1777689678612",
-        "name": "0002 Shapes Right",
-        "effectUrl": "effects/effect-0002-shapes.html",
-        "params": {
-          "shape": "Cube",
-          "speed": 0,
-          "opacity": 1,
-          "color": "#0056d6",
-          "reactLow": 1.5,
-          "reactMid": 1,
-          "reactHigh": 1,
-          "hueSource": "Low",
-          "hueAmount": 306,
-          "shiftX": 58,
-          "shiftY": -4
-        }
-      },
-      {
-        "id": "layer-1777682632635",
-        "name": "0003 Visualizer",
-        "effectUrl": "effects/effect-0003-visualizer.html",
-        "params": {
-          "shape": "Bar",
-          "color": "#ff4500",
-          "opacity": 1,
-          "sensitivity": 1,
-          "beatAnim": "Flash",
-          "reactLow": 1,
-          "hueSource": "High",
-          "hueAmount": 144,
+          "hueAmount": 120,
           "shiftX": 0,
           "shiftY": 0
         }
       },
       {
-        "id": "layer-forest-gen",
-        "name": "Tree Line",
-        "effectUrl": "effects/effect-0002-shapes.html",
+        "id": "layer-sn01-cornerflash",
+        "name": "Solar Corner Flash",
+        "effectUrl": "effects/effect-iv06-cornerflash.html",
         "params": {
-          "baseR": 20,
-          "baseG": 100,
-          "baseB": 30,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.85,
+          "cornerSize": 350,
+          "thickness": 4,
+          "glowIntensity": 0.95,
+          "pulseSpeed": 3.2,
+          "arcCount": 6,
+          "sizeReact": 2,
+          "colorReactLow": 120,
+          "colorReactMid": 60,
+          "colorReactHigh": 30,
+          "smoothing": 0.12,
+          "color": "#000000",
+          "opacity": 0.85,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn01-strobe",
+        "name": "Heavy Bass Strobe",
+        "effectUrl": "effects/effect-bass06-strobe.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
           "baseA": 0.4,
-          "shape": "FractalTree",
-          "speed": 0.3,
-          "opacity": 0.53,
-          "color": "#228833",
-          "reactLow": 0.5,
-          "reactMid": 0.8,
-          "reactHigh": 0.3,
-          "hueSource": "High",
-          "hueAmount": 360,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-1777682347503",
-        "name": "0016 Botanical",
-        "effectUrl": "effects/effect-0016-botanical.html",
-        "params": {
-          "layout": "Center",
-          "opacity": 1,
-          "color": "#00ff44",
-          "lineThickness": 8.4,
-          "reactLow": 0.8,
-          "reactMid": 1,
-          "reactHigh": 1,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 5,
+          "bassThreshold": 0.45,
+          "bassSense": 1.8,
+          "flashDuration": 45,
+          "cooldown": 120,
+          "shape": "Full",
+          "color": "#000000",
+          "opacity": 0.35,
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
           "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1783439135200",
+    "name": "SN-02 Thunder Strike",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn02-laserwall",
+        "name": "Thunder Laser Wall",
+        "effectUrl": "effects/effect-iv03-laserwall.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.9,
+          "lineCount": 22,
+          "scanSpeed": 3.8,
+          "thickness": 12,
+          "orientation": "Both",
+          "sizeReact": 2.5,
+          "colorReactLow": 180,
+          "colorReactMid": 80,
+          "colorReactHigh": 40,
+          "smoothing": 0.1,
+          "glow": 30,
+          "color": "#000000",
+          "opacity": 0.9,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn02-quake",
+        "name": "Thunder Quake",
+        "effectUrl": "effects/effect-bass03-quake.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.85,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 8,
+          "bassThreshold": 0.12,
+          "bassSense": 2.8,
+          "shakeAmount": 65,
+          "glitchSlice": 0.85,
+          "rgbSplit": 18,
+          "mode": "Both",
+          "color": "#000000",
+          "opacity": 0.85,
+          "hueSource": "Low",
+          "hueAmount": 120,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn02-glitchbar",
+        "name": "Lightning Glitch Bar",
+        "effectUrl": "effects/effect-iv05-glitchbar.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.85,
+          "barCount": 96,
+          "barWidth": 0.9,
+          "glitchIntensity": 0.85,
+          "shakeAmount": 22,
+          "channelSplit": 12,
+          "mirror": "Center",
+          "sizeReact": 2.4,
+          "colorReactLow": 150,
+          "colorReactMid": 75,
+          "colorReactHigh": 30,
+          "smoothing": 0.1,
+          "color": "#000000",
+          "opacity": 0.85,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1782219730187",
+    "name": "SN-03 Neon Rush",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn03-edgerunner",
+        "name": "Neon Edge Runner",
+        "effectUrl": "effects/effect-iv07-edgerunner.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.95,
+          "particleCount": 32,
+          "speed": 4.2,
+          "trailLength": 65,
+          "edgeWidth": 70,
+          "dotSize": 6,
+          "sizeReact": 2,
+          "colorReactLow": 120,
+          "colorReactMid": 60,
+          "colorReactHigh": 30,
+          "smoothing": 0.12,
+          "color": "#000000",
+          "opacity": 0.95,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn03-prism",
+        "name": "Prismatic Core",
+        "effectUrl": "effects/effect-iv01-prism.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.85,
+          "rayCount": 36,
+          "rayLength": 350,
+          "thickness": 3,
+          "rotSpeed": 1.2,
+          "spread": 1,
+          "sizeReact": 1.8,
+          "colorReactLow": 120,
+          "colorReactMid": 60,
+          "colorReactHigh": 30,
+          "smoothing": 0.15,
+          "color": "#000000",
+          "opacity": 0.85,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn03-particles",
+        "name": "Floating Diamond Dust",
+        "effectUrl": "effects/effect-012-particles.html",
+        "params": {
+          "particleCount": 400,
+          "baseSize": 6,
+          "color1": "#00ffff",
+          "color2": "#ff00aa",
+          "opacity": 0.8,
+          "reactLow": 2.2,
+          "reactMid": 0.5,
+          "speed": 1.8,
+          "shape": "Diamond"
         }
       }
     ]
@@ -198,7 +255,7 @@
     "params": {
       "scale": 1,
       "color": "#000000",
-      "opacity": "0"
+      "opacity": 0
     },
     "layers": [
       {
@@ -220,7 +277,8 @@
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -241,7 +299,8 @@
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
-          "shiftY": 0
+          "shiftY": 0,
+          "thickness": 2
         }
       },
       {
@@ -350,7 +409,8 @@
           "hueSource": "High",
           "hueAmount": 334,
           "shiftX": 0,
-          "shiftY": 6
+          "shiftY": 6,
+          "thickness": 2
         }
       }
     ]
@@ -360,8 +420,8 @@
     "name": "IV EDM",
     "params": {
       "scale": 1,
-      "color": "#ff8800",
-      "opacity": "0"
+      "color": "#ff0000",
+      "opacity": 0
     },
     "layers": [
       {
@@ -375,7 +435,7 @@
           "baseA": 1,
           "rayCount": 80,
           "rayLength": 500,
-          "thickness": 3,
+          "thickness": 8,
           "rotSpeed": 1,
           "spread": 1,
           "sizeReact": 2,
@@ -383,7 +443,7 @@
           "colorReactMid": 150,
           "colorReactHigh": 100,
           "smoothing": 0.12,
-          "color": "#ff4400",
+          "color": "#000000",
           "opacity": 0.8,
           "shiftX": 0,
           "shiftY": 0
@@ -400,7 +460,7 @@
           "baseA": 0.8,
           "lineCount": 12,
           "scanSpeed": 2,
-          "thickness": 4,
+          "thickness": 10,
           "orientation": "Both",
           "sizeReact": 2,
           "colorReactLow": 180,
@@ -408,7 +468,7 @@
           "colorReactHigh": 80,
           "smoothing": 0.1,
           "glow": 30,
-          "color": "#ff00ff",
+          "color": "#000000",
           "opacity": 0.7,
           "shiftX": 0,
           "shiftY": 0
@@ -424,14 +484,14 @@
           "baseB": 255,
           "baseA": 0.6,
           "gridSize": 45,
-          "cellGap": 2,
+          "cellGap": 4,
           "pulseDecay": 0.9,
           "sizeReact": 1.8,
           "colorReactLow": 160,
           "colorReactMid": 100,
           "colorReactHigh": 80,
           "smoothing": 0.12,
-          "color": "#00ff44",
+          "color": "#000000",
           "opacity": 0.6,
           "shiftX": 0,
           "shiftY": 0
@@ -447,7 +507,7 @@
           "baseB": 255,
           "baseA": 0.5,
           "barCount": 48,
-          "barWidth": 0.9,
+          "barWidth": 3,
           "glitchIntensity": 0.3,
           "shakeAmount": 8,
           "channelSplit": 6,
@@ -457,7 +517,7 @@
           "colorReactMid": 100,
           "colorReactHigh": 60,
           "smoothing": 0.12,
-          "color": "#ffaa00",
+          "color": "#000000",
           "opacity": 0.4,
           "shiftX": 0,
           "shiftY": 0
@@ -467,355 +527,73 @@
   },
   {
     "id": "group-1777690713933",
-    "name": "Red Preset",
-    "params": {
-      "scale": "1.1",
-      "color": "#000000",
-      "opacity": "0"
-    },
-    "layers": [
-      {
-        "id": "layer-1777691345094",
-        "name": "Hard Song01 Radial",
-        "effectUrl": "effects/effect-hard-song01-radial.html",
-        "params": {
-          "speed": 4.7,
-          "intensity": 0.22,
-          "glitch": 0.99,
-          "flash": 0.02,
-          "mode": "bars",
-          "hueSource": "Low",
-          "hueAmount": 360
-        }
-      },
-      {
-        "id": "layer-1777690809353",
-        "name": "Dot wave",
-        "effectUrl": "effects/effect-0004-utility.html",
-        "params": {
-          "mode": "DotWave",
-          "feedback": 0.86,
-          "opacity": 1,
-          "speed": 2.5,
-          "color": "#3c071b",
-          "intensity": 1,
-          "reactLow": 1.5,
-          "hueSource": "Low",
-          "hueAmount": 54,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-1777691486507",
-        "name": "Botanical Left",
-        "effectUrl": "effects/effect-0016-botanical.html",
-        "params": {
-          "layout": "Center",
-          "opacity": 1,
-          "color": "#e63b7a",
-          "lineThickness": 2.7,
-          "reactLow": 0,
-          "reactMid": 0.9,
-          "reactHigh": 2.5,
-          "hueSource": "Mid",
-          "hueAmount": 90,
-          "shiftX": -64,
-          "shiftY": -35
-        }
-      },
-      {
-        "id": "layer-1777691631849",
-        "name": "Botanical Right",
-        "effectUrl": "effects/effect-0016-botanical.html",
-        "params": {
-          "layout": "Center",
-          "opacity": 1,
-          "color": "#e63b7a",
-          "lineThickness": 2.7,
-          "reactLow": 0,
-          "reactMid": 0.9,
-          "reactHigh": 2.5,
-          "hueSource": "Mid",
-          "hueAmount": 90,
-          "shiftX": 62,
-          "shiftY": -35
-        }
-      },
-      {
-        "id": "layer-1777690722718",
-        "name": "GeneTunnel",
-        "effectUrl": "effects/effect-0001-generator.html",
-        "params": {
-          "shape": "Tunnel",
-          "speed": 1,
-          "opacity": 1,
-          "color": "#b51a00",
-          "beatAnim": "None",
-          "reactLow": 0.7,
-          "reactMid": 2.9,
-          "reactHigh": 5,
-          "hueSource": "None",
-          "hueAmount": 90,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-1777691206434",
-        "name": "CodeRain",
-        "effectUrl": "effects/effect-0002-shapes.html",
-        "params": {
-          "shape": "CodeRain",
-          "speed": 0.6,
-          "opacity": 1,
-          "color": "#01c7fc",
-          "reactLow": 5,
-          "reactMid": 2.1,
-          "reactHigh": 2.8,
-          "hueSource": "Low",
-          "hueAmount": 156,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-1777691733509",
-        "name": "Grid frame",
-        "effectUrl": "effects/effect-0001-generator.html",
-        "params": {
-          "shape": "Grid",
-          "speed": 3.8,
-          "opacity": 1,
-          "color": "#ff6250",
-          "beatAnim": "None",
-          "reactLow": 5,
-          "reactMid": 5,
-          "reactHigh": 5,
-          "hueSource": "None",
-          "hueAmount": -238,
-          "shiftX": 0,
-          "shiftY": 19
-        }
-      }
-    ]
-  },
-  {
-    "id": "group-1778045231383",
-    "name": "IV AllOut",
+    "name": "SN-04 Meltdown Core",
     "params": {
       "scale": 1,
-      "color": "#ff0001",
-      "opacity": "0"
+      "color": "#000000",
+      "opacity": 0
     },
     "layers": [
       {
-        "id": "layer-iv-ao-prism",
-        "name": "Prism Full",
-        "effectUrl": "effects/effect-iv01-prism.html",
+        "id": "layer-sn04-impactcore",
+        "name": "Meltdown Impact Core",
+        "effectUrl": "effects/effect-bass11-impact-core.html",
         "params": {
-          "baseR": 0,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 1,
-          "rayCount": 60,
-          "rayLength": 400,
-          "thickness": 2.5,
-          "rotSpeed": 1.2,
-          "spread": 1,
-          "sizeReact": 2,
-          "colorReactLow": 180,
-          "colorReactMid": 120,
-          "colorReactHigh": 90,
-          "smoothing": 0.1,
-          "color": "#ffffff",
-          "opacity": 0.8,
-          "shiftX": 0,
-          "shiftY": 0
+          "sides": 6,
+          "baseSize": 140,
+          "reactLow": 4.5,
+          "color": "#000000",
+          "opacity": 0.95,
+          "style": "Glow",
+          "rotationSpeed": 1.5
         }
       },
       {
-        "id": "layer-iv-ao-hex",
-        "name": "HexGrid Full",
-        "effectUrl": "effects/effect-iv02-hexgrid.html",
-        "params": {
-          "baseR": 0,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.7,
-          "gridSize": 50,
-          "cellGap": 2,
-          "pulseDecay": 0.91,
-          "sizeReact": 1.8,
-          "colorReactLow": 150,
-          "colorReactMid": 100,
-          "colorReactHigh": 60,
-          "smoothing": 0.12,
-          "color": "#ffffff",
-          "opacity": 0.6,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-iv-ao-laser",
-        "name": "Laser Full",
-        "effectUrl": "effects/effect-iv03-laserwall.html",
-        "params": {
-          "baseR": 0,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.6,
-          "lineCount": 8,
-          "scanSpeed": 1.8,
-          "thickness": 4,
-          "orientation": "Cross",
-          "sizeReact": 2,
-          "colorReactLow": 160,
-          "colorReactMid": 100,
-          "colorReactHigh": 70,
-          "smoothing": 0.1,
-          "glow": 25,
-          "color": "#ffffff",
-          "opacity": 0.6,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-iv-ao-vortex",
-        "name": "Vortex Full",
+        "id": "layer-sn04-vortex",
+        "name": "Core Vortex",
         "effectUrl": "effects/effect-iv04-vortex.html",
         "params": {
           "baseR": 0,
           "baseG": 255,
           "baseB": 255,
-          "baseA": 0.5,
-          "particleCount": 50,
-          "vortexSpeed": 1.5,
-          "radius": 250,
-          "trailAlpha": 0.05,
-          "dotSize": 4,
-          "sizeReact": 1.8,
-          "colorReactLow": 140,
-          "colorReactMid": 90,
-          "colorReactHigh": 60,
-          "smoothing": 0.12,
-          "color": "#ffffff",
-          "opacity": 0.5,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-iv-ao-glitch",
-        "name": "GlitchBar Full",
-        "effectUrl": "effects/effect-iv05-glitchbar.html",
-        "params": {
-          "baseR": 0,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.4,
-          "barCount": 48,
-          "barWidth": 0.85,
-          "glitchIntensity": 0.4,
-          "shakeAmount": 10,
-          "channelSplit": 5,
-          "mirror": "Center",
-          "sizeReact": 1.5,
+          "baseA": 0.85,
+          "particleCount": 65,
+          "vortexSpeed": 2,
+          "radius": 260,
+          "trailAlpha": 0.15,
+          "dotSize": 5,
+          "sizeReact": 2,
           "colorReactLow": 120,
-          "colorReactMid": 80,
-          "colorReactHigh": 50,
+          "colorReactMid": 60,
+          "colorReactHigh": 30,
           "smoothing": 0.12,
-          "color": "#ffffff",
-          "opacity": 0.4,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      }
-    ]
-  },
-  {
-    "id": "group-1779290877613",
-    "name": "IVe Trance",
-    "params": {
-      "scale": 1,
-      "color": "#00e6a0",
-      "opacity": "1"
-    },
-    "layers": [
-      {
-        "id": "layer-ive-tr-track",
-        "name": "TrackArc Flow",
-        "effectUrl": "effects/effect-iv09-trackarc.html",
-        "params": {
-          "baseR": 0,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 1,
-          "ringCount": 3,
-          "arcLength": 1.5,
-          "dotCount": 24,
-          "ellipseRatio": 0.65,
-          "rotSpeed": 0.6,
-          "ringRadius": 350,
-          "sizeReact": 1.3,
-          "colorReactLow": 100,
-          "colorReactMid": 120,
-          "colorReactHigh": 60,
-          "smoothing": 0.2,
-          "color": "#100800",
+          "color": "#000000",
           "opacity": 0.85,
           "shiftX": 0,
           "shiftY": 0
         }
       },
       {
-        "id": "layer-ive-tr-frame",
-        "name": "FrameBeat Pulse",
+        "id": "layer-sn04-framebeat",
+        "name": "Pulsing Frame",
         "effectUrl": "effects/effect-iv08-framebeat.html",
         "params": {
           "baseR": 0,
           "baseG": 255,
           "baseB": 255,
-          "baseA": 0.7,
-          "frameWidth": 18,
-          "bounceReact": 1.5,
+          "baseA": 0.9,
+          "frameWidth": 45,
+          "bounceReact": 2.5,
           "layerCount": 3,
-          "glow": 25,
-          "waveAmount": 8,
-          "sizeReact": 1.2,
-          "colorReactLow": 80,
-          "colorReactMid": 100,
-          "colorReactHigh": 50,
-          "smoothing": 0.18,
-          "color": "#001008",
-          "opacity": 0.65,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-ive-tr-edge",
-        "name": "EdgeRunner Drift",
-        "effectUrl": "effects/effect-iv07-edgerunner.html",
-        "params": {
-          "baseR": 0,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.5,
-          "particleCount": 10,
-          "speed": 1.5,
-          "trailLength": 60,
-          "edgeWidth": 20,
-          "dotSize": 5,
-          "sizeReact": 1,
-          "colorReactLow": 70,
-          "colorReactMid": 90,
-          "colorReactHigh": 40,
-          "smoothing": 0.2,
-          "color": "#080010",
-          "opacity": 0.5,
+          "glow": 35,
+          "waveAmount": 16,
+          "sizeReact": 2.2,
+          "colorReactLow": 140,
+          "colorReactMid": 70,
+          "colorReactHigh": 35,
+          "smoothing": 0.1,
+          "color": "#000000",
+          "opacity": 0.9,
           "shiftX": 0,
           "shiftY": 0
         }
@@ -823,12 +601,609 @@
     ]
   },
   {
+    "id": "group-1782216148911",
+    "name": "SN-06 Volcanic Drop",
+    "params": {
+      "scale": 1,
+      "color": "#81f820",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-06-shockwave",
+        "name": "Shockwave",
+        "effectUrl": "effects/effect-bass02-shockwave.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 6,
+          "bassThreshold": 0.15,
+          "bassSense": 3.5,
+          "waveSpeed": 8,
+          "waveDecay": 0.006,
+          "maxRadius": 1200,
+          "thickness": 10,
+          "cooldown": 100,
+          "color": "#000000",
+          "opacity": 1,
+          "hueSource": "Low",
+          "hueAmount": 120,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn-06-radial",
+        "name": "Radial",
+        "effectUrl": "effects/effect-hard-song01-radial.html",
+        "params": {
+          "speed": 6,
+          "intensity": 0.7,
+          "glitch": 0.5,
+          "flash": 0.15,
+          "mode": "bars",
+          "hueSource": "Low",
+          "hueAmount": 90,
+          "color": "#ff4400"
+        }
+      },
+      {
+        "id": "layer-sn-06-pulsering",
+        "name": "PulseRing",
+        "effectUrl": "effects/effect-bass01-pulsering.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.7,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 8,
+          "bassThreshold": 0.1,
+          "bassSense": 2.5,
+          "ringCount": 4,
+          "ringSpacing": 80,
+          "thickness": 5,
+          "color": "#000000",
+          "opacity": 0.7,
+          "mode": "Single",
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1782625795429",
+    "name": "SN-07 Laser Storm",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-07-laserwall",
+        "name": "LaserWall",
+        "effectUrl": "effects/effect-iv03-laserwall.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "lineCount": 20,
+          "scanSpeed": 4,
+          "thickness": 8,
+          "orientation": "Both",
+          "sizeReact": 2.5,
+          "colorReactLow": 200,
+          "colorReactMid": 150,
+          "colorReactHigh": 100,
+          "smoothing": 0.08,
+          "glow": 50,
+          "color": "#000000",
+          "opacity": 0.9,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn-07-laserclash",
+        "name": "LaserClash",
+        "effectUrl": "effects/effect-b2b02-laser-clash.html",
+        "params": {
+          "color": "#00ffff",
+          "opacity": 0.75,
+          "speed": 3.5,
+          "b2bMode": "Left",
+          "laserCount": 20,
+          "reactHigh": 2
+        }
+      },
+      {
+        "id": "layer-sn-07-cornerflash",
+        "name": "CornerFlash",
+        "effectUrl": "effects/effect-iv06-cornerflash.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.8,
+          "cornerSize": 280,
+          "glowIntensity": 0.85,
+          "pulseSpeed": 2.5,
+          "arcCount": 6,
+          "sizeReact": 2,
+          "colorReactLow": 180,
+          "colorReactMid": 120,
+          "colorReactHigh": 80,
+          "smoothing": 0.1,
+          "color": "#000000",
+          "opacity": 0.7,
+          "shiftX": 0,
+          "shiftY": 0,
+          "thickness": 2.5
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1779292337979",
+    "name": "SN-09 Groove Hex",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn09-hexgrid",
+        "name": "HexGrid",
+        "effectUrl": "effects/effect-iv02-hexgrid.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "cellSize": 35,
+          "fillRatio": 0.4,
+          "pulseSpeed": 1.5,
+          "sizeReact": 1.5,
+          "colorReactLow": 140,
+          "colorReactMid": 80,
+          "colorReactHigh": 30,
+          "smoothing": 0.15,
+          "color": "#000000",
+          "opacity": 0.85,
+          "shiftX": 0,
+          "shiftY": 0,
+          "gridSize": 50,
+          "cellGap": 2,
+          "pulseDecay": 0.92
+        }
+      },
+      {
+        "id": "layer-sn09-sidepillar",
+        "name": "SidePillar",
+        "effectUrl": "effects/effect-iv10-sidepillar.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.8,
+          "pillarCount": 6,
+          "maxWidth": 30,
+          "gapRatio": 0.7,
+          "sparkAmount": 10,
+          "sizeReact": 1.3,
+          "colorReactLow": 120,
+          "colorReactMid": 60,
+          "colorReactHigh": 25,
+          "smoothing": 0.15,
+          "color": "#000000",
+          "opacity": 0.7,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn09-framebeat",
+        "name": "FrameBeat",
+        "effectUrl": "effects/effect-iv08-framebeat.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.6,
+          "frameWidth": 18,
+          "bounceReact": 1.2,
+          "layerCount": 2,
+          "glow": 20,
+          "waveAmount": 6,
+          "sizeReact": 1,
+          "colorReactLow": 100,
+          "colorReactMid": 50,
+          "colorReactHigh": 20,
+          "smoothing": 0.15,
+          "color": "#000000",
+          "opacity": 0.55,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1782219849917",
+    "name": "Bass DunDun",
+    "params": {
+      "scale": 1,
+      "color": "#ff000d",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-dd-shock1",
+        "name": "Heavy Impact",
+        "effectUrl": "effects/effect-bass02-shockwave.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 6,
+          "bassThreshold": 0.2,
+          "bassSense": 3.1,
+          "waveSpeed": 6,
+          "waveDecay": 0.008,
+          "maxRadius": 1000,
+          "thickness": 8,
+          "cooldown": 150,
+          "color": "#000000",
+          "opacity": 1,
+          "hueSource": "None",
+          "hueAmount": 146,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-dd-quake1",
+        "name": "Earth Shake",
+        "effectUrl": "effects/effect-bass03-quake.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.8,
+          "bassFreqLow": "4",
+          "bassFreqHigh": "9",
+          "bassThreshold": 0.15,
+          "bassSense": "2.8",
+          "shakeAmount": "46",
+          "glitchSlice": 0.96,
+          "rgbSplit": 10,
+          "color": "#000000",
+          "opacity": 0.8,
+          "mode": "Both",
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-dd-woofer1",
+        "name": "Sub Woofer",
+        "effectUrl": "effects/effect-bass04-woofer.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.7,
+          "bassFreqLow": 8,
+          "bassFreqHigh": 53,
+          "bassThreshold": 0.47,
+          "bassSense": 4,
+          "coneSize": 255,
+          "vibration": 30,
+          "ringCount": 10,
+          "color": "#000000",
+          "opacity": 1,
+          "hueSource": "Low",
+          "hueAmount": -144,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-dd-pulse1",
+        "name": "Deep Ring",
+        "effectUrl": "effects/effect-bass01-pulsering.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.5,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 6,
+          "bassThreshold": 0.15,
+          "bassSense": "1.7",
+          "ringCount": 2,
+          "ringSpacing": 100,
+          "thickness": 17.5,
+          "color": "#000000",
+          "opacity": 0.7,
+          "mode": "Single",
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1782625970307",
+    "name": "SN-10 Midnight Disco",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn10-prism",
+        "name": "Prism",
+        "effectUrl": "effects/effect-iv01-prism.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "rotSpeed": 0.8,
+          "segmentCount": 8,
+          "innerRadius": 80,
+          "outerRadius": 350,
+          "sizeReact": 1.5,
+          "colorReactLow": 160,
+          "colorReactMid": 100,
+          "colorReactHigh": 50,
+          "smoothing": 0.12,
+          "color": "#000000",
+          "opacity": 0.85,
+          "shiftX": 0,
+          "shiftY": 0,
+          "rayCount": 40,
+          "rayLength": 300,
+          "thickness": 2.5,
+          "spread": 1
+        }
+      },
+      {
+        "id": "layer-sn10-polygon",
+        "name": "Polygon",
+        "effectUrl": "effects/effect-0011-polygon.html",
+        "params": {
+          "color": "#ff66cc",
+          "opacity": 0.6,
+          "speed": 1.2,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "reactLow": 2,
+          "reactMid": 3,
+          "reactHigh": 1.5,
+          "hueSource": "Mid",
+          "hueAmount": 120,
+          "shiftX": 0,
+          "shiftY": 0,
+          "baseSize": 150,
+          "baseThick": 2,
+          "lowSize": 1,
+          "lowHue": 0,
+          "lowThick": 10,
+          "midSize": 0.5,
+          "midHue": 90,
+          "midThick": 5,
+          "highSize": 0.2,
+          "highHue": 180,
+          "highThick": 20,
+          "subBass": 7,
+          "ultraHigh": 9,
+          "beatAnim": "なし"
+        }
+      },
+      {
+        "id": "layer-sn10-circle",
+        "name": "Circle",
+        "effectUrl": "effects/effect-0000-circle.html",
+        "params": {
+          "size": 300,
+          "thickness": 15,
+          "color": "#00ccff",
+          "audioReact": 0.5,
+          "reactLow": 2,
+          "reactMid": 150,
+          "reactHigh": 20,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1782625983002",
+    "name": "SN-11 Retro Wave",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn11-tunnel",
+        "name": "Tunnel",
+        "effectUrl": "effects/effect-0001-generator.html",
+        "params": {
+          "shape": "Tunnel",
+          "speed": -2.5,
+          "opacity": 0.85,
+          "color": "#ff6600",
+          "beatAnim": "Scale",
+          "reactLow": 3,
+          "reactMid": 2.5,
+          "reactHigh": 1.5,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "Low",
+          "hueAmount": 120,
+          "shiftX": 0,
+          "shiftY": 0,
+          "thickness": 2
+        }
+      },
+      {
+        "id": "layer-sn11-sine-wave",
+        "name": "Sine Wave",
+        "effectUrl": "effects/effect-013-sine-wave.html",
+        "params": {
+          "color": "#00ffcc",
+          "opacity": 0.6,
+          "speed": 1.5,
+          "reactLow": 2,
+          "shiftX": 0,
+          "shiftY": 0,
+          "dotCount": 100,
+          "dotSize": 5,
+          "amplitude": 200,
+          "frequency": 2,
+          "style": "Dots"
+        }
+      },
+      {
+        "id": "layer-sn11-vertical-lines",
+        "name": "Vertical Lines",
+        "effectUrl": "effects/effect-014-vertical-lines.html",
+        "params": {
+          "color": "#ffffff",
+          "opacity": 0.35,
+          "speed": 2,
+          "reactLow": 1.5,
+          "shiftX": 0,
+          "shiftY": 0,
+          "lineCount": 20,
+          "baseWidth": 50,
+          "reactMid": 1
+        }
+      }
+    ]
+  },
+  {
     "id": "group-1779291025276",
+    "name": "SN-12 Pulse Drive",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn12-pulse-ring",
+        "name": "Pulse Ring",
+        "effectUrl": "effects/effect-bass01-pulsering.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 6,
+          "bassThreshold": 0.15,
+          "bassSense": 2.2,
+          "ringCount": 3,
+          "ringSpacing": 90,
+          "thickness": 6,
+          "color": "#000000",
+          "opacity": 0.9,
+          "mode": "Single",
+          "hueSource": "Low",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn12-track-arc",
+        "name": "Track Arc",
+        "effectUrl": "effects/effect-iv09-trackarc.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.75,
+          "ringCount": 3,
+          "arcLength": 1.5,
+          "dotCount": 20,
+          "ellipseRatio": 0.6,
+          "rotSpeed": 0.6,
+          "ringRadius": 300,
+          "sizeReact": 1.3,
+          "colorReactLow": 120,
+          "colorReactMid": 80,
+          "colorReactHigh": 40,
+          "smoothing": 0.15,
+          "color": "#000000",
+          "opacity": 0.7,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn12-woofer",
+        "name": "Woofer",
+        "effectUrl": "effects/effect-bass04-woofer.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.6,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 4,
+          "bassThreshold": 0.12,
+          "bassSense": 2,
+          "coneSize": 200,
+          "vibration": 25,
+          "ringCount": 8,
+          "color": "#000000",
+          "opacity": 0.6,
+          "hueSource": "Low",
+          "hueAmount": 60,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1783439001691",
     "name": "IVe Ambient",
     "params": {
       "scale": 1,
-      "color": "#b50d0d",
-      "opacity": "1"
+      "color": "#00ffe1",
+      "opacity": 0
     },
     "layers": [
       {
@@ -885,83 +1260,81 @@
     ]
   },
   {
-    "id": "group-1779292337979",
-    "name": "IVe DnB",
+    "id": "group-1782625338257",
+    "name": "SN-13 Night Cruise",
     "params": {
       "scale": 1,
-      "color": "#00e6a0",
-      "opacity": "0"
+      "color": "#000000",
+      "opacity": 0
     },
     "layers": [
       {
-        "id": "layer-ive-dnb-edge",
-        "name": "EdgeRunner Fast",
+        "id": "layer-sn13-wireframe3d",
+        "name": "Wireframe3D",
+        "effectUrl": "effects/effect-0012-wireframe3d.html",
+        "params": {
+          "shape": "Box",
+          "speed": 1.2,
+          "opacity": 0.8,
+          "color": "#6699ff",
+          "axisX": 20,
+          "axisY": -40,
+          "reactLow": 1.5,
+          "reactMid": 4,
+          "reactHigh": 8,
+          "beatAnim": "Glitch",
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0,
+          "thickness": 2
+        }
+      },
+      {
+        "id": "layer-sn13-edgerunner",
+        "name": "EdgeRunner",
         "effectUrl": "effects/effect-iv07-edgerunner.html",
         "params": {
           "baseR": 0,
           "baseG": 255,
           "baseB": 255,
-          "baseA": 1,
-          "particleCount": 20,
-          "speed": 3.5,
-          "trailLength": 50,
-          "edgeWidth": 25,
-          "dotSize": 3.5,
-          "sizeReact": 2,
-          "colorReactLow": 180,
-          "colorReactMid": 130,
-          "colorReactHigh": 80,
-          "smoothing": 0.1,
-          "color": "#100800",
-          "opacity": 0.9,
-          "shiftX": 0,
-          "shiftY": 0
-        }
-      },
-      {
-        "id": "layer-ive-dnb-corner",
-        "name": "CornerFlash Hit",
-        "effectUrl": "effects/effect-iv06-cornerflash.html",
-        "params": {
-          "baseR": 0,
-          "baseG": 255,
-          "baseB": 255,
           "baseA": 0.8,
-          "cornerSize": 200,
-          "glowIntensity": 0.9,
-          "pulseSpeed": 2.5,
-          "arcCount": 5,
-          "sizeReact": 2.2,
-          "colorReactLow": 220,
-          "colorReactMid": 140,
-          "colorReactHigh": 100,
-          "smoothing": 0.1,
-          "color": "#001008",
-          "opacity": 0.75,
+          "particleCount": 12,
+          "speed": 2,
+          "trailLength": 45,
+          "edgeWidth": 30,
+          "dotSize": 6,
+          "sizeReact": 1.5,
+          "colorReactLow": 130,
+          "colorReactMid": 80,
+          "colorReactHigh": 40,
+          "smoothing": 0.15,
+          "color": "#000000",
+          "opacity": 0.7,
           "shiftX": 0,
           "shiftY": 0
         }
       },
       {
-        "id": "layer-ive-dnb-pillar",
-        "name": "SidePillar Snap",
-        "effectUrl": "effects/effect-iv10-sidepillar.html",
+        "id": "layer-sn13-circle",
+        "name": "Circle",
+        "effectUrl": "effects/effect-0000-circle.html",
         "params": {
+          "size": 150,
+          "thickness": 8,
+          "color": "#ffffff",
+          "audioReact": 0.3,
+          "reactLow": 1.2,
+          "reactMid": 80,
+          "reactHigh": 10,
           "baseR": 0,
           "baseG": 255,
           "baseB": 255,
-          "baseA": 0.6,
-          "pillarCount": 8,
-          "maxWidth": 28,
-          "gapRatio": 0.6,
-          "sparkAmount": 15,
-          "sizeReact": 2,
-          "colorReactLow": 160,
-          "colorReactMid": 100,
-          "colorReactHigh": 60,
-          "smoothing": 0.08,
-          "color": "#080010",
-          "opacity": 0.6,
+          "baseA": 1,
           "shiftX": 0,
           "shiftY": 0
         }
@@ -969,17 +1342,793 @@
     ]
   },
   {
-    "id": "group-1778044443540",
-    "name": "Bass DunDun",
+    "id": "group-1779290877613",
+    "name": "SN-14 Funky Frame",
     "params": {
       "scale": 1,
-      "color": "#fd0014",
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn14-framebeat",
+        "name": "FrameBeat",
+        "effectUrl": "effects/effect-iv08-framebeat.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "frameWidth": 25,
+          "bounceReact": 2,
+          "layerCount": 3,
+          "glow": 30,
+          "waveAmount": 10,
+          "sizeReact": 1.8,
+          "colorReactLow": 160,
+          "colorReactMid": 100,
+          "colorReactHigh": 50,
+          "smoothing": 0.12,
+          "color": "#000000",
+          "opacity": 0.85,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn14-sidepillar",
+        "name": "SidePillar",
+        "effectUrl": "effects/effect-iv10-sidepillar.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.75,
+          "pillarCount": 8,
+          "maxWidth": 40,
+          "gapRatio": 0.6,
+          "sparkAmount": 15,
+          "sizeReact": 1.5,
+          "colorReactLow": 140,
+          "colorReactMid": 80,
+          "colorReactHigh": 40,
+          "smoothing": 0.12,
+          "color": "#000000",
+          "opacity": 0.7,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn14-shapes",
+        "name": "Shapes",
+        "effectUrl": "effects/effect-0002-shapes.html",
+        "params": {
+          "shape": "Cube",
+          "speed": 1.8,
+          "opacity": 0.5,
+          "color": "#ff9933",
+          "reactLow": 2.5,
+          "reactMid": 3,
+          "reactHigh": 2,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "Mid",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0,
+          "thickness": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1783439045862",
+    "name": "SN-15 Electric Slide",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn15-oscilloscope",
+        "name": "Oscilloscope",
+        "effectUrl": "effects/effect-bass10-oscilloscope.html",
+        "params": {
+          "color": "#00ff88",
+          "opacity": 0.9,
+          "reactLow": 3,
+          "shiftX": 0,
+          "shiftY": 0,
+          "thickness": 10,
+          "amplitude": 300,
+          "trail": 0.5,
+          "shape": "Linear"
+        }
+      },
+      {
+        "id": "layer-sn15-glitchbar",
+        "name": "GlitchBar",
+        "effectUrl": "effects/effect-iv05-glitchbar.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.7,
+          "barCount": 15,
+          "barWidth": 6,
+          "glitchIntensity": 0.5,
+          "shakeAmount": 15,
+          "channelSplit": 8,
+          "mirror": "None",
+          "sizeReact": 1.5,
+          "colorReactLow": 120,
+          "colorReactMid": 60,
+          "colorReactHigh": 30,
+          "smoothing": 0.12,
+          "color": "#000000",
+          "opacity": 0.6,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn15-speedlines",
+        "name": "SpeedLines",
+        "effectUrl": "effects/effect-b2b07-speed-lines.html",
+        "params": {
+          "color": "#ffffff",
+          "opacity": 0.45,
+          "speed": 3,
+          "shiftX": 0,
+          "shiftY": 0,
+          "b2bMode": "Left",
+          "lineCount": 50,
+          "reactHigh": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1778045231383",
+    "name": "SN-16 Starry Pop",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-16-kawaii",
+        "name": "Kawaii",
+        "effectUrl": "effects/effect-0015-kawaii.html",
+        "params": {
+          "color": "#ff66aa",
+          "opacity": 0.85,
+          "speed": 2,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "reactLow": 2,
+          "reactMid": 3,
+          "shiftX": 0,
+          "shiftY": 0,
+          "motif": "Mix",
+          "layout": "Burst",
+          "color1": "#ff99cc",
+          "color2": "#cc99ff",
+          "color3": "#99ffff",
+          "afterimage": 0.99,
+          "waveAmp": 50,
+          "lowReactSize": 2,
+          "lowReactSpawn": 3,
+          "midReactHue": 180,
+          "highReactFlash": 2,
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-sn-16-stardust",
+        "name": "Stardust",
+        "effectUrl": "effects/effect-high01-stardust.html",
+        "params": {
+          "color": "#ffcc00",
+          "opacity": 0.6,
+          "speed": 1.5,
+          "reactHigh": 3,
+          "shiftX": 0,
+          "shiftY": 0,
+          "particleCount": 200,
+          "decay": 0.85,
+          "thickness": 1.5
+        }
+      },
+      {
+        "id": "layer-sn-16-bubble",
+        "name": "Bubble",
+        "effectUrl": "effects/effect-0014-bubble.html",
+        "params": {
+          "complexity": 8,
+          "particleCount": 120,
+          "opacity": 0.5,
+          "afterimage": 0.97,
+          "color1": "#ff99cc",
+          "color2": "#99ccff",
+          "color3": "#ffff66",
+          "pattern": "湧き出る",
+          "speed": 2,
+          "highReact": 3,
+          "midReact": 1,
+          "lowReact": 1,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1782625149280",
+    "name": "SN-18 Crystal Prism",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-18-prism",
+        "name": "Prism",
+        "effectUrl": "effects/effect-iv01-prism.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "rotSpeed": 0.6,
+          "segmentCount": 6,
+          "innerRadius": 60,
+          "outerRadius": 300,
+          "sizeReact": 1.2,
+          "colorReactLow": 100,
+          "colorReactMid": 120,
+          "colorReactHigh": 60,
+          "smoothing": 0.18,
+          "color": "#000000",
+          "opacity": 0.85,
+          "shiftX": 0,
+          "shiftY": 0,
+          "rayCount": 40,
+          "rayLength": 300,
+          "thickness": 2.5,
+          "spread": 1
+        }
+      },
+      {
+        "id": "layer-sn-18-kaleidoscope",
+        "name": "Kaleidoscope",
+        "effectUrl": "effects/effect-0013-kaleidoscope.html",
+        "params": {
+          "color": "#ff88dd",
+          "opacity": 0.6,
+          "speed": 1,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "reactLow": 1.5,
+          "reactMid": 2.5,
+          "hueSource": "Mid",
+          "hueAmount": 150,
+          "shiftX": 0,
+          "shiftY": 0,
+          "complexity": 6,
+          "particleCount": 80,
+          "afterimage": 0.2,
+          "beatColorJump": 45,
+          "beatAnim": "Pop"
+        }
+      },
+      {
+        "id": "layer-sn-18-particles",
+        "name": "Particles",
+        "effectUrl": "effects/effect-012-particles.html",
+        "params": {
+          "particleCount": 300,
+          "baseSize": 4,
+          "color1": "#ffffff",
+          "color2": "#ffccee",
+          "opacity": 0.4,
+          "reactLow": 1.5,
+          "reactMid": 1,
+          "speed": 1,
+          "shape": "Circle",
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1782625342534",
+    "name": "SN-20 Pastel Burst",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-20-watercolor",
+        "name": "Watercolor",
+        "effectUrl": "effects/effect-b2b01-watercolor.html",
+        "params": {
+          "color": "#ffaacc",
+          "opacity": 0.8,
+          "speed": 1.5,
+          "shiftX": 0,
+          "shiftY": 0,
+          "b2bMode": "Left",
+          "blurAmount": 100,
+          "reactLow": 1.5
+        }
+      },
+      {
+        "id": "layer-sn-20-bubble",
+        "name": "Bubble",
+        "effectUrl": "effects/effect-0014-bubble.html",
+        "params": {
+          "complexity": 6,
+          "particleCount": 80,
+          "opacity": 0.6,
+          "afterimage": 0.96,
+          "color1": "#ffccdd",
+          "color2": "#aaccff",
+          "color3": "#ccffaa",
+          "pattern": "湧き出る",
+          "speed": 1.5,
+          "highReact": 2,
+          "midReact": 1.5,
+          "lowReact": 1,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn-20-opening-shape",
+        "name": "Opening Shape",
+        "effectUrl": "effects/effect-015-opening-shape.html",
+        "params": {
+          "color": "#ffffff",
+          "opacity": 0.5,
+          "speed": 1,
+          "reactLow": 2,
+          "shiftX": 0,
+          "shiftY": 0,
+          "shape": "Diamond",
+          "size": 800,
+          "thickness": 200,
+          "reactMid": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1782625361156",
+    "name": "SN-21 Moonlit Wave",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-21-flowwave",
+        "name": "FlowWave",
+        "effectUrl": "effects/effect-chill01-flowwave.html",
+        "params": {
+          "color": "#4488cc",
+          "opacity": 0.8,
+          "speed": 0.4,
+          "reactLow": 1,
+          "shiftX": 0,
+          "shiftY": 0,
+          "waveCount": 4,
+          "waveHeight": 80,
+          "reactMid": 1,
+          "reactHigh": 1,
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-sn-21-auraring",
+        "name": "AuraRing",
+        "effectUrl": "effects/effect-chill03-auraring.html",
+        "params": {
+          "color": "#6644aa",
+          "opacity": 0.55,
+          "speed": 0.3,
+          "reactLow": 0.8,
+          "shiftX": 0,
+          "shiftY": 0,
+          "ringCount": 5,
+          "ringSpacing": 60,
+          "thickness": 2,
+          "reactMid": 1,
+          "reactHigh": 1,
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-sn-21-ambient",
+        "name": "Ambient",
+        "effectUrl": "effects/effect-0005-ambient.html",
+        "params": {
+          "color": "#001133",
+          "opacity": 0.4,
+          "speed": 0.2,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "shiftX": 0,
+          "shiftY": 0,
+          "mode": "AmbientGlow",
+          "reactLow": 1.5,
+          "reactMid": 1,
+          "reactHigh": 1,
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1782625762720",
+    "name": "SN-23 Forest Breeze",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-23-botanical",
+        "name": "Botanical",
+        "effectUrl": "effects/effect-0016-botanical.html",
+        "params": {
+          "color": "#33cc66",
+          "opacity": 0.75,
+          "speed": 0.5,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "reactLow": 1,
+          "shiftX": 0,
+          "shiftY": 0,
+          "layout": "Bottom",
+          "lineThickness": 1,
+          "reactMid": 1,
+          "reactHigh": 1,
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-sn-23-mellowglow",
+        "name": "MellowGlow",
+        "effectUrl": "effects/effect-b2b10-mellow-glow.html",
+        "params": {
+          "color": "#ffcc66",
+          "opacity": 0.5,
+          "speed": 0.3,
+          "shiftX": 0,
+          "shiftY": 0,
+          "b2bMode": "Left",
+          "reactLow": 1
+        }
+      },
+      {
+        "id": "layer-sn-23-sinewave",
+        "name": "SineWave",
+        "effectUrl": "effects/effect-013-sine-wave.html",
+        "params": {
+          "color": "#88cc44",
+          "opacity": 0.35,
+          "speed": 0.6,
+          "reactLow": 0.8,
+          "shiftX": 0,
+          "shiftY": 0,
+          "dotCount": 100,
+          "dotSize": 5,
+          "amplitude": 200,
+          "frequency": 2,
+          "style": "Dots"
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1782625785193",
+    "name": "SN-24 Cosmic Drift",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-24-wireframe3d",
+        "name": "Wireframe3D",
+        "effectUrl": "effects/effect-0012-wireframe3d.html",
+        "params": {
+          "shape": "Octahedron",
+          "speed": 0.5,
+          "opacity": 0.7,
+          "color": "#8866ff",
+          "axisX": 15,
+          "axisY": -20,
+          "reactLow": 0.8,
+          "reactMid": 2,
+          "reactHigh": 5,
+          "beatAnim": "None",
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "None",
+          "hueAmount": 60,
+          "shiftX": 0,
+          "shiftY": 0,
+          "thickness": 2
+        }
+      },
+      {
+        "id": "layer-sn-24-particles",
+        "name": "Particles",
+        "effectUrl": "effects/effect-012-particles.html",
+        "params": {
+          "particleCount": 200,
+          "baseSize": 3,
+          "color1": "#aaaaff",
+          "color2": "#ffaaff",
+          "opacity": 0.45,
+          "reactLow": 0.8,
+          "reactMid": 0.5,
+          "speed": 0.5,
+          "shape": "Circle",
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn-24-ambient",
+        "name": "Ambient",
+        "effectUrl": "effects/effect-0005-ambient.html",
+        "params": {
+          "color": "#110022",
+          "opacity": 0.35,
+          "speed": 0.15,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "shiftX": 0,
+          "shiftY": 0,
+          "mode": "AmbientGlow",
+          "reactLow": 1.5,
+          "reactMid": 1,
+          "reactHigh": 1,
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1782229440988",
+    "name": "SN-25 Night Rain",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-25-inkdrop",
+        "name": "InkDrop",
+        "effectUrl": "effects/effect-b2b03-ink-drop.html",
+        "params": {
+          "color": "#334466",
+          "opacity": 0.75,
+          "speed": 2,
+          "shiftX": 0,
+          "shiftY": 0,
+          "b2bMode": "Left",
+          "dropCount": 5,
+          "gravity": 1,
+          "reactLow": 3
+        }
+      },
+      {
+        "id": "layer-sn-25-verticallines",
+        "name": "VerticalLines",
+        "effectUrl": "effects/effect-014-vertical-lines.html",
+        "params": {
+          "color": "#6688aa",
+          "opacity": 0.5,
+          "speed": 3,
+          "reactLow": 1.5,
+          "shiftX": 0,
+          "shiftY": 0,
+          "lineCount": 20,
+          "baseWidth": 50,
+          "reactMid": 1
+        }
+      },
+      {
+        "id": "layer-sn-25-flowwave",
+        "name": "FlowWave",
+        "effectUrl": "effects/effect-chill01-flowwave.html",
+        "params": {
+          "color": "#223344",
+          "opacity": 0.4,
+          "speed": 0.3,
+          "reactLow": 0.6,
+          "shiftX": 0,
+          "shiftY": 0,
+          "waveCount": 4,
+          "waveHeight": 80,
+          "reactMid": 1,
+          "reactHigh": 1,
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1783434129489",
+    "name": "SN-26 Build Up",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-26-vortex",
+        "name": "Vortex",
+        "effectUrl": "effects/effect-iv04-vortex.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "armCount": 4,
+          "rotSpeed": 1.5,
+          "depth": 0.8,
+          "trailLength": 50,
+          "sizeReact": 2,
+          "colorReactLow": 180,
+          "colorReactMid": 120,
+          "colorReactHigh": 60,
+          "smoothing": 0.1,
+          "color": "#000000",
+          "opacity": 0.9,
+          "shiftX": 0,
+          "shiftY": 0,
+          "particleCount": 50,
+          "vortexSpeed": 1.5,
+          "radius": 200,
+          "trailAlpha": 0.08,
+          "dotSize": 4
+        }
+      },
+      {
+        "id": "layer-sn-26-side-pillar",
+        "name": "Side Pillar",
+        "effectUrl": "effects/effect-iv10-sidepillar.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.8,
+          "pillarCount": 8,
+          "maxWidth": 35,
+          "gapRatio": 0.5,
+          "sparkAmount": 20,
+          "sizeReact": 2,
+          "colorReactLow": 160,
+          "colorReactMid": 100,
+          "colorReactHigh": 60,
+          "smoothing": 0.1,
+          "color": "#000000",
+          "opacity": 0.75,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn-26-track-arc",
+        "name": "Track Arc",
+        "effectUrl": "effects/effect-iv09-trackarc.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.65,
+          "ringCount": 4,
+          "arcLength": 1,
+          "dotCount": 24,
+          "ellipseRatio": 0.5,
+          "rotSpeed": 1,
+          "ringRadius": 280,
+          "sizeReact": 1.8,
+          "colorReactLow": 140,
+          "colorReactMid": 90,
+          "colorReactHigh": 50,
+          "smoothing": 0.1,
+          "color": "#000000",
+          "opacity": 0.65,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1787058618049",
+    "name": "SN-27 White Out",
+    "params": {
+      "scale": 1,
+      "color": "#a441d2",
       "opacity": "0"
     },
     "layers": [
       {
-        "id": "layer-dd-shock1",
-        "name": "Heavy Impact",
+        "id": "layer-sn-27-strobe",
+        "name": "Strobe",
+        "effectUrl": "effects/effect-bass06-strobe.html",
+        "params": {
+          "color": "#000000",
+          "reactLow": 6,
+          "opacity": 0.85,
+          "shiftX": 0,
+          "shiftY": 0,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 10,
+          "bassThreshold": 0.15,
+          "bassSense": 1.5,
+          "flashDuration": 60,
+          "cooldown": 80,
+          "shape": "Full",
+          "hueSource": "None",
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-sn-27-shockwave",
+        "name": "Shockwave",
         "effectUrl": "effects/effect-bass02-shockwave.html",
         "params": {
           "baseR": 0,
@@ -988,73 +2137,251 @@
           "baseA": 1,
           "bassFreqLow": 0,
           "bassFreqHigh": 6,
-          "bassThreshold": 0.2,
-          "bassSense": 3.1,
-          "waveSpeed": 6,
-          "waveDecay": 0.008,
-          "maxRadius": 1000,
-          "thickness": 8,
-          "cooldown": 150,
+          "bassThreshold": 0.1,
+          "bassSense": 4,
+          "waveSpeed": 10,
+          "waveDecay": 0.005,
+          "maxRadius": 1500,
+          "thickness": 12,
+          "cooldown": 80,
           "color": "#000000",
-          "opacity": 1,
+          "opacity": 0.9,
           "hueSource": "None",
-          "hueAmount": 146,
+          "hueAmount": 0,
           "shiftX": 0,
           "shiftY": 0
         }
       },
       {
-        "id": "layer-dd-quake1",
-        "name": "Earth Shake",
-        "effectUrl": "effects/effect-bass03-quake.html",
+        "id": "layer-sn-27-corner-flash",
+        "name": "Corner Flash",
+        "effectUrl": "effects/effect-iv06-cornerflash.html",
         "params": {
           "baseR": 0,
           "baseG": 255,
           "baseB": 255,
-          "baseA": 0.8,
-          "bassFreqLow": "4",
-          "bassFreqHigh": "9",
-          "bassThreshold": 0.15,
-          "bassSense": "2.8",
-          "shakeAmount": "46",
-          "glitchSlice": 0.6,
-          "rgbSplit": 10,
+          "baseA": 0.9,
+          "cornerSize": 350,
+          "glowIntensity": 1,
+          "pulseSpeed": 3,
+          "arcCount": 8,
+          "sizeReact": 3,
+          "colorReactLow": 250,
+          "colorReactMid": 200,
+          "colorReactHigh": 150,
+          "smoothing": 0.06,
           "color": "#000000",
           "opacity": 0.8,
-          "mode": "Both",
+          "shiftX": 0,
+          "shiftY": 0,
+          "thickness": 2.5
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1787058659816",
+    "name": "SN-28 Gravity Well",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-28-gravity",
+        "name": "Gravity",
+        "effectUrl": "effects/effect-bass07-gravity.html",
+        "params": {
+          "color": "#000000",
+          "opacity": 0.85,
+          "reactLow": 3,
+          "shiftX": 0,
+          "shiftY": 0,
+          "bassFreqLow": 0,
+          "bassFreqHigh": 10,
+          "bassThreshold": 0.15,
+          "bassSense": 1.5,
+          "particleCount": 30,
+          "gravity": 0.3,
+          "launchPower": 12,
+          "particleSize": 4,
+          "afterimage": 0.85,
+          "cooldown": 100,
           "hueSource": "None",
-          "hueAmount": 90,
+          "hueAmount": 90
+        }
+      },
+      {
+        "id": "layer-sn-28-generator-tunnel",
+        "name": "Generator Tunnel",
+        "effectUrl": "effects/effect-0001-generator.html",
+        "params": {
+          "shape": "Tunnel",
+          "speed": -4,
+          "opacity": 0.7,
+          "color": "#6633cc",
+          "beatAnim": "Scale",
+          "reactLow": 3.5,
+          "reactMid": 2.5,
+          "reactHigh": 1.5,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "hueSource": "Low",
+          "hueAmount": 150,
+          "shiftX": 0,
+          "shiftY": 0,
+          "thickness": 2
+        }
+      },
+      {
+        "id": "layer-sn-28-vortex",
+        "name": "Vortex",
+        "effectUrl": "effects/effect-iv04-vortex.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.6,
+          "armCount": 6,
+          "rotSpeed": 2,
+          "depth": 0.9,
+          "trailLength": 60,
+          "sizeReact": 2,
+          "colorReactLow": 200,
+          "colorReactMid": 140,
+          "colorReactHigh": 80,
+          "smoothing": 0.08,
+          "color": "#000000",
+          "opacity": 0.6,
+          "shiftX": 0,
+          "shiftY": 0,
+          "particleCount": 50,
+          "vortexSpeed": 1.5,
+          "radius": 200,
+          "trailAlpha": 0.08,
+          "dotSize": 4
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1787058686590",
+    "name": "SN-29 Summer Finale",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-29-corner-flash",
+        "name": "Corner Flash",
+        "effectUrl": "effects/effect-iv06-cornerflash.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "cornerSize": 250,
+          "glowIntensity": 0.9,
+          "pulseSpeed": 2.5,
+          "arcCount": 6,
+          "sizeReact": 2.2,
+          "colorReactLow": 200,
+          "colorReactMid": 140,
+          "colorReactHigh": 90,
+          "smoothing": 0.1,
+          "color": "#000000",
+          "opacity": 0.85,
+          "shiftX": 0,
+          "shiftY": 0,
+          "thickness": 2.5
+        }
+      },
+      {
+        "id": "layer-sn-29-edge-runner",
+        "name": "Edge Runner",
+        "effectUrl": "effects/effect-iv07-edgerunner.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.85,
+          "particleCount": 18,
+          "speed": 3,
+          "trailLength": 45,
+          "edgeWidth": 40,
+          "dotSize": 6,
+          "sizeReact": 2,
+          "colorReactLow": 180,
+          "colorReactMid": 120,
+          "colorReactHigh": 70,
+          "smoothing": 0.1,
+          "color": "#000000",
+          "opacity": 0.8,
           "shiftX": 0,
           "shiftY": 0
         }
       },
       {
-        "id": "layer-dd-woofer1",
-        "name": "Sub Woofer",
-        "effectUrl": "effects/effect-bass04-woofer.html",
+        "id": "layer-sn-29-frame-beat",
+        "name": "Frame Beat",
+        "effectUrl": "effects/effect-iv08-framebeat.html",
         "params": {
           "baseR": 0,
           "baseG": 255,
           "baseB": 255,
           "baseA": 0.7,
-          "bassFreqLow": 0,
-          "bassFreqHigh": 4,
-          "bassThreshold": 0.1,
-          "bassSense": "2.6",
-          "coneSize": 250,
-          "vibration": 30,
-          "ringCount": 10,
+          "frameWidth": 22,
+          "bounceReact": 2,
+          "layerCount": 2,
+          "glow": 30,
+          "waveAmount": 12,
+          "sizeReact": 1.8,
+          "colorReactLow": 160,
+          "colorReactMid": 100,
+          "colorReactHigh": 60,
+          "smoothing": 0.1,
           "color": "#000000",
-          "opacity": 0.9,
-          "hueSource": "Low",
-          "hueAmount": 60,
+          "opacity": 0.7,
           "shiftX": 0,
           "shiftY": 0
         }
       },
       {
-        "id": "layer-dd-pulse1",
-        "name": "Deep Ring",
+        "id": "layer-sn-29-prism",
+        "name": "Prism",
+        "effectUrl": "effects/effect-iv01-prism.html",
+        "params": {
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 0.6,
+          "rotSpeed": 0.7,
+          "segmentCount": 6,
+          "innerRadius": 70,
+          "outerRadius": 280,
+          "sizeReact": 1.5,
+          "colorReactLow": 140,
+          "colorReactMid": 90,
+          "colorReactHigh": 45,
+          "smoothing": 0.12,
+          "color": "#000000",
+          "opacity": 0.6,
+          "shiftX": 0,
+          "shiftY": 0,
+          "rayCount": 40,
+          "rayLength": 300,
+          "thickness": 2.5,
+          "spread": 1
+        }
+      },
+      {
+        "id": "layer-sn-29-pulse-ring",
+        "name": "Pulse Ring",
         "effectUrl": "effects/effect-bass01-pulsering.html",
         "params": {
           "baseR": 0,
@@ -1064,17 +2391,124 @@
           "bassFreqLow": 0,
           "bassFreqHigh": 6,
           "bassThreshold": 0.15,
-          "bassSense": "1.7",
+          "bassSense": 2,
           "ringCount": 3,
           "ringSpacing": 100,
           "thickness": 6,
           "color": "#000000",
-          "opacity": 0.7,
+          "opacity": 0.55,
           "mode": "Single",
           "hueSource": "None",
           "hueAmount": 90,
           "shiftX": 0,
           "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1787058702477",
+    "name": "SN-30 Minimal Pulse",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-sn-30-circle",
+        "name": "Circle",
+        "effectUrl": "effects/effect-0000-circle.html",
+        "params": {
+          "size": 400,
+          "thickness": 6,
+          "color": "#ffffff",
+          "audioReact": 0.4,
+          "reactLow": 1.5,
+          "reactMid": 60,
+          "reactHigh": 8,
+          "baseR": 0,
+          "baseG": 255,
+          "baseB": 255,
+          "baseA": 1,
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      },
+      {
+        "id": "layer-sn-30-sine-wave",
+        "name": "Sine Wave",
+        "effectUrl": "effects/effect-013-sine-wave.html",
+        "params": {
+          "color": "#aaaaff",
+          "opacity": 0.4,
+          "speed": 0.5,
+          "reactLow": 1,
+          "shiftX": 0,
+          "shiftY": 0,
+          "dotCount": 100,
+          "dotSize": 5,
+          "amplitude": 200,
+          "frequency": 2,
+          "style": "Dots"
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1787060488024",
+    "name": "ImageView",
+    "params": {
+      "scale": 0.9,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "layers": [
+      {
+        "id": "layer-1787060537094",
+        "name": "0020 Image",
+        "effectUrl": "effects/effect-0020-image.html",
+        "params": {
+          "folder": "SummerNotes2026",
+          "imageIndex": 0,
+          "aspectX": 10,
+          "aspectY": 11,
+          "scale": 0.6,
+          "reactLow": "0.7",
+          "distortion": "21",
+          "distortSpeed": "3.5",
+          "distortReact": "0.6",
+          "glitch": "0",
+          "glitchReact": "0.9",
+          "autoSwitch": "None",
+          "color": "#ffffff",
+          "shiftX": 0,
+          "shiftY": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "group-1782219865269",
+    "name": "Camera Frame",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 1
+    },
+    "layers": [
+      {
+        "id": "layer-1782219961463",
+        "name": "011 Camera Frame",
+        "effectUrl": "effects/effect-011-camera-frame.html",
+        "params": {
+          "base_size": "36",
+          "resolution": "1920x1080",
+          "fps": "60FPS",
+          "event_time": "2026-08-18T24:00",
+          "battery": 96,
+          "dj_index": "6: itan",
+          "show_affil": true
         }
       }
     ]

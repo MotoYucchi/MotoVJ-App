@@ -1,0 +1,59 @@
+{
+  "id": "group-sn-11-retro-wave",
+  "name": "Retro Wave",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn11-tunnel",
+      "name": "Tunnel",
+      "effectUrl": "effects/effect-0001-generator.html",
+      "params": {
+        "shape": "Tunnel",
+        "speed": -2.5,
+        "opacity": 0.85,
+        "color": "#ff6600",
+        "beatAnim": "Scale",
+        "reactLow": 3.0,
+        "reactMid": 2.5,
+        "reactHigh": 1.5,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "hueSource": "Low",
+        "hueAmount": 120,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn11-sine-wave",
+      "name": "Sine Wave",
+      "effectUrl": "effects/effect-013-sine-wave.html",
+      "params": {
+        "color": "#00ffcc",
+        "opacity": 0.6,
+        "speed": 1.5,
+        "reactLow": 2.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn11-vertical-lines",
+      "name": "Vertical Lines",
+      "effectUrl": "effects/effect-014-vertical-lines.html",
+      "params": {
+        "color": "#ffffff",
+        "opacity": 0.35,
+        "speed": 2.0,
+        "reactLow": 1.5,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

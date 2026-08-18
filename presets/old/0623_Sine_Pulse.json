@@ -1,0 +1,43 @@
+{
+  "id": "group-0623-sine-pulse",
+  "name": "0623 Sine Pulse",
+  "params": {
+    "scale": 1.0,
+    "color": "#ffffff",
+    "opacity": 1.0
+  },
+  "layers": [
+    {
+      "id": "layer-0623-sine",
+      "name": "Dotted Sine Wave",
+      "effectUrl": "effects/effect-013-sine-wave.html",
+      "params": {
+        "dotCount": 200,
+        "dotSize": 10,
+        "color": "#ff00ff",
+        "opacity": 1.0,
+        "amplitude": 300,
+        "frequency": 3.5,
+        "reactLow": 2.5,
+        "speed": 3.0,
+        "style": "Dots"
+      }
+    },
+    {
+      "id": "layer-0623-sine-bg",
+      "name": "Filled Sine Wave",
+      "effectUrl": "effects/effect-013-sine-wave.html",
+      "params": {
+        "dotCount": 100,
+        "dotSize": 2,
+        "color": "#00ffff",
+        "opacity": 0.4,
+        "amplitude": 150,
+        "frequency": 1.5,
+        "reactLow": 1.0,
+        "speed": 1.0,
+        "style": "Filled"
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "group-b2b-hardstyle-clash",
+  "name": "03 B2B HardStyle Clash",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-03-b2b-hardstyle-clash-l-1",
+      "name": "Laser Clash",
+      "effectUrl": "effects/effect-b2b02-laser-clash.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#ff0000",
+        "laserCount": 30,
+        "speed": 15,
+        "reactHigh": 3.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-03-b2b-hardstyle-clash-l-2",
+      "name": "Strobe",
+      "effectUrl": "effects/effect-bass06-strobe.html",
+      "params": {
+        "shiftX": -30,
+        "shiftY": 0,
+        "opacity": 0.5,
+        "reactLow": 3.0
+      }
+    }
+  ]
+}

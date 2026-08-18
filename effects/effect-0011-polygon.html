@@ -277,9 +277,9 @@
       ctx.rotate(beatRotate + (params.beatAnim === "Glitch" ? (Math.random()-0.5)*beatValue : 0));
       
       const mixedRgb = hexToRgb(params.color);
-      const r = (mixedRgb.r + groupColorRgb.r) % 256;
-      const g = (mixedRgb.g + groupColorRgb.g) % 256;
-      const b = (mixedRgb.b + groupColorRgb.b) % 256;
+      const r = Math.min(255, mixedRgb.r + groupColorRgb.r);
+      const g = Math.min(255, mixedRgb.g + groupColorRgb.g);
+      const b = Math.min(255, mixedRgb.b + groupColorRgb.b);
       ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${params.opacity})`;
       ctx.lineWidth = thick;
       
