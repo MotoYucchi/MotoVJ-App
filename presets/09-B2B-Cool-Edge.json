@@ -1,0 +1,37 @@
+{
+  "name": "B2B Cool Edge",
+  "layers": [
+    {
+      "id": "layer1",
+      "name": "Speed Lines",
+      "effectUrl": "effects/effect-b2b07-speed-lines.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#00ffff",
+        "speed": 30,
+        "reactHigh": 3.0
+      },
+      "blendMode": "screen",
+      "globalAlpha": 1.0,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    },
+    {
+      "id": "layer2",
+      "name": "Polygon Shatter",
+      "effectUrl": "effects/effect-0011-polygon.html",
+      "params": {
+        "shiftX": -25,
+        "color": "#0088ff",
+        "speed": 5,
+        "ultraHigh": 15
+      },
+      "blendMode": "screen",
+      "globalAlpha": 0.8,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    }
+  ]
+}

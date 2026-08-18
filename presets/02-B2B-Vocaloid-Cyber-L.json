@@ -1,0 +1,36 @@
+{
+  "name": "B2B Vocaloid Cyber L",
+  "layers": [
+    {
+      "id": "layer1",
+      "name": "Cyber Grid (Left)",
+      "effectUrl": "effects/effect-b2b05-cyber-grid.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#00ffcc",
+        "speed": 8,
+        "reactMid": 2.5
+      },
+      "blendMode": "screen",
+      "globalAlpha": 1.0,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    },
+    {
+      "id": "layer2",
+      "name": "Glitch Edge",
+      "effectUrl": "effects/effect-b2b09-glitch-split.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#ff00aa",
+        "glitchIntensity": 40
+      },
+      "blendMode": "screen",
+      "globalAlpha": 0.8,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    }
+  ]
+}

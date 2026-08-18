@@ -1,0 +1,22 @@
+{
+  "name": "B2B Techno Minimal",
+  "layers": [
+    {
+      "id": "layer1",
+      "name": "Fractal Bloom",
+      "effectUrl": "effects/effect-b2b08-fractal-bloom.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#ffffff",
+        "complexity": 5,
+        "speed": 0.5,
+        "opacity": 0.6
+      },
+      "blendMode": "screen",
+      "globalAlpha": 1.0,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    }
+  ]
+}

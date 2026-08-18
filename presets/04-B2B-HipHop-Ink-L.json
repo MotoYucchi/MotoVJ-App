@@ -1,0 +1,36 @@
+{
+  "name": "B2B HipHop Ink L",
+  "layers": [
+    {
+      "id": "layer1",
+      "name": "Ink Drop (Left)",
+      "effectUrl": "effects/effect-b2b03-ink-drop.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#000000",
+        "opacity": 0.8,
+        "gravity": 1.5,
+        "reactLow": 4.0
+      },
+      "blendMode": "normal",
+      "globalAlpha": 1.0,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    },
+    {
+      "id": "layer2",
+      "name": "Quake Shake",
+      "effectUrl": "effects/effect-bass03-quake.html",
+      "params": {
+        "shiftX": -25,
+        "opacity": 0.4
+      },
+      "blendMode": "screen",
+      "globalAlpha": 1.0,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    }
+  ]
+}

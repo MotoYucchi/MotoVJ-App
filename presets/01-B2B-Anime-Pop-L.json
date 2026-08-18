@@ -1,0 +1,40 @@
+{
+  "name": "B2B Anime Pop L",
+  "layers": [
+    {
+      "id": "layer1",
+      "name": "Kawaii Pop (Left)",
+      "effectUrl": "effects/effect-b2b04-kawaii-pop.html",
+      "params": {
+        "b2bMode": "Left",
+        "popCount": 60,
+        "color": "#ff3399",
+        "opacity": 0.8,
+        "speed": 3.0,
+        "reactMid": 3.0
+      },
+      "blendMode": "screen",
+      "globalAlpha": 1.0,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    },
+    {
+      "id": "layer2",
+      "name": "Sparkle Particles",
+      "effectUrl": "effects/effect-0001-generator.html",
+      "params": {
+        "shape": "Star",
+        "color": "#ffffff",
+        "speed": 1.5,
+        "opacity": 0.5,
+        "shiftX": -25
+      },
+      "blendMode": "screen",
+      "globalAlpha": 1.0,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    }
+  ]
+}

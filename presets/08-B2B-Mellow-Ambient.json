@@ -1,0 +1,37 @@
+{
+  "name": "B2B Mellow Ambient",
+  "layers": [
+    {
+      "id": "layer1",
+      "name": "Ambient Glow",
+      "effectUrl": "effects/effect-b2b10-mellow-glow.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#ffaa00",
+        "opacity": 0.4,
+        "speed": 0.2
+      },
+      "blendMode": "screen",
+      "globalAlpha": 1.0,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    },
+    {
+      "id": "layer2",
+      "name": "Slow Snow",
+      "effectUrl": "effects/effect-0001-generator.html",
+      "params": {
+        "shiftX": -25,
+        "speed": 0.2,
+        "opacity": 0.3,
+        "color": "#ffffff"
+      },
+      "blendMode": "screen",
+      "globalAlpha": 0.6,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "B2B Trap Heavy",
+  "layers": [
+    {
+      "id": "layer1",
+      "name": "Glitch Split",
+      "effectUrl": "effects/effect-b2b09-glitch-split.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#ff0000",
+        "glitchIntensity": 60,
+        "reactHigh": 4.0
+      },
+      "blendMode": "screen",
+      "globalAlpha": 1.0,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    },
+    {
+      "id": "layer2",
+      "name": "Heavy Quake",
+      "effectUrl": "effects/effect-bass04-woofer.html",
+      "params": {
+        "shiftX": -25,
+        "color": "#ffaa00",
+        "opacity": 0.7,
+        "reactLow": 5.0
+      },
+      "blendMode": "screen",
+      "globalAlpha": 0.9,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    }
+  ]
+}

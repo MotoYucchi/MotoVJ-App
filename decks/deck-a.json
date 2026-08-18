@@ -1,92 +1,55 @@
 [
   {
-    "id": "group-1778045717583",
-    "name": "Botanical Tree",
-    "params": {
-      "scale": 1,
-      "color": "#000000",
-      "opacity": 0
-    },
+    "name": "B2B Anime Pop L",
     "layers": [
       {
-        "id": "layer-botanical-bg",
-        "name": "Forest Flow",
-        "effectUrl": "effects/effect-chill01-flowwave.html",
+        "id": "layer1",
+        "name": "Kawaii Pop (Left)",
+        "effectUrl": "effects/effect-b2b04-kawaii-pop.html",
         "params": {
-          "baseR": 0,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.6,
-          "opacity": 0.6,
-          "color": "#0a2e12",
-          "speed": 0.5,
-          "waveCount": 5,
-          "waveHeight": 40,
-          "reactLow": 1,
-          "reactMid": 1.5,
-          "reactHigh": 0.5,
-          "hueSource": "None",
-          "hueAmount": 90
-        }
+          "b2bMode": "Left",
+          "popCount": 60,
+          "color": "#ff3399",
+          "opacity": 0.8,
+          "speed": 3,
+          "reactMid": 3
+        },
+        "blendMode": "screen",
+        "globalAlpha": 1,
+        "shiftX": 0,
+        "shiftY": 0,
+        "scale": 1
       },
       {
-        "id": "layer-botanical-spores",
-        "name": "Firefly Drift",
-        "effectUrl": "effects/effect-chill02-glowdrift.html",
+        "id": "layer2",
+        "name": "Sparkle Particles",
+        "effectUrl": "effects/effect-0001-generator.html",
         "params": {
-          "baseR": 0,
-          "baseG": 255,
-          "baseB": 255,
-          "baseA": 0.5,
+          "shape": "Star",
+          "color": "#ffffff",
+          "speed": 1.5,
           "opacity": 0.5,
-          "color": "#15ff4e",
-          "speed": 0.2,
-          "count": 30,
-          "sizeBase": 35,
-          "reactLow": 0.5,
-          "reactMid": 1.5,
-          "reactHigh": 1,
-          "hueSource": "None",
-          "hueAmount": 90
-        }
-      },
-      {
-        "id": "layer-botanical-tree",
-        "name": "Botanical Core",
-        "effectUrl": "effects/effect-0016-botanical.html",
-        "params": {
-          "layout": "Center",
-          "opacity": 1,
-          "color": "#2eb848",
-          "lineThickness": 10,
-          "reactLow": 1.2,
+          "shiftX": -25,
+          "thickness": 2,
+          "beatAnim": "None",
+          "reactLow": 1,
           "reactMid": 1,
           "reactHigh": 1,
-          "shiftX": 0,
-          "shiftY": 0,
           "hueSource": "None",
-          "hueAmount": 90
-        }
-      },
-      {
-        "id": "layer-botanical-leaves",
-        "name": "Falling Leaves",
-        "effectUrl": "effects/effect-012-particles.html",
-        "params": {
-          "particleCount": 300,
-          "baseSize": 5,
-          "color1": "#44ff77",
-          "color2": "#00aa33",
-          "opacity": 0.4,
-          "reactLow": 1.5,
-          "reactMid": 0.5,
-          "speed": 0.3,
-          "shape": "Diamond",
-          "shiftX": 0,
+          "hueAmount": 90,
           "shiftY": 0
-        }
+        },
+        "blendMode": "screen",
+        "globalAlpha": 1,
+        "shiftX": 0,
+        "shiftY": 0,
+        "scale": 1
       }
-    ]
+    ],
+    "id": "group-1778045717583",
+    "params": {
+      "opacity": 0
+    }
   },
   {
     "id": "group-1782219730187",
@@ -94,7 +57,7 @@
     "params": {
       "scale": 1,
       "color": "#ff2200",
-      "opacity": 1
+      "opacity": "0"
     },
     "layers": [
       {
@@ -1351,6 +1314,199 @@
         }
       }
     ]
+  },
+  {
+    "id": "group-1783434129489",
+    "name": "New Group",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 1
+    },
+    "layers": []
+  },
+  {
+    "id": "group-1783434130187",
+    "name": "New Group",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 1
+    },
+    "layers": []
+  },
+  {
+    "id": "group-1783434130838",
+    "name": "New Group",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 1
+    },
+    "layers": []
+  },
+  {
+    "id": "group-1783434131494",
+    "name": "New Group",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 1
+    },
+    "layers": []
+  },
+  {
+    "id": "group-1783434132117",
+    "name": "New Group",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 1
+    },
+    "layers": []
+  },
+  {
+    "id": "group-1783434132787",
+    "name": "New Group",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 1
+    },
+    "layers": []
+  },
+  {
+    "id": "group-1783434133377",
+    "name": "New Group",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 1
+    },
+    "layers": []
+  },
+  {
+    "id": "group-1783434133983",
+    "name": "New Group",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 1
+    },
+    "layers": []
+  },
+  {
+    "id": "group-1783434134622",
+    "name": "New Group",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 1
+    },
+    "layers": []
+  },
+  {
+    "id": "group-1783434135276",
+    "name": "New Group",
+    "params": {
+      "scale": 1,
+      "color": "#000000",
+      "opacity": 1
+    },
+    "layers": []
+  },
+  {
+    "name": "B2B Trap Heavy",
+    "layers": [
+      {
+        "id": "layer1",
+        "name": "Glitch Split",
+        "effectUrl": "effects/effect-b2b09-glitch-split.html",
+        "params": {
+          "b2bMode": "Left",
+          "color": "#ff0000",
+          "glitchIntensity": 60,
+          "reactHigh": 4
+        },
+        "blendMode": "screen",
+        "globalAlpha": 1,
+        "shiftX": 0,
+        "shiftY": 0,
+        "scale": 1
+      },
+      {
+        "id": "layer2",
+        "name": "Heavy Quake",
+        "effectUrl": "effects/effect-bass04-woofer.html",
+        "params": {
+          "shiftX": -25,
+          "color": "#ffaa00",
+          "opacity": 0.7,
+          "reactLow": 5
+        },
+        "blendMode": "screen",
+        "globalAlpha": 0.9,
+        "shiftX": 0,
+        "shiftY": 0,
+        "scale": 1
+      }
+    ],
+    "id": "group-1783434135959",
+    "params": {
+      "opacity": 1
+    }
+  },
+  {
+    "name": "B2B Freeform Setup",
+    "layers": [
+      {
+        "id": "layer1",
+        "name": "Base Watercolor",
+        "effectUrl": "effects/effect-b2b01-watercolor.html",
+        "params": {
+          "b2bMode": "Left",
+          "color": "#ffffff",
+          "opacity": 1,
+          "blurAmount": 150,
+          "speed": 2,
+          "reactLow": 1.5
+        },
+        "blendMode": "normal",
+        "globalAlpha": 1,
+        "shiftX": 0,
+        "shiftY": 0,
+        "scale": 1
+      },
+      {
+        "id": "layer2",
+        "name": "Free Particle",
+        "effectUrl": "effects/effect-0001-generator.html",
+        "params": {
+          "shiftX": -25,
+          "opacity": 0.5,
+          "shape": "Particle",
+          "speed": 1,
+          "color": "#00ffff",
+          "thickness": 2,
+          "beatAnim": "None",
+          "reactLow": 1,
+          "reactMid": 1,
+          "reactHigh": 1,
+          "hueSource": "None",
+          "hueAmount": 90,
+          "shiftY": 0
+        },
+        "blendMode": "screen",
+        "globalAlpha": 1,
+        "shiftX": 0,
+        "shiftY": 0,
+        "scale": 1
+      }
+    ],
+    "id": "group-1783434136640",
+    "params": {
+      "opacity": 1
+    }
   },
   {
     "id": "group-1782219865269",

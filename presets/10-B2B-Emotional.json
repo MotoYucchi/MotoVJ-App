@@ -1,0 +1,37 @@
+{
+  "name": "B2B Emotional",
+  "layers": [
+    {
+      "id": "layer1",
+      "name": "Watercolor Base",
+      "effectUrl": "effects/effect-b2b01-watercolor.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#ff0088",
+        "opacity": 0.8,
+        "speed": 5.0
+      },
+      "blendMode": "screen",
+      "globalAlpha": 1.0,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    },
+    {
+      "id": "layer2",
+      "name": "Light Streaks",
+      "effectUrl": "effects/effect-b2b07-speed-lines.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#ffffff",
+        "speed": 40,
+        "opacity": 0.5
+      },
+      "blendMode": "screen",
+      "globalAlpha": 0.9,
+      "shiftX": 0,
+      "shiftY": 0,
+      "scale": 1.0
+    }
+  ]
+}
