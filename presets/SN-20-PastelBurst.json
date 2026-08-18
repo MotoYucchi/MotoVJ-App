@@ -1,0 +1,62 @@
+{
+  "id": "group-sn-20-pastel-burst",
+  "name": "SN-20 Pastel Burst",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-20-watercolor",
+      "name": "Watercolor",
+      "effectUrl": "effects/effect-b2b01-watercolor.html",
+      "params": {
+        "color": "#ffaacc",
+        "opacity": 0.8,
+        "speed": 1.5,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-20-bubble",
+      "name": "Bubble",
+      "effectUrl": "effects/effect-0014-bubble.html",
+      "params": {
+        "complexity": 6,
+        "particleCount": 80,
+        "opacity": 0.6,
+        "afterimage": 0.96,
+        "color1": "#ffccdd",
+        "color2": "#aaccff",
+        "color3": "#ccffaa",
+        "pattern": "湧き出る",
+        "speed": 1.5,
+        "highReact": 2,
+        "midReact": 1.5,
+        "lowReact": 1,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "hueSource": "None",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-20-opening-shape",
+      "name": "Opening Shape",
+      "effectUrl": "effects/effect-015-opening-shape.html",
+      "params": {
+        "color": "#ffffff",
+        "opacity": 0.5,
+        "speed": 1.0,
+        "reactLow": 2.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

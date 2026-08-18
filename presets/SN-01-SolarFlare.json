@@ -1,0 +1,85 @@
+{
+  "id": "group-sn-01-solar-flare",
+  "name": "SN-01 Solar Flare",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn01-shockwave",
+      "name": "Solar Shockwave",
+      "effectUrl": "effects/effect-bass02-shockwave.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "bassFreqLow": 0,
+        "bassFreqHigh": 8,
+        "bassThreshold": 0.12,
+        "bassSense": 3.5,
+        "waveSpeed": 18,
+        "waveDecay": 0.012,
+        "maxRadius": 1200,
+        "thickness": 8,
+        "cooldown": 80,
+        "color": "#000000",
+        "opacity": 1,
+        "hueSource": "Low",
+        "hueAmount": 120,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn01-cornerflash",
+      "name": "Solar Corner Flash",
+      "effectUrl": "effects/effect-iv06-cornerflash.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.85,
+        "cornerSize": 350,
+        "thickness": 4,
+        "glowIntensity": 0.95,
+        "pulseSpeed": 3.2,
+        "arcCount": 6,
+        "sizeReact": 2,
+        "colorReactLow": 120,
+        "colorReactMid": 60,
+        "colorReactHigh": 30,
+        "smoothing": 0.12,
+        "color": "#000000",
+        "opacity": 0.85,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn01-strobe",
+      "name": "Heavy Bass Strobe",
+      "effectUrl": "effects/effect-bass06-strobe.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.4,
+        "bassFreqLow": 0,
+        "bassFreqHigh": 5,
+        "bassThreshold": 0.45,
+        "bassSense": 1.8,
+        "flashDuration": 45,
+        "cooldown": 120,
+        "shape": "Full",
+        "color": "#000000",
+        "opacity": 0.35,
+        "hueSource": "None",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

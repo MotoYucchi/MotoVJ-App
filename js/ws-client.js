@@ -3,6 +3,7 @@
 
 window.VJWs = {
   ws: null,
+  clientId: Math.random().toString(36).substring(2, 9) + Date.now().toString(36),
   
   // onMessageCallbackは、受信したデータをmain.jsのUIに渡すための関数
   init(onMessageCallback) {
@@ -32,6 +33,7 @@ window.VJWs = {
 
   send(dataObj) {
     if (this.ws && this.ws.readyState === WebSocket.OPEN) {
+      if (!dataObj.clientId) dataObj.clientId = this.clientId;
       if (dataObj.type === 'param_update') {
         // パラメータごとに最新状態を上書き保存
         const key = `${dataObj.deckId}_${dataObj.groupId}_${dataObj.layerId}_${dataObj.paramId}`;
@@ -55,9 +57,11 @@ window.VJWs = {
     this.lastSendTime = Date.now();
     if (this.ws && this.ws.readyState === WebSocket.OPEN) {
       Object.keys(this.pendingParams).forEach(key => {
-        this.ws.send(JSON.stringify(this.pendingParams[key]));
+        const dataObj = this.pendingParams[key];
+        if (!dataObj.clientId) dataObj.clientId = this.clientId;
+        this.ws.send(JSON.stringify(dataObj));
       });
       this.pendingParams = {};
     }
   }
-};
+};

@@ -1,0 +1,74 @@
+{
+  "id": "group-sn-04-meltdown-core",
+  "name": "SN-04 Meltdown Core",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn04-impactcore",
+      "name": "Meltdown Impact Core",
+      "effectUrl": "effects/effect-bass11-impact-core.html",
+      "params": {
+        "sides": 6,
+        "baseSize": 140,
+        "reactLow": 4.5,
+        "color": "#000000",
+        "opacity": 0.95,
+        "style": "Glow",
+        "rotationSpeed": 1.5
+      }
+    },
+    {
+      "id": "layer-sn04-vortex",
+      "name": "Core Vortex",
+      "effectUrl": "effects/effect-iv04-vortex.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.85,
+        "particleCount": 65,
+        "vortexSpeed": 2,
+        "radius": 260,
+        "trailAlpha": 0.15,
+        "dotSize": 5,
+        "sizeReact": 2,
+        "colorReactLow": 120,
+        "colorReactMid": 60,
+        "colorReactHigh": 30,
+        "smoothing": 0.12,
+        "color": "#000000",
+        "opacity": 0.85,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn04-framebeat",
+      "name": "Pulsing Frame",
+      "effectUrl": "effects/effect-iv08-framebeat.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.9,
+        "frameWidth": 45,
+        "bounceReact": 2.5,
+        "layerCount": 3,
+        "glow": 35,
+        "waveAmount": 16,
+        "sizeReact": 2.2,
+        "colorReactLow": 140,
+        "colorReactMid": 70,
+        "colorReactHigh": 35,
+        "smoothing": 0.1,
+        "color": "#000000",
+        "opacity": 0.9,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

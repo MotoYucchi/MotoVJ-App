@@ -1,35 +1,33 @@
 {
-  "name": "B2B Freeform Setup",
+  "id": "group-b2b-freeform",
+  "name": "12 B2B Freeform Setup",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
   "layers": [
     {
-      "id": "layer1",
+      "id": "layer-12-b2b-freeform-setup-1",
       "name": "Base Watercolor",
       "effectUrl": "effects/effect-b2b01-watercolor.html",
       "params": {
         "b2bMode": "Left",
         "color": "#ffffff",
         "opacity": 1.0,
-        "blurAmount": 150
-      },
-      "blendMode": "normal",
-      "globalAlpha": 1.0,
-      "shiftX": 0,
-      "shiftY": 0,
-      "scale": 1.0
+        "blurAmount": 150,
+        "shiftX": 0,
+        "shiftY": 0
+      }
     },
     {
-      "id": "layer2",
+      "id": "layer-12-b2b-freeform-setup-2",
       "name": "Free Particle",
       "effectUrl": "effects/effect-0001-generator.html",
       "params": {
         "shiftX": -25,
+        "shiftY": 0,
         "opacity": 0.5
-      },
-      "blendMode": "screen",
-      "globalAlpha": 1.0,
-      "shiftX": 0,
-      "shiftY": 0,
-      "scale": 1.0
+      }
     }
   ]
 }

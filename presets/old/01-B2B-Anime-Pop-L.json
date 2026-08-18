@@ -1,9 +1,13 @@
 {
-  "name": "B2B Anime Pop L",
+  "id": "group-b2b-anime-pop",
+  "name": "01 B2B Anime Pop",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
   "layers": [
     {
-      "id": "layer1",
-      "name": "Kawaii Pop (Left)",
+      "name": "Kawaii Pop",
       "effectUrl": "effects/effect-b2b04-kawaii-pop.html",
       "params": {
         "b2bMode": "Left",
@@ -11,16 +15,13 @@
         "color": "#ff3399",
         "opacity": 0.8,
         "speed": 3.0,
-        "reactMid": 3.0
+        "reactMid": 3.0,
+        "shiftX": 0,
+        "shiftY": 0
       },
-      "blendMode": "screen",
-      "globalAlpha": 1.0,
-      "shiftX": 0,
-      "shiftY": 0,
-      "scale": 1.0
+      "id": "layer-01-b2b-anime-pop-l-1"
     },
     {
-      "id": "layer2",
       "name": "Sparkle Particles",
       "effectUrl": "effects/effect-0001-generator.html",
       "params": {
@@ -28,13 +29,10 @@
         "color": "#ffffff",
         "speed": 1.5,
         "opacity": 0.5,
-        "shiftX": -25
+        "shiftX": -25,
+        "shiftY": 0
       },
-      "blendMode": "screen",
-      "globalAlpha": 1.0,
-      "shiftX": 0,
-      "shiftY": 0,
-      "scale": 1.0
+      "id": "layer-01-b2b-anime-pop-l-2"
     }
   ]
 }

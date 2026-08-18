@@ -1,8 +1,10 @@
+import asyncio
 import json
 import os
 import uvicorn
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
 
 # 保存先ディレクトリ
@@ -20,6 +22,24 @@ def save_to_disk():
             with open(os.path.join(DECKS_DIR, f"{deck_id}.json"), "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
     print("💾 Decks saved to disk.")
+
+save_task: asyncio.Task | None = None
+
+async def debounced_save_to_disk(delay: float = 1.0):
+    global save_task
+    try:
+        await asyncio.sleep(delay)
+        save_to_disk()
+    except asyncio.CancelledError:
+        pass
+    finally:
+        save_task = None
+
+def schedule_save_to_disk(delay: float = 1.0):
+    global save_task
+    if save_task and not save_task.done():
+        save_task.cancel()
+    save_task = asyncio.create_task(debounced_save_to_disk(delay))
 
 def load_from_disk():
     """ファイルから状態を読み込み"""
@@ -56,10 +76,11 @@ async def save_preset(name: str, request: Request):
 @app.get("/load_preset/{name}")
 async def load_preset(name: str):
     path = os.path.join(PRESETS_DIR, f"{name}.json")
-    if not os.path.exists(path):
-        return {"error": "not found"}
-    with open(path, "r", encoding="utf-8-sig") as f:
-        return json.load(f)
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return JSONResponse(content=data, headers={"Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"})
+    return {"error": "not found"}
 
 @app.get("/list_presets")
 async def list_presets():
@@ -82,6 +103,19 @@ async def list_video_folders():
     if os.path.exists(VIDEO_DIR):
         for entry in os.listdir(VIDEO_DIR):
             folder_path = os.path.join(VIDEO_DIR, entry)
+            if os.path.isdir(folder_path):
+                if os.path.exists(os.path.join(folder_path, "index.csv")):
+                    folders.append(entry)
+    return sorted(folders)
+
+IMAGE_DIR = "./Image"
+
+@app.get("/list_image_folders")
+async def list_image_folders():
+    folders = []
+    if os.path.exists(IMAGE_DIR):
+        for entry in os.listdir(IMAGE_DIR):
+            folder_path = os.path.join(IMAGE_DIR, entry)
             if os.path.isdir(folder_path):
                 if os.path.exists(os.path.join(folder_path, "index.csv")):
                     folders.append(entry)
@@ -117,8 +151,10 @@ class ConnectionManager:
         if websocket in self.active_connections:
             self.active_connections.remove(websocket)
 
-    async def broadcast(self, message: str | bytes):
+    async def broadcast(self, message: str | bytes, sender: WebSocket | None = None):
         for connection in self.active_connections[:]:
+            if sender and connection == sender:
+                continue
             try:
                 if isinstance(message, bytes):
                     await connection.send_bytes(message)
@@ -139,7 +175,7 @@ async def websocket_endpoint(websocket: WebSocket):
             
             if "bytes" in message:
                 # Binary message (FFT data), broadcast directly
-                await manager.broadcast(message["bytes"])
+                await manager.broadcast(message["bytes"], sender=websocket)
             elif "text" in message:
                 data = message["text"]
                 msg = json.loads(data)
@@ -148,6 +184,7 @@ async def websocket_endpoint(websocket: WebSocket):
                 if msg.get("type") == "rebuild_layers":
                     server_state[msg["deckId"]] = msg["layers"]
                     save_to_disk() # 構造変更時は即座に保存
+                    await manager.broadcast(data, sender=None) # rebuildは全員に送信
                 elif msg.get("type") == "param_update":
                     deck_id = msg.get("deckId")
                     group_id = msg.get("groupId")
@@ -168,10 +205,12 @@ async def websocket_endpoint(websocket: WebSocket):
                                         if layer["id"] == layer_id:
                                             layer["params"][param_id] = val
                     
-                    # 変更をディスクに保存
-                    save_to_disk()
-                
-                await manager.broadcast(data)
+                    # 変更をディスクに非同期デバウンス保存 (1.0秒後)
+                    schedule_save_to_disk(1.0)
+                    # 送信元(操作中のiPad等)にはエコーバックしない
+                    await manager.broadcast(data, sender=websocket)
+                else:
+                    await manager.broadcast(data, sender=websocket)
     except WebSocketDisconnect:
         manager.disconnect(websocket)
 

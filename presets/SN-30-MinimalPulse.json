@@ -1,0 +1,43 @@
+{
+  "id": "group-sn-30-minimal-pulse",
+  "name": "SN-30 Minimal Pulse",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-30-circle",
+      "name": "Circle",
+      "effectUrl": "effects/effect-0000-circle.html",
+      "params": {
+        "size": 400,
+        "thickness": 6,
+        "color": "#ffffff",
+        "audioReact": 0.4,
+        "reactLow": 1.5,
+        "reactMid": 60,
+        "reactHigh": 8,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-30-sine-wave",
+      "name": "Sine Wave",
+      "effectUrl": "effects/effect-013-sine-wave.html",
+      "params": {
+        "color": "#aaaaff",
+        "opacity": 0.4,
+        "speed": 0.5,
+        "reactLow": 1.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

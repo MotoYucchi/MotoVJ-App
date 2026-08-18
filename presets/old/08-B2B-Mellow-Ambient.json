@@ -1,37 +1,35 @@
 {
-  "name": "B2B Mellow Ambient",
+  "id": "group-b2b-mellow-ambient",
+  "name": "08 B2B Mellow Ambient",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
   "layers": [
     {
-      "id": "layer1",
+      "id": "layer-08-b2b-mellow-ambient-1",
       "name": "Ambient Glow",
       "effectUrl": "effects/effect-b2b10-mellow-glow.html",
       "params": {
         "b2bMode": "Left",
         "color": "#ffaa00",
         "opacity": 0.4,
-        "speed": 0.2
-      },
-      "blendMode": "screen",
-      "globalAlpha": 1.0,
-      "shiftX": 0,
-      "shiftY": 0,
-      "scale": 1.0
+        "speed": 0.2,
+        "shiftX": 0,
+        "shiftY": 0
+      }
     },
     {
-      "id": "layer2",
+      "id": "layer-08-b2b-mellow-ambient-2",
       "name": "Slow Snow",
       "effectUrl": "effects/effect-0001-generator.html",
       "params": {
         "shiftX": -25,
+        "shiftY": 0,
         "speed": 0.2,
         "opacity": 0.3,
         "color": "#ffffff"
-      },
-      "blendMode": "screen",
-      "globalAlpha": 0.6,
-      "shiftX": 0,
-      "shiftY": 0,
-      "scale": 1.0
+      }
     }
   ]
 }

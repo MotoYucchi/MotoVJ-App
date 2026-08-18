@@ -1,0 +1,86 @@
+{
+  "id": "group-sn-02-thunder-strike",
+  "name": "SN-02 Thunder Strike",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn02-laserwall",
+      "name": "Thunder Laser Wall",
+      "effectUrl": "effects/effect-iv03-laserwall.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.9,
+        "lineCount": 22,
+        "scanSpeed": 3.8,
+        "thickness": 12,
+        "orientation": "Both",
+        "sizeReact": 2.5,
+        "colorReactLow": 180,
+        "colorReactMid": 80,
+        "colorReactHigh": 40,
+        "smoothing": 0.1,
+        "glow": 30,
+        "color": "#000000",
+        "opacity": 0.9,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn02-quake",
+      "name": "Thunder Quake",
+      "effectUrl": "effects/effect-bass03-quake.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.85,
+        "bassFreqLow": 0,
+        "bassFreqHigh": 8,
+        "bassThreshold": 0.12,
+        "bassSense": 2.8,
+        "shakeAmount": 65,
+        "glitchSlice": 0.85,
+        "rgbSplit": 18,
+        "mode": "Both",
+        "color": "#000000",
+        "opacity": 0.85,
+        "hueSource": "Low",
+        "hueAmount": 120,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn02-glitchbar",
+      "name": "Lightning Glitch Bar",
+      "effectUrl": "effects/effect-iv05-glitchbar.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.85,
+        "barCount": 96,
+        "barWidth": 0.9,
+        "glitchIntensity": 0.85,
+        "shakeAmount": 22,
+        "channelSplit": 12,
+        "mirror": "Center",
+        "sizeReact": 2.4,
+        "colorReactLow": 150,
+        "colorReactMid": 75,
+        "colorReactHigh": 30,
+        "smoothing": 0.1,
+        "color": "#000000",
+        "opacity": 0.85,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

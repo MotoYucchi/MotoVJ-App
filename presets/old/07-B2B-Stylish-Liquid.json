@@ -1,36 +1,35 @@
 {
-  "name": "B2B Stylish Liquid",
+  "id": "group-b2b-stylish-liquid",
+  "name": "07 B2B Stylish Liquid",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
   "layers": [
     {
-      "id": "layer1",
+      "id": "layer-07-b2b-stylish-liquid-1",
       "name": "Mellow Glow",
       "effectUrl": "effects/effect-b2b10-mellow-glow.html",
       "params": {
         "b2bMode": "Left",
         "color": "#00aaff",
-        "opacity": 0.5
-      },
-      "blendMode": "screen",
-      "globalAlpha": 1.0,
-      "shiftX": 0,
-      "shiftY": 0,
-      "scale": 1.0
+        "opacity": 0.5,
+        "shiftX": 0,
+        "shiftY": 0
+      }
     },
     {
-      "id": "layer2",
+      "id": "layer-07-b2b-stylish-liquid-2",
       "name": "Watercolor",
       "effectUrl": "effects/effect-b2b01-watercolor.html",
       "params": {
         "b2bMode": "Left",
         "color": "#0055ff",
         "opacity": 0.7,
-        "speed": 1.0
-      },
-      "blendMode": "screen",
-      "globalAlpha": 1.0,
-      "shiftX": 0,
-      "shiftY": 0,
-      "scale": 1.0
+        "speed": 1.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
     }
   ]
 }

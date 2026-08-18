@@ -1,0 +1,52 @@
+{
+  "id": "group-sn-23-forest-breeze",
+  "name": "SN-23 Forest Breeze",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-23-botanical",
+      "name": "Botanical",
+      "effectUrl": "effects/effect-0016-botanical.html",
+      "params": {
+        "color": "#33cc66",
+        "opacity": 0.75,
+        "speed": 0.5,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "reactLow": 1.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-23-mellowglow",
+      "name": "MellowGlow",
+      "effectUrl": "effects/effect-b2b10-mellow-glow.html",
+      "params": {
+        "color": "#ffcc66",
+        "opacity": 0.5,
+        "speed": 0.3,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-23-sinewave",
+      "name": "SineWave",
+      "effectUrl": "effects/effect-013-sine-wave.html",
+      "params": {
+        "color": "#88cc44",
+        "opacity": 0.35,
+        "speed": 0.6,
+        "reactLow": 0.8,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

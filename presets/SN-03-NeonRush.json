@@ -1,0 +1,76 @@
+{
+  "id": "group-sn-03-neon-rush",
+  "name": "SN-03 Neon Rush",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn03-edgerunner",
+      "name": "Neon Edge Runner",
+      "effectUrl": "effects/effect-iv07-edgerunner.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.95,
+        "particleCount": 32,
+        "speed": 4.2,
+        "trailLength": 65,
+        "edgeWidth": 70,
+        "dotSize": 6,
+        "sizeReact": 2,
+        "colorReactLow": 120,
+        "colorReactMid": 60,
+        "colorReactHigh": 30,
+        "smoothing": 0.12,
+        "color": "#000000",
+        "opacity": 0.95,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn03-prism",
+      "name": "Prismatic Core",
+      "effectUrl": "effects/effect-iv01-prism.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.85,
+        "rayCount": 36,
+        "rayLength": 350,
+        "thickness": 3,
+        "rotSpeed": 1.2,
+        "spread": 1,
+        "sizeReact": 1.8,
+        "colorReactLow": 120,
+        "colorReactMid": 60,
+        "colorReactHigh": 30,
+        "smoothing": 0.15,
+        "color": "#000000",
+        "opacity": 0.85,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn03-particles",
+      "name": "Floating Diamond Dust",
+      "effectUrl": "effects/effect-012-particles.html",
+      "params": {
+        "particleCount": 400,
+        "baseSize": 6,
+        "color1": "#00ffff",
+        "color2": "#ff00aa",
+        "opacity": 0.8,
+        "reactLow": 2.2,
+        "reactMid": 0.5,
+        "speed": 1.8,
+        "shape": "Diamond"
+      }
+    }
+  ]
+}

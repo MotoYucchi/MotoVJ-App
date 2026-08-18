@@ -48,6 +48,10 @@
     "url": "effects/effect-0016-botanical.html"
   },
   {
+    "name": "0020 Image",
+    "url": "effects/effect-0020-image.html"
+  },
+  {
     "name": "011 Camera Frame",
     "url": "effects/effect-011-camera-frame.html"
   },
@@ -66,6 +70,46 @@
   {
     "name": "015 Opening Shape",
     "url": "effects/effect-015-opening-shape.html"
+  },
+  {
+    "name": "B2B01 Watercolor",
+    "url": "effects/effect-b2b01-watercolor.html"
+  },
+  {
+    "name": "B2B02 Laser Clash",
+    "url": "effects/effect-b2b02-laser-clash.html"
+  },
+  {
+    "name": "B2B03 Ink Drop",
+    "url": "effects/effect-b2b03-ink-drop.html"
+  },
+  {
+    "name": "B2B04 Kawaii Pop",
+    "url": "effects/effect-b2b04-kawaii-pop.html"
+  },
+  {
+    "name": "B2B05 Cyber Grid",
+    "url": "effects/effect-b2b05-cyber-grid.html"
+  },
+  {
+    "name": "B2B06 Sweet Clouds",
+    "url": "effects/effect-b2b06-sweet-clouds.html"
+  },
+  {
+    "name": "B2B07 Speed Lines",
+    "url": "effects/effect-b2b07-speed-lines.html"
+  },
+  {
+    "name": "B2B08 Fractal Bloom",
+    "url": "effects/effect-b2b08-fractal-bloom.html"
+  },
+  {
+    "name": "B2B09 Glitch Split",
+    "url": "effects/effect-b2b09-glitch-split.html"
+  },
+  {
+    "name": "B2B10 Mellow Glow",
+    "url": "effects/effect-b2b10-mellow-glow.html"
   },
   {
     "name": "Bass01 Pulsering",

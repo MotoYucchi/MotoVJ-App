@@ -1,0 +1,35 @@
+{
+  "id": "group-b2b-vocaloid-cyber",
+  "name": "02 B2B Vocaloid Cyber",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-02-b2b-vocaloid-cyber-l-1",
+      "name": "Cyber Grid",
+      "effectUrl": "effects/effect-b2b05-cyber-grid.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#00ffcc",
+        "speed": 8,
+        "reactMid": 2.5,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-02-b2b-vocaloid-cyber-l-2",
+      "name": "Glitch Edge",
+      "effectUrl": "effects/effect-b2b09-glitch-split.html",
+      "params": {
+        "b2bMode": "Left",
+        "color": "#ff00aa",
+        "glitchIntensity": 40,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

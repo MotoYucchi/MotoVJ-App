@@ -1,0 +1,73 @@
+{
+  "id": "group-sn-08-pixel-crash",
+  "name": "Pixel Crash",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-08-glitchbar",
+      "name": "GlitchBar",
+      "effectUrl": "effects/effect-iv05-glitchbar.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1.0,
+        "barCount": 25,
+        "barWidth": 10.0,
+        "glitchIntensity": 0.85,
+        "shakeAmount": 35,
+        "channelSplit": 20,
+        "mirror": "Center",
+        "sizeReact": 2.8,
+        "colorReactLow": 220,
+        "colorReactMid": 160,
+        "colorReactHigh": 100,
+        "smoothing": 0.08,
+        "color": "#000000",
+        "opacity": 0.9,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-08-quake",
+      "name": "Quake",
+      "effectUrl": "effects/effect-bass03-quake.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.85,
+        "bassFreqLow": 0,
+        "bassFreqHigh": 8,
+        "bassThreshold": 0.12,
+        "bassSense": 3.0,
+        "shakeAmount": 50,
+        "glitchSlice": 0.8,
+        "rgbSplit": 15,
+        "color": "#000000",
+        "opacity": 0.85,
+        "mode": "Both",
+        "hueSource": "None",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-08-strobe",
+      "name": "Strobe",
+      "effectUrl": "effects/effect-bass06-strobe.html",
+      "params": {
+        "color": "#000000",
+        "reactLow": 5.0,
+        "opacity": 0.6,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}
