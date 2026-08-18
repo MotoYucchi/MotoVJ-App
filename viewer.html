@@ -9,13 +9,21 @@
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
       pointer-events: none; transform-origin: center center;
       transition: transform 0.2s, opacity 0.2s;
+      transform: translateZ(0);
+      will-change: transform, opacity;
+      contain: layout style;
     }
-    .layer-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .layer-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: translateZ(0); }
     iframe { width: 100%; height: 100%; border: none; background: transparent; pointer-events: none; }
+    #video-player-iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: -1; pointer-events: none; opacity: 1;
+      transform: translateZ(0);
+      will-change: transform, opacity;
+    }
   </style>
 </head>
 <body>
-  <iframe id="video-player-iframe" src="video-player.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: -1; pointer-events: none; opacity: 1;"></iframe>
+  <iframe id="video-player-iframe" src="video-player.html"></iframe>
   <div id="layers-container"></div>
 
   <script>
@@ -25,6 +33,33 @@
     const container = document.getElementById('layers-container');
     let iframes = {}; 
     let groupElements = {};
+    let playerZIndex = 'background';
+    let playerOpacity = 100;
+
+    function updateContainerVisibility() {
+      // 動画が前面かつ不透明度100% (>=99%) の場合はバックグラウンドの全ジェネレーターを描画停止・非表示
+      const hideGenerators = (playerZIndex === 'foreground' && playerOpacity >= 99);
+      if (hideGenerators) {
+        if (container.style.display !== 'none') {
+          container.style.display = 'none';
+          notifyAllVisibility(false);
+        }
+      } else {
+        if (container.style.display === 'none') {
+          container.style.display = 'block';
+          notifyAllVisibility(true);
+        }
+      }
+    }
+
+    function notifyAllVisibility(isContainerVisible) {
+      Object.values(iframes).forEach(obj => {
+        const groupEl = groupElements[obj.groupId];
+        const isGroupVisible = isContainerVisible && groupEl && groupEl.style.display !== 'none';
+        const win = obj.getWin();
+        if (win) win.postMessage({ type: 'visibility', visible: isGroupVisible }, '*');
+      });
+    }
 
     function standardize(data) {
       if (!Array.isArray(data)) return [];
@@ -71,10 +106,13 @@
 
         // Groupスタイルの更新
         groupEl.style.zIndex = groupIndex;
+        const opacityVal = (group.params && group.params.opacity !== undefined) ? Number(group.params.opacity) : 1.0;
         if (group.params) {
           groupEl.style.transform = `scale(${group.params.scale || 1.0})`;
-          groupEl.style.opacity = group.params.opacity !== undefined ? group.params.opacity : 1.0;
+          groupEl.style.opacity = opacityVal;
         }
+        const isGroupVisible = opacityVal > 0.001;
+        groupEl.style.display = isGroupVisible ? 'block' : 'none';
 
         const newLayerIds = new Set(group.layers.map(l => `layer-wrapper-${l.id}`));
         
@@ -100,6 +138,8 @@
             const iframe = document.createElement('iframe');
             iframe.src = layer.effectUrl + '?t=' + Date.now();
             iframe.onload = () => {
+              const isVisible = isGroupVisible && container.style.display !== 'none';
+              iframe.contentWindow.postMessage({ type: 'visibility', visible: isVisible }, '*');
               if (layer.params) {
                 Object.keys(layer.params).forEach(key => {
                   iframe.contentWindow.postMessage({ type: 'param_update', paramId: key, value: layer.params[key] }, '*');
@@ -124,6 +164,8 @@
           wrapper.style.zIndex = layerIndex;
         });
       });
+
+      updateContainerVisibility();
     }
 
     // 初期ロード
@@ -138,6 +180,12 @@
     const FFT_LERP_FACTOR = 0.35; // 補間の強さ
 
     function loopFFT() {
+      // コンテナ全体が非表示の場合は処理をスキップ
+      if (container.style.display === 'none') {
+        requestAnimationFrame(loopFFT);
+        return;
+      }
+
       let changed = false;
       for (let i = 0; i < 512; i++) {
         const diff = targetFFT[i] - currentFFT[i];
@@ -151,13 +199,21 @@
       }
       
       if (changed) {
-        const outFFT = new Uint8Array(512);
-        for (let i = 0; i < 512; i++) outFFT[i] = currentFFT[i];
-        const msgObj = { type: 'audio_data', fft: outFFT };
-        Object.values(iframes).forEach(obj => {
-          const win = obj.getWin();
-          if (win) win.postMessage(msgObj, '*');
+        // 表示中のグループ内の iframe にのみ FFT データを送信
+        const visibleTargets = Object.values(iframes).filter(obj => {
+          const gEl = groupElements[obj.groupId];
+          return gEl && gEl.style.display !== 'none';
         });
+
+        if (visibleTargets.length > 0) {
+          const outFFT = new Uint8Array(512);
+          for (let i = 0; i < 512; i++) outFFT[i] = currentFFT[i];
+          const msgObj = { type: 'audio_data', fft: outFFT };
+          visibleTargets.forEach(obj => {
+            const win = obj.getWin();
+            if (win) win.postMessage(msgObj, '*');
+          });
+        }
       }
       requestAnimationFrame(loopFFT);
     }
@@ -176,31 +232,37 @@
 
         const msg = JSON.parse(e.data);
 
+        // ブロードキャストメッセージ（統合Video Player / 全レイヤー共通制御）の先行処理
+        if (msg.type === 'param_update' && msg.layerId === 'broadcast') {
+          if (msg.paramId === 'player_zindex') {
+            playerZIndex = msg.value;
+            const vp = document.getElementById('video-player-iframe');
+            if (vp) vp.style.zIndex = msg.value === 'foreground' ? 9999 : -1;
+            updateContainerVisibility();
+          } else if (msg.paramId === 'player_opacity') {
+            playerOpacity = Number(msg.value);
+            const vp = document.getElementById('video-player-iframe');
+            if (vp) vp.style.opacity = msg.value / 100.0;
+            updateContainerVisibility();
+          }
+
+          // ジェネレーター iframe 群にブロードキャスト
+          Object.values(iframes).forEach(target => {
+            const win = target.getWin();
+            if (win) win.postMessage(msg, '*');
+          });
+
+          // 統合 Video Player iframe にブロードキャスト
+          const vp = document.getElementById('video-player-iframe');
+          if (vp && vp.contentWindow) vp.contentWindow.postMessage(msg, '*');
+
+          return;
+        }
+
         if (msg.deckId !== myDeckId) return;
 
         if (msg.type === 'param_update') {
-          // Video Player 自体のスタイル制御
-          if (msg.paramId === 'player_zindex') {
-            const vp = document.getElementById('video-player-iframe');
-            if (vp) vp.style.zIndex = msg.value === 'foreground' ? 9999 : -1;
-            return;
-          }
-          if (msg.paramId === 'player_opacity') {
-            const vp = document.getElementById('video-player-iframe');
-            if (vp) vp.style.opacity = msg.value / 100.0;
-            return;
-          }
-
-          if (msg.layerId === 'broadcast') {
-            Object.values(iframes).forEach(target => {
-              const win = target.getWin();
-              if (win) win.postMessage(msg, '*');
-            });
-            // 統合 Video Player にもブロードキャスト
-            const vp = document.getElementById('video-player-iframe');
-            if (vp && vp.contentWindow) vp.contentWindow.postMessage(msg, '*');
-          } else if (msg.layerId) {
-            // ★修正ポイント: nullチェックを徹底
+          if (msg.layerId) {
             const target = iframes[msg.layerId];
             if (target) {
               const win = target.getWin();
@@ -210,7 +272,22 @@
             const groupEl = groupElements[msg.groupId];
             if (groupEl) {
               if (msg.paramId === 'scale') groupEl.style.transform = `scale(${msg.value})`;
-              else if (msg.paramId === 'opacity') groupEl.style.opacity = msg.value;
+              else if (msg.paramId === 'opacity') {
+                const opacityVal = Number(msg.value);
+                groupEl.style.opacity = opacityVal;
+                const isGroupVisible = opacityVal > 0.001;
+                const prevDisplay = groupEl.style.display;
+                groupEl.style.display = isGroupVisible ? 'block' : 'none';
+
+                if (prevDisplay !== groupEl.style.display) {
+                  Object.keys(iframes).forEach(lId => {
+                    if (iframes[lId].groupId === msg.groupId) {
+                      const win = iframes[lId].getWin();
+                      if (win) win.postMessage({ type: 'visibility', visible: isGroupVisible && container.style.display !== 'none' }, '*');
+                    }
+                  });
+                }
+              }
               else if (msg.paramId === 'color') {
                 Object.keys(iframes).forEach(lId => {
                   if (iframes[lId].groupId === msg.groupId) {
@@ -231,4 +308,4 @@
     };
   </script>
 </body>
-</html>
+</html>

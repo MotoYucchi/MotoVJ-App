@@ -1430,7 +1430,7 @@
     "params": {
       "scale": 1,
       "color": "#000000",
-      "opacity": 0
+      "opacity": 0.23
     },
     "layers": [
       {

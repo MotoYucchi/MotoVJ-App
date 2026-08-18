@@ -11,6 +11,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
     video {
       position: absolute;
       top: 0;
@@ -20,6 +21,9 @@
       object-fit: cover;
       opacity: 0;
       transition: opacity 0.1s ease;
+      transform: translateZ(0);
+      will-change: opacity, transform;
+      backface-visibility: hidden;
     }
   </style>
 </head>
@@ -55,24 +59,38 @@
 
         if (id === 'folderA') {
           folderA = val;
+          params.folderA = val;
         } else if (id === 'folderB') {
           folderB = val;
+          params.folderB = val;
         } else if (id === 'trackA') {
-          if (folderA && val) {
-            videoA.src = `/Video/${encodeURIComponent(folderA)}/${encodeURIComponent(val)}`;
-            videoA.load(); // 事前プリロードを強制
+          const targetFolder = folderA || params.folderA;
+          if (targetFolder && val) {
+            const newSrc = `/Video/${encodeURIComponent(targetFolder)}/${encodeURIComponent(val)}`;
+            if (videoA.getAttribute('data-src') !== newSrc) {
+              videoA.setAttribute('data-src', newSrc);
+              videoA.src = newSrc;
+              videoA.load();
+            }
             if (params.playA) videoA.play().catch(console.warn);
           }
         } else if (id === 'trackB') {
-          if (folderB && val) {
-            videoB.src = `/Video/${encodeURIComponent(folderB)}/${encodeURIComponent(val)}`;
-            videoB.load(); // 事前プリロードを強制
+          const targetFolder = folderB || params.folderB;
+          if (targetFolder && val) {
+            const newSrc = `/Video/${encodeURIComponent(targetFolder)}/${encodeURIComponent(val)}`;
+            if (videoB.getAttribute('data-src') !== newSrc) {
+              videoB.setAttribute('data-src', newSrc);
+              videoB.src = newSrc;
+              videoB.load();
+            }
             if (params.playB) videoB.play().catch(console.warn);
           }
         } else if (id === 'playA') {
+          params.playA = val;
           if (val) videoA.play().catch(console.warn);
           else videoA.pause();
         } else if (id === 'playB') {
+          params.playB = val;
           if (val) videoB.play().catch(console.warn);
           else videoB.pause();
         } else if (id === 'timeA') {

@@ -39,6 +39,8 @@
     };
     let groupColor = { r: 0, g: 0, b: 0 }; 
     let fftData = new Uint8Array(512);
+    let isVisible = true;
+    let isAnimating = false;
 
     // --- C案：SharedArrayBuffer 対応 (実装されている場合) ---
     // 親側で SharedArrayBuffer が生成されている場合、メモリを直接参照します。
@@ -49,6 +51,14 @@
       const msg = e.data;
 
       switch(msg.type) {
+        case 'visibility':
+          isVisible = !!msg.visible;
+          if (isVisible && !isAnimating) {
+            isAnimating = true;
+            requestAnimationFrame(update);
+          }
+          break;
+
         case 'param_update':
           // 型変換の自動化
           params[msg.paramId] = isNaN(msg.value) ? msg.value : Number(msg.value);
@@ -95,6 +105,12 @@
     const root = document.getElementById('vj-root');
     
     function update() {
+      if (!isVisible) {
+        isAnimating = false;
+        return;
+      }
+      isAnimating = true;
+
       // SharedArrayBufferがあればそちらを優先（超低レイテンシ）
       const data = sharedFFT || fftData;
 
