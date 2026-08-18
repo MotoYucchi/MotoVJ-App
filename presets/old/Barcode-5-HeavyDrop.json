@@ -1,0 +1,47 @@
+{
+  "id": "group-barcode-5-heavydrop",
+  "name": "Barcode 5 HeavyDrop",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-barcode5-shockwave",
+      "name": "Drop Shockwave",
+      "effectUrl": "effects/effect-bass02-shockwave.html",
+      "params": {
+        "color": "#000000",
+        "reactLow": 5.0,
+        "ringWidth": 20,
+        "speed": 1.5,
+        "opacity": 0.9,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-barcode5-glitch",
+      "name": "Drop Chaos",
+      "effectUrl": "effects/effect-iv05-glitchbar.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.8,
+        "barCount": 30,
+        "barWidth": 8.0,
+        "glitchIntensity": 0.9,
+        "shakeAmount": 30,
+        "channelSplit": 15,
+        "mirror": "Center",
+        "sizeReact": 3.0,
+        "colorReactLow": 200,
+        "colorReactMid": 50,
+        "colorReactHigh": 0,
+        "smoothing": 0.08,
+        "color": "#000000",
+        "opacity": 0.8,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

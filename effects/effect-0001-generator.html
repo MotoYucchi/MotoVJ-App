@@ -49,6 +49,15 @@
             "default": "#00ffff"
       },
       {
+            "id": "thickness",
+            "label": "Line Thickness",
+            "type": "range",
+            "min": 1,
+            "max": 50,
+            "step": 1,
+            "default": 2
+      },
+      {
             "id": "beatAnim",
             "label": "Beat Animation",
             "type": "select",
@@ -143,7 +152,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { shape: "Particle", speed: 1.0, opacity: 1.0, color: "#00ffff", beatAnim: "None", reactLow: 1.0, reactMid: 1.0, reactHigh: 1.0, hueSource: "None", hueAmount: 90, shiftX: 0, shiftY: 0 };
+    let params = { shape: "Particle", speed: 1.0, opacity: 1.0, color: "#00ffff", beatAnim: "None", reactLow: 1.0, reactMid: 1.0, reactHigh: 1.0, hueSource: "None", hueAmount: 90, shiftX: 0, shiftY: 0, thickness: 2 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let time = 0;
@@ -252,7 +261,7 @@
           break;
 
         case "Tunnel":
-          ctx.lineWidth = 2 + (high * params.reactHigh * 10);
+          ctx.lineWidth = params.thickness + (high * params.reactHigh * 10);
           for(let i=0; i<15; i++) {
             const rad = ((time * 50 + i * 50) % 800) * (1 + bass * params.reactLow * 0.2);
             ctx.globalAlpha = (1 - rad/800) * params.opacity;
@@ -268,7 +277,7 @@
           break;
 
         case "Lissajous":
-          ctx.lineWidth = 2 + (high * params.reactHigh * 5);
+          ctx.lineWidth = params.thickness + (high * params.reactHigh * 5);
           ctx.beginPath();
           const freqA = 3 + (bass * params.reactLow * 2);
           const freqB = 2 + (mid * params.reactMid * 2);
@@ -281,7 +290,7 @@
           break;
           
         case "Grid":
-          ctx.lineWidth = 2 + (high * params.reactHigh * 5);
+          ctx.lineWidth = params.thickness + (high * params.reactHigh * 5);
           const horizonY = 50;
           const lines = 20;
           ctx.translate(0, horizonY);

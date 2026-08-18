@@ -45,15 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
       source.connect(analyser);
       const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
-      function audioLoop() {
-        analyser.getByteFrequencyData(dataArray);
-        // 新しい通信モジュールを使って送信
-        if (window.VJWs) {
-          window.VJWs.send({ type: 'audio_data', fft: Array.from(dataArray) });
+      let lastSendTime = 0;
+      function audioLoop(timestamp) {
+        if (timestamp - lastSendTime > 33) {
+          analyser.getByteFrequencyData(dataArray);
+          // バイナリデータ(ArrayBuffer)をそのまま送信し、JSON化の負荷をゼロに
+          if (window.VJWs && window.VJWs.ws && window.VJWs.ws.readyState === WebSocket.OPEN) {
+            window.VJWs.ws.send(dataArray.buffer);
+          }
+          lastSendTime = timestamp;
         }
         requestAnimationFrame(audioLoop);
       }
-      audioLoop();
+      requestAnimationFrame(audioLoop);
       
       startAudioBtn.style.background = "#28a745";
       startAudioBtn.innerText = "🎙 Audio Active";

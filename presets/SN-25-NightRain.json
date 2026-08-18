@@ -1,0 +1,48 @@
+{
+  "id": "group-sn-25-night-rain",
+  "name": "SN-25 Night Rain",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-25-inkdrop",
+      "name": "InkDrop",
+      "effectUrl": "effects/effect-b2b03-ink-drop.html",
+      "params": {
+        "color": "#334466",
+        "opacity": 0.75,
+        "speed": 2.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-25-verticallines",
+      "name": "VerticalLines",
+      "effectUrl": "effects/effect-014-vertical-lines.html",
+      "params": {
+        "color": "#6688aa",
+        "opacity": 0.5,
+        "speed": 3.0,
+        "reactLow": 1.5,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-25-flowwave",
+      "name": "FlowWave",
+      "effectUrl": "effects/effect-chill01-flowwave.html",
+      "params": {
+        "color": "#223344",
+        "opacity": 0.4,
+        "speed": 0.3,
+        "reactLow": 0.6,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

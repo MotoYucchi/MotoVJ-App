@@ -1,0 +1,82 @@
+{
+  "id": "group-sn-09-groove-hex",
+  "name": "Groove Hex",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn09-hexgrid",
+      "name": "HexGrid",
+      "effectUrl": "effects/effect-iv02-hexgrid.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1.0,
+        "cellSize": 35,
+        "fillRatio": 0.4,
+        "pulseSpeed": 1.5,
+        "sizeReact": 1.5,
+        "colorReactLow": 140,
+        "colorReactMid": 80,
+        "colorReactHigh": 30,
+        "smoothing": 0.15,
+        "color": "#000000",
+        "opacity": 0.85,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn09-sidepillar",
+      "name": "SidePillar",
+      "effectUrl": "effects/effect-iv10-sidepillar.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.8,
+        "pillarCount": 6,
+        "maxWidth": 30,
+        "gapRatio": 0.7,
+        "sparkAmount": 10,
+        "sizeReact": 1.3,
+        "colorReactLow": 120,
+        "colorReactMid": 60,
+        "colorReactHigh": 25,
+        "smoothing": 0.15,
+        "color": "#000000",
+        "opacity": 0.7,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn09-framebeat",
+      "name": "FrameBeat",
+      "effectUrl": "effects/effect-iv08-framebeat.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.6,
+        "frameWidth": 18,
+        "bounceReact": 1.2,
+        "layerCount": 2,
+        "glow": 20,
+        "waveAmount": 6,
+        "sizeReact": 1.0,
+        "colorReactLow": 100,
+        "colorReactMid": 50,
+        "colorReactHigh": 20,
+        "smoothing": 0.15,
+        "color": "#000000",
+        "opacity": 0.55,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

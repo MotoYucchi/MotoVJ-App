@@ -1,0 +1,65 @@
+{
+  "id": "group-sn-19-pop-spark",
+  "name": "SN-19 Pop Spark",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-19-generator-star",
+      "name": "Generator Star",
+      "effectUrl": "effects/effect-0001-generator.html",
+      "params": {
+        "shape": "Star",
+        "speed": 3.0,
+        "opacity": 0.85,
+        "color": "#ffcc00",
+        "beatAnim": "Scale",
+        "reactLow": 3.0,
+        "reactMid": 4.0,
+        "reactHigh": 2.0,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "hueSource": "Mid",
+        "hueAmount": 120,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-19-circle",
+      "name": "Circle",
+      "effectUrl": "effects/effect-0000-circle.html",
+      "params": {
+        "size": 250,
+        "thickness": 12,
+        "color": "#ff3399",
+        "audioReact": 0.6,
+        "reactLow": 2.5,
+        "reactMid": 120,
+        "reactHigh": 15,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-19-glow-drift",
+      "name": "Glow Drift",
+      "effectUrl": "effects/effect-chill02-glowdrift.html",
+      "params": {
+        "color": "#ffaadd",
+        "opacity": 0.4,
+        "speed": 0.5,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

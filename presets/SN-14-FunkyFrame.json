@@ -1,0 +1,81 @@
+{
+  "id": "group-sn-14-funky-frame",
+  "name": "Funky Frame",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn14-framebeat",
+      "name": "FrameBeat",
+      "effectUrl": "effects/effect-iv08-framebeat.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1.0,
+        "frameWidth": 25,
+        "bounceReact": 2.0,
+        "layerCount": 3,
+        "glow": 30,
+        "waveAmount": 10,
+        "sizeReact": 1.8,
+        "colorReactLow": 160,
+        "colorReactMid": 100,
+        "colorReactHigh": 50,
+        "smoothing": 0.12,
+        "color": "#000000",
+        "opacity": 0.85,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn14-sidepillar",
+      "name": "SidePillar",
+      "effectUrl": "effects/effect-iv10-sidepillar.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.75,
+        "pillarCount": 8,
+        "maxWidth": 40,
+        "gapRatio": 0.6,
+        "sparkAmount": 15,
+        "sizeReact": 1.5,
+        "colorReactLow": 140,
+        "colorReactMid": 80,
+        "colorReactHigh": 40,
+        "smoothing": 0.12,
+        "color": "#000000",
+        "opacity": 0.7,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn14-shapes",
+      "name": "Shapes",
+      "effectUrl": "effects/effect-0002-shapes.html",
+      "params": {
+        "shape": "Cube",
+        "speed": 1.8,
+        "opacity": 0.5,
+        "color": "#ff9933",
+        "reactLow": 2.5,
+        "reactMid": 3.0,
+        "reactHigh": 2.0,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "hueSource": "Mid",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

@@ -36,6 +36,15 @@
             "default": "#ff4500"
       },
       {
+            "id": "thickness",
+            "label": "Line Thickness",
+            "type": "range",
+            "min": 1,
+            "max": 50,
+            "step": 1,
+            "default": 2
+      },
+      {
             "id": "opacity",
             "label": "Opacity",
             "type": "range",
@@ -130,7 +139,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { shape: "Bar", color: "#ff4500", opacity: 1.0, sensitivity: 1.0, beatAnim: "None", reactLow: 1.0, hueSource: "None", hueAmount: 90, shiftX: 0, shiftY: 0 };
+    let params = { shape: "Bar", color: "#ff4500", opacity: 1.0, sensitivity: 1.0, beatAnim: "None", reactLow: 1.0, hueSource: "None", hueAmount: 90, shiftX: 0, shiftY: 0, thickness: 2 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let shockwaves = [];
@@ -143,9 +152,9 @@
 
     function getMixedColor(alpha = params.opacity) {
       const lRgb = hexToRgb(params.color);
-      const r = (lRgb.r + groupColorRgb.r) % 256;
-      const g = (lRgb.g + groupColorRgb.g) % 256;
-      const b = (lRgb.b + groupColorRgb.b) % 256;
+      const r = Math.min(255, lRgb.r + groupColorRgb.r);
+      const g = Math.min(255, lRgb.g + groupColorRgb.g);
+      const b = Math.min(255, lRgb.b + groupColorRgb.b);
       return `rgba(${r}, ${g}, ${b}, ${alpha})`;
     }
 
@@ -181,7 +190,7 @@
       }
 
       ctx.fillStyle = ctx.strokeStyle = color;
-      ctx.lineWidth = 2;
+      ctx.lineWidth = params.thickness;
 
       const binCount = 512;
       const barWidth = width / (binCount / 2);
@@ -267,7 +276,7 @@
           const r = 100 + (currentFFT[5] * params.sensitivity);
           ctx.beginPath();
           ctx.arc(cx, cy, r, 0, Math.PI * 2);
-          ctx.lineWidth = 5 + (bass * 20);
+          ctx.lineWidth = (params.thickness + 3) + (bass * 20);
           ctx.stroke();
           break;
 

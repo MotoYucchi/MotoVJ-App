@@ -69,9 +69,9 @@
       ctx.clearRect(0, 0, width, height);
 
       const lRgb = hexToRgb(params.color);
-      const r = (lRgb.r + groupColorRgb.r) % 256;
-      const g = (lRgb.g + groupColorRgb.g) % 256;
-      const b = (lRgb.b + groupColorRgb.b) % 256;
+      const r = Math.min(255, lRgb.r + groupColorRgb.r);
+      const g = Math.min(255, lRgb.g + groupColorRgb.g);
+      const b = Math.min(255, lRgb.b + groupColorRgb.b);
 
       ctx.save();
       ctx.translate(cx, cy);

@@ -1,0 +1,40 @@
+{
+  "id": "group-1778045231383",
+  "name": "0623 Eye of Storm",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-0623-particles",
+      "name": "Background Particles",
+      "effectUrl": "effects/effect-012-particles.html",
+      "params": {
+        "particleCount": 1100,
+        "baseSize": 4,
+        "color1": "#00ffcc",
+        "color2": "#ff0066",
+        "opacity": 0.45,
+        "reactLow": 3,
+        "reactMid": 0.4,
+        "speed": 1.5,
+        "shape": "Circle"
+      }
+    },
+    {
+      "id": "layer-0623-eye",
+      "name": "Foreground Eye",
+      "effectUrl": "effects/effect-015-opening-shape.html",
+      "params": {
+        "shape": "Eye",
+        "size": 630,
+        "thickness": 498,
+        "color": "#fefaf5",
+        "opacity": 0.83,
+        "reactLow": 2.5,
+        "reactMid": 1
+      }
+    }
+  ]
+}

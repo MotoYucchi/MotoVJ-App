@@ -1,0 +1,36 @@
+{
+  "id": "group-bass-grime",
+  "name": "Bass Grime",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-bass-strobe",
+      "name": "Under Strobe",
+      "effectUrl": "effects/effect-bass06-strobe.html",
+      "params": {
+        "color": "#000000",
+        "reactLow": 4.0,
+        "opacity": 0.5,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-bass-grime-main",
+      "name": "Screen Tear",
+      "effectUrl": "effects/effect-bass09-grime.html",
+      "params": {
+        "sliceCount": 40,
+        "intensity": 250,
+        "rgbShift": 80,
+        "color": "#000000",
+        "opacity": 0.9,
+        "reactLow": 3.0,
+        "sustain": 0.7
+      }
+    }
+  ]
+}

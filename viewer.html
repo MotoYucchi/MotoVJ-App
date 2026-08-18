@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <style>
-    body { margin: 0; background: transparent; overflow: hidden; position: relative; width: 100vw; height: 100vh; }
+    body { margin: 0; background: transparent; overflow: hidden; position: relative; width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; }
+    #layers-container { width: 100%; max-width: 100%; max-height: 100%; aspect-ratio: 16 / 9; position: relative; }
     .group-wrapper { 
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
       pointer-events: none; transform-origin: center center;
@@ -14,6 +15,7 @@
   </style>
 </head>
 <body>
+  <iframe id="video-player-iframe" src="video-player.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: -1; pointer-events: none; opacity: 1;"></iframe>
   <div id="layers-container"></div>
 
   <script>
@@ -41,53 +43,86 @@
 
     function buildLayers(groupsData) {
       const data = standardize(groupsData);
-      container.innerHTML = '';
-      iframes = {};
-      groupElements = {};
       
-      data.forEach((group) => {
-        const groupEl = document.createElement('div');
-        groupEl.className = 'group-wrapper';
-        groupEl.id = `group-dom-${group.id}`;
-        
-        // グループ初期スタイルの適用
+      const newGroupIds = new Set(data.map(g => `group-dom-${g.id}`));
+      
+      // 1. 古いGroupの削除
+      Array.from(container.children).forEach(groupEl => {
+        if (!newGroupIds.has(groupEl.id)) {
+          groupEl.remove();
+          const groupId = groupEl.id.replace('group-dom-', '');
+          delete groupElements[groupId];
+          Object.keys(iframes).forEach(key => {
+            if (iframes[key].groupId === groupId) delete iframes[key];
+          });
+        }
+      });
+
+      data.forEach((group, groupIndex) => {
+        // 2. Groupの作成または取得
+        let groupEl = document.getElementById(`group-dom-${group.id}`);
+        if (!groupEl) {
+          groupEl = document.createElement('div');
+          groupEl.className = 'group-wrapper';
+          groupEl.id = `group-dom-${group.id}`;
+          container.appendChild(groupEl);
+          groupElements[group.id] = groupEl;
+        }
+
+        // Groupスタイルの更新
+        groupEl.style.zIndex = groupIndex;
         if (group.params) {
           groupEl.style.transform = `scale(${group.params.scale || 1.0})`;
           groupEl.style.opacity = group.params.opacity !== undefined ? group.params.opacity : 1.0;
         }
 
-        group.layers.forEach((layer) => {
-          const wrapper = document.createElement('div');
-          wrapper.className = 'layer-wrapper';
-          wrapper.style.mixBlendMode = layer.blend || 'normal';
-
-          const iframe = document.createElement('iframe');
-          // キャッシュ回避のためクエリパラメータを付与
-          iframe.src = layer.effectUrl + '?t=' + Date.now();
-          
-          iframe.onload = () => {
-            // ロード完了時にデータを送る
-            if (layer.params) {
-              Object.keys(layer.params).forEach(key => {
-                iframe.contentWindow.postMessage({ type: 'param_update', paramId: key, value: layer.params[key] }, '*');
-              });
-            }
-            if (group.params && group.params.color) {
-              iframe.contentWindow.postMessage({ type: 'group_update', color: group.params.color }, '*');
-            }
-          };
-          
-          wrapper.appendChild(iframe);
-          groupEl.appendChild(wrapper);
-          // 安全のために、win が存在するかチェックする関数として保持
-          iframes[layer.id] = { 
-            getWin: () => iframe.contentWindow, 
-            groupId: group.id 
-          };
-        });
+        const newLayerIds = new Set(group.layers.map(l => `layer-wrapper-${l.id}`));
         
-        container.appendChild(groupEl);
-        groupElements[group.id] = groupEl;
+        // 3. 古いLayerの削除
+        Array.from(groupEl.children).forEach(wrapper => {
+          if (!newLayerIds.has(wrapper.id)) {
+            wrapper.remove();
+            const layerId = wrapper.id.replace('layer-wrapper-', '');
+            delete iframes[layerId];
+          }
+        });
+
+        // 4. Layerの作成または更新
+        group.layers.forEach((layer, layerIndex) => {
+          let wrapper = document.getElementById(`layer-wrapper-${layer.id}`);
+          
+          if (!wrapper) {
+            // 新規作成
+            wrapper = document.createElement('div');
+            wrapper.className = 'layer-wrapper';
+            wrapper.id = `layer-wrapper-${layer.id}`;
+            
+            const iframe = document.createElement('iframe');
+            iframe.src = layer.effectUrl + '?t=' + Date.now();
+            iframe.onload = () => {
+              if (layer.params) {
+                Object.keys(layer.params).forEach(key => {
+                  iframe.contentWindow.postMessage({ type: 'param_update', paramId: key, value: layer.params[key] }, '*');
+                });
+              }
+              if (group.params && group.params.color) {
+                iframe.contentWindow.postMessage({ type: 'group_update', color: group.params.color }, '*');
+              }
+            };
+            
+            wrapper.appendChild(iframe);
+            groupEl.appendChild(wrapper);
+            
+            iframes[layer.id] = { 
+              getWin: () => iframe.contentWindow, 
+              groupId: group.id 
+            };
+          }
+          
+          // Layerスタイルの更新
+          wrapper.style.mixBlendMode = layer.blend || 'normal';
+          wrapper.style.zIndex = layerIndex;
+        });
       });
     }
 
@@ -98,23 +133,73 @@
       buildLayers(rawData);
     } catch(e) { console.error(e); }
 
+    let targetFFT = new Uint8Array(512);
+    let currentFFT = new Float32Array(512);
+    const FFT_LERP_FACTOR = 0.35; // 補間の強さ
+
+    function loopFFT() {
+      let changed = false;
+      for (let i = 0; i < 512; i++) {
+        const diff = targetFFT[i] - currentFFT[i];
+        if (Math.abs(diff) > 0.5) {
+          currentFFT[i] += diff * FFT_LERP_FACTOR;
+          changed = true;
+        } else if (currentFFT[i] !== targetFFT[i]) {
+          currentFFT[i] = targetFFT[i];
+          changed = true;
+        }
+      }
+      
+      if (changed) {
+        const outFFT = new Uint8Array(512);
+        for (let i = 0; i < 512; i++) outFFT[i] = currentFFT[i];
+        const msgObj = { type: 'audio_data', fft: outFFT };
+        Object.values(iframes).forEach(obj => {
+          const win = obj.getWin();
+          if (win) win.postMessage(msgObj, '*');
+        });
+      }
+      requestAnimationFrame(loopFFT);
+    }
+    loopFFT();
+
     const ws = new WebSocket(`ws://${location.host}/ws`);
+    ws.binaryType = 'arraybuffer';
     ws.onmessage = (e) => {
       try {
-        const msg = JSON.parse(e.data);
-        
-        if (msg.type === 'audio_data') {
-          Object.values(iframes).forEach(obj => {
-            const win = obj.getWin();
-            if (win) win.postMessage(msg, '*');
-          });
+        // バイナリデータ（FFT波形）の受信 (30Hz)
+        if (e.data instanceof ArrayBuffer) {
+          const fftData = new Uint8Array(e.data);
+          for(let i=0; i<512; i++) targetFFT[i] = fftData[i];
           return;
         }
+
+        const msg = JSON.parse(e.data);
 
         if (msg.deckId !== myDeckId) return;
 
         if (msg.type === 'param_update') {
-          if (msg.layerId) {
+          // Video Player 自体のスタイル制御
+          if (msg.paramId === 'player_zindex') {
+            const vp = document.getElementById('video-player-iframe');
+            if (vp) vp.style.zIndex = msg.value === 'foreground' ? 9999 : -1;
+            return;
+          }
+          if (msg.paramId === 'player_opacity') {
+            const vp = document.getElementById('video-player-iframe');
+            if (vp) vp.style.opacity = msg.value / 100.0;
+            return;
+          }
+
+          if (msg.layerId === 'broadcast') {
+            Object.values(iframes).forEach(target => {
+              const win = target.getWin();
+              if (win) win.postMessage(msg, '*');
+            });
+            // 統合 Video Player にもブロードキャスト
+            const vp = document.getElementById('video-player-iframe');
+            if (vp && vp.contentWindow) vp.contentWindow.postMessage(msg, '*');
+          } else if (msg.layerId) {
             // ★修正ポイント: nullチェックを徹底
             const target = iframes[msg.layerId];
             if (target) {

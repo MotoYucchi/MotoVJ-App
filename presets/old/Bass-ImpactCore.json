@@ -1,0 +1,38 @@
+{
+  "id": "group-bass-core",
+  "name": "Bass Core Smash",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-bass-shockwave",
+      "name": "Outer Rings",
+      "effectUrl": "effects/effect-bass02-shockwave.html",
+      "params": {
+        "color": "#000000",
+        "reactLow": 5.0,
+        "ringWidth": 30,
+        "speed": 1.2,
+        "opacity": 0.8,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-bass-core-main",
+      "name": "Impact Core",
+      "effectUrl": "effects/effect-bass11-impact-core.html",
+      "params": {
+        "sides": 6,
+        "baseSize": 120,
+        "reactLow": 4.0,
+        "color": "#000000",
+        "opacity": 0.9,
+        "style": "Wireframe",
+        "rotationSpeed": 1.0
+      }
+    }
+  ]
+}

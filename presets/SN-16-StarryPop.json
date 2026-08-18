@@ -1,0 +1,68 @@
+{
+  "id": "group-sn-16-starry-pop",
+  "name": "SN-16 Starry Pop",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-16-kawaii",
+      "name": "Kawaii",
+      "effectUrl": "effects/effect-0015-kawaii.html",
+      "params": {
+        "color": "#ff66aa",
+        "opacity": 0.85,
+        "speed": 2.0,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "reactLow": 2.0,
+        "reactMid": 3.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-16-stardust",
+      "name": "Stardust",
+      "effectUrl": "effects/effect-high01-stardust.html",
+      "params": {
+        "color": "#ffcc00",
+        "opacity": 0.6,
+        "speed": 1.5,
+        "reactHigh": 3.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-16-bubble",
+      "name": "Bubble",
+      "effectUrl": "effects/effect-0014-bubble.html",
+      "params": {
+        "complexity": 8,
+        "particleCount": 120,
+        "opacity": 0.5,
+        "afterimage": 0.97,
+        "color1": "#ff99cc",
+        "color2": "#99ccff",
+        "color3": "#ffff66",
+        "pattern": "湧き出る",
+        "speed": 2.0,
+        "highReact": 3,
+        "midReact": 1,
+        "lowReact": 1,
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1,
+        "hueSource": "None",
+        "hueAmount": 90,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

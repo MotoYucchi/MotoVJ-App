@@ -1,0 +1,84 @@
+{
+  "id": "group-sn-26-build-up",
+  "name": "SN-26 Build Up",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-26-vortex",
+      "name": "Vortex",
+      "effectUrl": "effects/effect-iv04-vortex.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1.0,
+        "armCount": 4,
+        "rotSpeed": 1.5,
+        "depth": 0.8,
+        "trailLength": 50,
+        "sizeReact": 2.0,
+        "colorReactLow": 180,
+        "colorReactMid": 120,
+        "colorReactHigh": 60,
+        "smoothing": 0.1,
+        "color": "#000000",
+        "opacity": 0.9,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-26-side-pillar",
+      "name": "Side Pillar",
+      "effectUrl": "effects/effect-iv10-sidepillar.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.8,
+        "pillarCount": 8,
+        "maxWidth": 35,
+        "gapRatio": 0.5,
+        "sparkAmount": 20,
+        "sizeReact": 2.0,
+        "colorReactLow": 160,
+        "colorReactMid": 100,
+        "colorReactHigh": 60,
+        "smoothing": 0.1,
+        "color": "#000000",
+        "opacity": 0.75,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-26-track-arc",
+      "name": "Track Arc",
+      "effectUrl": "effects/effect-iv09-trackarc.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.65,
+        "ringCount": 4,
+        "arcLength": 1.0,
+        "dotCount": 24,
+        "ellipseRatio": 0.5,
+        "rotSpeed": 1.0,
+        "ringRadius": 280,
+        "sizeReact": 1.8,
+        "colorReactLow": 140,
+        "colorReactMid": 90,
+        "colorReactHigh": 50,
+        "smoothing": 0.1,
+        "color": "#000000",
+        "opacity": 0.65,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

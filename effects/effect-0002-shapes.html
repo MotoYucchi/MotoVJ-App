@@ -50,6 +50,15 @@
             "default": "#00ff00"
       },
       {
+            "id": "thickness",
+            "label": "Line Thickness",
+            "type": "range",
+            "min": 1,
+            "max": 50,
+            "step": 1,
+            "default": 2
+      },
+      {
             "id": "reactLow",
             "label": "Bass React",
             "type": "range",
@@ -132,7 +141,7 @@
     window.addEventListener('resize', resize);
     resize();
 
-    let params = { shape: "Cube", speed: 1.0, opacity: 1.0, color: "#00ff00", reactLow: 1.5, reactMid: 1.0, reactHigh: 1.0, hueSource: "None", hueAmount: 90, shiftX: 0, shiftY: 0 };
+    let params = { shape: "Cube", speed: 1.0, opacity: 1.0, color: "#00ff00", reactLow: 1.5, reactMid: 1.0, reactHigh: 1.0, hueSource: "None", hueAmount: 90, shiftX: 0, shiftY: 0, thickness: 2 };
     let currentFFT = new Array(512).fill(0);
     let groupColorRgb = { r: 0, g: 0, b: 0 };
     let time = 0;
@@ -218,7 +227,7 @@
             const p = 4 / (4 + tz);
             return [tx * p * s, ty * p * s];
           });
-          ctx.lineWidth = 2 + high * 10;
+          ctx.lineWidth = params.thickness + high * 10;
           edges.forEach(e => {
             ctx.beginPath();
             ctx.moveTo(projected[e[0]][0], projected[e[0]][1]);
@@ -238,7 +247,7 @@
             ctx.moveTo(0,0);
             const lineLen = 200 + mid * 300 * params.reactMid;
             ctx.lineTo(lineLen, Math.sin(time) * 100);
-            ctx.lineWidth = 5 + high * 20;
+            ctx.lineWidth = (params.thickness + 3) + high * 20;
             ctx.stroke();
             ctx.restore();
           }
@@ -289,7 +298,7 @@
           ctx.translate(cx, height * 0.9);
           const drawBranch = (len, angle, depth) => {
             if(depth > 8) return;
-            ctx.lineWidth = depth === 0 ? 5 : 2;
+            ctx.lineWidth = depth === 0 ? params.thickness + 3 : params.thickness;
             ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0, -len); ctx.stroke();
             ctx.translate(0, -len);
             ctx.save();

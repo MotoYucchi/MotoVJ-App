@@ -30,12 +30,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: false });
 
-  // ====== Effect list cache ======
+  // ====== 荒ぶるフェーダー対策（ローカル操作中の同期無視） ======
+  document.addEventListener('pointerdown', e => {
+    if (e.target.tagName === 'INPUT' && (e.target.type === 'range' || e.target.type === 'number')) {
+      e.target.dataset.dragging = "true";
+    }
+  });
+  document.addEventListener('pointerup', e => {
+    document.querySelectorAll('input[data-dragging="true"]').forEach(el => el.dataset.dragging = "");
+  });
+  document.addEventListener('pointercancel', e => {
+    document.querySelectorAll('input[data-dragging="true"]').forEach(el => el.dataset.dragging = "");
+  });
+
+  // ====== Effect & Video Folder list cache ======
   let effectListCache = [];
+  let videoFolderCache = [];
+
+  async function fetchVideoFolders() {
+    try {
+      const res = await fetch('/list_video_folders');
+      videoFolderCache = await res.json();
+    } catch(e) { console.error("Video folder fetch failed", e); }
+  }
+  fetchVideoFolders();
 
   // ====== Incoming WS messages ======
   function handleIncomingMessage(msg) {
-    if (msg.type === 'rebuild_layers') {
+    if (msg.type === 'request_sync') {
+      deckIds.forEach(id => window.syncDeck(id));
+    } else if (msg.type === 'rebuild_layers') {
       VJStorage.overwriteDeck(msg.deckId, msg.layers);
       renderDeck(msg.deckId);
     } else if (msg.type === 'param_update') {
@@ -44,16 +68,33 @@ document.addEventListener('DOMContentLoaded', () => {
         : `input[data-deck="${msg.deckId}"][data-group="${msg.groupId}"][data-param="${msg.paramId}"]`;
       
       const input = document.querySelector(selector);
-      if (input && document.activeElement !== input) {
-        input.value = msg.value;
+      if (input && input.dataset.dragging !== "true") {
+        if (input.type === 'checkbox') input.checked = msg.value;
+        else input.value = msg.value;
       }
       VJStorage.updateParam(msg.deckId, msg.groupId, msg.layerId, msg.paramId, msg.value);
+
     }
   }
+
+
 
   // ====== Render Deck ======
   function renderDeck(deckId) {
     let panel = document.getElementById(`panel-${deckId}`);
+    
+    // ★ 展開状態の保存
+    let openGroups = new Set();
+    let openLayers = new Set();
+    if (panel) {
+      panel.querySelectorAll('.group-item:not(.collapsed)').forEach(el => {
+        if (el.dataset.groupId) openGroups.add(el.dataset.groupId);
+      });
+      panel.querySelectorAll('.layer-item.expanded').forEach(el => {
+        if (el.id) openLayers.add(el.id);
+      });
+    }
+
     if (!panel) {
       panel = document.createElement('div');
       panel.id = `panel-${deckId}`;
@@ -75,6 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const groupContainer = panel.querySelector('.group-list');
     groups.forEach((group, index) => {
       groupContainer.appendChild(createGroupUI(deckId, group, index));
+    });
+
+    // ★ 展開状態の復元
+    panel.querySelectorAll('.group-item').forEach(el => {
+      if (openGroups.has(el.dataset.groupId)) el.classList.remove('collapsed');
+    });
+    panel.querySelectorAll('.layer-item').forEach(el => {
+      if (openLayers.has(el.id)) el.classList.add('expanded');
     });
 
     // グループのドラッグ&ドロップ設定
@@ -162,15 +211,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const div = document.createElement('div');
     div.className = 'group-item collapsed';
     div.dataset.deckId = deckId;
+    div.dataset.groupId = group.id;
     div.dataset.groupIndex = groupIndex;
     div.innerHTML = `
       <div class="group-header" onclick="toggleGroupCollapse(this)">
-        <div class="group-drag-handle" title="ドラッグで移動" onclick="event.stopPropagation()">
-          <img src="nt/icons/drag-handle.svg" alt="drag">
-        </div>
         <img class="group-fold-icon" src="nt/icons/caret-button.svg" alt="fold">
         <div class="group-info">
           <input class="group-title" value="${group.name}" onclick="event.stopPropagation()" onchange="renameGroup('${deckId}', '${group.id}', this.value)">
+        </div>
+        <div class="group-drag-handle" title="ドラッグで移動" onclick="event.stopPropagation()">
+          <img src="nt/icons/drag-handle.svg" alt="drag">
         </div>
         <div class="group-actions" onclick="event.stopPropagation()">
           <select class="preset-select" onchange="loadPreset('${deckId}', '${group.id}', this.value)">
@@ -227,13 +277,13 @@ document.addEventListener('DOMContentLoaded', () => {
     item.dataset.layerIndex = index;
     item.innerHTML = `
       <div class="layer-ctrl-bar">
-        <div class="layer-drag-handle" title="ドラッグで移動">
-          <img src="nt/icons/drag-handle.svg" alt="drag">
-        </div>
         <div class="layer-fold-btn" onclick="event.stopPropagation(); toggleFolder('${deckId}', '${layer.id}')" title="展開/縮小">
           <img class="layer-fold-icon" src="nt/icons/caret-button.svg" alt="fold">
         </div>
         <input class="layer-title" value="${layer.name || layer.id}" onclick="event.stopPropagation()" onchange="renameLayer('${deckId}', '${groupId}', '${layer.id}', this.value)">
+        <div class="layer-drag-handle" title="ドラッグで移動">
+          <img src="nt/icons/drag-handle.svg" alt="drag">
+        </div>
         <button class="btn btn-icon" onclick="event.stopPropagation(); showLayerMenu(event, '${deckId}', '${groupId}', '${layer.id}')" title="メニュー">
           <img src="nt/icons/hamburger-menu.svg" alt="menu">
         </button>
@@ -258,6 +308,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const schemaEl = doc.getElementById('vj-schema');
       
       const customSchema = schemaEl ? JSON.parse(schemaEl.textContent) : [];
+      
+      // 動的にdj-list.csvを読み込んでdj_indexの選択肢にセット
+      for (const p of customSchema) {
+        if (p.id === 'dj_index') {
+          try {
+            const djRes = await fetch('effects/dj-list.csv?t=' + Date.now());
+            if (djRes.ok) {
+              const djText = await djRes.text();
+              const lines = djText.trim().split('\n').slice(1);
+              p.options = lines.filter(l => l.trim()).map((line, idx) => {
+                const name = line.split(',')[0] || `DJ ${idx}`;
+                return `${idx}: ${name}`;
+              });
+            }
+          } catch(e) { console.error(e); }
+        }
+      }
+
       const fullSchema = customSchema;
     
       if (!pDiv) return;
@@ -290,6 +358,26 @@ document.addEventListener('DOMContentLoaded', () => {
                   onchange="updateParamFromUI('${deckId}', '${groupId}', '${layer.id}', '${p.id}', this.value)">
                   ${optionsHtml}
               </select>`;
+        } else if (p.type === 'video-folder') {
+          const optionsHtml = ['<option value="">-- Select Folder --</option>', ...videoFolderCache.map(opt => 
+            `<option value="${opt}" ${currentValue === opt ? 'selected' : ''}>${opt}</option>`
+          )].join('');
+          inputHtml = `
+              <select ${commonAttrs} class="video-folder-select"
+                  onchange="updateParamFromUI('${deckId}', '${groupId}', '${layer.id}', '${p.id}', this.value); updateVideoTracks('${deckId}', '${groupId}', '${layer.id}', this.value)">
+                  ${optionsHtml}
+              </select>`;
+        } else if (p.type === 'video-track') {
+          inputHtml = `
+              <select ${commonAttrs} class="video-track-select" data-current="${currentValue}"
+                  onchange="updateParamFromUI('${deckId}', '${groupId}', '${layer.id}', '${p.id}', this.value)">
+                  <option value="">-- Select Track --</option>
+              </select>`;
+        } else if (p.type === 'checkbox') {
+          inputHtml = `
+              <input type="checkbox" ${currentValue ? 'checked' : ''}
+                  ${commonAttrs}
+                  onchange="updateParamFromUI('${deckId}', '${groupId}', '${layer.id}', '${p.id}', this.checked)">`;
         } else {
           inputHtml = `
               <input type="${p.type}" 
@@ -307,11 +395,54 @@ document.addEventListener('DOMContentLoaded', () => {
           VJStorage.save(deckId);
         }
       });
+
+      // レイヤーに video-folder が設定されていればトラックリストを初期化
+      const folderParam = customSchema.find(s => s.type === 'video-folder');
+      if (folderParam && layer.params[folderParam.id]) {
+        updateVideoTracks(deckId, groupId, layer.id, layer.params[folderParam.id]);
+      }
+
     } catch(e) { 
       console.error("Schema Load Error:", e);
       if (pDiv) pDiv.innerHTML = `<div style="color:#ff6b6b;font-size:11px;padding:4px">⚠ Error: ${e.message}</div>`;
     }
   }
+
+  // ====== CSV Fetch & Update Video Tracks ======
+  window.updateVideoTracks = async (deckId, groupId, layerId, folderName) => {
+    const selects = document.querySelectorAll(`select.video-track-select[data-layer="${layerId}"]`);
+    if (!selects.length) return;
+
+    let optionsHtml = '<option value="">-- Select Track --</option>';
+    if (folderName) {
+      try {
+        const res = await fetch(`/Video/${encodeURIComponent(folderName)}/index.csv`);
+        if (res.ok) {
+          const csvText = await res.text();
+          const lines = csvText.trim().split('\n');
+          // 1行目はヘッダなのでスキップ
+          for (let i = 1; i < lines.length; i++) {
+            const cols = lines[i].split(',');
+            if (cols.length >= 4) {
+              const title = cols[0].trim();
+              const filename = cols[3].trim();
+              optionsHtml += `<option value="${filename}">${title}</option>`;
+            }
+          }
+        }
+      } catch (e) {
+        console.error("Failed to load CSV", e);
+      }
+    }
+
+    selects.forEach(select => {
+      const currentVal = select.getAttribute('data-current');
+      select.innerHTML = optionsHtml;
+      if (currentVal && select.querySelector(`option[value="${currentVal}"]`)) {
+        select.value = currentVal;
+      }
+    });
+  };
 
   // ====== Group Collapse Toggle ======
   window.toggleGroupCollapse = (headerEl) => {

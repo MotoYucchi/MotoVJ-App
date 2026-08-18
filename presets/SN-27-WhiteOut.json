@@ -1,0 +1,72 @@
+{
+  "id": "group-sn-27-white-out",
+  "name": "SN-27 White Out",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-27-strobe",
+      "name": "Strobe",
+      "effectUrl": "effects/effect-bass06-strobe.html",
+      "params": {
+        "color": "#000000",
+        "reactLow": 6.0,
+        "opacity": 0.85,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-27-shockwave",
+      "name": "Shockwave",
+      "effectUrl": "effects/effect-bass02-shockwave.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 1.0,
+        "bassFreqLow": 0,
+        "bassFreqHigh": 6,
+        "bassThreshold": 0.1,
+        "bassSense": 4.0,
+        "waveSpeed": 10,
+        "waveDecay": 0.005,
+        "maxRadius": 1500,
+        "thickness": 12,
+        "cooldown": 80,
+        "color": "#000000",
+        "opacity": 0.9,
+        "hueSource": "None",
+        "hueAmount": 0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-27-corner-flash",
+      "name": "Corner Flash",
+      "effectUrl": "effects/effect-iv06-cornerflash.html",
+      "params": {
+        "baseR": 0,
+        "baseG": 255,
+        "baseB": 255,
+        "baseA": 0.9,
+        "cornerSize": 350,
+        "glowIntensity": 1.0,
+        "pulseSpeed": 3.0,
+        "arcCount": 8,
+        "sizeReact": 3.0,
+        "colorReactLow": 250,
+        "colorReactMid": 200,
+        "colorReactHigh": 150,
+        "smoothing": 0.06,
+        "color": "#000000",
+        "opacity": 0.8,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}

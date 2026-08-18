@@ -1,0 +1,26 @@
+{
+  "id": "group-barcode-6-interlude",
+  "name": "Barcode 6 Interlude",
+  "params": {
+    "scale": 1,
+    "color": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "layer-barcode6-chill",
+      "name": "Chill Waves",
+      "effectUrl": "effects/effect-chill01-flowwave.html",
+      "params": {
+        "baseR": 0, "baseG": 255, "baseB": 255, "baseA": 0.6,
+        "opacity": 0.5,
+        "color": "#000000",
+        "speed": 0.3,
+        "waveCount": 3,
+        "waveHeight": 20,
+        "reactLow": 0.2,
+        "reactMid": 0.5,
+        "reactHigh": 0.2
+      }
+    }
+  ]
+}

@@ -156,9 +156,9 @@
     function getDynamicColor(alpha = 1.0, extraHue = 0) {
       const lRgb = hexToRgb(params.color);
       // 基本のModulo色
-      const r = (lRgb.r + groupColorRgb.r) % 256;
-      const g = (lRgb.g + groupColorRgb.g) % 256;
-      const b = (lRgb.b + groupColorRgb.b) % 256;
+      const r = Math.min(255, lRgb.r + groupColorRgb.r);
+      const g = Math.min(255, lRgb.g + groupColorRgb.g);
+      const b = Math.min(255, lRgb.b + groupColorRgb.b);
       
       // HSLに変換して色相を回す（楽しさの演出）
       // beatHueOffsetがビートごとに加算され、色がジャンプする

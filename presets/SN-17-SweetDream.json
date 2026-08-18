@@ -1,0 +1,48 @@
+{
+  "id": "group-sn-17-sweet-dream",
+  "name": "SN-17 Sweet Dream",
+  "params": {
+    "scale": 1,
+    "color": "#000000"
+  },
+  "layers": [
+    {
+      "id": "layer-sn-17-sweet-clouds",
+      "name": "Sweet Clouds",
+      "effectUrl": "effects/effect-b2b06-sweet-clouds.html",
+      "params": {
+        "color": "#ffb6c1",
+        "opacity": 0.8,
+        "speed": 0.8,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-17-kawaii-pop",
+      "name": "Kawaii Pop",
+      "effectUrl": "effects/effect-b2b04-kawaii-pop.html",
+      "params": {
+        "popCount": 40,
+        "color": "#ff66cc",
+        "opacity": 0.65,
+        "speed": 2.0,
+        "reactMid": 2.5,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    },
+    {
+      "id": "layer-sn-17-fractal-bloom",
+      "name": "Fractal Bloom",
+      "effectUrl": "effects/effect-b2b08-fractal-bloom.html",
+      "params": {
+        "color": "#cc99ff",
+        "opacity": 0.5,
+        "speed": 1.0,
+        "shiftX": 0,
+        "shiftY": 0
+      }
+    }
+  ]
+}
